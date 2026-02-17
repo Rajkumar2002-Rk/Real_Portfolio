@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Kumar Nelluri | Data Engineer</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav>
+    <div class="logo">Raj Kumar</div>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact" class="btn-contact">Contact</a></li>
+    </ul>
+</nav>
+
+<header class="hero" id="home">
+    <div class="hero-content">
+        <h1>Hi, I'm <span class="highlight">Raj Kumar Nelluri</span></h1>
+        <h2>Data Engineer & AWS Cloud Practitioner</h2>
+        <p>
+            Master's in Computer Science graduate specializing in building scalable data pipelines, 
+            Real-Time Customer Profiles (AEP), and Machine Learning solutions. 
+            Expert in transforming raw data into actionable business insights.
+        </p>
+        <div class="hero-buttons">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="resume.pdf" target="_blank" class="btn secondary">Download Resume</a>
+        </div>
+    </div>
+    
+    <div class="hero-image">
+        <img src="Raj_Kumar.png" alt="Raj Kumar Nelluri">
+    </div>
+</header>
+<section id="about" class="section-padding" style="background-color: white;">
+    <div class="about-container">
+        <div class="about-text">
+            <h2 class="section-title">About Me</h2>
+            <p>
+                I am a Data Engineer and Python Developer currently based in <strong>Celina, Texas</strong>. 
+                With a Master’s in Computer Science from <strong>Pace University, New York</strong> and a background in Artificial Intelligence, 
+                I bridge the gap between complex data and business value.
+            </p>
+            <p>
+                My journey started with building AI models for face generation, but I quickly realized that 
+                <strong>clean, scalable data</strong> is the fuel for every great innovation. Now, I focus on architecting 
+                cloud solutions on AWS and Adobe Experience Platform to help companies make smarter decisions.
+            </p>
+            <div class="about-stats">
+                <div class="stat">
+                    <h3>Master's</h3>
+                    <p>Computer Science</p>
+                </div>
+                <div class="stat">
+                    <h3>AWS</h3>
+                    <p>Certified Practitioner</p>
+                </div>
+                <div class="stat">
+                    <h3>3+</h3>
+                    <p>Major Projects</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="skills" class="section-padding">
+    <h2 class="section-title">Technical Expertise</h2>
+    
+    <div class="skills-container">
+        <div class="skill-category">
+            <h3>Languages & Databases</h3>
+            <div class="skill-tags">
+                <span>Python</span>
+                <span>SQL / MySQL</span>
+                <span>NumPy & Pandas</span>
+                <span>Java</span>
+            </div>
+        </div>
+
+        <div class="skill-category">
+            <h3>Cloud & Data Engineering</h3>
+            <div class="skill-tags">
+                <span>AWS (EC2, S3, Lambda, Glue)</span>
+                <span>Adobe Experience Platform (AEP)</span>
+                <span>ETL Pipelines</span>
+                <span>Data Warehousing</span>
+            </div>
+        </div>
+
+        <div class="skill-category">
+            <h3>Machine Learning & AI</h3>
+            <div class="skill-tags">
+                <span>TensorFlow & Keras</span>
+                <span>Scikit-learn</span>
+                <span>Computer Vision (NeRF)</span>
+                <span>Predictive Modeling</span>
+            </div>
+        </div>
+
+        <div class="skill-category">
+            <h3>Tools & Visualization</h3>
+            <div class="skill-tags">
+                <span>Tableau</span>
+                <span>Power BI</span>
+                <span>Adobe Journey Optimizer</span>
+                <span>Git & GitHub</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="projects" class="section-padding">
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="projects-grid">
+    
+    <div class="project-card">
+        <div class="card-content">
+            <h3>Insurance Fraud Detection System</h3>
+            <p class="tech-stack">AWS Lambda | SageMaker | Kinesis | Python</p>
+            
+            <p>
+                Developed a cloud-native fraud detection platform using AWS S3 and SageMaker. 
+                Implemented Random Forest classifiers to detect anomalies in real-time.
+            </p>
+
+            <div class="full-desc" style="display:none;">
+                <h4>The Challenge</h4>
+                <p>Insurance claims verification was manual and slow, leading to delays and potential fraud slipping through.</p>
+                
+                <h4>The Solution</h4>
+                <p>I architected a serverless pipeline on AWS. Raw claims data is ingested into <strong>S3</strong>, triggering a <strong>Lambda</strong> function for pre-processing. The data is then fed into a <strong>SageMaker</strong> endpoint running a Random Forest model to classify the claim as 'Legitimate' or 'Suspicious' in real-time.</p>
+                
+                <h4>The Result</h4>
+                <p>The system achieved <strong>~90% accuracy</strong> in detecting anomalies, significantly reducing false positives and optimizing the claim validation process.</p>
+            </div>
+
+            <a href="#" class="btn-text">View Analysis &rarr;</a>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="card-content">
+            <h3>3D Face Generation with NeRF</h3>
+            <p class="tech-stack">TensorFlow | JAX/Flax | Computer Vision</p>
+            
+            <p>
+                Built an AI pipeline to generate photorealistic 3D faces from video clips using Deformable Neural Radiance Fields (NeRFs).
+            </p>
+
+            <div class="full-desc" style="display:none;">
+                <h4>The Challenge</h4>
+                <p>Standard 3D rendering struggles to capture non-rigid facial dynamics (like smiling or blinking) from simple 2D video inputs.</p>
+                
+                <h4>The Solution</h4>
+                <p>I implemented <strong>Deformable Neural Radiance Fields (NeRFs)</strong> to model these complex dynamics. I built the training framework using <strong>JAX/Flax and TensorFlow</strong> and integrated tools like COLMAP and OpenCV for data preprocessing.</p>
+                
+                <h4>The Result</h4>
+                <p>The model achieved high-fidelity synthesis validated by PSNR metrics, outperforming baseline NeRF models in both training speed and inference quality.</p>
+            </div>
+
+            <a href="#" class="btn-text">View Analysis &rarr;</a>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="card-content">
+            <h3>Crypto Price Prediction Engine</h3>
+            <p class="tech-stack">Deep Learning (LSTM/CNN) | Flask | XGBoost</p>
+            
+            <p>
+                Designed a Bitcoin price forecasting system using On-Chain data and Deep Learning. 
+                Deployed a real-time web dashboard for visualization.
+            </p>
+
+            <div class="full-desc" style="display:none;">
+                <h4>The Challenge</h4>
+                <p>Cryptocurrency markets are highly volatile, making traditional linear regression models ineffective for accurate forecasting.</p>
+                
+                <h4>The Solution</h4>
+                <p>I developed a hybrid deep learning system using <strong>LSTM, CNN, and RNN</strong> networks to capture sequential volatility. I also built a <strong>Flask web application</strong> to visualize these predictions in real-time for users.</p>
+                
+                <h4>The Result</h4>
+                <p>The XGBoost model achieved an <strong>R² accuracy of 0.99</strong>, successfully detecting emerging market patterns better than standard regression techniques.</p>
+            </div>
+
+            <a href="#" class="btn-text">View Analysis &rarr;</a>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="card-content">
+            <h3>Customer 360 Data Integration (AEP)</h3>
+            <p class="tech-stack">Adobe Experience Platform | XDM | ETL</p>
+            
+            <p>
+                Engineered an end-to-end pipeline unifying customer interactions from CRM, web, and mobile into a single Real-Time Profile.
+            </p>
+
+            <div class="full-desc" style="display:none;">
+                <h4>The Challenge</h4>
+                <p>Customer data was siloed across CRM, website analytics, and mobile apps, making it impossible to get a unified view of the customer.</p>
+                
+                <h4>The Solution</h4>
+                <p>I designed <strong>XDM schemas</strong> to standardize data and configured <strong>Identity Stitching</strong> to link these disparate sources. I built ingestion pipelines using both batch and streaming connectors to feed the Real-Time Customer Profile.</p>
+                
+                <h4>The Result</h4>
+                <p>Enabled the marketing team to activate audiences across Adobe Target and Meta Ads based on a trusted, 360-degree view of the customer.</p>
+            </div>
+
+            <a href="#" class="btn-text">View Analysis &rarr;</a>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="card-content">
+            <h3>Real-Time Journey Orchestration</h3>
+            <p class="tech-stack">Adobe Journey Optimizer | Real-Time Triggers</p>
+            
+            <p>
+                Developed cross-channel customer journeys with branching logic and dynamic personalization using Adobe Journey Optimizer.
+            </p>
+
+            <div class="full-desc" style="display:none;">
+                <h4>The Challenge</h4>
+                <p>Marketing campaigns were static and "batch-based," meaning customers received irrelevant emails long after they had left the site.</p>
+                
+                <h4>The Solution</h4>
+                <p>I built real-time journeys triggered by specific events (like cart abandonment). I used <strong>Adobe Journey Optimizer (AJO)</strong> to create branching logic that sends different messages based on user behavior (e.g., "Did they open the email?").</p>
+                
+                <h4>The Result</h4>
+                <p>Improved engagement and retention by ensuring customers received the right message at exactly the right moment.</p>
+            </div>
+
+            <a href="#" class="btn-text">View Analysis &rarr;</a>
+        </div>
+    </div>
+
+</div> 
+</section>
+</header>
+<section id="contact" class="section-padding" style="background-color: #f9f9f9;">
+    <div class="contact-container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="contact-subtitle">
+            Interested in my Data Engineering work? Fill out the form below or 
+            <a href="mailto:rajkumarn2002@gmail.com">email me directly</a>.
+        </p>
+
+        <form action="https://formspree.io/f/mqedbjoj" method="POST" class="contact-form">
+            
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required></textarea>
+            </div>
+
+            <button type="submit" class="btn primary submit-btn">Send Message</button>
+        </form>
+    </div>
+</section>
+<footer>
+    <div class="footer-content">
+        <h3>Raj Kumar Nelluri</h3>
+        <p>Data Engineer | Python Developer | Cloud Enthusiast</p>
+        
+        <ul class="socials">
+            <li><a href="https://github.com/Raj-Kumar-Nelluri" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/raj-kumar-nelluri-351389393/" target="_blank">LinkedIn</a></li>
+            
+        </ul>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Raj Kumar Nelluri. Built with HTML & CSS.</p>
+        </div>
+    </div>
+</footer>
+<div id="project-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2 id="modal-title">Project Title</h2>
+        <p id="modal-desc">Project description goes here.</p>
+    </div>
+</div>
+
+<script>
+    // 1. Get the modal elements
+    const modal = document.getElementById("project-modal");
+    const closeBtn = document.querySelector(".close-btn");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDesc = document.getElementById("modal-desc");
+    const viewButtons = document.querySelectorAll(".btn-text");
+
+    // 2. Add click event to each button
+    viewButtons.forEach(button => {
+        button.addEventListener("click", function(e) {
+            e.preventDefault(); // Stop page reload
+            
+            // Get the card that was clicked
+            const card = this.closest(".project-card");
+            
+            // Get the Title
+            const title = card.querySelector("h3").innerText;
+            
+            // Get the Hidden Description (The Case Study)
+            const fullDesc = card.querySelector(".full-desc");
+            
+            // LOGIC: If we find a hidden case study, show it. 
+            // If not, fall back to the short text.
+            if (fullDesc) {
+                modalDesc.innerHTML = fullDesc.innerHTML; // Use HTML to keep bold text/paragraphs
+            } else {
+                const shortDesc = card.querySelector("p:not(.tech-stack)").innerText;
+                modalDesc.innerText = shortDesc;
+            }
+
+            modalTitle.innerText = title;
+            modal.style.display = "block";
+        });
+    });
+
+    // 3. Close logic
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+    </body>
+</html>
+
