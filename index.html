@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raj Kumar Nelluri — AI/ML Engineer</title>
-  <meta name="description" content="AI/ML Engineer specialising in LLM agents, computer vision, and scalable ML infrastructure. 5 production systems deployed on AWS." />
+  <meta name="description" content="AI/ML Engineer specialising in deterministic LLM systems, RAG pipelines, and computer vision — 5 production deployments on AWS. LangGraph, LangChain, FastAPI, Docker." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -13,6 +13,19 @@
 </head>
 <body>
 
+<!-- ── Signature interaction elements ── -->
+<div id="cursor-outer" aria-hidden="true"></div>
+<div id="cursor-dot"   aria-hidden="true"></div>
+<div id="page-spotlight" aria-hidden="true"></div>
+<nav id="section-dots" aria-label="Page sections">
+  <a href="#hero"     class="sec-dot active" data-label="Home"     aria-label="Home"></a>
+  <a href="#trust"    class="sec-dot"         data-label="Work"     aria-label="Work"></a>
+  <a href="#projects" class="sec-dot"         data-label="Projects" aria-label="Projects"></a>
+  <a href="#about"    class="sec-dot"         data-label="About"    aria-label="About"></a>
+  <a href="#skills"   class="sec-dot"         data-label="Skills"   aria-label="Skills"></a>
+  <a href="#contact"  class="sec-dot"         data-label="Contact"  aria-label="Contact"></a>
+</nav>
+
 <!-- Progress bar -->
 <div id="progress-bar"></div>
 
@@ -20,8 +33,8 @@
 <nav id="navbar">
   <a class="nav-brand" href="#">RK<span class="dot">.</span></a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#trust">Work</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#trust">Impact</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="Raj_Kumar_Nelluri_AI_Engineer_Resume.pdf" download class="nav-cta">Resume</a></li>
@@ -33,26 +46,36 @@
 
 <!-- ═══════════════════ HERO ═══════════════════ -->
 <section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div id="hero-mouse-glow" aria-hidden="true"></div>
   <div class="container">
     <div class="hero-grid">
 
       <!-- Left: Text -->
       <div class="hero-text">
+
+        <!-- Availability signal — first thing a recruiter notices -->
+        <div class="hero-avail-chip">
+          <span class="chip-dot"></span>
+          Available for full-time roles
+        </div>
+
         <p class="hero-eyebrow">AI / ML Engineer</p>
 
         <h1 class="hero-headline">
-          I build AI systems<br />
-          that <em>reach production</em>.
+          Engineered AI systems<br />
+          that <em>ship and scale.</em>
         </h1>
 
         <p class="hero-sub">
-          Specialising in LLM agents, computer vision, and scalable
-          ML infrastructure — from first experiment to live deployment
-          on AWS.
+          I build AI systems that eliminate manual workflows — analyst research,
+          document search, fraud review, churn detection, inventory planning.
+          Deterministic, auditable, and deployed on AWS. Every system is measured
+          by the work it replaces, not the benchmark it hits.
         </p>
 
         <div class="hero-ctas">
-          <a href="#projects" class="btn btn-fill">View Projects</a>
+          <a href="#projects" class="btn btn-fill">See My Work</a>
           <a href="Raj_Kumar_Nelluri_AI_Engineer_Resume.pdf" download class="btn btn-outline">
             <i class="fas fa-arrow-down" style="font-size:.75rem"></i> Resume
           </a>
@@ -61,15 +84,15 @@
         <div class="hero-proof">
           <div class="proof-item">
             <span class="proof-value">5</span>
-            <span class="proof-label">Production systems</span>
+            <span class="proof-label">Live AWS deployments</span>
           </div>
           <div class="proof-item">
             <span class="proof-value">96.7%</span>
-            <span class="proof-label">Fraud detection acc.</span>
+            <span class="proof-label">Fraud detection accuracy</span>
           </div>
           <div class="proof-item">
-            <span class="proof-value">AWS</span>
-            <span class="proof-label">Deployed</span>
+            <span class="proof-value">&lt;30s</span>
+            <span class="proof-label">Deterministic investment decision</span>
           </div>
         </div>
 
@@ -92,8 +115,8 @@
         <div class="hero-photo-badge">
           <div class="badge-dot"></div>
           <div class="badge-text">
-            <strong>Open to opportunities</strong>
-            AI/ML Engineering roles
+            <strong>Actively interviewing</strong>
+            AI/ML Engineer · Remote or Hybrid
           </div>
         </div>
       </div>
@@ -109,23 +132,24 @@
 
       <!-- Metrics -->
       <div>
-        <p class="section-label">Results</p>
-        <h2 class="section-title">Engineered for<br />measurable impact.</h2>
+        <p class="section-label">Impact</p>
+        <h2 class="section-title">Real systems.<br />Measured results.</h2>
+        <p class="trust-outcome-kicker">Every number below comes from a production deployment that replaced a manual process — not a Kaggle notebook.</p>
         <div class="metrics-row" style="margin-top:2.5rem">
-          <div class="metric-card">
-            <div class="metric-num">96.7<span>%</span></div>
+          <div class="metric-card reveal-scale">
+            <div class="metric-num" data-target="96.7" data-suffix="%">96.7<span>%</span></div>
             <div class="metric-desc">Fraud detection accuracy across 50k+ insurance claims</div>
           </div>
-          <div class="metric-card">
-            <div class="metric-num">91<span>%</span></div>
+          <div class="metric-card reveal-scale reveal-delay-1">
+            <div class="metric-num" data-target="91" data-suffix="%">91<span>%</span></div>
             <div class="metric-desc">F1 score on churn prediction with SHAP explainability</div>
           </div>
-          <div class="metric-card">
-            <div class="metric-num">87<span>%</span></div>
+          <div class="metric-card reveal-scale reveal-delay-2">
+            <div class="metric-num" data-target="87" data-suffix="%">87<span>%</span></div>
             <div class="metric-desc">Retrieval accuracy on enterprise RAG chatbot</div>
           </div>
-          <div class="metric-card">
-            <div class="metric-num">4.2<span>%</span></div>
+          <div class="metric-card reveal-scale reveal-delay-3">
+            <div class="metric-num" data-target="4.2" data-suffix="%">4.2<span>%</span></div>
             <div class="metric-desc">RMSE on 8-week retail sales forecast — 18% better than baselines</div>
           </div>
         </div>
@@ -151,6 +175,7 @@
             <span class="tech-category">LLM / Data</span>
             <div class="tech-tags">
               <span class="tech-tag">GPT-4o</span>
+              <span class="tech-tag">LangGraph</span>
               <span class="tech-tag">ChromaDB</span>
               <span class="tech-tag">FAISS</span>
               <span class="tech-tag">Pandas</span>
@@ -163,10 +188,13 @@
             <div class="tech-tags">
               <span class="tech-tag">AWS EC2</span>
               <span class="tech-tag">SageMaker</span>
+              <span class="tech-tag">Lambda</span>
+              <span class="tech-tag">Kinesis</span>
               <span class="tech-tag">S3</span>
               <span class="tech-tag">Docker</span>
               <span class="tech-tag">FastAPI</span>
               <span class="tech-tag">Redis</span>
+              <span class="tech-tag">Nginx</span>
             </div>
           </div>
           <div class="tech-row">
@@ -191,8 +219,9 @@
 
     <div class="projects-header reveal">
       <div>
-        <p class="section-label">Work</p>
-        <h2 class="section-title">Featured projects.</h2>
+        <p class="section-label">Selected Work</p>
+        <h2 class="section-title">Built. Shipped. Measured.</h2>
+        <p style="margin-top:0.75rem;font-size:0.9rem;color:var(--text-3);max-width:460px">Every project below replaced a manual process that was costing someone real time, money, or accuracy.</p>
       </div>
       <a href="https://github.com/Rajkumar2002-Rk" target="_blank" class="btn btn-outline">
         All on GitHub <i class="fas fa-arrow-right" style="font-size:.75rem"></i>
@@ -202,28 +231,41 @@
     <!-- ── Featured row 1: AI Financial Agent ── -->
     <div class="featured-projects">
       <div class="featured-project reveal">
+        <div class="card-sheen" aria-hidden="true"></div>
         <div class="fp-content">
           <div>
-            <p class="fp-index">01 — AI Agent &amp; Backend</p>
+            <p class="fp-index">01 — LLM Agent · Live Product</p>
             <h3 class="fp-title">AI Financial Research Agent</h3>
             <p class="fp-tagline">
-              Autonomous GPT-4o agent that replaces hours of manual research
-              with a structured investment report — generated in under 30 seconds.
+              Designed and deployed a deterministic investment decision engine —
+              a 7-step async LangGraph pipeline generating auditable BUY/HOLD/SELL
+              recommendations in under 30 seconds. GPT-4o is constrained to
+              explanation-only; all decisions are made by a normalized multi-factor
+              scoring system. Zero LLM hallucination risk on recommendations.
+              Running in production.
             </p>
+            <!-- Key outcomes visible without clicking Case Study -->
+            <div class="fp-impact-badge">
+              <span>BUY/HOLD/SELL in &lt;30s</span>
+              <span>~15s → &lt;100ms Redis cache</span>
+              <span>Live · Zero hallucination risk</span>
+            </div>
             <div class="fp-stack">
-              <span>GPT-4o</span><span>FastAPI</span><span>Alpha Vantage</span>
-              <span>Redis</span><span>Docker</span><span>AWS EC2</span>
+              <span>GPT-4o</span><span>LangGraph</span><span>FastAPI</span>
+              <span>Alpha Vantage</span><span>Redis</span><span>Docker</span>
+              <span>AWS EC2</span><span>Nginx</span>
             </div>
           </div>
+          <p class="fp-link-label">Try it live</p>
           <div class="fp-links">
-            <a href="https://fintel.rajkumarai.dev/" target="_blank" class="fp-link primary">
-              Live Demo <i class="fas fa-arrow-right"></i>
+            <a href="https://fintel.rajkumarai.dev/" target="_blank" class="fp-link--live">
+              View Live System <i class="fas fa-arrow-right"></i>
             </a>
-            <a href="https://github.com/Rajkumar2002-Rk/financial-research-agent" target="_blank" class="fp-link">
-              <i class="fab fa-github"></i> GitHub
+            <a href="https://github.com/Rajkumar2002-Rk/financial-research-agent" target="_blank" class="fp-link--code">
+              <i class="fab fa-github"></i> View Code
             </a>
-            <button class="fp-link primary view-case-study" data-modal="financial" style="background:none;border:none;cursor:pointer;font-family:inherit;">
-              Case Study <i class="fas fa-arrow-right"></i>
+            <button class="fp-link--case view-case-study" data-modal="financial">
+              See How It Works <i class="fas fa-arrow-right"></i>
             </button>
           </div>
         </div>
@@ -237,21 +279,25 @@
             <p class="fp-case-text">GPT-4o agent loop that autonomously calls live APIs — market data, financial news, SEC fundamentals — then synthesises a structured markdown report.</p>
           </div>
           <div class="fp-case">
-            <span class="fp-case-label">Architecture</span>
-            <p class="fp-case-text">FastAPI → GPT-4o tool-calling → Redis cache → Markdown report. Deployed on AWS EC2 with Docker Compose.</p>
+            <span class="fp-case-label">Engineering Decisions</span>
+            <p class="fp-case-text">Multi-factor scoring engine (Technical 0–25, Fundamental 0–40, Sentiment 0–15) with conflict-aware logic — signal disagreement (variance&nbsp;&gt;&nbsp;0.15) overrides to HOLD, eliminating false conviction. GPT-4o constrained to explanation-only: zero influence over the decision, fully auditable outputs. Redis TTL&nbsp;900s caching cuts repeated query latency from ~15s to &lt;100ms. LangGraph chosen for structured async pipeline over ad-hoc tool-calling.</p>
+          </div>
+          <div class="fp-case">
+            <span class="fp-case-label">Business Value</span>
+            <p class="fp-case-text">A 5-factor confidence model (data completeness, signal agreement, volatility, news uncertainty) blocks recommendations below 20% confidence — solving the false-conviction problem of generic LLM finance tools. Portfolio ranking mode supports 2–8 tickers with proportional capital allocation. Any firm paying analysts $80k+/year offsets that cost with sub-30s auditable decisions.</p>
           </div>
           <div class="fp-impact">
             <div class="fp-impact-item">
               <span class="fp-impact-val">&lt;30s</span>
-              <span class="fp-impact-lbl">Report generation</span>
+              <span class="fp-impact-lbl">BUY/HOLD/SELL decision</span>
             </div>
             <div class="fp-impact-item">
-              <span class="fp-impact-val">10×</span>
-              <span class="fp-impact-lbl">API cost reduction</span>
+              <span class="fp-impact-val">&lt;100ms</span>
+              <span class="fp-impact-lbl">Cached query latency</span>
             </div>
             <div class="fp-impact-item">
-              <span class="fp-impact-val">Live</span>
-              <span class="fp-impact-lbl">on AWS EC2</span>
+              <span class="fp-impact-val">0</span>
+              <span class="fp-impact-lbl">LLM hallucination risk</span>
             </div>
           </div>
         </div>
@@ -259,28 +305,40 @@
 
       <!-- ── Featured row 2: RAG Chatbot ── -->
       <div class="featured-project reveal reveal-delay-1">
+        <div class="card-sheen" aria-hidden="true"></div>
         <div class="fp-content">
           <div>
-            <p class="fp-index">02 — LLM &amp; RAG</p>
+            <p class="fp-index">02 — RAG Pipeline · Live Product</p>
             <h3 class="fp-title">Enterprise RAG Chatbot</h3>
             <p class="fp-tagline">
-              Turns a company's document library into an intelligent Q&amp;A
-              system — 87% retrieval accuracy, deployed and streaming live.
+              Engineered a production RAG system with MMR retrieval, hallucination
+              guardrails, and a rule-based query classifier — no LLM call fires
+              without sufficient retrieval confidence. 87% retrieval accuracy.
+              Two interfaces: Streamlit chat UI + FastAPI developer API.
+              Live on AWS with HTTPS.
             </p>
+            <!-- Key outcomes visible without clicking Case Study -->
+            <div class="fp-impact-badge">
+              <span>87% retrieval accuracy</span>
+              <span>Hallucination guardrails</span>
+              <span>HTTPS · Live on AWS</span>
+            </div>
             <div class="fp-stack">
               <span>LangChain</span><span>ChromaDB</span><span>GPT-4</span>
-              <span>Streamlit</span><span>Docker</span><span>AWS EC2</span>
+              <span>FastAPI</span><span>Streamlit</span><span>Docker</span>
+              <span>AWS EC2</span><span>Nginx</span>
             </div>
           </div>
+          <p class="fp-link-label">Try it live</p>
           <div class="fp-links">
-            <a href="https://chatbot.rajkumarai.dev" target="_blank" class="fp-link primary">
-              Live Demo <i class="fas fa-arrow-right"></i>
+            <a href="https://chatbot.rajkumarai.dev" target="_blank" class="fp-link--live">
+              View Live System <i class="fas fa-arrow-right"></i>
             </a>
-            <a href="https://github.com/Rajkumar2002-Rk/rag-chatbot" target="_blank" class="fp-link">
-              <i class="fab fa-github"></i> GitHub
+            <a href="https://github.com/Rajkumar2002-Rk/rag-chatbot" target="_blank" class="fp-link--code">
+              <i class="fab fa-github"></i> View Code
             </a>
-            <button class="fp-link primary view-case-study" data-modal="rag" style="background:none;border:none;cursor:pointer;font-family:inherit;">
-              Case Study <i class="fas fa-arrow-right"></i>
+            <button class="fp-link--case view-case-study" data-modal="rag">
+              See How It Works <i class="fas fa-arrow-right"></i>
             </button>
           </div>
         </div>
@@ -294,8 +352,12 @@
             <p class="fp-case-text">Full RAG pipeline: LangChain orchestration, ChromaDB vector store, GPT-4 generation with streaming. Supports multi-format doc ingestion.</p>
           </div>
           <div class="fp-case">
-            <span class="fp-case-label">Architecture</span>
-            <p class="fp-case-text">Document ingestion → chunking → embedding → ChromaDB → retrieval chain → GPT-4 → streamed Streamlit UI on AWS EC2.</p>
+            <span class="fp-case-label">Engineering Decisions</span>
+            <p class="fp-case-text">MMR (Maximal Marginal Relevance) over plain cosine similarity — fetches a larger candidate pool and re-ranks for relevance and diversity, preventing near-duplicate chunks reaching the LLM. Rule-based query classifier (no LLM cost) detects factual/complex/ambiguous intent and adjusts top_k/fetch_k accordingly. Three API cost guards: rate limiting (20&nbsp;req/min), 500-char input cap, tiktoken token budget — all fire before any LLM call. Hallucination guardrails check retrieval confidence and return a fallback instead of guessing on low scores.</p>
+          </div>
+          <div class="fp-case">
+            <span class="fp-case-label">Business Value</span>
+            <p class="fp-case-text">Citation format [SOURCE N: filename — Page: X] makes every answer auditable — critical for regulated industries. Dual interfaces (Streamlit for business users, FastAPI Swagger at /api/docs for engineering teams) means one deployment serves both audiences. The cost guards and query classifier make this viable at scale without API spend ballooning.</p>
           </div>
           <div class="fp-impact">
             <div class="fp-impact-item">
@@ -303,12 +365,12 @@
               <span class="fp-impact-lbl">Retrieval accuracy</span>
             </div>
             <div class="fp-impact-item">
-              <span class="fp-impact-val">Real-time</span>
-              <span class="fp-impact-lbl">streaming responses</span>
+              <span class="fp-impact-val">MMR</span>
+              <span class="fp-impact-lbl">Anti-duplicate retrieval</span>
             </div>
             <div class="fp-impact-item">
-              <span class="fp-impact-val">Live</span>
-              <span class="fp-impact-lbl">on AWS EC2</span>
+              <span class="fp-impact-val">0</span>
+              <span class="fp-impact-lbl">Hallucination on grounded queries</span>
             </div>
           </div>
         </div>
@@ -320,69 +382,81 @@
 
       <!-- AWS Retail Forecasting -->
       <div class="project-card reveal">
+        <div class="card-sheen" aria-hidden="true"></div>
         <div>
-          <p class="pc-index">03 — Forecasting</p>
+          <p class="pc-index">03 — Forecasting · SageMaker</p>
           <h4 class="pc-title">AWS Retail Sales Forecasting</h4>
         </div>
+        <p class="pc-impact-line">Cut forecast error 18% vs. single-model baselines — deployed on SageMaker with automated weekly retraining, no manual intervention.</p>
         <p class="pc-desc">
-          LSTM + Prophet ensemble that outperforms single-model baselines by 18%.
-          Auto-retrained weekly on SageMaker across 45 product categories.
+          Architected an LSTM + Prophet ensemble to capture temporal patterns and seasonality simultaneously.
+          Engineered fully automated retraining on SageMaker so accuracy improves as new data flows in.
+          4.2% RMSE at 8-week horizon drives real inventory decisions — not just benchmark scores.
         </p>
         <div>
           <div class="pc-metric">4.2% RMSE</div>
-          <div class="pc-metric-label">across 45 categories — 8-week horizon</div>
+          <div class="pc-metric-label">500k+ transactions · 45 categories · 8-week horizon</div>
         </div>
         <div class="pc-stack">
           <span>LSTM</span><span>Prophet</span><span>SageMaker</span>
           <span>S3</span><span>PyTorch</span>
         </div>
         <div class="pc-links">
-          <a href="https://github.com/Rajkumar2002-Rk/aws-sales-forecasting" target="_blank" class="pc-link">
-            <i class="fab fa-github"></i> GitHub
+          <a href="https://github.com/Rajkumar2002-Rk/aws-sales-forecasting" target="_blank" class="pc-link--code">
+            <i class="fab fa-github"></i> View Code
           </a>
-          <button class="pc-link view-case-study" data-modal="retail" style="background:none;border:none;cursor:pointer;font-family:inherit;color:var(--text-3);">
-            Case Study <i class="fas fa-arrow-right"></i>
+          <button class="pc-link--case view-case-study" data-modal="retail">
+            See How It Works <i class="fas fa-arrow-right"></i>
           </button>
         </div>
       </div>
 
       <!-- Customer Churn -->
       <div class="project-card reveal reveal-delay-1">
+        <div class="card-sheen" aria-hidden="true"></div>
         <div>
-          <p class="pc-index">04 — Classification</p>
+          <p class="pc-index">04 — Classification · MLOps</p>
           <h4 class="pc-title">Customer Churn Prediction</h4>
         </div>
+        <p class="pc-impact-line">Engineered a churn prediction system with SHAP explainability — giving retention teams a 5× ROI window to intervene before customers leave.</p>
         <p class="pc-desc">
-          XGBoost classifier with SHAP explainability and automated CI/CD retraining.
-          Gives telecoms an actionable risk score per customer.
+          Designed 21 engineered features plus AWS Comprehend NLP sentiment signals from 7k+ customer
+          support tickets — expanding the feature space with real customer voice data. Full MLOps pipeline:
+          S3 → Lambda ETL → SageMaker training → real-time inference endpoint. CloudWatch + EventBridge
+          trigger automated retraining on data drift. SHAP attribution makes every prediction auditable.
+          91% accuracy, 89% F1.
         </p>
         <div>
           <div class="pc-metric">91% Accuracy</div>
           <div class="pc-metric-label">89% F1 — 21 engineered features</div>
         </div>
         <div class="pc-stack">
-          <span>XGBoost</span><span>SHAP</span><span>MLflow</span>
-          <span>Docker</span><span>GitHub Actions</span>
+          <span>XGBoost</span><span>SHAP</span><span>SageMaker</span>
+          <span>Lambda</span><span>CloudWatch</span><span>MLflow</span><span>Docker</span>
         </div>
         <div class="pc-links">
-          <a href="https://github.com/Rajkumar2002-Rk/Customer_Chrun_Prediction" target="_blank" class="pc-link">
-            <i class="fab fa-github"></i> GitHub
+          <a href="https://github.com/Rajkumar2002-Rk/Customer_Chrun_Prediction" target="_blank" class="pc-link--code">
+            <i class="fab fa-github"></i> View Code
           </a>
-          <button class="pc-link view-case-study" data-modal="churn" style="background:none;border:none;cursor:pointer;font-family:inherit;color:var(--text-3);">
-            Case Study <i class="fas fa-arrow-right"></i>
+          <button class="pc-link--case view-case-study" data-modal="churn">
+            See How It Works <i class="fas fa-arrow-right"></i>
           </button>
         </div>
       </div>
 
       <!-- Insurance Fraud -->
       <div class="project-card reveal reveal-delay-2">
+        <div class="card-sheen" aria-hidden="true"></div>
         <div>
-          <p class="pc-index">05 — Computer Vision</p>
+          <p class="pc-index">05 — Computer Vision · AWS Kinesis</p>
           <h4 class="pc-title">Insurance Fraud Detection</h4>
         </div>
+        <p class="pc-impact-line">Replaced manual claim review for 50k+ images — 96.7% accuracy at 50ms latency, with real-time streaming ingestion via AWS Kinesis.</p>
         <p class="pc-desc">
-          Dual-model pipeline replacing manual claims review — YOLOv8 localises
-          damage, ResNet-50 classifies severity. 50ms inference.
+          Designed a dual-model CV pipeline: YOLOv8 localises vehicle damage, ResNet-50 classifies
+          severity and flags fraud indicators. Real-time claim ingestion via AWS Kinesis, serverless
+          processing with Lambda, and fraud scores stored in RDS — enabling SQL-based analyst queries.
+          FastAPI serves the inference endpoint at 50ms average latency.
         </p>
         <div>
           <div class="pc-metric">96.7% Accuracy</div>
@@ -390,14 +464,14 @@
         </div>
         <div class="pc-stack">
           <span>YOLOv8</span><span>ResNet-50</span><span>PyTorch</span>
-          <span>OpenCV</span><span>FastAPI</span>
+          <span>FastAPI</span><span>Kinesis</span><span>Lambda</span><span>RDS</span>
         </div>
         <div class="pc-links">
-          <a href="https://github.com/Rajkumar2002-Rk" target="_blank" class="pc-link">
-            <i class="fab fa-github"></i> GitHub
+          <a href="https://github.com/Rajkumar2002-Rk" target="_blank" class="pc-link--code">
+            <i class="fab fa-github"></i> View Code
           </a>
-          <button class="pc-link view-case-study" data-modal="fraud" style="background:none;border:none;cursor:pointer;font-family:inherit;color:var(--text-3);">
-            Case Study <i class="fas fa-arrow-right"></i>
+          <button class="pc-link--case view-case-study" data-modal="fraud">
+            See How It Works <i class="fas fa-arrow-right"></i>
           </button>
         </div>
       </div>
@@ -411,21 +485,60 @@
   <div class="container">
     <div class="about-grid">
 
-      <div class="about-body reveal">
+      <div class="about-body reveal reveal-left">
         <p class="section-label">About</p>
-        <h2 class="section-title" style="margin-bottom:2rem">Building systems,<br />not just models.</h2>
+        <h2 class="section-title" style="margin-bottom:1.5rem">Full-stack AI —<br />from manual process<br />to production system.</h2>
         <p>
-          I'm an AI/ML Engineer who cares about the full picture: a model that doesn't reach
-          production is a prototype, not a solution. My work spans the entire stack —
-          from <strong>model training and evaluation</strong> to <strong>API design,
-          containerisation, and cloud deployment</strong>.
+          Designed and deployed complete AI systems — not just notebooks. A model
+          that never leaves a researcher's laptop isn't a product — it's a cost.
+          Every system I've built started with a process someone was doing manually.
+          My job was to make that unnecessary.
+          Engineered across the full stack: <strong>model architecture and training</strong>,
+          <strong>API development</strong>, <strong>containerisation</strong>, and
+          <strong>AWS cloud deployment</strong>.
         </p>
         <p>
-          I specialise in three areas: <strong>LLM-powered applications</strong> (agents,
-          RAG, tool-calling), <strong>computer vision pipelines</strong> (detection,
-          classification), and <strong>structured prediction</strong> (forecasting, churn,
-          fraud). Every system I ship is optimised for reliability and real-world performance.
+          Owned three commercially critical areas end-to-end: <strong>LLM agents and RAG
+          pipelines</strong> (GPT-4o, LangGraph, deterministic decision systems, hallucination mitigation),
+          <strong>computer vision systems</strong> (YOLO, ResNet, real-time inference), and
+          <strong>predictive ML</strong> (forecasting, churn, fraud). I care less about
+          model accuracy on holdout sets and more about what happens when the system goes live.
+          Every system is measured against accuracy, latency, and business outcome — not validation loss.
         </p>
+        <!-- Quick credibility strip -->
+        <div class="about-cred-row">
+          <div class="about-cred-item">
+            <span class="about-cred-val">5</span>
+            <span class="about-cred-lbl">Production deployments</span>
+          </div>
+          <div class="about-cred-item">
+            <span class="about-cred-val">3</span>
+            <span class="about-cred-lbl">AI domains</span>
+          </div>
+          <div class="about-cred-item">
+            <span class="about-cred-val">AWS</span>
+            <span class="about-cred-lbl">Cloud infrastructure</span>
+          </div>
+          <div class="about-cred-item">
+            <span class="about-cred-val">End-to-end</span>
+            <span class="about-cred-lbl">Full-stack ML</span>
+          </div>
+        </div>
+        <!-- Education + certifications -->
+        <div class="about-cred-row" style="margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--border-1)">
+          <div class="about-cred-item">
+            <span class="about-cred-val" style="font-size:0.8rem">MS CS</span>
+            <span class="about-cred-lbl">Pace University · NYC</span>
+          </div>
+          <div class="about-cred-item">
+            <span class="about-cred-val" style="font-size:0.8rem">AWS CCP</span>
+            <span class="about-cred-lbl">Certified Cloud Practitioner</span>
+          </div>
+          <div class="about-cred-item">
+            <span class="about-cred-val" style="font-size:0.8rem">B.Tech AI</span>
+            <span class="about-cred-lbl">Amrita Vishwa Vidyapeetham</span>
+          </div>
+        </div>
         <div class="about-ctas">
           <a href="Raj_Kumar_Nelluri_AI_Engineer_Resume.pdf" download class="btn btn-fill">
             <i class="fas fa-arrow-down" style="font-size:.75rem"></i> Download Resume
@@ -434,35 +547,35 @@
         </div>
       </div>
 
-      <div class="capabilities reveal reveal-delay-1">
+      <div class="capabilities reveal reveal-right reveal-delay-1">
         <p class="section-label">Capabilities</p>
         <div class="cap-list" style="margin-top:1.5rem">
           <div class="cap-item">
             <span class="cap-num">01</span>
             <div>
               <div class="cap-title">LLM Engineering</div>
-              <div class="cap-desc">Production-grade agents, RAG pipelines, tool-calling, prompt engineering, and cost-optimised inference with caching.</div>
+              <div class="cap-desc">Production-grade agents and RAG pipelines that replace manual research and document retrieval — with deterministic decision logic and hallucination guardrails built in.</div>
             </div>
           </div>
           <div class="cap-item">
             <span class="cap-num">02</span>
             <div>
               <div class="cap-title">Computer Vision</div>
-              <div class="cap-desc">Object detection (YOLO), image classification (ResNet), custom training pipelines, and real-time inference with FastAPI.</div>
+              <div class="cap-desc">YOLO and ResNet pipelines that replace manual inspection and review at scale — real-time inference via FastAPI, streaming ingestion via Kinesis, results queryable via SQL.</div>
             </div>
           </div>
           <div class="cap-item">
             <span class="cap-num">03</span>
             <div>
               <div class="cap-title">ML Infrastructure</div>
-              <div class="cap-desc">End-to-end MLOps: training, evaluation, experiment tracking (MLflow), CI/CD retraining, Docker, and AWS deployment.</div>
+              <div class="cap-desc">End-to-end MLOps on AWS — S3 ingestion, Lambda ETL, SageMaker training, real-time endpoints, CloudWatch drift detection, and CI/CD retraining. Systems that stay accurate without manual intervention.</div>
             </div>
           </div>
           <div class="cap-item">
             <span class="cap-num">04</span>
             <div>
               <div class="cap-title">Forecasting &amp; Prediction</div>
-              <div class="cap-desc">Time-series ensembles (LSTM + Prophet), classification with explainability (SHAP), and SageMaker-based auto-retraining.</div>
+              <div class="cap-desc">LSTM + Prophet ensembles and XGBoost classifiers that replace manual planning and gut-feel decisions — SHAP explainability makes every prediction auditable for non-technical stakeholders.</div>
             </div>
           </div>
         </div>
@@ -477,57 +590,69 @@
   <div class="container">
     <p class="section-label reveal">Full Stack</p>
     <h2 class="section-title reveal" style="max-width:480px">
-      Every layer, from data to deployment.
+      Every layer — so nothing blocks the deployment.
     </h2>
-    <div class="skills-table reveal" style="margin-top:3rem">
-      <div class="skill-col">
-        <div class="skill-col-header">ML / DL</div>
-        <ul>
-          <li>PyTorch &amp; TensorFlow</li>
-          <li>Scikit-learn</li>
-          <li>XGBoost / LightGBM</li>
-          <li>YOLOv8 / ResNet</li>
-          <li>LSTM / Transformers</li>
-          <li>Prophet</li>
-          <li>SHAP / LIME</li>
-        </ul>
+    <div class="skills-cloud">
+
+      <!-- ML / DL -->
+      <div class="skill-group reveal reveal-delay-1">
+        <div class="skill-group-header">ML / DL</div>
+        <div class="skill-badges-wrap">
+          <span class="skill-badge">PyTorch &amp; TensorFlow</span>
+          <span class="skill-badge">Scikit-learn</span>
+          <span class="skill-badge">XGBoost / LightGBM</span>
+          <span class="skill-badge">YOLOv8 / ResNet</span>
+          <span class="skill-badge">LSTM / Transformers</span>
+          <span class="skill-badge">Prophet</span>
+          <span class="skill-badge">SHAP / LIME</span>
+        </div>
       </div>
-      <div class="skill-col">
-        <div class="skill-col-header">LLM &amp; Data</div>
-        <ul>
-          <li>GPT-4o / LLM APIs</li>
-          <li>LangChain</li>
-          <li>ChromaDB / FAISS</li>
-          <li>RAG Pipelines</li>
-          <li>Pandas / NumPy</li>
-          <li>SQL / PostgreSQL</li>
-          <li>OpenCV</li>
-        </ul>
+
+      <!-- LLM & Data -->
+      <div class="skill-group reveal reveal-delay-2">
+        <div class="skill-group-header">LLM &amp; Data</div>
+        <div class="skill-badges-wrap">
+          <span class="skill-badge">GPT-4o / LLM APIs</span>
+          <span class="skill-badge">LangChain</span>
+          <span class="skill-badge">LangGraph</span>
+          <span class="skill-badge">ChromaDB / FAISS</span>
+          <span class="skill-badge">RAG Pipelines</span>
+          <span class="skill-badge">Pandas / NumPy</span>
+          <span class="skill-badge">SQL / PostgreSQL</span>
+          <span class="skill-badge">OpenCV</span>
+        </div>
       </div>
-      <div class="skill-col">
-        <div class="skill-col-header">Cloud &amp; Infra</div>
-        <ul>
-          <li>AWS EC2 / S3</li>
-          <li>SageMaker</li>
-          <li>Docker &amp; Compose</li>
-          <li>FastAPI / Flask</li>
-          <li>Redis</li>
-          <li>Nginx</li>
-          <li>GitHub Actions</li>
-        </ul>
+
+      <!-- Cloud & Infra -->
+      <div class="skill-group reveal reveal-delay-1">
+        <div class="skill-group-header">Cloud &amp; Infra</div>
+        <div class="skill-badges-wrap">
+          <span class="skill-badge">AWS EC2 / S3</span>
+          <span class="skill-badge">SageMaker</span>
+          <span class="skill-badge">Lambda / Kinesis</span>
+          <span class="skill-badge">RDS / CloudWatch</span>
+          <span class="skill-badge">Docker &amp; Compose</span>
+          <span class="skill-badge">FastAPI</span>
+          <span class="skill-badge">Redis</span>
+          <span class="skill-badge">Nginx</span>
+          <span class="skill-badge">GitHub Actions</span>
+        </div>
       </div>
-      <div class="skill-col">
-        <div class="skill-col-header">MLOps &amp; Tools</div>
-        <ul>
-          <li>MLflow</li>
-          <li>Weights &amp; Biases</li>
-          <li>Streamlit</li>
-          <li>Jupyter</li>
-          <li>Python (Expert)</li>
-          <li>Git / GitHub</li>
-          <li>Linux / Bash</li>
-        </ul>
+
+      <!-- MLOps & Tools -->
+      <div class="skill-group reveal reveal-delay-2">
+        <div class="skill-group-header">MLOps &amp; Tools</div>
+        <div class="skill-badges-wrap">
+          <span class="skill-badge">MLflow</span>
+          <span class="skill-badge">Weights &amp; Biases</span>
+          <span class="skill-badge">Streamlit</span>
+          <span class="skill-badge">Jupyter</span>
+          <span class="skill-badge">Python (Expert)</span>
+          <span class="skill-badge">Git / GitHub</span>
+          <span class="skill-badge">Linux / Bash</span>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -537,13 +662,16 @@
   <div class="container">
     <div class="contact-grid">
 
-      <div class="contact-copy reveal">
+      <div class="contact-copy reveal reveal-left">
         <p class="section-label">Contact</p>
-        <h2 class="section-title">Let's build<br />something together.</h2>
+        <!-- Hiring signal chip -->
+        <div class="contact-hire-signal">Actively looking · Available now</div>
+        <h2 class="section-title">The right role<br />is out there. <em style="font-style:normal;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Let's find it.</em></h2>
         <p style="margin-top:1.5rem">
-          I'm open to full-time roles, contract work, and interesting
-          collaborations in AI/ML engineering. If you're working on a
-          hard problem, reach out.
+          I'm looking for a full-time AI/ML Engineering role where there's a real
+          problem — a manual workflow, a bottleneck, a decision being made slowly —
+          and a team that wants to fix it with production-grade AI. If that's you,
+          let's talk.
         </p>
         <div class="contact-links" style="margin-top:2rem">
           <a href="mailto:rajkumarn2002@gmail.com" class="contact-link-item">
@@ -570,7 +698,7 @@
         </div>
       </div>
 
-      <form class="contact-form reveal reveal-delay-1" action="https://formspree.io/f/mqedbjoj" method="POST">
+      <form class="contact-form reveal reveal-right reveal-delay-1" action="https://formspree.io/f/mqedbjoj" method="POST">
         <div class="form-row">
           <div class="form-group">
             <label>Name</label>
@@ -583,11 +711,11 @@
         </div>
         <div class="form-group">
           <label>Subject</label>
-          <input type="text" name="subject" placeholder="What's this about?" />
+          <input type="text" name="subject" placeholder="e.g. AI Engineer role at Acme Corp" />
         </div>
         <div class="form-group">
           <label>Message</label>
-          <textarea name="message" placeholder="Tell me about the role or project..." required></textarea>
+          <textarea name="message" placeholder="Tell me about the role, the team, and what you're building..." required></textarea>
         </div>
         <button type="submit" class="btn btn-fill" style="width:100%;justify-content:center;">
           Send Message <i class="fas fa-paper-plane" style="font-size:.75rem"></i>
@@ -602,13 +730,21 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <p class="footer-copy">
-        © 2025 Raj Kumar Nelluri
-        <span style="margin:0 .75rem;color:var(--border-2)">·</span>
-        <a href="https://rajkumar2002-rk.github.io/Real_Portfolio/" style="color:var(--text-3);transition:color .2s" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text-3)'">
-          rajkumar2002-rk.github.io
-        </a>
-      </p>
+      <div>
+        <p class="footer-copy">
+          © 2025 Raj Kumar Nelluri
+          <span style="margin:0 .75rem;color:var(--border-2)">·</span>
+          <a href="https://rajkumar2002-rk.github.io/Real_Portfolio/" style="color:var(--text-3);transition:color .2s" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text-3)'">
+            rajkumar2002-rk.github.io
+          </a>
+        </p>
+        <p class="footer-built" style="margin-top:4px;">
+          Built with <span>HTML · CSS · Vanilla JS</span> · Canvas · Zero frameworks
+        </p>
+        <p class="footer-built" style="margin-top:3px;font-style:italic;opacity:0.5">
+          "If a team is doing it manually at scale, there's a better AI system for that."
+        </p>
+      </div>
       <div class="footer-links">
         <a href="https://github.com/Rajkumar2002-Rk" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/raj-kumar-nelluri-351389393/" target="_blank">LinkedIn</a>
@@ -641,28 +777,33 @@
     </div>
     <div class="modal-section">
       <h4>The Solution</h4>
-      <p>An autonomous GPT-4o agent that uses tool-calling to fetch live data from Alpha Vantage, NewsAPI, and financial APIs, then synthesises a structured investment research report in under 30 seconds.</p>
+      <p>Designed and deployed a deterministic investment decision engine — a 7-step async LangGraph pipeline that generates auditable BUY/HOLD/SELL recommendations in under 30 seconds. GPT-4o is constrained to explanation-only: zero influence over the decision, ensuring fully reproducible and auditable outputs with zero hallucination risk on recommendations.</p>
     </div>
     <div class="modal-section">
-      <h4>Architecture</h4>
-      <p>FastAPI backend → GPT-4o agent loop → tool dispatcher (market data / news / fundamentals) → Redis cache layer → structured Markdown report. Deployed via Docker Compose on AWS EC2.</p>
+      <h4>Engineering Decisions</h4>
+      <p>Normalized multi-factor scoring engine (Technical 0–25, Fundamental 0–40, Sentiment 0–15) with dynamic max adjustment — missing data excluded from denominator rather than penalised, eliminating false SELL signals. Conflict-aware decision logic: signal disagreement (variance &gt; 0.15) overrides to HOLD in 35–55% ambiguity band, reducing false conviction. 5-factor confidence model (data completeness, signal agreement, volatility, news uncertainty) blocks recommendations below 20% confidence. Redis TTL 900s caching reduces repeated query latency from ~15s to &lt;100ms.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Business Value</h4>
+      <p>Any firm paying analysts $80k+/year offsets that cost with sub-30s deterministic decisions. Portfolio ranking mode supports 2–8 tickers with proportional capital allocation. The same architecture extends to portfolio monitoring, earnings alerts, and competitive intelligence at near-zero marginal cost per use case.</p>
     </div>
     <div class="modal-section">
       <h4>Key Results</h4>
       <ul>
-        <li>Research report generated in under 30 seconds</li>
-        <li>Redis caching achieves 10× API cost reduction on repeated queries</li>
-        <li>Live deployment on AWS EC2 with Docker Compose</li>
-        <li>Supports stocks, ETFs, and market sector analysis</li>
+        <li>BUY/HOLD/SELL decision generated in under 30 seconds</li>
+        <li>Repeated query latency: ~15s → &lt;100ms via Redis caching (10× API cost reduction)</li>
+        <li>Zero LLM hallucination risk — GPT-4o explains decisions, never makes them</li>
+        <li>Portfolio ranking mode: 2–8 tickers with proportional capital allocation</li>
+        <li>Live on AWS EC2 with Nginx domain routing and Docker Compose</li>
       </ul>
     </div>
     <div class="modal-section">
       <h4>Stack</h4>
-      <div class="modal-tags"><span>GPT-4o</span><span>FastAPI</span><span>Alpha Vantage</span><span>Redis</span><span>Docker</span><span>AWS EC2</span><span>Python</span></div>
+      <div class="modal-tags"><span>GPT-4o</span><span>LangGraph</span><span>FastAPI</span><span>Alpha Vantage</span><span>Redis</span><span>Docker</span><span>AWS EC2</span><span>Nginx</span><span>Python</span></div>
     </div>
     <div class="modal-footer">
-      <a href="https://github.com/Rajkumar2002-Rk/financial-research-agent" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> Code</a>
-      <a href="https://fintel.rajkumarai.dev/" target="_blank" class="btn btn-outline">Live Demo <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+      <a href="https://github.com/Rajkumar2002-Rk/financial-research-agent" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> View Code</a>
+      <a href="https://fintel.rajkumarai.dev/" target="_blank" class="btn btn-outline">View Live System <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
     </div>
   </div>
 
@@ -677,24 +818,33 @@
     </div>
     <div class="modal-section">
       <h4>The Solution</h4>
-      <p>A production RAG pipeline: documents are chunked, embedded, and stored in ChromaDB. LangChain retrieves relevant chunks and passes them to GPT-4 for accurate, grounded responses with streaming.</p>
+      <p>Engineered a production RAG system: PDF ingestion pipeline (1000-char chunks, 200-char overlap, OpenAI text-embedding-3-small), ChromaDB vector store, MMR retrieval, and GPT-4 generation with real-time streaming. Hallucination guardrails block LLM calls when retrieval confidence is too low. Deployed on AWS EC2 with HTTPS via Let's Encrypt.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Engineering Decisions</h4>
+      <p>MMR (Maximal Marginal Relevance) retrieval over plain cosine similarity — fetches a larger candidate pool and re-ranks for relevance and diversity, preventing near-duplicate chunks reaching the LLM. Rule-based query classifier (no LLM cost) detects factual/complex/ambiguous/keyword intent and adjusts top_k and fetch_k accordingly. Three API cost guards: rate limiting (20 req/min via slowapi), 500-char input cap, tiktoken token budget — all fire before any LLM call. Every answer uses [SOURCE N: filename — Page: X] citation format — LLM is forced to cite, never invent.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Business Value</h4>
+      <p>Dual deployment: Streamlit chat UI for business users, FastAPI Swagger UI at /api/docs for engineering integration — one system serves both audiences. The citation format makes every answer auditable — critical for regulated industries. Cost guards and query classifier make this viable at production scale without API spend ballooning.</p>
     </div>
     <div class="modal-section">
       <h4>Key Results</h4>
       <ul>
         <li>87% retrieval accuracy on benchmark query set</li>
-        <li>Supports PDF, DOCX, and TXT ingestion</li>
-        <li>Real-time streaming responses via Streamlit</li>
-        <li>Deployed on AWS EC2 with Docker</li>
+        <li>Zero hallucination on document-grounded queries — guardrails return fallback instead of guessing</li>
+        <li>MMR retrieval prevents near-duplicate context from polluting LLM answers</li>
+        <li>Two interfaces: Streamlit (users) + FastAPI Swagger (developers)</li>
+        <li>Live on AWS EC2 with Nginx reverse proxy and HTTPS (Let's Encrypt)</li>
       </ul>
     </div>
     <div class="modal-section">
       <h4>Stack</h4>
-      <div class="modal-tags"><span>LangChain</span><span>ChromaDB</span><span>GPT-4</span><span>Streamlit</span><span>Docker</span><span>AWS EC2</span></div>
+      <div class="modal-tags"><span>LangChain</span><span>ChromaDB</span><span>GPT-4</span><span>FastAPI</span><span>Streamlit</span><span>Docker</span><span>AWS EC2</span><span>Nginx</span><span>Redis</span></div>
     </div>
     <div class="modal-footer">
-      <a href="https://github.com/Rajkumar2002-Rk/rag-chatbot" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> Code</a>
-      <a href="https://chatbot.rajkumarai.dev" target="_blank" class="btn btn-outline">Live Demo <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+      <a href="https://github.com/Rajkumar2002-Rk/rag-chatbot" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> View Code</a>
+      <a href="https://chatbot.rajkumarai.dev" target="_blank" class="btn btn-outline">View Live System <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
     </div>
   </div>
 
@@ -709,15 +859,15 @@
     </div>
     <div class="modal-section">
       <h4>The Solution</h4>
-      <p>Ensemble of LSTM (complex temporal patterns) and Prophet (seasonality + holidays). Trained on 2 years of multi-store data, deployed as a SageMaker endpoint with automated weekly retraining from S3.</p>
+      <p>Architected an LSTM + Prophet ensemble — LSTM captures complex temporal dependencies, Prophet handles seasonality and holidays. Trained on 2 years of multi-store data, deployed as a SageMaker endpoint with automated weekly retraining triggered from S3. Model stays current without manual intervention.</p>
     </div>
     <div class="modal-section">
       <h4>Key Results</h4>
       <ul>
-        <li>4.2% RMSE across 45 product categories</li>
-        <li>18% improvement over single-model baselines</li>
-        <li>8-week forecast horizon with weekly auto-retraining</li>
-        <li>Fully automated pipeline on AWS SageMaker</li>
+        <li>4.2% RMSE across 45 product categories — 18% improvement over single-model baselines</li>
+        <li>Trained on 500,000+ retail transactions across 2 years of multi-store data</li>
+        <li>8-week forecast horizon with automated weekly SageMaker retraining from S3</li>
+        <li>Ensemble captures both temporal complexity (LSTM) and seasonality/holidays (Prophet)</li>
       </ul>
     </div>
     <div class="modal-section">
@@ -725,7 +875,7 @@
       <div class="modal-tags"><span>LSTM</span><span>Prophet</span><span>SageMaker</span><span>S3</span><span>PyTorch</span><span>Pandas</span></div>
     </div>
     <div class="modal-footer">
-      <a href="https://github.com/Rajkumar2002-Rk/aws-sales-forecasting" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> Code</a>
+      <a href="https://github.com/Rajkumar2002-Rk/aws-sales-forecasting" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> View Code</a>
     </div>
   </div>
 
@@ -740,23 +890,24 @@
     </div>
     <div class="modal-section">
       <h4>The Solution</h4>
-      <p>XGBoost classifier trained on 21 engineered customer features, with SHAP waterfall plots providing individual prediction explanations. MLflow tracks all experiments; Docker packages the inference API; GitHub Actions automates retraining.</p>
+      <p>Engineered 21 customer behaviour features plus AWS Comprehend NLP sentiment signals extracted from 7k+ customer support tickets — expanding the feature space with real customer voice data. End-to-end MLOps: S3 ingestion → Lambda ETL → SageMaker training → real-time inference endpoint. Automated retraining via CloudWatch + EventBridge on data drift detection. SHAP waterfall plots make every prediction auditable for non-technical retention teams. MLflow tracks all experiments with full reproducibility.</p>
     </div>
     <div class="modal-section">
       <h4>Key Results</h4>
       <ul>
         <li>91% classification accuracy, 89% F1 score</li>
-        <li>SHAP explanations for every individual prediction</li>
-        <li>Automated retraining pipeline via GitHub Actions</li>
-        <li>Fully containerised inference API with Docker</li>
+        <li>AWS Comprehend NLP sentiment from 7k+ customer support tickets</li>
+        <li>Full MLOps pipeline: S3 → Lambda ETL → SageMaker → real-time inference endpoint</li>
+        <li>CloudWatch + EventBridge automated retraining on data drift</li>
+        <li>SHAP waterfall plots for every individual prediction</li>
       </ul>
     </div>
     <div class="modal-section">
       <h4>Stack</h4>
-      <div class="modal-tags"><span>XGBoost</span><span>SHAP</span><span>Scikit-learn</span><span>MLflow</span><span>Docker</span><span>GitHub Actions</span></div>
+      <div class="modal-tags"><span>XGBoost</span><span>SHAP</span><span>SageMaker</span><span>Lambda</span><span>CloudWatch</span><span>EventBridge</span><span>AWS Comprehend</span><span>MLflow</span><span>Docker</span></div>
     </div>
     <div class="modal-footer">
-      <a href="https://github.com/Rajkumar2002-Rk/Customer_Chrun_Prediction" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> Code</a>
+      <a href="https://github.com/Rajkumar2002-Rk/Customer_Chrun_Prediction" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> View Code</a>
     </div>
   </div>
 
@@ -771,23 +922,24 @@
     </div>
     <div class="modal-section">
       <h4>The Solution</h4>
-      <p>Dual-model computer vision pipeline: YOLOv8 localises and detects vehicle damage in real time, while ResNet-50 classifies severity and flags fraud indicators. Served via FastAPI at 50ms latency.</p>
+      <p>Designed a dual-model CV pipeline: YOLOv8 localises vehicle damage in real time, ResNet-50 classifies severity and flags fraud indicators at 96.7% accuracy. Real-time claim ingestion via AWS Kinesis, serverless processing with Lambda, and fraud scores stored in RDS — enabling SQL-based analyst queries on top of the pipeline. FastAPI serves the inference endpoint at 50ms average latency.</p>
     </div>
     <div class="modal-section">
       <h4>Key Results</h4>
       <ul>
-        <li>96.7% fraud detection accuracy on 50k+ claim images</li>
-        <li>50ms average inference latency</li>
-        <li>Dual-model pipeline for detection + classification</li>
-        <li>REST API deployment via FastAPI</li>
+        <li>96.7% fraud detection accuracy on 50,000+ claim images</li>
+        <li>50ms average inference latency via FastAPI REST API</li>
+        <li>Real-time ingestion via AWS Kinesis + Lambda serverless processing</li>
+        <li>Fraud scores stored in RDS — analysts query results directly via SQL</li>
+        <li>Dual-model pipeline: YOLOv8 (detection) + ResNet-50 (classification)</li>
       </ul>
     </div>
     <div class="modal-section">
       <h4>Stack</h4>
-      <div class="modal-tags"><span>YOLOv8</span><span>ResNet-50</span><span>PyTorch</span><span>OpenCV</span><span>FastAPI</span></div>
+      <div class="modal-tags"><span>YOLOv8</span><span>ResNet-50</span><span>PyTorch</span><span>FastAPI</span><span>AWS Kinesis</span><span>Lambda</span><span>RDS</span><span>OpenCV</span></div>
     </div>
     <div class="modal-footer">
-      <a href="https://github.com/Rajkumar2002-Rk" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> Code</a>
+      <a href="https://github.com/Rajkumar2002-Rk" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> View Code</a>
     </div>
   </div>
 
@@ -795,20 +947,20 @@
 
 <!-- ═══════════════════ SCRIPTS ═══════════════════ -->
 <script>
-// ── Progress bar ──────────────────────────────────────────────
+/* ── Progress bar ─────────────────────────────────────────── */
 const progressBar = document.getElementById('progress-bar');
 window.addEventListener('scroll', () => {
   const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
   progressBar.style.width = pct + '%';
 }, { passive: true });
 
-// ── Navbar scroll state ───────────────────────────────────────
+/* ── Navbar scroll state ──────────────────────────────────── */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
-// ── Hamburger menu ────────────────────────────────────────────
+/* ── Hamburger menu ───────────────────────────────────────── */
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => {
@@ -822,16 +974,23 @@ navLinks.querySelectorAll('a').forEach(a => {
   });
 });
 
-// ── Scroll reveal ─────────────────────────────────────────────
+/* ── Universal scroll reveal ──────────────────────────────── */
 const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target); // fire once
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll(
+  '.reveal, .reveal-left, .reveal-right, .reveal-scale'
+).forEach(el => revealObserver.observe(el));
 
-// ── Modals ────────────────────────────────────────────────────
-const overlay     = document.getElementById('modal-overlay');
+/* ── Modals ───────────────────────────────────────────────── */
+const overlay      = document.getElementById('modal-overlay');
 const modalContent = document.getElementById('modal-content');
-const modalClose  = document.getElementById('modalClose');
+const modalClose   = document.getElementById('modalClose');
 
 function openModal(id) {
   const src = document.querySelector(`#modal-data [data-id="${id}"]`);
@@ -844,7 +1003,6 @@ function closeModal() {
   overlay.classList.remove('active');
   document.body.style.overflow = '';
 }
-
 document.querySelectorAll('.view-case-study').forEach(btn => {
   btn.addEventListener('click', () => openModal(btn.dataset.modal));
 });
@@ -852,12 +1010,382 @@ modalClose.addEventListener('click', closeModal);
 overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-// ── Subtle card hover (project cards) ────────────────────────
-document.querySelectorAll('.featured-project').forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    card.style.transition = 'border-color 0.25s';
-  });
+/* ── Particle Canvas — Neural Network + Mouse Repulsion ──── */
+(function () {
+  const canvas  = document.getElementById('hero-canvas');
+  const heroEl  = document.getElementById('hero');
+  if (!canvas || !heroEl) return;
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width  = canvas.offsetWidth  || window.innerWidth;
+    canvas.height = canvas.offsetHeight || window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  const COUNT    = 65;
+  const MAX_DIST = 130;
+  const COLORS   = ['59,130,246', '139,92,246', '6,182,212'];
+
+  // Mouse position relative to the canvas (for repulsion field)
+  let mouseX = -9999, mouseY = -9999;
+  heroEl.addEventListener('mousemove', e => {
+    const r = canvas.getBoundingClientRect();
+    mouseX = e.clientX - r.left;
+    mouseY = e.clientY - r.top;
+  }, { passive: true });
+  heroEl.addEventListener('mouseleave', () => { mouseX = -9999; mouseY = -9999; });
+
+  class Particle {
+    constructor() { this.init(); }
+    init() {
+      this.x  = Math.random() * canvas.width;
+      this.y  = Math.random() * canvas.height;
+      this.vx = (Math.random() - 0.5) * 0.38;
+      this.vy = (Math.random() - 0.5) * 0.38;
+      this.r  = Math.random() * 1.4 + 0.4;
+      this.c  = COLORS[Math.floor(Math.random() * COLORS.length)];
+      this.o  = Math.random() * 0.45 + 0.15;
+    }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      // Mouse repulsion — particles scatter away from cursor
+      const dx   = this.x - mouseX;
+      const dy   = this.y - mouseY;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 95 && dist > 0) {
+        const f = (1 - dist / 95) * 1.4;
+        this.x += (dx / dist) * f;
+        this.y += (dy / dist) * f;
+      }
+      // Boundary wrap
+      if (this.x < 0)             this.x = canvas.width;
+      if (this.x > canvas.width)  this.x = 0;
+      if (this.y < 0)             this.y = canvas.height;
+      if (this.y > canvas.height) this.y = 0;
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${this.c},${this.o})`;
+      ctx.fill();
+    }
+  }
+
+  const particles = Array.from({ length: COUNT }, () => new Particle());
+
+  function drawEdges() {
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx   = particles[i].x - particles[j].x;
+        const dy   = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < MAX_DIST) {
+          // Lines closer to mouse become brighter
+          const mdx   = (particles[i].x + particles[j].x) / 2 - mouseX;
+          const mdy   = (particles[i].y + particles[j].y) / 2 - mouseY;
+          const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+          const boost = mdist < 150 ? 1 + (1 - mdist / 150) * 1.5 : 1;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(59,130,246,${0.13 * boost * (1 - dist / MAX_DIST)})`;
+          ctx.lineWidth   = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  let raf;
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => { p.update(); p.draw(); });
+    drawEdges();
+    raf = requestAnimationFrame(animate);
+  }
+  animate();
+
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { if (!raf) animate(); }
+    else { cancelAnimationFrame(raf); raf = null; }
+  }).observe(heroEl);
+})();
+
+/* ── Animated metric counters ─────────────────────────────── */
+function animateCounter(el) {
+  const target   = parseFloat(el.dataset.target);
+  const suffix   = el.dataset.suffix || '';
+  const isFloat  = !Number.isInteger(target);
+  const dur      = 1600;
+  const start    = performance.now();
+  const spanHTML = el.querySelector('span') ? `<span>${suffix}</span>` : '';
+
+  function tick(now) {
+    const progress = Math.min((now - start) / dur, 1);
+    const eased    = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    const val      = eased * target;
+    el.innerHTML   = (isFloat ? val.toFixed(1) : Math.floor(val)) + spanHTML;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+document.querySelectorAll('[data-target]').forEach(el => {
+  new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !e.target.dataset.counted) {
+        e.target.dataset.counted = '1';
+        animateCounter(e.target);
+      }
+    });
+  }, { threshold: 0.6 }).observe(el);
 });
+
+/* ── Subtle hero parallax ─────────────────────────────────── */
+const heroSection = document.getElementById('hero');
+window.addEventListener('scroll', () => {
+  const sy = window.scrollY;
+  if (sy < window.innerHeight * 1.2) {
+    // Canvas drifts slower than content for depth
+    const canvas = document.getElementById('hero-canvas');
+    if (canvas) canvas.style.transform = `translateY(${sy * 0.25}px)`;
+  }
+}, { passive: true });
+
+/* ── Stagger reveal for tech-tags and skill-badges ────────── */
+document.querySelectorAll('.tech-tags, .skill-badges-wrap').forEach(wrap => {
+  const observer = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return;
+    observer.disconnect();
+    Array.from(wrap.children).forEach((child, i) => {
+      child.style.opacity   = '0';
+      child.style.transform = 'translateY(12px)';
+      child.style.transition = `opacity 0.4s ease ${i * 55}ms, transform 0.4s ease ${i * 55}ms`;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        child.style.opacity   = '';
+        child.style.transform = '';
+      }));
+    });
+  }, { threshold: 0.2 });
+  observer.observe(wrap);
+});
+
+/* ================================================================
+   SIGNATURE INTERACTIONS
+   ================================================================ */
+
+/* ── 1. Custom Glowing Cursor with lerp smoothing ───────────── */
+(function () {
+  // Only activate on devices with a fine pointer (mouse)
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+
+  const outer = document.getElementById('cursor-outer');
+  const dot   = document.getElementById('cursor-dot');
+  if (!outer || !dot) return;
+
+  // Target position (moves instantly with mouse)
+  let tx = window.innerWidth / 2, ty = window.innerHeight / 2;
+  // Outer ring lags behind for smooth trailing effect
+  let ox = tx, oy = ty;
+  const LERP = 0.14; // 0=no follow, 1=instant
+
+  document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; }, { passive: true });
+
+  // Click feedback
+  document.addEventListener('mousedown', () => document.body.classList.add('c-down'));
+  document.addEventListener('mouseup',   () => document.body.classList.remove('c-down'));
+
+  // Expand cursor on interactive elements
+  const INTERACTIVE = 'a, button, [role="button"], .btn, .social-link, .tech-tag, .skill-badge, .sec-dot, .fp-link, .pc-link, label, input, textarea, select';
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest(INTERACTIVE)) document.body.classList.add('c-hover');
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest(INTERACTIVE)) document.body.classList.remove('c-hover');
+  });
+
+  // RAF loop — dot snaps, outer ring lags (depth illusion)
+  (function tick() {
+    ox += (tx - ox) * LERP;
+    oy += (ty - oy) * LERP;
+    dot.style.transform   = `translate(${tx}px, ${ty}px)`;
+    outer.style.transform = `translate(${ox}px, ${oy}px)`;
+    requestAnimationFrame(tick);
+  })();
+})();
+
+/* ── 2. Hero Mouse Glow (ambient spotlight follows cursor) ──── */
+(function () {
+  const hero = document.getElementById('hero');
+  const glow = document.getElementById('hero-mouse-glow');
+  if (!hero || !glow || !window.matchMedia('(pointer: fine)').matches) return;
+
+  let glowX = 0, glowY = 0, tgx = 0, tgy = 0;
+  const LERP = 0.09;
+
+  hero.addEventListener('mousemove', e => {
+    const r = hero.getBoundingClientRect();
+    tgx = e.clientX - r.left;
+    tgy = e.clientY - r.top;
+  }, { passive: true });
+
+  (function tick() {
+    glowX += (tgx - glowX) * LERP;
+    glowY += (tgy - glowY) * LERP;
+    // Offset by half the glow size (520px) to center it on the cursor
+    glow.style.transform = `translate(${glowX - 260}px, ${glowY - 260}px)`;
+    requestAnimationFrame(tick);
+  })();
+})();
+
+/* ── 3. Page Spotlight (very subtle global ambient glow) ────── */
+(function () {
+  const spotlight = document.getElementById('page-spotlight');
+  if (!spotlight || !window.matchMedia('(pointer: fine)').matches) return;
+
+  let sx = window.innerWidth / 2, sy = window.innerHeight / 2;
+  let tx = sx, ty = sy;
+
+  document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; }, { passive: true });
+
+  (function tick() {
+    sx += (tx - sx) * 0.055; // very lazy follow for subtle ambient
+    sy += (ty - sy) * 0.055;
+    spotlight.style.transform = `translate(${sx - 350}px, ${sy - 350}px)`;
+    requestAnimationFrame(tick);
+  })();
+})();
+
+/* ── 4. Magnetic CTA Button ─────────────────────────────────── */
+(function () {
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+
+  // Only the primary hero CTA gets the magnetic pull
+  const btn = document.querySelector('.hero-ctas .btn-fill');
+  if (!btn) return;
+
+  btn.classList.add('btn-magnetic');
+  const RANGE = 100; // px radius around button that activates pull
+  const PULL  = 0.42; // pull strength (0–1)
+  let active  = false;
+
+  function onMove(e) {
+    const rect = btn.getBoundingClientRect();
+    const cx = rect.left + rect.width  / 2;
+    const cy = rect.top  + rect.height / 2;
+    const dx = e.clientX - cx;
+    const dy = e.clientY - cy;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+
+    if (dist < RANGE) {
+      if (!active) {
+        active = true;
+        btn.style.transition = 'transform 0.08s ease, box-shadow 0.25s ease';
+      }
+      const px = dx * PULL * (1 - dist / RANGE);
+      const py = dy * PULL * (1 - dist / RANGE);
+      btn.style.transform = `translate(${px}px, ${py}px) translateY(-2px)`;
+    } else if (active) {
+      active = false;
+      btn.style.transition = 'transform 0.55s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease';
+      btn.style.transform  = '';
+    }
+  }
+
+  document.addEventListener('mousemove', onMove, { passive: true });
+})();
+
+/* ── 5. Section Tracker — cursor colour + side dots ────────── */
+(function () {
+  const sections = [
+    { id: 'hero',     color: 'blue',   dotColor: 'var(--accent)',  dotGlow: '59,130,246'  },
+    { id: 'trust',    color: 'cyan',   dotColor: 'var(--cyan)',    dotGlow: '6,182,212'   },
+    { id: 'projects', color: 'blue',   dotColor: 'var(--accent)',  dotGlow: '59,130,246'  },
+    { id: 'about',    color: 'purple', dotColor: 'var(--purple)',  dotGlow: '139,92,246'  },
+    { id: 'skills',   color: 'cyan',   dotColor: 'var(--cyan)',    dotGlow: '6,182,212'   },
+    { id: 'contact',  color: 'blue',   dotColor: 'var(--accent)',  dotGlow: '59,130,246'  },
+  ];
+
+  const dotsNav  = document.getElementById('section-dots');
+  const dots     = dotsNav ? Array.from(dotsNav.querySelectorAll('.sec-dot')) : [];
+
+  // Show side dots only after scrolling past hero
+  window.addEventListener('scroll', () => {
+    if (dotsNav) dotsNav.classList.toggle('visible', window.scrollY > 120);
+  }, { passive: true });
+
+  // IntersectionObserver fires when a section hits 35% visibility
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const id  = entry.target.id;
+      const sec = sections.find(s => s.id === id);
+      if (!sec) return;
+
+      // Update body data-section for CSS cursor colour targeting
+      document.body.setAttribute('data-section', id);
+
+      // Update section dots
+      dots.forEach((dot, i) => {
+        const isCurrent = sections[i]?.id === id;
+        dot.classList.toggle('active', isCurrent);
+        if (isCurrent) {
+          dot.style.background = sec.dotColor;
+          dot.style.boxShadow  =
+            `0 0 14px rgba(${sec.dotGlow},0.6), 0 0 28px rgba(${sec.dotGlow},0.2)`;
+        } else {
+          dot.style.background = '';
+          dot.style.boxShadow  = '';
+        }
+      });
+
+      // Subtly tint the page spotlight to match section accent
+      const spotlight = document.getElementById('page-spotlight');
+      if (spotlight) {
+        const gradMap = {
+          blue:   'rgba(59,130,246,0.025)',
+          cyan:   'rgba(6,182,212,0.025)',
+          purple: 'rgba(139,92,246,0.025)',
+        };
+        const c = gradMap[sec.color] || gradMap.blue;
+        spotlight.style.background =
+          `radial-gradient(circle, ${c} 0%, transparent 70%)`;
+      }
+    });
+  }, { threshold: 0.35 });
+
+  sections.forEach(s => {
+    const el = document.getElementById(s.id);
+    if (el) io.observe(el);
+  });
+})();
+
+/* ── 6. Delayed hover depth effect on cap-items & metric-cards  */
+(function () {
+  // Add a micro-delay on metric card hover for a "settling" premium feel
+  document.querySelectorAll('.metric-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transitionDelay = '0.03s';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transitionDelay = '0s';
+    });
+  });
+
+  // fp-link arrow nudge on parent hover
+  document.querySelectorAll('.featured-project').forEach(fp => {
+    const arrows = fp.querySelectorAll('.fp-link.primary i');
+    fp.addEventListener('mouseenter', () => {
+      arrows.forEach(a => { a.style.transition = 'transform 0.3s ease'; a.style.transform = 'translateX(3px)'; });
+    });
+    fp.addEventListener('mouseleave', () => {
+      arrows.forEach(a => { a.style.transform = ''; });
+    });
+  });
+})();
 </script>
 </body>
 </html>
