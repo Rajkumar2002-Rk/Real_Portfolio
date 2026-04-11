@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raj Kumar Nelluri — AI/ML Engineer</title>
   <meta name="description" content="AI/ML Engineer specialising in deterministic LLM systems, RAG pipelines, and computer vision — 5 production deployments on AWS. LangGraph, LangChain, FastAPI, Docker." />
+
+  <!-- Open Graph / LinkedIn / Twitter -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://rajkumarai.dev/" />
+  <meta property="og:title"       content="Raj Kumar Nelluri — AI/ML Engineer" />
+  <meta property="og:description" content="5 production AI systems on AWS · LangGraph agents · RAG pipelines · Computer Vision · MLOps. Replacing manual workflows with deterministic, auditable AI." />
+  <meta property="og:image"       content="https://rajkumarai.dev/Raj_Kumar.png" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Raj Kumar Nelluri — AI/ML Engineer" />
+  <meta name="twitter:description" content="5 production AI systems on AWS · LangGraph · RAG · Computer Vision · MLOps" />
+  <meta name="twitter:image"       content="https://rajkumarai.dev/Raj_Kumar.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -13,10 +25,17 @@
 </head>
 <body>
 
+<!-- ── Page loader ── -->
+<div id="page-loader" aria-hidden="true">
+  <span class="loader-brand">RK<span class="loader-dot">.</span></span>
+</div>
+
+<!-- ── Toast notification ── -->
+<div id="toast" role="alert" aria-live="polite"></div>
+
 <!-- ── Signature interaction elements ── -->
 <div id="cursor-outer" aria-hidden="true"></div>
 <div id="cursor-dot"   aria-hidden="true"></div>
-<div id="page-spotlight" aria-hidden="true"></div>
 <nav id="section-dots" aria-label="Page sections">
   <a href="#hero"     class="sec-dot active" data-label="Home"     aria-label="Home"></a>
   <a href="#trust"    class="sec-dot"         data-label="Work"     aria-label="Work"></a>
@@ -34,7 +53,7 @@
   <a class="nav-brand" href="#">RK<span class="dot">.</span></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#trust">Impact</a></li>
+    <li><a href="#trust">Results</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="Raj_Kumar_Nelluri_AI_Engineer_Resume.pdf" download class="nav-cta">Resume</a></li>
@@ -63,15 +82,14 @@
         <p class="hero-eyebrow">AI / ML Engineer</p>
 
         <h1 class="hero-headline">
-          Engineered AI systems<br />
-          that <em>ship and scale.</em>
+          Production AI —<br />
+          <em>not just notebooks.</em>
         </h1>
 
         <p class="hero-sub">
-          I build AI systems that eliminate manual workflows — analyst research,
-          document search, fraud review, churn detection, inventory planning.
-          Deterministic, auditable, and deployed on AWS. Every system is measured
-          by the work it replaces, not the benchmark it hits.
+          5 live AWS deployments: analyst research, document retrieval, fraud review,
+          churn prediction, and inventory planning — all automated, auditable, and measured
+          by the work they replace.
         </p>
 
         <div class="hero-ctas">
@@ -87,8 +105,8 @@
             <span class="proof-label">Live AWS deployments</span>
           </div>
           <div class="proof-item">
-            <span class="proof-value">96.7%</span>
-            <span class="proof-label">Fraud detection accuracy</span>
+            <span class="proof-value">PR #20</span>
+            <span class="proof-label">Merged into Meta FAIR TRIBE v2</span>
           </div>
           <div class="proof-item">
             <span class="proof-value">&lt;30s</span>
@@ -228,10 +246,10 @@
       </a>
     </div>
 
-    <!-- ── Featured row 1: AI Financial Agent ── -->
     <div class="featured-projects">
+
+      <!-- ── 01: AI Financial Research Agent ── -->
       <div class="featured-project reveal">
-        <div class="card-sheen" aria-hidden="true"></div>
         <div class="fp-content">
           <div>
             <p class="fp-index">01 — LLM Agent · Live Product</p>
@@ -244,7 +262,6 @@
               scoring system. Zero LLM hallucination risk on recommendations.
               Running in production.
             </p>
-            <!-- Key outcomes visible without clicking Case Study -->
             <div class="fp-impact-badge">
               <span>BUY/HOLD/SELL in &lt;30s</span>
               <span>~15s → &lt;100ms Redis cache</span>
@@ -303,12 +320,83 @@
         </div>
       </div>
 
-      <!-- ── Featured row 2: RAG Chatbot ── -->
+      <!-- ── 02: CineNeuro ── -->
       <div class="featured-project reveal reveal-delay-1">
-        <div class="card-sheen" aria-hidden="true"></div>
         <div class="fp-content">
           <div>
-            <p class="fp-index">02 — RAG Pipeline · Live Product</p>
+            <p class="fp-index">02 — Neuroscience AI · Live Product · Meta FAIR TRIBE v2</p>
+            <h3 class="fp-title">CineNeuro — Neural Audience Intelligence</h3>
+            <p class="fp-tagline">
+              Engineered a multimodal brain encoding pipeline that predicts second-by-second
+              fMRI activations across 20,484 cortical vertices — giving studios audience
+              emotional response intelligence before a trailer ever releases. Three neural
+              networks (V-JEPA2, Wav2Vec-BERT, Llama 3.2) feed Meta FAIR's TRIBE v2
+              to map vision, audio, and language into 5 emotion channels across 7 brain regions.
+              Live on AWS. PR #20 merged into Meta FAIR's official repository.
+            </p>
+            <div class="fp-impact-badge">
+              <span>20,484 brain vertices/sec</span>
+              <span>&lt;100ms demo response</span>
+              <span>$0.50/trailer · Live on AWS</span>
+            </div>
+            <div class="fp-stack">
+              <span>Meta TRIBE v2</span><span>V-JEPA2</span><span>Wav2Vec-BERT</span>
+              <span>Llama 3.2</span><span>FastAPI</span><span>React</span>
+              <span>Docker</span><span>AWS EC2</span><span>Nginx</span>
+            </div>
+          </div>
+          <p class="fp-link-label">Try it live</p>
+          <div class="fp-links">
+            <a href="https://cineneuro.rajkumarai.dev/" target="_blank" class="fp-link--live">
+              View Live System <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="https://github.com/Rajkumar2002-Rk/CineNeuro" target="_blank" class="fp-link--code">
+              <i class="fab fa-github"></i> View Code
+            </a>
+            <button class="fp-link--case view-case-study" data-modal="cineneuro">
+              See How It Works <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="fp-detail">
+          <div class="fp-case">
+            <span class="fp-case-label">Problem</span>
+            <p class="fp-case-text">Studios spend millions on trailers with no way to predict emotional response before release. Test screenings are expensive, slow, and limited to small samples — a studio can't know second-by-second where audiences peak in excitement or disengage.</p>
+          </div>
+          <div class="fp-case">
+            <span class="fp-case-label">Solution</span>
+            <p class="fp-case-text">Multimodal brain encoding pipeline: V-JEPA2 extracts video features, Wav2Vec-BERT processes audio, Llama 3.2 embeds the transcript — all three streams feed Meta FAIR's TRIBE v2, which predicts fMRI activations across 20,484 cortical vertices per second of video. Activations are mapped to 5 emotion channels (excitement, fear, joy, suspense, boredom) across 7 brain regions using neuroscience-based weights.</p>
+          </div>
+          <div class="fp-case">
+            <span class="fp-case-label">Engineering Decisions</span>
+            <p class="fp-case-text">Two-tier deployment: g4dn.xlarge GPU instance ($0.53/hr, Tesla T4 15GB VRAM) spun on-demand for inference only, t3.micro serves 24/7 with pre-computed JSON results at &lt;100ms — keeping monthly cost near $0. 12.89GB across three extractors barely fits in T4 VRAM, requiring careful model loading order. Multi-stage Docker build (Node 18 + Python 3.11-slim) keeps the production image at ~500MB with no ML weights. Submitted PR #20 to Meta FAIR's TRIBE v2 repo to fix an incorrect model initialization example in the official README.</p>
+          </div>
+          <div class="fp-case">
+            <span class="fp-case-label">Business Value</span>
+            <p class="fp-case-text">Second-by-second emotion maps identify the 3 strongest and 3 weakest moments in a trailer — actionable edit intelligence. Persona simulation models how Action Lovers, Romance Fans, and Horror Enthusiasts respond differently. Competitive benchmarking against Oppenheimer, Avengers Endgame, Inception, Interstellar, and The Dark Knight gives studios a quantified baseline. Full analysis costs ~$0.50 in GPU time, replacing a test screening that costs thousands.</p>
+          </div>
+          <div class="fp-impact">
+            <div class="fp-impact-item">
+              <span class="fp-impact-val">20,484</span>
+              <span class="fp-impact-lbl">Brain vertices/sec</span>
+            </div>
+            <div class="fp-impact-item">
+              <span class="fp-impact-val">&lt;100ms</span>
+              <span class="fp-impact-lbl">Pre-computed demo latency</span>
+            </div>
+            <div class="fp-impact-item">
+              <span class="fp-impact-val">$0.50</span>
+              <span class="fp-impact-lbl">Full trailer GPU cost</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 03: Enterprise RAG Chatbot ── -->
+      <div class="featured-project reveal reveal-delay-2">
+        <div class="fp-content">
+          <div>
+            <p class="fp-index">03 — RAG Pipeline · Live Product</p>
             <h3 class="fp-title">Enterprise RAG Chatbot</h3>
             <p class="fp-tagline">
               Engineered a production RAG system with MMR retrieval, hallucination
@@ -317,7 +405,6 @@
               Two interfaces: Streamlit chat UI + FastAPI developer API.
               Live on AWS with HTTPS.
             </p>
-            <!-- Key outcomes visible without clicking Case Study -->
             <div class="fp-impact-badge">
               <span>87% retrieval accuracy</span>
               <span>Hallucination guardrails</span>
@@ -373,106 +460,6 @@
               <span class="fp-impact-lbl">Hallucination on grounded queries</span>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── Secondary grid: 3 projects ── -->
-    <div class="secondary-grid">
-
-      <!-- AWS Retail Forecasting -->
-      <div class="project-card reveal">
-        <div class="card-sheen" aria-hidden="true"></div>
-        <div>
-          <p class="pc-index">03 — Forecasting · SageMaker</p>
-          <h4 class="pc-title">AWS Retail Sales Forecasting</h4>
-        </div>
-        <p class="pc-impact-line">Cut forecast error 18% vs. single-model baselines — deployed on SageMaker with automated weekly retraining, no manual intervention.</p>
-        <p class="pc-desc">
-          Architected an LSTM + Prophet ensemble to capture temporal patterns and seasonality simultaneously.
-          Engineered fully automated retraining on SageMaker so accuracy improves as new data flows in.
-          4.2% RMSE at 8-week horizon drives real inventory decisions — not just benchmark scores.
-        </p>
-        <div>
-          <div class="pc-metric">4.2% RMSE</div>
-          <div class="pc-metric-label">500k+ transactions · 45 categories · 8-week horizon</div>
-        </div>
-        <div class="pc-stack">
-          <span>LSTM</span><span>Prophet</span><span>SageMaker</span>
-          <span>S3</span><span>PyTorch</span>
-        </div>
-        <div class="pc-links">
-          <a href="https://github.com/Rajkumar2002-Rk/aws-sales-forecasting" target="_blank" class="pc-link--code">
-            <i class="fab fa-github"></i> View Code
-          </a>
-          <button class="pc-link--case view-case-study" data-modal="retail">
-            See How It Works <i class="fas fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Customer Churn -->
-      <div class="project-card reveal reveal-delay-1">
-        <div class="card-sheen" aria-hidden="true"></div>
-        <div>
-          <p class="pc-index">04 — Classification · MLOps</p>
-          <h4 class="pc-title">Customer Churn Prediction</h4>
-        </div>
-        <p class="pc-impact-line">Engineered a churn prediction system with SHAP explainability — giving retention teams a 5× ROI window to intervene before customers leave.</p>
-        <p class="pc-desc">
-          Designed 21 engineered features plus AWS Comprehend NLP sentiment signals from 7k+ customer
-          support tickets — expanding the feature space with real customer voice data. Full MLOps pipeline:
-          S3 → Lambda ETL → SageMaker training → real-time inference endpoint. CloudWatch + EventBridge
-          trigger automated retraining on data drift. SHAP attribution makes every prediction auditable.
-          91% accuracy, 89% F1.
-        </p>
-        <div>
-          <div class="pc-metric">91% Accuracy</div>
-          <div class="pc-metric-label">89% F1 — 21 engineered features</div>
-        </div>
-        <div class="pc-stack">
-          <span>XGBoost</span><span>SHAP</span><span>SageMaker</span>
-          <span>Lambda</span><span>CloudWatch</span><span>MLflow</span><span>Docker</span>
-        </div>
-        <div class="pc-links">
-          <a href="https://github.com/Rajkumar2002-Rk/Customer_Chrun_Prediction" target="_blank" class="pc-link--code">
-            <i class="fab fa-github"></i> View Code
-          </a>
-          <button class="pc-link--case view-case-study" data-modal="churn">
-            See How It Works <i class="fas fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Insurance Fraud -->
-      <div class="project-card reveal reveal-delay-2">
-        <div class="card-sheen" aria-hidden="true"></div>
-        <div>
-          <p class="pc-index">05 — Computer Vision · AWS Kinesis</p>
-          <h4 class="pc-title">Insurance Fraud Detection</h4>
-        </div>
-        <p class="pc-impact-line">Replaced manual claim review for 50k+ images — 96.7% accuracy at 50ms latency, with real-time streaming ingestion via AWS Kinesis.</p>
-        <p class="pc-desc">
-          Designed a dual-model CV pipeline: YOLOv8 localises vehicle damage, ResNet-50 classifies
-          severity and flags fraud indicators. Real-time claim ingestion via AWS Kinesis, serverless
-          processing with Lambda, and fraud scores stored in RDS — enabling SQL-based analyst queries.
-          FastAPI serves the inference endpoint at 50ms average latency.
-        </p>
-        <div>
-          <div class="pc-metric">96.7% Accuracy</div>
-          <div class="pc-metric-label">50ms inference — 50k+ claims processed</div>
-        </div>
-        <div class="pc-stack">
-          <span>YOLOv8</span><span>ResNet-50</span><span>PyTorch</span>
-          <span>FastAPI</span><span>Kinesis</span><span>Lambda</span><span>RDS</span>
-        </div>
-        <div class="pc-links">
-          <a href="https://github.com/Rajkumar2002-Rk" target="_blank" class="pc-link--code">
-            <i class="fab fa-github"></i> View Code
-          </a>
-          <button class="pc-link--case view-case-study" data-modal="fraud">
-            See How It Works <i class="fas fa-arrow-right"></i>
-          </button>
         </div>
       </div>
 
@@ -660,67 +647,33 @@
 <!-- ═══════════════════ CONTACT ═══════════════════ -->
 <section id="contact">
   <div class="container">
-    <div class="contact-grid">
+    <div class="contact-centered reveal">
 
-      <div class="contact-copy reveal reveal-left">
-        <p class="section-label">Contact</p>
-        <!-- Hiring signal chip -->
-        <div class="contact-hire-signal">Actively looking · Available now</div>
-        <h2 class="section-title">The right role<br />is out there. <em style="font-style:normal;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Let's find it.</em></h2>
-        <p style="margin-top:1.5rem">
-          I'm looking for a full-time AI/ML Engineering role where there's a real
-          problem — a manual workflow, a bottleneck, a decision being made slowly —
-          and a team that wants to fix it with production-grade AI. If that's you,
-          let's talk.
-        </p>
-        <div class="contact-links" style="margin-top:2rem">
-          <a href="mailto:rajkumarn2002@gmail.com" class="contact-link-item">
-            <div class="cli-icon"><i class="fas fa-envelope"></i></div>
-            <div>
-              <div class="cli-label">Email</div>
-              <div class="cli-value">rajkumarn2002@gmail.com</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/raj-kumar-nelluri-351389393/" target="_blank" class="contact-link-item">
-            <div class="cli-icon"><i class="fab fa-linkedin-in"></i></div>
-            <div>
-              <div class="cli-label">LinkedIn</div>
-              <div class="cli-value">raj-kumar-nelluri</div>
-            </div>
-          </a>
-          <a href="https://github.com/Rajkumar2002-Rk" target="_blank" class="contact-link-item">
-            <div class="cli-icon"><i class="fab fa-github"></i></div>
-            <div>
-              <div class="cli-label">GitHub</div>
-              <div class="cli-value">Rajkumar2002-Rk</div>
-            </div>
-          </a>
-        </div>
+      <p class="section-label">Contact</p>
+      <div class="contact-hire-signal">Actively looking · Available now</div>
+
+      <h2 class="section-title contact-heading">
+        Got a manual workflow<br />
+        that should be <em style="font-style:normal;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">automated?</em>
+      </h2>
+
+      <p class="contact-sub">
+        I'm looking for a full-time AI/ML Engineering role where there's a real problem —
+        a bottleneck, a slow decision, a process someone is doing by hand. If that's your team,
+        reach out directly. I reply within 24 hours.
+      </p>
+
+      <div class="contact-cta-row">
+        <a href="mailto:rajkumarn2002@gmail.com" class="btn btn-fill contact-btn-primary">
+          <i class="fas fa-envelope"></i> rajkumarn2002@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/raj-kumar-nelluri-351389393/" target="_blank" class="btn btn-outline contact-btn-secondary">
+          <i class="fab fa-linkedin-in"></i> Connect on LinkedIn
+        </a>
+        <a href="Raj_Kumar_Nelluri_AI_Engineer_Resume.pdf" download class="btn btn-outline contact-btn-secondary">
+          <i class="fas fa-arrow-down" style="font-size:.75rem"></i> Download Resume
+        </a>
       </div>
-
-      <form class="contact-form reveal reveal-right reveal-delay-1" action="https://formspree.io/f/mqedbjoj" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Name</label>
-            <input type="text" name="name" placeholder="Your name" required />
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="you@company.com" required />
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Subject</label>
-          <input type="text" name="subject" placeholder="e.g. AI Engineer role at Acme Corp" />
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea name="message" placeholder="Tell me about the role, the team, and what you're building..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn-fill" style="width:100%;justify-content:center;">
-          Send Message <i class="fas fa-paper-plane" style="font-size:.75rem"></i>
-        </button>
-      </form>
 
     </div>
   </div>
@@ -732,7 +685,7 @@
     <div class="footer-inner">
       <div>
         <p class="footer-copy">
-          © 2025 Raj Kumar Nelluri
+          © 2026 Raj Kumar Nelluri
           <span style="margin:0 .75rem;color:var(--border-2)">·</span>
           <a href="https://rajkumar2002-rk.github.io/Real_Portfolio/" style="color:var(--text-3);transition:color .2s" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text-3)'">
             rajkumar2002-rk.github.io
@@ -940,6 +893,49 @@
     </div>
     <div class="modal-footer">
       <a href="https://github.com/Rajkumar2002-Rk" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> View Code</a>
+    </div>
+  </div>
+
+  <div data-id="cineneuro">
+    <div class="modal-header">
+      <h2>CineNeuro — Neural Audience Intelligence</h2>
+      <p>Meta FAIR TRIBE v2 · V-JEPA2 · Wav2Vec-BERT · Llama 3.2 · FastAPI · React · AWS EC2</p>
+    </div>
+    <div class="modal-section">
+      <h4>The Problem</h4>
+      <p>Film studios spend millions producing trailers with no way to quantify emotional impact before release. Traditional test screenings are expensive, slow, and limited to small samples — there's no second-by-second signal showing where audiences peak in excitement, disengage, or feel fear.</p>
+    </div>
+    <div class="modal-section">
+      <h4>The Solution</h4>
+      <p>CineNeuro uses Meta FAIR's TRIBE v2 brain encoding model to predict fMRI activations across 20,484 cortical vertices for every second of a trailer. Three feature extractors process the video simultaneously — V-JEPA2 for visual content, Wav2Vec-BERT for audio waveforms, and Llama 3.2 for transcript embeddings. These feed TRIBE v2, and the predicted activations are mapped to 5 emotion channels (excitement, fear, joy, suspense, boredom) across 7 functional brain regions using neuroscience-based weights.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Engineering Decisions</h4>
+      <p>Two-tier deployment strategy: a g4dn.xlarge GPU instance (Tesla T4, 15GB VRAM) handles inference on-demand at $0.53/hr, then terminates. A t3.micro serves the React dashboard 24/7 at near-zero cost using pre-computed JSON results (&lt;100ms load time). The three extractors total 12.89GB (V-JEPA2 4.14GB + Wav2Vec-BERT 2.32GB + Llama 3.2 6.43GB) — barely fitting in 15GB VRAM, requiring careful sequential model loading. Multi-stage Docker build (Node 18 + Python 3.11-slim) keeps the production image at ~500MB with no ML weights. Submitted PR #20 to Meta FAIR's official TRIBE v2 repository, fixing an incorrect model initialization example in the README that caused first-run failures.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Business Value</h4>
+      <p>Second-by-second emotion maps identify the 3 strongest and 3 weakest trailer moments with human-readable explanations — directly actionable edit intelligence. Audience persona simulation (Action Lovers, Romance Fans, Horror Enthusiasts) shows differentiated engagement curves. Competitive benchmarking against 5 iconic trailers (Oppenheimer, Avengers Endgame, Inception, Interstellar, The Dark Knight) gives studios a quantified baseline. Full analysis costs ~$0.50 in GPU time vs thousands for a traditional test screening.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Key Results</h4>
+      <ul>
+        <li>20,484 cortical vertices predicted per second of video across 7 functional brain regions</li>
+        <li>5 simultaneous emotion channels: excitement, fear, joy, suspense, boredom</li>
+        <li>53–224 predicted segments per trailer (74–93% kept after quality filter)</li>
+        <li>Pre-computed demo results served in &lt;100ms from disk</li>
+        <li>Full 2-minute trailer analysis in ~55 minutes on Tesla T4 GPU</li>
+        <li>Monthly hosting cost: ~$0 (t3.micro free tier + on-demand GPU only when needed)</li>
+        <li>PR #20 merged into Meta FAIR TRIBE v2 — corrected model initialization example</li>
+      </ul>
+    </div>
+    <div class="modal-section">
+      <h4>Stack</h4>
+      <div class="modal-tags"><span>Meta TRIBE v2</span><span>V-JEPA2</span><span>Wav2Vec-BERT</span><span>Llama 3.2</span><span>WhisperX</span><span>FastAPI</span><span>React</span><span>Recharts</span><span>ReportLab</span><span>Docker</span><span>AWS EC2 g4dn.xlarge</span><span>Nginx</span><span>Python 3.11</span></div>
+    </div>
+    <div class="modal-footer">
+      <a href="https://github.com/Rajkumar2002-Rk/CineNeuro" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> View Code</a>
+      <a href="https://cineneuro.rajkumarai.dev/" target="_blank" class="btn btn-outline">View Live System <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
     </div>
   </div>
 
@@ -1241,23 +1237,7 @@ document.querySelectorAll('.tech-tags, .skill-badges-wrap').forEach(wrap => {
   })();
 })();
 
-/* ── 3. Page Spotlight (very subtle global ambient glow) ────── */
-(function () {
-  const spotlight = document.getElementById('page-spotlight');
-  if (!spotlight || !window.matchMedia('(pointer: fine)').matches) return;
-
-  let sx = window.innerWidth / 2, sy = window.innerHeight / 2;
-  let tx = sx, ty = sy;
-
-  document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; }, { passive: true });
-
-  (function tick() {
-    sx += (tx - sx) * 0.055; // very lazy follow for subtle ambient
-    sy += (ty - sy) * 0.055;
-    spotlight.style.transform = `translate(${sx - 350}px, ${sy - 350}px)`;
-    requestAnimationFrame(tick);
-  })();
-})();
+/* page spotlight removed */
 
 /* ── 4. Magnetic CTA Button ─────────────────────────────────── */
 (function () {
@@ -1342,18 +1322,6 @@ document.querySelectorAll('.tech-tags, .skill-badges-wrap').forEach(wrap => {
         }
       });
 
-      // Subtly tint the page spotlight to match section accent
-      const spotlight = document.getElementById('page-spotlight');
-      if (spotlight) {
-        const gradMap = {
-          blue:   'rgba(59,130,246,0.025)',
-          cyan:   'rgba(6,182,212,0.025)',
-          purple: 'rgba(139,92,246,0.025)',
-        };
-        const c = gradMap[sec.color] || gradMap.blue;
-        spotlight.style.background =
-          `radial-gradient(circle, ${c} 0%, transparent 70%)`;
-      }
     });
   }, { threshold: 0.35 });
 
@@ -1362,6 +1330,52 @@ document.querySelectorAll('.tech-tags, .skill-badges-wrap').forEach(wrap => {
     if (el) io.observe(el);
   });
 })();
+
+/* ── PAGE LOADER ─────────────────────────────────────────────── */
+(function () {
+  const loader = document.getElementById('page-loader');
+  if (!loader) return;
+  // Fade out after brand text has rendered
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      loader.classList.add('loader-out');
+      setTimeout(() => loader.remove(), 700);
+    }, 650);
+  });
+})();
+
+/* typewriter removed — static copy is clearer and loads instantly */
+
+/* ── 3D CARD TILT ─────────────────────────────────────────────── */
+(function () {
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+
+  const TILT_MAX = 6; // degrees
+  const cards = document.querySelectorAll('.featured-project, .project-card');
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r  = card.getBoundingClientRect();
+      const x  = (e.clientX - r.left) / r.width  - 0.5; // -0.5 to 0.5
+      const y  = (e.clientY - r.top)  / r.height - 0.5;
+      const rx =  y * TILT_MAX * -1;
+      const ry =  x * TILT_MAX;
+      card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(4px)`;
+    }, { passive: true });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transition = 'transform 0.55s cubic-bezier(0.34,1.56,0.64,1)';
+      card.style.transform  = '';
+      setTimeout(() => { card.style.transition = ''; }, 560);
+    });
+
+    card.addEventListener('mouseenter', () => {
+      card.style.transition = 'transform 0.12s ease';
+    });
+  });
+})();
+
+/* contact form removed — direct email CTA replaces it */
 
 /* ── 6. Delayed hover depth effect on cap-items & metric-cards  */
 (function () {
