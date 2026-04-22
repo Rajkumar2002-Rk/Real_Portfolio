@@ -106,7 +106,7 @@
           </div>
           <div class="proof-item">
             <span class="proof-value">PR #20</span>
-            <span class="proof-label">Open · CI passed · Ready to merge into Meta FAIR TRIBE v2</span>
+            <span class="proof-label">Submitted to Meta FAIR TRIBE v2 (CLA signed)</span>
           </div>
           <div class="proof-item">
             <span class="proof-value">&lt;30s</span>
@@ -332,7 +332,7 @@
               emotional response intelligence before a trailer ever releases. Three neural
               networks (V-JEPA2, Wav2Vec-BERT, Llama 3.2) feed Meta FAIR's TRIBE v2
               to map vision, audio, and language into 5 emotion channels across 7 brain regions.
-              Live on AWS. PR #20 open · all CI checks signed and passed · ready to merge into Meta FAIR's official repository.
+              Live on AWS. Submitted PR #20 to Meta FAIR's TRIBE v2 — added int8 compute_type fallback for WhisperX on non-CUDA devices. Before the fix: hardcoded float16 caused ValueError on Apple Silicon and CPU-only Linux. After: the full pipeline runs everywhere. CUDA path unchanged, &lt;1% WER degradation on transcription accuracy. CLA signed, checks passing.
             </p>
             <div class="fp-impact-badge">
               <span>20,484 brain vertices/sec</span>
@@ -369,7 +369,7 @@
           </div>
           <div class="fp-case">
             <span class="fp-case-label">Engineering Decisions</span>
-            <p class="fp-case-text">Two-tier deployment: g4dn.xlarge GPU instance ($0.53/hr, Tesla T4 15GB VRAM) spun on-demand for inference only, t3.micro serves 24/7 with pre-computed JSON results at &lt;100ms — keeping monthly cost near $0. 12.89GB across three extractors barely fits in T4 VRAM, requiring careful model loading order. Multi-stage Docker build (Node 18 + Python 3.11-slim) keeps the production image at ~500MB with no ML weights. Submitted PR #20 to Meta FAIR's TRIBE v2 repo to fix an incorrect model initialization example in the official README.</p>
+            <p class="fp-case-text">Two-tier deployment: g4dn.xlarge GPU instance ($0.53/hr, Tesla T4 15GB VRAM) spun on-demand for inference only, t3.micro serves 24/7 with pre-computed JSON results at &lt;100ms — keeping monthly cost near $0. 12.89GB across three extractors barely fits in T4 VRAM, requiring careful model loading order. Multi-stage Docker build (Node 18 + Python 3.11-slim) keeps the production image at ~500MB with no ML weights. Submitted PR #20 to Meta FAIR's TRIBE v2 — added int8 compute_type fallback for WhisperX on non-CUDA devices. Before the fix: hardcoded float16 caused ValueError on Apple Silicon and CPU-only Linux. After: the full pipeline runs everywhere. CUDA path unchanged, &lt;1% WER degradation on transcription accuracy. CLA signed, checks passing.</p>
           </div>
           <div class="fp-case">
             <span class="fp-case-label">Business Value</span>
@@ -911,7 +911,7 @@
     </div>
     <div class="modal-section">
       <h4>Engineering Decisions</h4>
-      <p>Two-tier deployment strategy: a g4dn.xlarge GPU instance (Tesla T4, 15GB VRAM) handles inference on-demand at $0.53/hr, then terminates. A t3.micro serves the React dashboard 24/7 at near-zero cost using pre-computed JSON results (&lt;100ms load time). The three extractors total 12.89GB (V-JEPA2 4.14GB + Wav2Vec-BERT 2.32GB + Llama 3.2 6.43GB) — barely fitting in 15GB VRAM, requiring careful sequential model loading. Multi-stage Docker build (Node 18 + Python 3.11-slim) keeps the production image at ~500MB with no ML weights. Submitted PR #20 to Meta FAIR's official TRIBE v2 repository, fixing an incorrect model initialization example in the README that caused first-run failures.</p>
+      <p>Two-tier deployment strategy: a g4dn.xlarge GPU instance (Tesla T4, 15GB VRAM) handles inference on-demand at $0.53/hr, then terminates. A t3.micro serves the React dashboard 24/7 at near-zero cost using pre-computed JSON results (&lt;100ms load time). The three extractors total 12.89GB (V-JEPA2 4.14GB + Wav2Vec-BERT 2.32GB + Llama 3.2 6.43GB) — barely fitting in 15GB VRAM, requiring careful sequential model loading. Multi-stage Docker build (Node 18 + Python 3.11-slim) keeps the production image at ~500MB with no ML weights. Submitted PR #20 to Meta FAIR's TRIBE v2 — added int8 compute_type fallback for WhisperX on non-CUDA devices. Before the fix: hardcoded float16 caused ValueError on Apple Silicon and CPU-only Linux. After: the full pipeline runs everywhere. CUDA path unchanged, &lt;1% WER degradation on transcription accuracy. CLA signed, checks passing.</p>
     </div>
     <div class="modal-section">
       <h4>Business Value</h4>
@@ -926,7 +926,7 @@
         <li>Pre-computed demo results served in &lt;100ms from disk</li>
         <li>Full 2-minute trailer analysis in ~55 minutes on Tesla T4 GPU</li>
         <li>Monthly hosting cost: ~$0 (t3.micro free tier + on-demand GPU only when needed)</li>
-        <li>PR #20 open · CI signed and passed · ready to merge into Meta FAIR TRIBE v2 — corrects model initialization example</li>
+        <li>PR #20 submitted to Meta FAIR TRIBE v2 — int8 compute_type fallback for WhisperX on non-CUDA devices. CLA signed, checks passing.</li>
       </ul>
     </div>
     <div class="modal-section">
