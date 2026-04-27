@@ -941,6 +941,88 @@
 
 </div><!-- /modal-data -->
 
+<!-- ═══════════════════ CHATBOT ═══════════════════ -->
+<div id="chatbot-wrap">
+  <!-- Proactive greeting bubble -->
+  <div id="chat-greeting" class="chat-greeting" aria-hidden="true">
+    <span id="chat-greeting-text"></span>
+    <button class="chat-greeting-close" aria-label="Dismiss">&times;</button>
+  </div>
+
+  <!-- Unread badge -->
+  <span id="chat-badge" class="chat-badge" aria-hidden="true">1</span>
+
+  <!-- Floating toggle button -->
+  <button id="chat-toggle" class="chat-toggle" aria-label="Open chat assistant">
+    <svg class="chat-icon-open" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+    <svg class="chat-icon-close" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+
+  <!-- Chat window -->
+  <div id="chat-window" class="chat-window" role="dialog" aria-label="Chat with Raj's assistant">
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar">RK</div>
+        <div>
+          <div class="chat-header-name">Raj's Assistant</div>
+          <div class="chat-header-status"><span class="chat-status-dot"></span> Online · replies instantly</div>
+        </div>
+      </div>
+      <div class="chat-header-actions">
+        <button id="chat-sound-toggle" class="chat-header-btn" aria-label="Toggle sound" title="Toggle sound">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path class="sound-on" d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/><line class="sound-off" x1="23" y1="9" x2="17" y2="15" style="display:none"/><line class="sound-off" x1="17" y1="9" x2="23" y2="15" style="display:none"/></svg>
+        </button>
+        <button id="chat-close" class="chat-header-btn" aria-label="Close chat">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ARIA live region for screen readers -->
+    <div id="chat-live" class="sr-only" aria-live="polite" aria-atomic="false"></div>
+
+    <!-- Messages area -->
+    <div id="chat-messages" class="chat-messages" role="log" aria-label="Chat messages"></div>
+
+    <!-- Quick replies -->
+    <div id="chat-quick" class="chat-quick">
+      <button class="chat-quick-btn" data-q="What projects have you built?" data-topic="projects">Projects</button>
+      <button class="chat-quick-btn" data-q="What's your tech stack?" data-topic="stack">Tech Stack</button>
+      <button class="chat-quick-btn" data-q="Are you available for hire?" data-topic="availability">Availability</button>
+      <button class="chat-quick-btn" data-q="How can I contact you?" data-topic="contact">Contact</button>
+      <button class="chat-quick-btn" data-q="Tell me about your experience" data-topic="experience">Experience</button>
+      <button class="chat-quick-btn" data-q="Can I see your resume?" data-topic="resume">Resume</button>
+    </div>
+
+    <!-- Input area -->
+    <div class="chat-input-wrap">
+      <input id="chat-input" type="text" class="chat-input" placeholder="Ask me anything about Raj..." autocomplete="off" maxlength="300" />
+      <button id="chat-send" class="chat-send" aria-label="Send message">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Footer actions -->
+    <div class="chat-footer-actions">
+      <button id="chat-clear" class="chat-footer-btn" title="Clear conversation">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        Clear
+      </button>
+      <button id="chat-email-summary" class="chat-footer-btn" title="Email this conversation">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email Summary
+      </button>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════════════ SCRIPTS ═══════════════════ -->
 <script>
 /* ── Progress bar ─────────────────────────────────────────── */
@@ -1376,6 +1458,923 @@ document.querySelectorAll('.tech-tags, .skill-badges-wrap').forEach(wrap => {
 })();
 
 /* contact form removed — direct email CTA replaces it */
+
+/* ================================================================
+   CHATBOT ENGINE v2 — Full upgrade
+   Multi-turn context · Conversion · Persistence · Analytics · A11y
+   ================================================================ */
+(function () {
+  /* ── DOM refs ── */
+  const chatToggle   = document.getElementById('chat-toggle');
+  const chatWindow   = document.getElementById('chat-window');
+  const chatMessages = document.getElementById('chat-messages');
+  const chatInput    = document.getElementById('chat-input');
+  const chatSend     = document.getElementById('chat-send');
+  const chatClose    = document.getElementById('chat-close');
+  const chatGreeting = document.getElementById('chat-greeting');
+  const greetingText = document.getElementById('chat-greeting-text');
+  const greetingClose= chatGreeting.querySelector('.chat-greeting-close');
+  const chatBadge    = document.getElementById('chat-badge');
+  const chatQuick    = document.getElementById('chat-quick');
+  const soundToggle  = document.getElementById('chat-sound-toggle');
+  const chatLive     = document.getElementById('chat-live');
+  const chatClear    = document.getElementById('chat-clear');
+  const chatEmailSum = document.getElementById('chat-email-summary');
+
+  /* ── State ── */
+  let isOpen = false;
+  let soundOn = false;
+  let history = [];          // full session history
+  let lastProjectKey = null; // multi-turn context tracking
+  let lastTopic = null;      // last discussed topic category
+  let proactiveTimer = null;
+  let hasInteracted = false;
+  let ctaNudged = false;     // CTA escalation flag
+  let messageCount = 0;
+  let lastMsgTimestamp = 0;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── localStorage keys ── */
+  const LS_HISTORY   = 'rk_chat_history';
+  const LS_RETURNING = 'rk_chat_returning';
+  const LS_LAST_PROJ = 'rk_chat_last_proj';
+  const LS_ANALYTICS = 'rk_chat_analytics';
+
+  /* ══════════════════════════════════════
+     KNOWLEDGE BASE
+     ══════════════════════════════════════ */
+  const PROJECTS = {
+    financial: {
+      key: 'financial',
+      title: 'AI Financial Research Agent',
+      desc: 'Deterministic investment decision engine — 7-step LangGraph pipeline, BUY/HOLD/SELL in <30s. Zero LLM hallucination risk.',
+      stack: 'GPT-4o, LangGraph, FastAPI, Redis, Docker, AWS EC2',
+      live: 'https://fintel.rajkumarai.dev/',
+      code: 'https://github.com/Rajkumar2002-Rk/financial-research-agent',
+      section: 'projects',
+      keywords: ['financial', 'finance', 'stock', 'invest', 'agent', 'langgraph', 'buy', 'sell', 'hold', 'trading', 'fintel', 'research agent', 'decision']
+    },
+    cineneuro: {
+      key: 'cineneuro',
+      title: 'CineNeuro — Neural Audience Intelligence',
+      desc: 'Predicts fMRI brain activations (20,484 vertices/sec) for movie trailers using Meta FAIR TRIBE v2. 5 emotion channels across 7 brain regions.',
+      stack: 'Meta TRIBE v2, V-JEPA2, Wav2Vec-BERT, Llama 3.2, FastAPI, React, AWS EC2',
+      live: 'https://cineneuro.rajkumarai.dev/',
+      code: 'https://github.com/Rajkumar2002-Rk/CineNeuro',
+      section: 'projects',
+      keywords: ['cineneuro', 'cine', 'neuro', 'brain', 'fmri', 'movie', 'trailer', 'emotion', 'audience', 'tribe', 'meta', 'fair', 'neuroscience', 'v-jepa', 'wav2vec']
+    },
+    rag: {
+      key: 'rag',
+      title: 'Enterprise RAG Chatbot',
+      desc: '87% retrieval accuracy with MMR retrieval, hallucination guardrails, and rule-based query classifier. Dual interface: Streamlit + FastAPI.',
+      stack: 'LangChain, ChromaDB, GPT-4, FastAPI, Streamlit, Docker, AWS EC2',
+      live: 'https://chatbot.rajkumarai.dev',
+      code: 'https://github.com/Rajkumar2002-Rk/rag-chatbot',
+      section: 'projects',
+      keywords: ['rag', 'chatbot', 'retrieval', 'enterprise', 'langchain', 'chroma', 'chromadb', 'mmr', 'document', 'pdf']
+    },
+    forecasting: {
+      key: 'forecasting',
+      title: 'AWS Retail Sales Forecasting',
+      desc: 'LSTM + Prophet ensemble — 4.2% RMSE, 18% better than baselines. Automated weekly SageMaker retraining.',
+      stack: 'LSTM, Prophet, SageMaker, S3, PyTorch',
+      code: 'https://github.com/Rajkumar2002-Rk/aws-sales-forecasting',
+      section: 'projects',
+      keywords: ['forecast', 'sales', 'retail', 'lstm', 'prophet', 'sagemaker', 'prediction', 'time series']
+    },
+    churn: {
+      key: 'churn',
+      title: 'Customer Churn Prediction',
+      desc: '91% accuracy, 89% F1. XGBoost + SHAP explainability + AWS Comprehend NLP sentiment from 7k+ tickets.',
+      stack: 'XGBoost, SHAP, SageMaker, Lambda, CloudWatch, MLflow',
+      code: 'https://github.com/Rajkumar2002-Rk/Customer_Chrun_Prediction',
+      section: 'projects',
+      keywords: ['churn', 'customer', 'xgboost', 'shap', 'retention', 'telecom', 'classification']
+    },
+    fraud: {
+      key: 'fraud',
+      title: 'Insurance Fraud Detection',
+      desc: '96.7% accuracy on 50k+ claims. YOLOv8 + ResNet-50 pipeline with real-time Kinesis ingestion.',
+      stack: 'YOLOv8, ResNet-50, PyTorch, FastAPI, AWS Kinesis, Lambda, RDS',
+      code: 'https://github.com/Rajkumar2002-Rk',
+      section: 'projects',
+      keywords: ['fraud', 'insurance', 'yolo', 'resnet', 'detection', 'computer vision', 'claim', 'vehicle']
+    }
+  };
+
+  const SKILLS_DATA = {
+    'AI/ML': 'PyTorch, TensorFlow, Scikit-learn, XGBoost, LightGBM, YOLOv8, ResNet, LSTM, Transformers, Prophet, SHAP, LIME',
+    'LLM & Data': 'GPT-4o, LangChain, LangGraph, ChromaDB, FAISS, RAG Pipelines, Pandas, NumPy, SQL, PostgreSQL, OpenCV',
+    'Cloud & Infra': 'AWS EC2, S3, SageMaker, Lambda, Kinesis, RDS, CloudWatch, Docker, FastAPI, Redis, Nginx, GitHub Actions',
+    'MLOps': 'MLflow, Weights & Biases, Streamlit, Jupyter'
+  };
+
+  /* ── Synonym clusters — map variations to canonical terms ── */
+  const SYNONYMS = {
+    'machine learning': 'ml', 'artificial intelligence': 'ai', 'deep learning': 'dl',
+    'ml': 'ml', 'ai': 'ai', 'dl': 'dl',
+    'deployed': 'production', 'shipped': 'production', 'live': 'production', 'production': 'production',
+    'natural language processing': 'nlp', 'nlp': 'nlp',
+    'cv': 'computer vision', 'computer vision': 'computer vision',
+    'neural network': 'nn', 'neural net': 'nn', 'nn': 'nn',
+  };
+
+  function expandSynonyms(text) {
+    let expanded = text.toLowerCase();
+    for (const [term, canonical] of Object.entries(SYNONYMS)) {
+      if (expanded.includes(term)) expanded += ' ' + canonical;
+    }
+    return expanded;
+  }
+
+  /* ══════════════════════════════════════
+     FUZZY MATCHING
+     ══════════════════════════════════════ */
+  function levenshtein(a, b) {
+    const m = a.length, n = b.length;
+    const dp = Array.from({length: m + 1}, () => Array(n + 1).fill(0));
+    for (let i = 0; i <= m; i++) dp[i][0] = i;
+    for (let j = 0; j <= n; j++) dp[0][j] = j;
+    for (let i = 1; i <= m; i++)
+      for (let j = 1; j <= n; j++)
+        dp[i][j] = a[i-1] === b[j-1] ? dp[i-1][j-1] : 1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]);
+    return dp[m][n];
+  }
+
+  function fuzzyMatch(input, keyword) {
+    input = input.toLowerCase();
+    keyword = keyword.toLowerCase();
+    if (input.includes(keyword) || keyword.includes(input)) return true;
+    // Check each word in input against keyword
+    const words = input.split(/\s+/);
+    for (const w of words) {
+      if (w.length > 3 && keyword.length > 3) {
+        const maxDist = Math.floor(Math.min(w.length, keyword.length) * 0.3);
+        if (levenshtein(w, keyword) <= maxDist) return true;
+      }
+    }
+    return false;
+  }
+
+  function findProject(input) {
+    const expanded = expandSynonyms(input);
+    let best = null, bestScore = 0;
+    for (const [key, proj] of Object.entries(PROJECTS)) {
+      for (const kw of proj.keywords) {
+        if (fuzzyMatch(expanded, kw)) {
+          const score = kw.length;
+          if (score > bestScore) { bestScore = score; best = key; }
+        }
+      }
+    }
+    return best;
+  }
+
+  /* ══════════════════════════════════════
+     MULTI-TURN CONTEXT ENGINE
+     ══════════════════════════════════════ */
+  function resolvePronouns(input) {
+    const lower = input.toLowerCase();
+    // Check for pronoun references to last project
+    const pronounPatterns = /\b(that|this|it|this one|that one|the same|that project|this project|its|about it)\b/;
+    if (pronounPatterns.test(lower) && lastProjectKey) {
+      return lastProjectKey;
+    }
+    // "what stack" / "what tech" / "how does it work" after a project discussion
+    if (/\b(stack|tech|how.*(work|built|made)|architecture|more)\b/.test(lower) && lastProjectKey && lower.split(/\s+/).length <= 6) {
+      return lastProjectKey;
+    }
+    return null;
+  }
+
+  /* ══════════════════════════════════════
+     ANALYTICS
+     ══════════════════════════════════════ */
+  function getAnalytics() {
+    try { return JSON.parse(localStorage.getItem(LS_ANALYTICS)) || {}; } catch(e) { return {}; }
+  }
+  function trackTopic(topic) {
+    const a = getAnalytics();
+    a[topic] = (a[topic] || 0) + 1;
+    a._depth = (a._depth || 0) + 1;
+    try { localStorage.setItem(LS_ANALYTICS, JSON.stringify(a)); } catch(e) {}
+    updateTrendingBadge();
+  }
+  function updateTrendingBadge() {
+    const a = getAnalytics();
+    let maxTopic = null, maxCount = 0;
+    for (const [k, v] of Object.entries(a)) {
+      if (k.startsWith('_')) continue;
+      if (v > maxCount) { maxCount = v; maxTopic = k; }
+    }
+    // Add trending badge to the matching quick reply
+    document.querySelectorAll('.chat-quick-btn').forEach(btn => {
+      btn.classList.remove('trending');
+      const existingBadge = btn.querySelector('.trending-dot');
+      if (existingBadge) existingBadge.remove();
+    });
+    if (maxTopic && maxCount >= 2) {
+      const btn = document.querySelector(`.chat-quick-btn[data-topic="${maxTopic}"]`);
+      if (btn) {
+        btn.classList.add('trending');
+        const dot = document.createElement('span');
+        dot.className = 'trending-dot';
+        dot.title = 'Popular topic';
+        btn.appendChild(dot);
+      }
+    }
+  }
+
+  /* ══════════════════════════════════════
+     AUDIO
+     ══════════════════════════════════════ */
+  function playPing() {
+    if (!soundOn) return;
+    try {
+      const ac = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = ac.createOscillator();
+      const gain = ac.createGain();
+      osc.type = 'sine'; osc.frequency.value = 880; gain.gain.value = 0.08;
+      osc.connect(gain); gain.connect(ac.destination);
+      osc.start();
+      gain.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.15);
+      osc.stop(ac.currentTime + 0.15);
+    } catch(e) {}
+  }
+
+  /* ══════════════════════════════════════
+     TIMESTAMPS
+     ══════════════════════════════════════ */
+  function timeAgo(ts) {
+    const diff = Math.floor((Date.now() - ts) / 1000);
+    if (diff < 10) return 'just now';
+    if (diff < 60) return diff + 's ago';
+    if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
+    return Math.floor(diff / 3600) + 'h ago';
+  }
+
+  // Update visible timestamps every 30s
+  setInterval(() => {
+    document.querySelectorAll('.chat-ts').forEach(el => {
+      const ts = parseInt(el.dataset.ts);
+      if (ts) el.textContent = timeAgo(ts);
+    });
+  }, 30000);
+
+  /* ══════════════════════════════════════
+     PERSISTENCE (localStorage)
+     ══════════════════════════════════════ */
+  function saveHistory() {
+    try {
+      const data = { history, lastProjectKey, messageCount };
+      localStorage.setItem(LS_HISTORY, JSON.stringify(data));
+    } catch(e) {}
+  }
+
+  function loadHistory() {
+    try {
+      const raw = localStorage.getItem(LS_HISTORY);
+      if (!raw) return false;
+      const data = JSON.parse(raw);
+      if (!data.history || !data.history.length) return false;
+      history = data.history;
+      lastProjectKey = data.lastProjectKey || null;
+      messageCount = data.messageCount || 0;
+      // Render saved messages
+      history.forEach((msg, i) => {
+        const isGrouped = i > 0 && history[i-1].role === msg.role && msg.role === 'bot';
+        renderMessage(msg.role, msg.html || msg.text, msg.ts, msg.card, null, isGrouped, true);
+      });
+      hasInteracted = true;
+      return true;
+    } catch(e) { return false; }
+  }
+
+  function clearHistory() {
+    history = [];
+    lastProjectKey = null;
+    lastTopic = null;
+    messageCount = 0;
+    ctaNudged = false;
+    chatMessages.innerHTML = '';
+    try { localStorage.removeItem(LS_HISTORY); } catch(e) {}
+    // Re-show welcome
+    hasInteracted = false;
+    addWelcomeMessage();
+  }
+
+  /* ══════════════════════════════════════
+     RETURN VISITOR DETECTION
+     ══════════════════════════════════════ */
+  function isReturningVisitor() {
+    try { return localStorage.getItem(LS_RETURNING) === '1'; } catch(e) { return false; }
+  }
+  function markVisitor() {
+    try { localStorage.setItem(LS_RETURNING, '1'); } catch(e) {}
+  }
+  function getLastProject() {
+    try { return localStorage.getItem(LS_LAST_PROJ); } catch(e) { return null; }
+  }
+  function saveLastProject(key) {
+    try { localStorage.setItem(LS_LAST_PROJ, key); } catch(e) {}
+  }
+
+  /* ══════════════════════════════════════
+     GREETING & WELCOME
+     ══════════════════════════════════════ */
+  function getTimeWord() {
+    const h = new Date().getHours();
+    if (h < 12) return 'Good morning';
+    if (h < 17) return 'Good afternoon';
+    if (h < 21) return 'Good evening';
+    return 'Hey there';
+  }
+
+  function getGreeting() {
+    if (isReturningVisitor()) return 'Welcome back! 👋 Pick up where you left off?';
+    return getTimeWord() + '! 👋 I can help you learn about Raj\'s work.';
+  }
+
+  function addWelcomeMessage() {
+    hasInteracted = true;
+    const returning = isReturningVisitor();
+    const lastProj = getLastProject();
+
+    if (returning && lastProj && PROJECTS[lastProj]) {
+      const p = PROJECTS[lastProj];
+      const name = p.title.split('—')[0].trim();
+      addBotMessage(
+        `Welcome back! Last time you were looking at <strong>${name}</strong>. Want to continue, or explore something new?`,
+        [`More about ${name}`, 'Show all projects', 'What\'s new?']
+      );
+    } else {
+      addBotMessage(
+        `${getTimeWord()}! I'm Raj's portfolio assistant. I know everything about his projects, skills, and experience. Ask me anything, or pick a topic below!`
+      );
+    }
+    markVisitor();
+  }
+
+  /* ── Show greeting bubble after 3s ── */
+  setTimeout(() => {
+    if (isOpen) return;
+    greetingText.textContent = getGreeting();
+    chatGreeting.classList.add('visible');
+    chatBadge.classList.add('visible');
+  }, 3000);
+
+  greetingClose.addEventListener('click', (e) => {
+    e.stopPropagation();
+    chatGreeting.classList.remove('visible');
+    chatBadge.classList.remove('visible');
+  });
+
+  /* ══════════════════════════════════════
+     OPEN / CLOSE
+     ══════════════════════════════════════ */
+  function openChat() {
+    isOpen = true;
+    chatToggle.classList.add('open');
+    chatWindow.classList.add('open');
+    chatGreeting.classList.remove('visible');
+    chatBadge.classList.remove('visible');
+
+    // Staggered quick reply entrance
+    const quickBtns = chatQuick.querySelectorAll('.chat-quick-btn');
+    quickBtns.forEach((btn, i) => {
+      btn.style.opacity = '0';
+      btn.style.transform = 'translateY(8px)';
+      const delay = prefersReducedMotion ? 0 : 60 * i;
+      setTimeout(() => {
+        btn.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        btn.style.opacity = '1';
+        btn.style.transform = 'translateY(0)';
+      }, 150 + delay);
+    });
+
+    chatInput.focus();
+    trapFocus(true);
+
+    if (!hasInteracted) {
+      // Check for persisted history first
+      const restored = loadHistory();
+      if (!restored) addWelcomeMessage();
+      else hasInteracted = true;
+    }
+    startProactiveTimer();
+    updateTrendingBadge();
+  }
+
+  function closeChat() {
+    isOpen = false;
+    chatToggle.classList.remove('open');
+    chatWindow.classList.remove('open');
+    stopProactiveTimer();
+    trapFocus(false);
+    // Reset exit intent so it can fire again on next leave
+    exitIntentFired = false;
+  }
+
+  chatToggle.addEventListener('click', () => { isOpen ? closeChat() : openChat(); });
+  chatClose.addEventListener('click', closeChat);
+
+  /* ══════════════════════════════════════
+     FOCUS TRAP (Accessibility)
+     ══════════════════════════════════════ */
+  const FOCUSABLE = 'button, input, a, [tabindex]:not([tabindex="-1"])';
+  let focusTrapActive = false;
+
+  function trapFocus(enable) {
+    focusTrapActive = enable;
+  }
+
+  chatWindow.addEventListener('keydown', (e) => {
+    if (!focusTrapActive || e.key !== 'Tab') return;
+    const focusable = Array.from(chatWindow.querySelectorAll(FOCUSABLE)).filter(el => !el.disabled && el.offsetParent !== null);
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault(); last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault(); first.focus();
+    }
+  });
+
+  /* ── Keyboard shortcuts ── */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen) closeChat();
+  });
+  chatInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && chatInput.value.trim()) sendMessage();
+  });
+
+  /* ── Sound toggle ── */
+  soundToggle.addEventListener('click', () => {
+    soundOn = !soundOn;
+    soundToggle.classList.toggle('sound-off', !soundOn);
+  });
+
+  /* ══════════════════════════════════════
+     MESSAGE RENDERING
+     ══════════════════════════════════════ */
+  function renderMessage(role, html, ts, card, followups, isGrouped, skipAnimation) {
+    const wrap = document.createElement('div');
+    wrap.className = `chat-msg-wrap ${role}${isGrouped ? ' grouped' : ''}`;
+    if (!skipAnimation && !prefersReducedMotion) {
+      wrap.style.opacity = '0';
+      wrap.style.transform = 'translateY(12px)';
+      wrap.style.animation = 'chatMsgIn 0.35s ease forwards';
+    }
+
+    const bubble = document.createElement('div');
+    bubble.className = `chat-msg ${role}`;
+    bubble.innerHTML = html;
+
+    // Copy button for bot messages
+    if (role === 'bot') {
+      const copyBtn = document.createElement('button');
+      copyBtn.className = 'chat-copy-btn';
+      copyBtn.innerHTML = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+      copyBtn.title = 'Copy message';
+      copyBtn.addEventListener('click', () => {
+        const text = bubble.innerText.replace(/Copy message|📋 Copied!/g, '').trim();
+        navigator.clipboard.writeText(text).then(() => {
+          copyBtn.innerHTML = '📋';
+          setTimeout(() => {
+            copyBtn.innerHTML = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+          }, 1500);
+        });
+      });
+      bubble.appendChild(copyBtn);
+    }
+
+    // Rich project card
+    if (card) {
+      const cardEl = document.createElement('div');
+      cardEl.className = 'chat-project-card';
+      cardEl.innerHTML = `
+        <h4>${card.title}</h4>
+        <p>${card.desc}</p>
+        <div class="chat-card-links">
+          ${card.live ? `<a href="${card.live}" target="_blank" class="chat-card-link live">View Live ↗</a>` : ''}
+          ${card.code ? `<a href="${card.code}" target="_blank" class="chat-card-link code">GitHub ↗</a>` : ''}
+          ${card.section ? `<button class="chat-card-link scroll-link" data-section="${card.section}">Show on page ↓</button>` : ''}
+        </div>
+      `;
+      bubble.appendChild(cardEl);
+    }
+
+    // Follow-up chips
+    if (followups && followups.length) {
+      const fWrap = document.createElement('div');
+      fWrap.className = 'chat-followups';
+      followups.forEach((f, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'chat-followup-btn';
+        btn.textContent = f;
+        if (!skipAnimation && !prefersReducedMotion) {
+          btn.style.opacity = '0';
+          btn.style.transform = 'translateY(6px)';
+          setTimeout(() => {
+            btn.style.transition = 'opacity 0.25s ease, transform 0.25s ease, background 0.2s, color 0.2s';
+            btn.style.opacity = '1';
+            btn.style.transform = 'translateY(0)';
+          }, 200 + i * 80);
+        }
+        btn.addEventListener('click', () => {
+          chatInput.value = f;
+          sendMessage();
+        });
+        fWrap.appendChild(btn);
+      });
+      bubble.appendChild(fWrap);
+    }
+
+    wrap.appendChild(bubble);
+
+    // Timestamp
+    const tsEl = document.createElement('div');
+    tsEl.className = `chat-ts ${role}`;
+    tsEl.dataset.ts = ts || Date.now();
+    tsEl.textContent = timeAgo(ts || Date.now());
+    wrap.appendChild(tsEl);
+
+    chatMessages.appendChild(wrap);
+    scrollToBottom();
+
+    // ARIA announcement
+    if (role === 'bot' && chatLive) {
+      chatLive.textContent = bubble.innerText.substring(0, 200);
+    }
+  }
+
+  function addUserMessage(text) {
+    const ts = Date.now();
+    const isGrouped = history.length > 0 && history[history.length - 1].role === 'user';
+    renderMessage('user', escapeHtml(text), ts, null, null, isGrouped);
+    history.push({ role: 'user', text, ts });
+    saveHistory();
+  }
+
+  function addBotMessage(html, followups, card) {
+    const ts = Date.now();
+    const isGrouped = history.length > 0 && history[history.length - 1].role === 'bot';
+    renderMessage('bot', html, ts, card, followups, isGrouped);
+    history.push({ role: 'bot', html, ts, card: card || null });
+    lastMsgTimestamp = ts;
+    saveHistory();
+    playPing();
+
+    // CTA escalation — after 3+ user messages, nudge once
+    const userMsgCount = history.filter(m => m.role === 'user').length;
+    if (userMsgCount >= 3 && !ctaNudged) {
+      ctaNudged = true;
+      setTimeout(() => {
+        addBotMessage("By the way — Raj responds within 24 hours if you want to <a href='mailto:rajkumarn2002@gmail.com'>reach out directly</a>. Just saying! 😊");
+      }, 1200);
+    }
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  /* ── Scroll-to-section handler (delegated) ── */
+  chatMessages.addEventListener('click', (e) => {
+    const scrollBtn = e.target.closest('.scroll-link');
+    if (!scrollBtn) return;
+    const sectionId = scrollBtn.dataset.section;
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Brief highlight
+      section.style.boxShadow = '0 0 0 2px var(--accent)';
+      setTimeout(() => { section.style.boxShadow = ''; }, 2000);
+    }
+  });
+
+  /* ── Typing indicator with avatar pulse ── */
+  function showTyping(callback) {
+    const avatar = chatWindow.querySelector('.chat-avatar');
+    if (avatar) avatar.classList.add('thinking');
+
+    const typing = document.createElement('div');
+    typing.className = 'chat-typing';
+    typing.innerHTML = '<span></span><span></span><span></span>';
+    chatMessages.appendChild(typing);
+    scrollToBottom();
+    const delay = prefersReducedMotion ? 200 : (600 + Math.random() * 600);
+    setTimeout(() => {
+      typing.remove();
+      if (avatar) avatar.classList.remove('thinking');
+      callback();
+    }, delay);
+  }
+
+  function scrollToBottom() {
+    requestAnimationFrame(() => { chatMessages.scrollTop = chatMessages.scrollHeight; });
+  }
+
+  /* ══════════════════════════════════════
+     SEND MESSAGE
+     ══════════════════════════════════════ */
+  chatSend.addEventListener('click', () => { if (chatInput.value.trim()) sendMessage(); });
+
+  function sendMessage() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+    addUserMessage(text);
+    chatInput.value = '';
+    messageCount++;
+    showTyping(() => {
+      const response = getResponse(text);
+      if (response.topic) trackTopic(response.topic);
+      addBotMessage(response.text, response.followups, response.card);
+    });
+  }
+
+  /* ── Quick replies ── */
+  chatQuick.addEventListener('click', (e) => {
+    const btn = e.target.closest('.chat-quick-btn');
+    if (!btn) return;
+    const q = btn.dataset.q;
+    if (!isOpen) openChat();
+    setTimeout(() => { chatInput.value = q; sendMessage(); }, 100);
+  });
+
+  /* ── Clear chat ── */
+  chatClear.addEventListener('click', clearHistory);
+
+  /* ── Email summary ── */
+  chatEmailSum.addEventListener('click', () => {
+    if (!history.length) return;
+    let body = 'Chat Summary — rajkumarai.dev\n\n';
+    history.forEach(m => {
+      const who = m.role === 'user' ? 'You' : 'Assistant';
+      // Strip HTML tags for plain text
+      const text = (m.html || m.text || '').replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, ' ').trim();
+      if (text) body += `${who}: ${text}\n\n`;
+    });
+    body += '---\nGenerated from rajkumarai.dev portfolio chatbot';
+    const mailto = `mailto:?subject=${encodeURIComponent('Chat with Raj Kumar\'s Portfolio')}&body=${encodeURIComponent(body)}`;
+    window.open(mailto, '_self');
+  });
+
+  /* ══════════════════════════════════════
+     EXIT INTENT DETECTION
+     ══════════════════════════════════════ */
+  let exitIntentFired = false;
+
+  // mouseleave on documentElement fires ONLY when cursor truly leaves the page
+  document.documentElement.addEventListener('mouseleave', (e) => {
+    if (exitIntentFired) return;
+    // Only trigger when mouse exits through the top (toward tab bar / address bar)
+    if (e.clientY <= 0) {
+      exitIntentFired = true;
+      if (isOpen) {
+        // Chat is open — inject a message directly
+        addBotMessage("Looks like you're heading out — want to grab Raj's resume before you go?<br><a href='Raj_Kumar_Nelluri_AI:ML_Engineer_Resume.pdf' download class='chat-resume-btn'><svg viewBox='0 0 24 24' width='14' height='14' fill='none' stroke='currentColor' stroke-width='2'><path d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/><polyline points='7 10 12 15 17 10'/><line x1='12' y1='15' x2='12' y2='3'/></svg> Download Resume (PDF)</a>");
+      } else {
+        // Chat is closed — show the greeting bubble
+        greetingText.textContent = "Before you go — want Raj's resume? 📄";
+        chatGreeting.classList.add('visible');
+        chatBadge.classList.add('visible');
+      }
+    }
+  });
+
+  /* ══════════════════════════════════════
+     SECTION-AWARE PROACTIVE MESSAGES
+     ══════════════════════════════════════ */
+  const proactiveMessages = {
+    projects: "I see you're checking out the projects! Want me to break down any of them?",
+    trust:    "Those metrics are all from production systems. Want the details behind any of them?",
+    about:    "Want to know more about Raj's background or education?",
+    skills:   "Curious about any specific skill or tool? I can give you context on how Raj uses it.",
+    contact:  "Ready to reach out? I can give you Raj's email or LinkedIn right here!"
+  };
+  let lastProactiveSection = '';
+
+  function startProactiveTimer() {
+    stopProactiveTimer();
+    proactiveTimer = setInterval(() => {
+      if (!isOpen) return;
+      const section = document.body.getAttribute('data-section');
+      if (section && section !== 'hero' && section !== lastProactiveSection && proactiveMessages[section]) {
+        const lastMsg = history[history.length - 1];
+        if (!lastMsg || (Date.now() - lastMsgTimestamp) > 15000) {
+          lastProactiveSection = section;
+          addBotMessage(proactiveMessages[section]);
+        }
+      }
+    }, 20000);
+  }
+
+  function stopProactiveTimer() {
+    if (proactiveTimer) { clearInterval(proactiveTimer); proactiveTimer = null; }
+  }
+
+  /* ══════════════════════════════════════
+     RESPONSE ENGINE v2
+     Multi-turn · Disambiguation · Synonyms
+     ══════════════════════════════════════ */
+  function getResponse(input) {
+    const lower = input.toLowerCase().trim();
+    const expanded = expandSynonyms(lower);
+    const words = lower.split(/\s+/);
+
+    /* ── Multi-turn pronoun resolution ── */
+    const pronounRef = resolvePronouns(lower);
+    if (pronounRef && PROJECTS[pronounRef]) {
+      const proj = PROJECTS[pronounRef];
+      lastProjectKey = pronounRef;
+      saveLastProject(pronounRef);
+
+      // Determine what they're asking about the referenced project
+      if (/\b(stack|tech|built with|tools?|language)\b/.test(lower)) {
+        return { text: `<strong>${proj.title}</strong> is built with:<br><br><strong>${proj.stack}</strong>`, followups: ['See it live', 'More projects'], topic: 'stack' };
+      }
+      if (/\b(live|demo|try|see|link|url|visit)\b/.test(lower)) {
+        const links = [];
+        if (proj.live) links.push(`🔗 <a href="${proj.live}" target="_blank">Live demo</a>`);
+        if (proj.code) links.push(`💻 <a href="${proj.code}" target="_blank">GitHub repo</a>`);
+        return { text: `Here are the links for <strong>${proj.title}</strong>:<br><br>${links.join('<br>')}`, topic: 'projects' };
+      }
+      if (/\b(how|work|explain|detail|more|tell me more|about)\b/.test(lower)) {
+        let text = `<strong>${proj.title}</strong><br><br>${proj.desc}<br><br><strong>Stack:</strong> ${proj.stack}`;
+        return { text, followups: ['See it live', 'What\'s his tech stack?'], card: { title: proj.title, desc: proj.desc, live: proj.live, code: proj.code, section: proj.section }, topic: 'projects' };
+      }
+      // Generic reference
+      let text = `<strong>${proj.title}</strong><br><br>${proj.desc}<br><br><strong>Stack:</strong> ${proj.stack}`;
+      return { text, followups: ['See it live', 'Show on page'], card: { title: proj.title, desc: proj.desc, live: proj.live, code: proj.code, section: proj.section }, topic: 'projects' };
+    }
+
+    /* ── Disambiguation ── */
+    if (/\bagent\b/.test(lower) && !/financial|research|llm/i.test(lower) && words.length <= 4) {
+      return { text: "When you say <strong>agent</strong>, do you mean:", followups: ['Financial Research Agent', 'LLM agent experience in general'] };
+    }
+
+    /* ── Easter eggs ── */
+    if (/\b(joke|funny|laugh)\b/.test(lower)) {
+      const jokes = [
+        "Why do ML engineers prefer dark mode? Because light attracts too many bugs! 😄",
+        "Why did the neural network go to therapy? Too many deep issues! 😄",
+        "What's a data scientist's favourite music? Heavy metal... I mean, heavy model ensembles. 😄"
+      ];
+      return { text: jokes[Math.floor(Math.random() * jokes.length)] + " But seriously, want to hear about Raj's actual work?", followups: ['Tell me about projects', 'What\'s his tech stack?'], topic: 'fun' };
+    }
+    if (/\b(are you (ai|real|human|bot|robot))\b/.test(lower) || lower === 'who are you') {
+      return { text: "I'm a knowledge-base assistant built right into this portfolio — no API calls, no latency, no hallucinations. Zero external dependencies. I know everything about Raj's work. What would you like to know?", followups: ['Projects', 'Skills', 'Experience'], topic: 'fun' };
+    }
+    if (/\bhire raj\b/.test(lower) || /\bhiring\b/.test(lower)) {
+      return { text: "Great call! 🎯 Raj is actively looking for full-time AI/ML engineering roles. He replies within 24 hours.<br><br>📧 <a href='mailto:rajkumarn2002@gmail.com'>rajkumarn2002@gmail.com</a><br>🔗 <a href='https://www.linkedin.com/in/raj-kumar-nelluri-351389393/' target='_blank'>LinkedIn</a>", followups: ['See his resume', 'What projects has he built?'], topic: 'contact' };
+    }
+    if (/\b(hello|hi|hey|sup|yo|hola|namaste)\b/.test(lower) && words.length <= 3) {
+      return { text: `Hey! ${getTimeWord()}! 👋 I'm here to answer anything about Raj — projects, skills, experience, or how to get in touch. What are you curious about?`, followups: ['Projects', 'Tech Stack', 'Availability'] };
+    }
+    if (/\b(thanks?|thank you|thx|ty)\b/.test(lower)) {
+      return { text: "You're welcome! Let me know if there's anything else you'd like to know about Raj's work. 🙌" };
+    }
+    if (/\b(bye|goodbye|see ya|later)\b/.test(lower)) {
+      return { text: "Thanks for stopping by! If you want to reach Raj directly — <a href='mailto:rajkumarn2002@gmail.com'>rajkumarn2002@gmail.com</a>. He replies within 24 hours. 👋" };
+    }
+    if (/\b(cool|awesome|nice|impressive|wow|great|amazing|insane)\b/.test(lower) && words.length <= 5) {
+      // Sentiment-aware — ride the momentum
+      if (lastProjectKey && PROJECTS[lastProjectKey]) {
+        const p = PROJECTS[lastProjectKey];
+        const links = [];
+        if (p.live) links.push(`<a href="${p.live}" target="_blank">try it live</a>`);
+        return { text: `Glad you think so! ${links.length ? 'Want to ' + links[0] + '?' : 'Want to explore more?'}`, followups: ['See it live', 'Show all projects', 'Contact Raj'] };
+      }
+      return { text: "Thanks! Want to dive deeper into any of Raj's projects or skills?", followups: ['Tell me about CineNeuro', 'Financial Agent details', 'RAG Chatbot'] };
+    }
+    if (/\b(what'?s new|update|latest|recent)\b/.test(lower)) {
+      return { text: "The latest addition is <strong>CineNeuro</strong> — brain encoding AI using Meta FAIR's TRIBE v2. Plus Raj just submitted PR #20 to Meta FAIR's official repo. Want to hear more?", followups: ['CineNeuro details', 'Tell me about the PR', 'All projects'], topic: 'projects' };
+    }
+
+    /* ── Projects (general) ── */
+    if (/\b(project|work|built|portfolio|showcase|show.*(all|everything)|what (have|has) (you|he|raj))\b/.test(lower) && !findProject(input)) {
+      let text = "Raj has built <strong>6 production-grade AI systems</strong>, 3 of which are live on AWS right now:<br><br>";
+      text += "🔹 <strong>AI Financial Research Agent</strong> — BUY/HOLD/SELL in <30s<br>";
+      text += "🔹 <strong>CineNeuro</strong> — Brain encoding for movie trailers (Meta FAIR TRIBE v2)<br>";
+      text += "🔹 <strong>Enterprise RAG Chatbot</strong> — 87% retrieval accuracy<br>";
+      text += "🔹 <strong>Retail Sales Forecasting</strong> — 4.2% RMSE on AWS SageMaker<br>";
+      text += "🔹 <strong>Customer Churn Prediction</strong> — 91% accuracy with SHAP<br>";
+      text += "🔹 <strong>Insurance Fraud Detection</strong> — 96.7% on 50k+ claims";
+      return { text, followups: ['Financial Agent details', 'Tell me about CineNeuro', 'RAG Chatbot details'], topic: 'projects' };
+    }
+
+    /* ── Specific project match ── */
+    const projKey = findProject(input);
+    if (projKey) {
+      const proj = PROJECTS[projKey];
+      lastProjectKey = projKey;
+      lastTopic = 'projects';
+      saveLastProject(projKey);
+
+      let text = `<strong>${proj.title}</strong><br><br>${proj.desc}<br><br><strong>Stack:</strong> ${proj.stack}`;
+      // Session memory — returning to a project
+      const prevMention = history.some(m => m.text && m.text.toLowerCase().includes(projKey));
+      if (prevMention && history.length > 4) {
+        text = `Coming back to this one! ` + text;
+      }
+      const followups = [];
+      const others = Object.values(PROJECTS).filter(p => p.key !== projKey).slice(0, 2);
+      others.forEach(p => followups.push(`Tell me about ${p.title.split('—')[0].trim().split(' ').slice(0,3).join(' ')}`));
+      followups.push('What\'s his tech stack?');
+      return { text, followups, card: { title: proj.title, desc: proj.desc, live: proj.live, code: proj.code, section: proj.section }, topic: 'projects' };
+    }
+
+    /* ── Tech stack / skills ── */
+    if (/\b(stack|skill|tech|tool|language|framework|what (do|does) (you|he|raj) (use|know|work))\b/.test(lower)) {
+      lastTopic = 'stack';
+      let text = "Here's Raj's full stack:<br><br>";
+      for (const [cat, skills] of Object.entries(SKILLS_DATA)) {
+        text += `<strong>${cat}:</strong> ${skills}<br><br>`;
+      }
+      text += "Every tool listed here is one he's used in a production deployment — not just tutorials.";
+      return { text, followups: ['Tell me about his projects', 'AWS experience?', 'LLM experience?'], topic: 'stack' };
+    }
+
+    /* ── Specific tech queries ── */
+    if (/\b(aws|cloud|deploy|infrastructure|ec2|s3|sagemaker|lambda)\b/.test(lower)) {
+      return { text: "Raj has <strong>3 live deployments on AWS</strong> (EC2, Nginx, Docker Compose) plus SageMaker training pipelines, Lambda ETL, Kinesis streaming, S3 storage, CloudWatch monitoring, and RDS databases. He's also AWS Certified Cloud Practitioner (CCP).", followups: ['Financial Agent (AWS)', 'CineNeuro (AWS)', 'RAG Chatbot (AWS)'], topic: 'stack' };
+    }
+    if (/\b(llm|gpt|openai|langchain|langgraph|rag|retrieval|large language|prompt)\b/.test(expanded)) {
+      return { text: "Raj specializes in <strong>production LLM systems</strong>:<br><br>🔹 <strong>LangGraph agents</strong> — deterministic multi-step pipelines (Financial Agent)<br>🔹 <strong>RAG pipelines</strong> — MMR retrieval, hallucination guardrails (Enterprise Chatbot)<br>🔹 <strong>Brain encoding</strong> — Llama 3.2 embeddings for neural predictions (CineNeuro)<br><br>Key principle: GPT explains decisions but never makes them. All decision logic is deterministic and auditable.", followups: ['Financial Agent details', 'RAG Chatbot details', 'CineNeuro details'], topic: 'stack' };
+    }
+    if (/\b(python|pytorch|tensorflow|docker|fastapi|redis)\b/.test(lower)) {
+      const tech = words.find(w => /^(python|pytorch|tensorflow|docker|fastapi|redis)$/i.test(w));
+      return { text: `Yes, Raj uses <strong>${tech}</strong> in production. It's part of his core stack across multiple deployed systems. Want me to show you a specific project where he uses it?`, followups: ['Show me projects', 'Full tech stack'], topic: 'stack' };
+    }
+    if (/\b(computer vision|cv|yolo|resnet|object detect|image)\b/.test(expanded)) {
+      lastProjectKey = 'fraud';
+      return { text: "Raj built an <strong>Insurance Fraud Detection</strong> system using YOLOv8 + ResNet-50 — 96.7% accuracy across 50k+ claim images, with real-time Kinesis ingestion and 50ms inference latency via FastAPI.", followups: ['Fraud Detection details', 'Other projects'], card: { title: PROJECTS.fraud.title, desc: PROJECTS.fraud.desc, code: PROJECTS.fraud.code, section: 'projects' }, topic: 'projects' };
+    }
+
+    /* ── Experience / background ── */
+    if (/\b(experience|background|education|degree|university|college|certif|qualification|school|study|studied)\b/.test(lower)) {
+      return { text: "<strong>Education:</strong><br>🎓 MS in Computer Science — Pace University, NYC<br>🎓 B.Tech in AI — Amrita Vishwa Vidyapeetham<br><br><strong>Certification:</strong><br>☁️ AWS Certified Cloud Practitioner (CCP)<br><br><strong>Focus areas:</strong> LLM Engineering, Computer Vision, ML Infrastructure, Predictive ML. He's built and deployed 3 live systems on AWS and submitted a PR to Meta FAIR's TRIBE v2 repository.", followups: ['What projects has he built?', 'Tech stack?', 'Is he available?'], topic: 'experience' };
+    }
+
+    /* ── Availability ── */
+    if (/\b(avail|hire|job|position|role|work with|open to|looking|employ|full.?time|remote|hybrid|relocat)\b/.test(lower)) {
+      return { text: "✅ <strong>Raj is actively looking for full-time AI/ML Engineering roles.</strong><br><br>He's open to remote or hybrid positions. He replies within 24 hours.<br><br>📧 <a href='mailto:rajkumarn2002@gmail.com'>rajkumarn2002@gmail.com</a><br>🔗 <a href='https://www.linkedin.com/in/raj-kumar-nelluri-351389393/' target='_blank'>Connect on LinkedIn</a>", followups: ['See his resume', 'What has he built?'], topic: 'availability' };
+    }
+
+    /* ── Contact ── */
+    if (/\b(contact|email|reach|connect|linkedin|get in touch|talk|message|phone|call)\b/.test(lower)) {
+      return { text: "Here's how to reach Raj — he replies within 24 hours:<br><br>📧 <a href='mailto:rajkumarn2002@gmail.com'>rajkumarn2002@gmail.com</a><br>🔗 <a href='https://www.linkedin.com/in/raj-kumar-nelluri-351389393/' target='_blank'>LinkedIn</a><br>💻 <a href='https://github.com/Rajkumar2002-Rk' target='_blank'>GitHub</a>", topic: 'contact' };
+    }
+
+    /* ── Resume ── */
+    if (/\b(resume|cv|download|pdf)\b/.test(lower)) {
+      return { text: 'Here\'s Raj\'s resume — download it directly:<br><a href="Raj_Kumar_Nelluri_AI:ML_Engineer_Resume.pdf" download class="chat-resume-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Resume (PDF)</a>', followups: ['What has he built?', 'Is he available?'], topic: 'resume' };
+    }
+
+    /* ── Metrics / results ── */
+    if (/\b(metric|result|number|accuracy|performance|how good|stats|data)\b/.test(lower)) {
+      return { text: "Here are Raj's production metrics:<br><br>📊 <strong>96.7%</strong> — Fraud detection accuracy (50k+ claims)<br>📊 <strong>91%</strong> — Churn prediction accuracy (F1: 89%)<br>📊 <strong>87%</strong> — RAG retrieval accuracy<br>📊 <strong>4.2%</strong> — RMSE on retail forecasting (18% above baseline)<br>📊 <strong><30s</strong> — Investment decision latency<br>📊 <strong>20,484</strong> — Brain vertices predicted per second<br><br>All from production systems, not Kaggle notebooks.", followups: ['Tell me about a project', 'What\'s his stack?'], topic: 'projects' };
+    }
+
+    /* ── PR / open source ── */
+    if (/\b(pr|pull request|open source|contribution|meta|tribe)\b/.test(lower)) {
+      lastProjectKey = 'cineneuro';
+      return { text: "Raj submitted <strong>PR #20 to Meta FAIR's TRIBE v2</strong> — added int8 compute_type fallback for WhisperX on non-CUDA devices. Before the fix, hardcoded float16 caused errors on Apple Silicon and CPU-only Linux. CLA signed, checks passing. The full pipeline now runs everywhere with <1% WER degradation.", followups: ['CineNeuro details', 'Other projects'], topic: 'projects' };
+    }
+
+    /* ── About the site ── */
+    if (/\b(site|website|portfolio|how.*(built|made)|this page)\b/.test(lower)) {
+      return { text: "This portfolio is built with <strong>HTML, CSS, and vanilla JavaScript</strong> — zero frameworks. Features include a particle canvas with mouse repulsion, 3D card tilt, custom cursor with lerp smoothing, scroll-reveal animations, glassmorphism chatbot with multi-turn context, and session persistence. 😄", followups: ['What projects has he built?', 'Tech stack?'], topic: 'fun' };
+    }
+
+    /* ── What can you do ── */
+    if (/\b(what can you|help|what do you know|capabilities)\b/.test(lower)) {
+      return { text: "I can tell you about:<br><br>🔹 Raj's <strong>projects</strong> — all 6, with live demos and GitHub links<br>🔹 <strong>Tech stack</strong> — every tool he uses in production<br>🔹 <strong>Experience</strong> — education, certifications, background<br>🔹 <strong>Availability</strong> — he's actively looking for roles<br>🔹 <strong>Contact info</strong> — email, LinkedIn, GitHub<br>🔹 <strong>Resume</strong> — instant download<br>🔹 <strong>Metrics</strong> — production numbers from real systems<br><br>I also understand follow-up questions! Ask about a project, then say \"what stack?\" or \"show me live\" — I'll know what you mean.", followups: ['Projects', 'Tech Stack', 'Availability'] };
+    }
+
+    /* ── Location ── */
+    if (/\b(where|location|based|city|country|live|from)\b/.test(lower)) {
+      return { text: "Raj is based in the <strong>NYC area</strong> (Pace University, MS in CS). He's open to remote or hybrid AI/ML engineering roles.", followups: ['Is he available?', 'Contact him'], topic: 'availability' };
+    }
+
+    /* ── Fallback ── */
+    const fallbacks = [
+      "I'm not sure about that one, but I can tell you about Raj's projects, skills, experience, or how to reach him. What interests you?",
+      "Hmm, that's outside my knowledge. I specialize in Raj's portfolio — try asking about his projects, tech stack, or availability!",
+      "I don't have info on that, but I know everything about Raj's AI/ML work. Want to hear about his projects or skills?"
+    ];
+    return { text: fallbacks[Math.floor(Math.random() * fallbacks.length)], followups: ['Projects', 'Tech Stack', 'Contact', 'Resume'] };
+  }
+
+  /* ── Init: load trending badge on page load ── */
+  updateTrendingBadge();
+
+})();
 
 /* ── 6. Delayed hover depth effect on cap-items & metric-cards  */
 (function () {
