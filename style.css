@@ -946,6 +946,17 @@ footer {
   .hero-proof { gap:var(--s4); }
   .secondary-grid { grid-template-columns:1fr; }
   .skills-cloud { grid-template-columns:1fr; }
+
+  /* Project cards — prevent text overflow on mobile */
+  .fp-content { padding:var(--s5); }
+  .fp-detail { padding:var(--s5); }
+  .fp-title { font-size:1.2rem; word-wrap:break-word; }
+  .fp-tagline { font-size:0.84rem; line-height:1.6; word-wrap:break-word; }
+  .fp-case-text { font-size:0.8rem; }
+  .fp-stack span { font-size:0.62rem; padding:2px 8px; }
+  .fp-impact-badge { flex-direction:column; gap:6px; }
+  .fp-impact-badge span { font-size:0.7rem; }
+  .fp-links { gap:var(--s2); }
 }
 
 /* ================================================================
@@ -1943,24 +1954,104 @@ footer {
   .chat-greeting { transition: opacity 0.15s ease; }
 }
 
-/* ── Mobile: full-screen chat ── */
+/* ── Mobile chat — floating panel, not full-screen ── */
 @media (max-width: 500px) {
   #chatbot-wrap {
-    bottom: 16px; right: 16px;
+    bottom: 12px; right: 12px;
   }
+  .chat-toggle {
+    width: 52px; height: 52px;
+  }
+  .chat-toggle svg { width: 24px; height: 24px; }
+
   .chat-window {
     position: fixed;
-    inset: 0;
-    width: 100%;
-    max-height: 100%;
-    border-radius: 0;
-    bottom: 0; right: 0;
+    bottom: 72px; right: 12px;
+    left: 12px;
+    width: auto;
+    max-height: 70vh;
+    border-radius: 16px;
   }
-  .chat-window::before { border-radius: 0; }
+  .chat-window::before { border-radius: 17px; }
+
   .chat-messages {
-    min-height: 0;
-    max-height: none;
-    flex: 1;
+    min-height: 180px;
+    max-height: 280px;
   }
-  .chat-greeting { right: 0; max-width: 220px; }
+
+  /* Smaller bubbles on mobile */
+  .chat-msg {
+    max-width: 90%;
+    font-size: 0.78rem;
+    padding: 8px 12px;
+  }
+
+  /* Project cards — tighter on mobile */
+  .chat-project-card {
+    padding: 10px;
+  }
+  .chat-project-card h4 { font-size: 0.78rem; }
+  .chat-project-card p { font-size: 0.7rem; }
+  .chat-card-links { gap: 6px; }
+  .chat-card-link { font-size: 0.65rem; padding: 3px 8px; }
+
+  /* Follow-up chips — smaller */
+  .chat-followup-btn {
+    font-size: 0.68rem;
+    padding: 4px 10px;
+  }
+
+  /* Quick reply bar */
+  .chat-quick { padding: 6px 12px; gap: 5px; }
+  .chat-quick-btn { font-size: 0.68rem; padding: 5px 11px; }
+
+  /* Input area */
+  .chat-input-wrap { padding: 8px 10px; gap: 6px; }
+  .chat-input { padding: 8px 12px; font-size: 0.78rem; border-radius: 10px; }
+  .chat-send { width: 34px; height: 34px; border-radius: 8px; }
+  .chat-send svg { width: 17px; height: 17px; }
+
+  /* Header */
+  .chat-header { padding: 10px 12px; }
+  .chat-avatar { width: 30px; height: 30px; font-size: 0.65rem; }
+  .chat-header-name { font-size: 0.78rem; }
+  .chat-header-status { font-size: 0.65rem; }
+  .chat-header-btn { width: 28px; height: 28px; }
+
+  /* Footer actions */
+  .chat-footer-actions { padding: 5px 12px 6px; gap: 12px; }
+  .chat-footer-btn { font-size: 0.6rem; }
+
+  /* Timestamps */
+  .chat-ts { font-size: 0.58rem; }
+
+  /* Greeting bubble — compact on mobile, above the toggle */
+  .chat-greeting {
+    right: 0;
+    width: 200px;
+    font-size: 0.78rem;
+    padding: 8px 28px 8px 12px;
+    bottom: 58px;
+    line-height: 1.4;
+    border-radius: 12px 12px 4px 12px;
+  }
+  .chat-greeting-close { top: 2px; right: 6px; font-size: 1rem; }
+
+  /* Resume button in chat */
+  .chat-resume-btn {
+    font-size: 0.7rem;
+    padding: 7px 14px;
+  }
+}
+
+/* ── Extra small screens (iPhone SE, etc.) ── */
+@media (max-width: 380px) {
+  .chat-window {
+    left: 8px; right: 8px;
+    bottom: 68px;
+    max-height: 65vh;
+  }
+  .chat-messages { max-height: 240px; }
+  .chat-msg { font-size: 0.75rem; }
+  .chat-quick-btn { font-size: 0.65rem; padding: 4px 9px; }
 }

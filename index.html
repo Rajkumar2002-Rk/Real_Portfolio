@@ -1822,6 +1822,13 @@ document.querySelectorAll('.tech-tags, .skill-badges-wrap').forEach(wrap => {
     greetingText.textContent = getGreeting();
     chatGreeting.classList.add('visible');
     chatBadge.classList.add('visible');
+
+    // Auto-dismiss greeting on mobile after 5s so it doesn't block content
+    if (window.innerWidth <= 500) {
+      setTimeout(() => {
+        chatGreeting.classList.remove('visible');
+      }, 5000);
+    }
   }, 3000);
 
   greetingClose.addEventListener('click', (e) => {
