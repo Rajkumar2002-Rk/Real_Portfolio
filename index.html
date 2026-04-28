@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Raj Kumar Nelluri — AI/ML Engineer</title>
   <meta name="description" content="AI/ML Engineer specialising in deterministic LLM systems, RAG pipelines, and computer vision — 3 production deployments on AWS. LangGraph, LangChain, FastAPI, Docker." />
 
@@ -1860,7 +1860,9 @@ document.querySelectorAll('.tech-tags, .skill-badges-wrap').forEach(wrap => {
       }, 150 + delay);
     });
 
-    chatInput.focus();
+    // Only auto-focus input on desktop — on mobile it triggers the keyboard
+    // which covers the page and causes iOS zoom
+    if (window.innerWidth > 500) chatInput.focus();
     trapFocus(true);
 
     if (!hasInteracted) {
@@ -1885,6 +1887,23 @@ document.querySelectorAll('.tech-tags, .skill-badges-wrap').forEach(wrap => {
 
   chatToggle.addEventListener('click', () => { isOpen ? closeChat() : openChat(); });
   chatClose.addEventListener('click', closeChat);
+
+  /* ── Mobile keyboard handling ── */
+  if (window.visualViewport && window.innerWidth <= 500) {
+    window.visualViewport.addEventListener('resize', () => {
+      if (!isOpen) return;
+      const keyboardHeight = window.innerHeight - window.visualViewport.height;
+      if (keyboardHeight > 100) {
+        // Keyboard is open — shrink chat so it doesn't cover the whole page
+        chatWindow.style.maxHeight = Math.min(window.visualViewport.height * 0.55, 340) + 'px';
+        chatWindow.style.bottom = (keyboardHeight + 12) + 'px';
+      } else {
+        // Keyboard closed — reset
+        chatWindow.style.maxHeight = '';
+        chatWindow.style.bottom = '';
+      }
+    });
+  }
 
   /* ══════════════════════════════════════
      FOCUS TRAP (Accessibility)
