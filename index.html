@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Raj Kumar Nelluri — AI/ML Engineer</title>
-  <meta name="description" content="AI/ML Engineer specialising in deterministic LLM systems, RAG pipelines, and computer vision — 3 production deployments on AWS. LangGraph, LangChain, FastAPI, Docker." />
+  <meta name="description" content="AI/ML Engineer specialising in deterministic LLM systems, RAG pipelines, and computer vision — 4 production deployments on AWS. LangGraph, LangChain, FastAPI, Docker." />
 
   <!-- Open Graph / LinkedIn / Twitter -->
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://rajkumarai.dev/" />
   <meta property="og:title"       content="Raj Kumar Nelluri — AI/ML Engineer" />
-  <meta property="og:description" content="3 production AI systems on AWS · LangGraph agents · RAG pipelines · Computer Vision · MLOps. Replacing manual workflows with deterministic, auditable AI." />
+  <meta property="og:description" content="4 production AI systems on AWS · LangGraph agents · RAG pipelines · Healthcare AI · Computer Vision · MLOps. Replacing manual workflows with deterministic, auditable AI." />
   <meta property="og:image"       content="https://rajkumarai.dev/Raj_Kumar.png" />
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Raj Kumar Nelluri — AI/ML Engineer" />
-  <meta name="twitter:description" content="3 production AI systems on AWS · LangGraph · RAG · Computer Vision · MLOps" />
+  <meta name="twitter:description" content="4 production AI systems on AWS · LangGraph · RAG · Healthcare AI · Computer Vision · MLOps" />
   <meta name="twitter:image"       content="https://rajkumarai.dev/Raj_Kumar.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -87,9 +87,9 @@
         </h1>
 
         <p class="hero-sub">
-          3 live AWS deployments: investment research, document retrieval, and neural
-          audience intelligence — all automated, auditable, and measured
-          by the work they replace.
+          4 live AWS deployments: healthcare triage, investment research, neural
+          audience intelligence, and document retrieval — all automated, auditable,
+          and measured by the work they replace.
         </p>
 
         <div class="hero-ctas">
@@ -101,7 +101,7 @@
 
         <div class="hero-proof">
           <div class="proof-item">
-            <span class="proof-value">3</span>
+            <span class="proof-value">4</span>
             <span class="proof-label">Live AWS deployments</span>
           </div>
           <div class="proof-item">
@@ -109,8 +109,8 @@
             <span class="proof-label">Submitted to Meta FAIR TRIBE v2 (CLA signed)</span>
           </div>
           <div class="proof-item">
-            <span class="proof-value">&lt;30s</span>
-            <span class="proof-label">Deterministic investment decision</span>
+            <span class="proof-value">PyPI</span>
+            <span class="proof-label">medeval-harness v0.1.0 published</span>
           </div>
         </div>
 
@@ -248,11 +248,84 @@
 
     <div class="featured-projects">
 
-      <!-- ── 01: AI Financial Research Agent ── -->
+      <!-- ── 01: MedEval — Clinical Triage AI ── -->
       <div class="featured-project reveal">
         <div class="fp-content">
           <div>
-            <p class="fp-index">01 — LLM Agent · Live Product</p>
+            <p class="fp-index">01 — Healthcare AI · Live Product · PyPI Published</p>
+            <h3 class="fp-title">MedEval — Clinical Triage AI</h3>
+            <p class="fp-tagline">
+              Designed and deployed a deterministic ESI triage engine where the LLM is
+              structurally barred from making urgency decisions. A Python rules engine
+              fires 68 ACEP handbook rules to assign ESI levels 1–5; GPT-4o-mini only
+              extracts 95 structured facts from free-text complaints and rephrases the
+              engine's rationale in plain language. Built and published the evaluation
+              harness to PyPI (medeval-harness v0.1.0). CI runs weekly evals against
+              live production. Live on AWS with HTTPS.
+            </p>
+            <div class="fp-impact-badge">
+              <span>68 ACEP rules · 0 LLM hallucination risk</span>
+              <span>PyPI · medeval-harness v0.1.0</span>
+              <span>Live · CI weekly eval</span>
+            </div>
+            <div class="fp-stack">
+              <span>GPT-4o-mini</span><span>LangGraph</span><span>FastAPI</span>
+              <span>React 19</span><span>Docker</span><span>Langfuse</span>
+              <span>AWS EC2</span><span>GitHub Actions</span>
+            </div>
+          </div>
+          <p class="fp-link-label">Try it live</p>
+          <div class="fp-links">
+            <a href="https://medeval.rajkumarai.dev/" target="_blank" class="fp-link--live">
+              View Live System <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="https://github.com/Rajkumar2002-Rk/MedEval" target="_blank" class="fp-link--code">
+              <i class="fab fa-github"></i> View Code
+            </a>
+            <button class="fp-link--case view-case-study" data-modal="medeval">
+              See How It Works <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="fp-detail">
+          <div class="fp-case">
+            <span class="fp-case-label">Problem</span>
+            <p class="fp-case-text">LLMs hallucinate — in emergency triage, under-rating urgency can be fatal. Generic LLM-based triage tools give confident answers with no structural guarantee against incorrect urgency assignments.</p>
+          </div>
+          <div class="fp-case">
+            <span class="fp-case-label">Solution</span>
+            <p class="fp-case-text">LangGraph pipeline with a hard architectural constraint: the LLM never touches the urgency decision. GPT-4o-mini converts free-text chief complaints into 95 structured booleans. A deterministic Python rules engine fires 68 ACEP handbook rules to assign the ESI level. A second LLM call rephrases the engine's rationale into plain language — the LLM explains, never decides.</p>
+          </div>
+          <div class="fp-case">
+            <span class="fp-case-label">Engineering Decisions</span>
+            <p class="fp-case-text">Rules engine evaluates recursive AND/OR conditions against a merged fact pool. First A or B rule match is definitive; C rules set a base level but D rules can upgrade to ESI 2 (C_upgraded_by_D path). Missing fields return False — pediatric rules safely no-op for adult patients. ExtractedFacts binds 94 booleans + predicted_resources to OpenAI structured output at temp 0.0. Built and published medeval-harness on PyPI — 50-case eval suite with exact/tolerant accuracy, under-triage rate, and p50/p95 latency. CI runs weekly against live production via GitHub Actions with --fail-under 60.</p>
+          </div>
+          <div class="fp-case">
+            <span class="fp-case-label">Business Value</span>
+            <p class="fp-case-text">Dual UI: patient view (plain-English explanation only) and doctor view (decision path + rule IDs that fired). Every triage decision is auditable — the specific ACEP rules that triggered are surfaced. Under-triage rate reduced 20% → 10% after prompt tuning. The evaluation harness is on PyPI so accuracy claims are independently reproducible.</p>
+          </div>
+          <div class="fp-impact">
+            <div class="fp-impact-item">
+              <span class="fp-impact-val">68</span>
+              <span class="fp-impact-lbl">ACEP triage rules</span>
+            </div>
+            <div class="fp-impact-item">
+              <span class="fp-impact-val">10%</span>
+              <span class="fp-impact-lbl">Under-triage rate (from 20%)</span>
+            </div>
+            <div class="fp-impact-item">
+              <span class="fp-impact-val">PyPI</span>
+              <span class="fp-impact-lbl">medeval-harness v0.1.0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 02: AI Financial Research Agent ── -->
+      <div class="featured-project reveal reveal-delay-1">
+        <div class="fp-content">
+          <div>
+            <p class="fp-index">02 — LLM Agent · Live Product</p>
             <h3 class="fp-title">AI Financial Research Agent</h3>
             <p class="fp-tagline">
               Designed and deployed a deterministic investment decision engine —
@@ -320,11 +393,11 @@
         </div>
       </div>
 
-      <!-- ── 02: CineNeuro ── -->
-      <div class="featured-project reveal reveal-delay-1">
+      <!-- ── 03: CineNeuro ── -->
+      <div class="featured-project reveal reveal-delay-2">
         <div class="fp-content">
           <div>
-            <p class="fp-index">02 — Neuroscience AI · Live Product · Meta FAIR TRIBE v2</p>
+            <p class="fp-index">03 — Neuroscience AI · Live Product · Meta FAIR TRIBE v2</p>
             <h3 class="fp-title">CineNeuro — Neural Audience Intelligence</h3>
             <p class="fp-tagline">
               Engineered a multimodal brain encoding pipeline that predicts second-by-second
@@ -392,11 +465,11 @@
         </div>
       </div>
 
-      <!-- ── 03: Enterprise RAG Chatbot ── -->
-      <div class="featured-project reveal reveal-delay-2">
+      <!-- ── 04: Enterprise RAG Chatbot ── -->
+      <div class="featured-project reveal reveal-delay-3">
         <div class="fp-content">
           <div>
-            <p class="fp-index">03 — RAG Pipeline · Live Product</p>
+            <p class="fp-index">04 — RAG Pipeline · Live Product</p>
             <h3 class="fp-title">Enterprise RAG Chatbot</h3>
             <p class="fp-tagline">
               Engineered a production RAG system with MMR retrieval, hallucination
@@ -495,7 +568,7 @@
         <!-- Quick credibility strip -->
         <div class="about-cred-row">
           <div class="about-cred-item">
-            <span class="about-cred-val">3</span>
+            <span class="about-cred-val">4</span>
             <span class="about-cred-lbl">Production deployments</span>
           </div>
           <div class="about-cred-item">
@@ -718,6 +791,49 @@
 
 <!-- Modal data (hidden) -->
 <div id="modal-data" style="display:none">
+
+  <div data-id="medeval">
+    <div class="modal-header">
+      <h2>MedEval — Clinical Triage AI</h2>
+      <p>GPT-4o-mini · LangGraph · FastAPI · React 19 · Docker · AWS EC2 · Langfuse</p>
+    </div>
+    <div class="modal-section">
+      <h4>The Problem</h4>
+      <p>LLMs hallucinate. In emergency triage, an under-rated urgency level can be fatal — a patient who is ESI 1 (immediate life threat) being triaged as ESI 3 (less urgent) is a clinical failure. Generic LLM-based triage tools give confident answers with no structural guarantee against incorrect urgency assignments.</p>
+    </div>
+    <div class="modal-section">
+      <h4>The Solution</h4>
+      <p>MedEval's core design constraint: the LLM is structurally barred from making the urgency decision. A three-node LangGraph pipeline (extract → triage → explain) processes each case: GPT-4o-mini converts a free-text chief complaint into 95 structured booleans (ExtractedFacts), a deterministic Python rules engine assigns the ESI level by firing 68 ACEP handbook rules, and a second GPT-4o-mini call rephrases the engine's clinical rationale into lay language. The LLM explains decisions — it never makes them.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Engineering Decisions</h4>
+      <p>Rules engine evaluates recursive AND/OR conditions (all_of / any_of / simple field comparisons) against a merged fact pool. First A or B rule match is definitive. C rules set a base level but D rules can upgrade to ESI 2 (decision_path="C_upgraded_by_D"). Missing fields return False — pediatric rules safely no-op for adult patients. ExtractedFacts binds 94 booleans + predicted_resources to OpenAI structured output at temperature 0.0. Every LLM call is traced via Langfuse (prompt, latency, tokens). Built and published medeval-harness on PyPI (v0.1.0) — 50-case eval suite with exact/tolerant accuracy, under-triage rate, over-triage rate, and p50/p95 latency. CI runs weekly against live production via GitHub Actions with --fail-under 60.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Business Value</h4>
+      <p>Dual UI: patients see a plain-English explanation only; doctors see the full decision path and specific rule IDs that fired — making every triage fully auditable and explainable. Under-triage rate reduced from 20% → 10% after prompt tuning on 50 benchmark cases. The evaluation harness is published on PyPI so accuracy claims are independently reproducible — not just a self-reported number. Backend + frontend deployed as Docker containers on AWS EC2 behind Nginx with Let's Encrypt HTTPS.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Key Results</h4>
+      <ul>
+        <li>68 deterministic ACEP rules — zero LLM influence on the urgency decision</li>
+        <li>Under-triage rate: 20% (baseline) → 10% (tuned) — the safety-critical metric</li>
+        <li>Exact triage accuracy: 66% (baseline) → 68% (tuned) on 50-case benchmark</li>
+        <li>medeval-harness v0.1.0 published on PyPI — independently reproducible eval</li>
+        <li>CI weekly eval against live production; build fails below 60% accuracy</li>
+        <li>A2_apneic crash bug fixed — all 68 rules verified live (returns ESI 1)</li>
+        <li>Live at medeval.rajkumarai.dev — HTTPS, Docker Compose, AWS EC2, Nginx</li>
+      </ul>
+    </div>
+    <div class="modal-section">
+      <h4>Stack</h4>
+      <div class="modal-tags"><span>GPT-4o-mini</span><span>LangGraph</span><span>FastAPI</span><span>React 19</span><span>Vite</span><span>Tailwind CSS</span><span>TypeScript</span><span>Docker</span><span>AWS EC2</span><span>Nginx</span><span>Langfuse</span><span>GitHub Actions</span><span>PyPI</span></div>
+    </div>
+    <div class="modal-footer">
+      <a href="https://github.com/Rajkumar2002-Rk/MedEval" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> View Code</a>
+      <a href="https://medeval.rajkumarai.dev/" target="_blank" class="btn btn-outline">View Live System <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+    </div>
+  </div>
 
   <div data-id="financial">
     <div class="modal-header">
@@ -1504,6 +1620,16 @@ document.querySelectorAll('.tech-tags, .skill-badges-wrap').forEach(wrap => {
      KNOWLEDGE BASE
      ══════════════════════════════════════ */
   const PROJECTS = {
+    medeval: {
+      key: 'medeval',
+      title: 'MedEval — Clinical Triage AI',
+      desc: 'Deterministic ESI triage engine — LLM structurally barred from urgency decisions. 68 ACEP rules fire in a Python engine; GPT-4o-mini only extracts facts and explains the outcome. Under-triage rate: 20% → 10%. medeval-harness published on PyPI (v0.1.0).',
+      stack: 'GPT-4o-mini, LangGraph, FastAPI, React 19, Docker, AWS EC2, Langfuse, GitHub Actions',
+      live: 'https://medeval.rajkumarai.dev/',
+      code: 'https://github.com/Rajkumar2002-Rk/MedEval',
+      section: 'projects',
+      keywords: ['medeval', 'medical', 'triage', 'esi', 'healthcare', 'hospital', 'emergency', 'clinical', 'pypi', 'patient', 'doctor', 'urgency', 'rules engine', 'acep']
+    },
     financial: {
       key: 'financial',
       title: 'AI Financial Research Agent',
@@ -2276,22 +2402,23 @@ document.querySelectorAll('.tech-tags, .skill-badges-wrap').forEach(wrap => {
         if (p.live) links.push(`<a href="${p.live}" target="_blank">try it live</a>`);
         return { text: `Glad you think so! ${links.length ? 'Want to ' + links[0] + '?' : 'Want to explore more?'}`, followups: ['See it live', 'Show all projects', 'Contact Raj'] };
       }
-      return { text: "Thanks! Want to dive deeper into any of Raj's projects or skills?", followups: ['Tell me about CineNeuro', 'Financial Agent details', 'RAG Chatbot'] };
+      return { text: "Thanks! Want to dive deeper into any of Raj's projects or skills?", followups: ['Tell me about MedEval', 'Tell me about CineNeuro', 'Financial Agent details'] };
     }
     if (/\b(what'?s new|update|latest|recent)\b/.test(lower)) {
-      return { text: "The latest addition is <strong>CineNeuro</strong> — brain encoding AI using Meta FAIR's TRIBE v2. Plus Raj just submitted PR #20 to Meta FAIR's official repo. Want to hear more?", followups: ['CineNeuro details', 'Tell me about the PR', 'All projects'], topic: 'projects' };
+      return { text: "The latest project is <strong>MedEval</strong> — a deterministic clinical triage AI where the LLM is structurally barred from urgency decisions. The evaluation harness (medeval-harness) is also published on PyPI (v0.1.0) — independently reproducible accuracy benchmarks. Want to hear more?", followups: ['MedEval details', 'All projects', 'Tell me about PyPI harness'], topic: 'projects' };
     }
 
     /* ── Projects (general) ── */
     if (/\b(project|work|built|portfolio|showcase|show.*(all|everything)|what (have|has) (you|he|raj))\b/.test(lower) && !findProject(input)) {
-      let text = "Raj has built <strong>6 production-grade AI systems</strong>, 3 of which are live on AWS right now:<br><br>";
-      text += "🔹 <strong>AI Financial Research Agent</strong> — BUY/HOLD/SELL in <30s<br>";
-      text += "🔹 <strong>CineNeuro</strong> — Brain encoding for movie trailers (Meta FAIR TRIBE v2)<br>";
+      let text = "Raj has built <strong>7 production-grade AI systems</strong>, 4 of which are live on AWS right now:<br><br>";
+      text += "🔹 <strong>MedEval</strong> — Deterministic ESI triage AI (LLM never decides urgency) · PyPI published<br>";
+      text += "🔹 <strong>AI Financial Research Agent</strong> — BUY/HOLD/SELL in &lt;30s<br>";
+      text += "🔹 <strong>CineNeuro</strong> — Brain encoding for movie trailers (Meta FAIR TRIBE v2 · PR #20)<br>";
       text += "🔹 <strong>Enterprise RAG Chatbot</strong> — 87% retrieval accuracy<br>";
       text += "🔹 <strong>Retail Sales Forecasting</strong> — 4.2% RMSE on AWS SageMaker<br>";
       text += "🔹 <strong>Customer Churn Prediction</strong> — 91% accuracy with SHAP<br>";
       text += "🔹 <strong>Insurance Fraud Detection</strong> — 96.7% on 50k+ claims";
-      return { text, followups: ['Financial Agent details', 'Tell me about CineNeuro', 'RAG Chatbot details'], topic: 'projects' };
+      return { text, followups: ['MedEval details', 'Financial Agent details', 'Tell me about CineNeuro'], topic: 'projects' };
     }
 
     /* ── Specific project match ── */
@@ -2328,7 +2455,7 @@ document.querySelectorAll('.tech-tags, .skill-badges-wrap').forEach(wrap => {
 
     /* ── Specific tech queries ── */
     if (/\b(aws|cloud|deploy|infrastructure|ec2|s3|sagemaker|lambda)\b/.test(lower)) {
-      return { text: "Raj has <strong>3 live deployments on AWS</strong> (EC2, Nginx, Docker Compose) plus SageMaker training pipelines, Lambda ETL, Kinesis streaming, S3 storage, CloudWatch monitoring, and RDS databases. He's also AWS Certified Cloud Practitioner (CCP).", followups: ['Financial Agent (AWS)', 'CineNeuro (AWS)', 'RAG Chatbot (AWS)'], topic: 'stack' };
+      return { text: "Raj has <strong>4 live deployments on AWS</strong> (EC2, Nginx, Docker Compose) — MedEval, Financial Agent, CineNeuro, and RAG Chatbot — plus SageMaker training pipelines, Lambda ETL, Kinesis streaming, S3 storage, CloudWatch monitoring, and RDS databases. He's also AWS Certified Cloud Practitioner (CCP).", followups: ['MedEval (AWS)', 'Financial Agent (AWS)', 'CineNeuro (AWS)'], topic: 'stack' };
     }
     if (/\b(llm|gpt|openai|langchain|langgraph|rag|retrieval|large language|prompt)\b/.test(expanded)) {
       return { text: "Raj specializes in <strong>production LLM systems</strong>:<br><br>🔹 <strong>LangGraph agents</strong> — deterministic multi-step pipelines (Financial Agent)<br>🔹 <strong>RAG pipelines</strong> — MMR retrieval, hallucination guardrails (Enterprise Chatbot)<br>🔹 <strong>Brain encoding</strong> — Llama 3.2 embeddings for neural predictions (CineNeuro)<br><br>Key principle: GPT explains decisions but never makes them. All decision logic is deterministic and auditable.", followups: ['Financial Agent details', 'RAG Chatbot details', 'CineNeuro details'], topic: 'stack' };
@@ -2344,7 +2471,7 @@ document.querySelectorAll('.tech-tags, .skill-badges-wrap').forEach(wrap => {
 
     /* ── Experience / background ── */
     if (/\b(experience|background|education|degree|university|college|certif|qualification|school|study|studied)\b/.test(lower)) {
-      return { text: "<strong>Education:</strong><br>🎓 MS in Computer Science — Pace University, NYC<br>🎓 B.Tech in AI — Amrita Vishwa Vidyapeetham<br><br><strong>Certification:</strong><br>☁️ AWS Certified Cloud Practitioner (CCP)<br><br><strong>Focus areas:</strong> LLM Engineering, Computer Vision, ML Infrastructure, Predictive ML. He's built and deployed 3 live systems on AWS and submitted a PR to Meta FAIR's TRIBE v2 repository.", followups: ['What projects has he built?', 'Tech stack?', 'Is he available?'], topic: 'experience' };
+      return { text: "<strong>Education:</strong><br>🎓 MS in Computer Science — Pace University, NYC<br>🎓 B.Tech in AI — Amrita Vishwa Vidyapeetham<br><br><strong>Certification:</strong><br>☁️ AWS Certified Cloud Practitioner (CCP)<br><br><strong>Focus areas:</strong> LLM Engineering, Healthcare AI, Computer Vision, ML Infrastructure. He's built and deployed 4 live systems on AWS, submitted PR #20 to Meta FAIR's TRIBE v2, and published medeval-harness on PyPI.", followups: ['What projects has he built?', 'Tech stack?', 'Is he available?'], topic: 'experience' };
     }
 
     /* ── Availability ── */
@@ -2367,6 +2494,12 @@ document.querySelectorAll('.tech-tags, .skill-badges-wrap').forEach(wrap => {
       return { text: "Here are Raj's production metrics:<br><br>📊 <strong>96.7%</strong> — Fraud detection accuracy (50k+ claims)<br>📊 <strong>91%</strong> — Churn prediction accuracy (F1: 89%)<br>📊 <strong>87%</strong> — RAG retrieval accuracy<br>📊 <strong>4.2%</strong> — RMSE on retail forecasting (18% above baseline)<br>📊 <strong><30s</strong> — Investment decision latency<br>📊 <strong>20,484</strong> — Brain vertices predicted per second<br><br>All from production systems, not Kaggle notebooks.", followups: ['Tell me about a project', 'What\'s his stack?'], topic: 'projects' };
     }
 
+    /* ── PyPI / evaluation harness ── */
+    if (/\b(pypi|harness|medeval.harness|eval|evaluation|pip install)\b/.test(lower)) {
+      lastProjectKey = 'medeval';
+      return { text: "Raj published <strong>medeval-harness v0.1.0 on PyPI</strong> — an evaluation harness for MedEval's triage engine. It runs 50 benchmark cases against the live API and reports exact/tolerant triage accuracy, under-triage rate (the safety-critical metric), over-triage rate, and p50/p95 latency. CI runs it weekly in GitHub Actions with <code>--fail-under 60</code>. Under-triage rate dropped from 20% → 10% after prompt tuning.", followups: ['MedEval details', 'See it live'], topic: 'projects' };
+    }
+
     /* ── PR / open source ── */
     if (/\b(pr|pull request|open source|contribution|meta|tribe)\b/.test(lower)) {
       lastProjectKey = 'cineneuro';
@@ -2380,7 +2513,7 @@ document.querySelectorAll('.tech-tags, .skill-badges-wrap').forEach(wrap => {
 
     /* ── What can you do ── */
     if (/\b(what can you|help|what do you know|capabilities)\b/.test(lower)) {
-      return { text: "I can tell you about:<br><br>🔹 Raj's <strong>projects</strong> — all 6, with live demos and GitHub links<br>🔹 <strong>Tech stack</strong> — every tool he uses in production<br>🔹 <strong>Experience</strong> — education, certifications, background<br>🔹 <strong>Availability</strong> — he's actively looking for roles<br>🔹 <strong>Contact info</strong> — email, LinkedIn, GitHub<br>🔹 <strong>Resume</strong> — instant download<br>🔹 <strong>Metrics</strong> — production numbers from real systems<br><br>I also understand follow-up questions! Ask about a project, then say \"what stack?\" or \"show me live\" — I'll know what you mean.", followups: ['Projects', 'Tech Stack', 'Availability'] };
+      return { text: "I can tell you about:<br><br>🔹 Raj's <strong>projects</strong> — all 7, with live demos and GitHub links<br>🔹 <strong>Tech stack</strong> — every tool he uses in production<br>🔹 <strong>Experience</strong> — education, certifications, background<br>🔹 <strong>Availability</strong> — he's actively looking for roles<br>🔹 <strong>Contact info</strong> — email, LinkedIn, GitHub<br>🔹 <strong>Resume</strong> — instant download<br>🔹 <strong>Metrics</strong> — production numbers from real systems<br><br>I also understand follow-up questions! Ask about a project, then say \"what stack?\" or \"show me live\" — I'll know what you mean.", followups: ['Projects', 'Tech Stack', 'Availability'] };
     }
 
     /* ── Location ── */
