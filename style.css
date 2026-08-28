@@ -246,21 +246,26 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   letter-spacing: 0.25em; text-transform: uppercase;
   color: #999; margin-bottom: 48px;
 }
+/* ── Style 3: Big centered case-study cards ── */
 .work-grid {
-  display: grid; grid-template-columns: 1fr; gap: 2px;
+  display: flex; flex-direction: column; gap: 32px;
+  max-width: 800px; margin: 0 auto;
 }
 .project-card {
-  background: #E5E5DF; position: relative; overflow: hidden;
-  cursor: pointer; min-height: 380px;
+  background: #E5E5DF;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
   display: flex; flex-direction: column;
-  padding: 40px; gap: 16px;
-  transition: background 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
-.project-card:hover { background: #DDDDD7; }
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
 .project-img {
-  width: calc(100% + 80px);
-  margin: -40px -40px 8px;
-  height: 200px;
+  width: 100%; height: 280px;
   background: var(--proj-color, #CCC);
   overflow: hidden; flex-shrink: 0;
 }
@@ -271,6 +276,10 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   transition: transform 0.5s ease;
 }
 .project-card:hover .project-img img { transform: scale(1.04); }
+.project-content {
+  padding: 36px 40px;
+  display: flex; flex-direction: column; gap: 12px;
+}
 .project-num {
   font-size: 0.72rem; font-weight: 600; color: #999;
   font-family: var(--mono); letter-spacing: 0.06em;
@@ -280,20 +289,19 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   letter-spacing: 0.06em; text-transform: uppercase;
 }
 .project-title {
-  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
   font-weight: 700; line-height: 1.2;
   letter-spacing: -0.02em; color: #1A1A1A;
-  margin-top: 4px;
 }
 .project-desc {
-  font-size: 0.9rem; color: #555; line-height: 1.65; flex: 1;
+  font-size: 0.9rem; color: #555; line-height: 1.65;
 }
 .project-metrics { display: flex; gap: 6px; flex-wrap: wrap; }
 .project-metric {
   font-size: 0.7rem; font-weight: 500; color: #555;
   padding: 4px 10px; border-radius: 100px;
   border: 1px solid rgba(0,0,0,0.15);
-  background: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.5);
 }
 .project-stack { display: flex; gap: 6px; flex-wrap: wrap; }
 .project-stack span {
@@ -803,7 +811,9 @@ footer {
   .about-photo-col img { height: 100%; }
   .about-text-col { padding: 48px 28px; }
 
-  .work-grid { grid-template-columns: 1fr; }
+  .work-grid { max-width: 100%; }
+  .project-img { height: 200px; }
+  .project-content { padding: 28px 24px; }
   .skill-badges { grid-template-columns: repeat(4, 1fr); }
   .metrics-row { flex-wrap: wrap; }
   .metric-col { flex: 0 0 50%; padding: 20px; }
