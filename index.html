@@ -2,530 +2,238 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raj Kumar Nelluri — AI/ML Engineer</title>
-  <meta name="description" content="AI/ML Engineer specialising in deterministic LLM systems, RAG pipelines, and computer vision — 4 production deployments on AWS. LangGraph, LangChain, FastAPI, Docker." />
-
-  <!-- Open Graph / LinkedIn / Twitter -->
+  <meta name="description" content="AI/ML Engineer specialising in deterministic LLM systems, RAG pipelines, and computer vision — 4 production deployments on AWS." />
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://rajkumarai.dev/" />
   <meta property="og:title"       content="Raj Kumar Nelluri — AI/ML Engineer" />
-  <meta property="og:description" content="4 production AI systems on AWS · LangGraph agents · RAG pipelines · Healthcare AI · Computer Vision · MLOps. Replacing manual workflows with deterministic, auditable AI." />
+  <meta property="og:description" content="4 production AI systems on AWS · LangGraph agents · RAG pipelines · Healthcare AI · Computer Vision · MLOps." />
   <meta property="og:image"       content="https://rajkumarai.dev/Raj_Kumar.png" />
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Raj Kumar Nelluri — AI/ML Engineer" />
-  <meta name="twitter:description" content="4 production AI systems on AWS · LangGraph · RAG · Healthcare AI · Computer Vision · MLOps" />
-  <meta name="twitter:image"       content="https://rajkumarai.dev/Raj_Kumar.png" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <meta name="twitter:title"      content="Raj Kumar Nelluri — AI/ML Engineer" />
+  <meta name="twitter:description" content="4 production AI systems on AWS · LangGraph · RAG · Healthcare AI · Computer Vision" />
+  <meta name="twitter:image"      content="https://rajkumarai.dev/Raj_Kumar.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- ── Page loader ── -->
-<div id="page-loader" aria-hidden="true">
-  <span class="loader-brand">RK<span class="loader-dot">.</span></span>
-</div>
-
-<!-- ── Toast notification ── -->
-<div id="toast" role="alert" aria-live="polite"></div>
-
-<!-- ── Signature interaction elements ── -->
-<div id="cursor-outer" aria-hidden="true"></div>
-<div id="cursor-dot"   aria-hidden="true"></div>
-<nav id="section-dots" aria-label="Page sections">
-  <a href="#hero"     class="sec-dot active" data-label="Home"     aria-label="Home"></a>
-  <a href="#trust"    class="sec-dot"         data-label="Work"     aria-label="Work"></a>
-  <a href="#projects" class="sec-dot"         data-label="Projects" aria-label="Projects"></a>
-  <a href="#about"    class="sec-dot"         data-label="About"    aria-label="About"></a>
-  <a href="#skills"   class="sec-dot"         data-label="Skills"   aria-label="Skills"></a>
-  <a href="#contact"  class="sec-dot"         data-label="Contact"  aria-label="Contact"></a>
-</nav>
-
 <!-- Progress bar -->
 <div id="progress-bar"></div>
+<!-- Toast -->
+<div id="toast" role="alert" aria-live="polite"></div>
 
-<!-- ═══════════════════ NAVBAR ═══════════════════ -->
-<nav id="navbar">
-  <a class="nav-brand" href="#">RK<span class="dot">.</span></a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#trust">Results</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="Raj_Kumar_Nelluri_AI:ML_Engineer_Resume.pdf" download class="nav-cta">Resume</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+<!-- ═══════════════════ TOP BAR ═══════════════════ -->
+<header id="topbar">
+  <div class="topbar-left">
+    <a href="https://www.linkedin.com/in/raj-kumar-nelluri-351389393/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://github.com/Rajkumar2002-Rk" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="mailto:rajkumarn2002@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    <a href="Raj_Kumar_Nelluri_AI:ML_Engineer_Resume.pdf" download aria-label="Resume"><i class="fas fa-file-pdf"></i></a>
+  </div>
+  <div class="topbar-right">
+    <a href="mailto:rajkumarn2002@gmail.com">
+      <i class="fas fa-envelope"></i>
+      <span>GET IN TOUCH</span>
+    </a>
+  </div>
+  <button class="topbar-menu-btn" id="menuBtn" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
+</header>
+
+<!-- Mobile nav -->
+<nav id="mobile-nav">
+  <a href="#work">Work</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+  <a href="Raj_Kumar_Nelluri_AI:ML_Engineer_Resume.pdf" download>Resume ↓</a>
 </nav>
 
 <!-- ═══════════════════ HERO ═══════════════════ -->
 <section id="hero">
-  <canvas id="hero-canvas"></canvas>
-  <div id="hero-mouse-glow" aria-hidden="true"></div>
+  <div class="hero-avail">
+    <span class="avail-dot"></span> Available for full-time roles
+  </div>
+
+  <div class="container hero-inner">
+    <img src="Raj_Kumar.png" alt="Raj Kumar Nelluri" class="hero-avatar" />
+    <h1 class="hero-name">
+      <span id="typing-name"></span><span class="typing-cursor"></span>
+    </h1>
+    <p class="hero-tagline reveal">
+      AI / ML Engineer · I build production systems that<br />replace manual work — not just notebooks.
+    </p>
+    <div class="hero-proof reveal reveal-delay-1">
+      <span>PR #20 Meta FAIR</span>
+      <span class="dot">·</span>
+      <span>PyPI Published</span>
+      <span class="dot">·</span>
+      <span>MS CS · Pace University</span>
+    </div>
+    <div class="hero-actions reveal reveal-delay-2">
+      <a href="#work" class="btn-primary">View Work</a>
+      <a href="Raj_Kumar_Nelluri_AI:ML_Engineer_Resume.pdf" download class="btn-secondary">Resume ↓</a>
+    </div>
+  </div>
+
+  <div class="hero-socials-bottom">
+    <a href="https://github.com/Rajkumar2002-Rk" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/raj-kumar-nelluri-351389393/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="mailto:rajkumarn2002@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ WORK ═══════════════════ -->
+<section id="work">
   <div class="container">
-    <div class="hero-grid">
+    <p class="section-eyebrow reveal">Selected Work</p>
+    <div class="work-grid">
 
-      <!-- Left: Text -->
-      <div class="hero-text">
-
-        <!-- Availability signal — first thing a recruiter notices -->
-        <div class="hero-avail-chip">
-          <span class="chip-dot"></span>
-          Available for full-time roles
+      <!-- 01 MedEval -->
+      <div class="project-card reveal">
+        <div class="project-img" style="--proj-color:#2D6A4F">
+          <img src="Medeval.png" alt="MedEval screenshot" onerror="this.style.display='none'" />
         </div>
-
-        <p class="hero-eyebrow">AI / ML Engineer</p>
-
-        <h1 class="hero-headline">
-          Production AI —<br />
-          <em>not just notebooks.</em>
-        </h1>
-
-        <p class="hero-sub">
-          4 live AWS deployments: healthcare triage, investment research, neural
-          audience intelligence, and document retrieval — all automated, auditable,
-          and measured by the work they replace.
+        <div>
+          <div class="project-num">01</div>
+          <div class="project-category">Healthcare AI · Live · PyPI</div>
+        </div>
+        <h3 class="project-title">MedEval — Clinical Triage AI</h3>
+        <p class="project-desc">
+          Deterministic ESI triage engine — LLM structurally barred from urgency decisions.
+          68 ACEP handbook rules fire in a Python engine; GPT-4o-mini only extracts facts.
+          Under-triage rate reduced from 20% → 10%.
         </p>
-
-        <div class="hero-ctas">
-          <a href="#projects" class="btn btn-fill">See My Work</a>
-          <a href="Raj_Kumar_Nelluri_AI:ML_Engineer_Resume.pdf" download class="btn btn-outline">
-            <i class="fas fa-arrow-down" style="font-size:.75rem"></i> Resume
+        <div class="project-metrics">
+          <span class="project-metric">68 ACEP rules</span>
+          <span class="project-metric">PyPI published</span>
+          <span class="project-metric">CI weekly eval</span>
+        </div>
+        <div class="project-stack">
+          <span>GPT-4o-mini</span><span>LangGraph</span><span>FastAPI</span>
+          <span>React 19</span><span>Docker</span><span>AWS EC2</span>
+        </div>
+        <div class="project-links">
+          <a href="https://medeval.rajkumarai.dev/" target="_blank" class="project-link-live">
+            Live System <i class="fas fa-arrow-right" style="font-size:.7rem"></i>
           </a>
-        </div>
-
-        <div class="hero-proof">
-          <div class="proof-item">
-            <span class="proof-value">4</span>
-            <span class="proof-label">Live AWS deployments</span>
-          </div>
-          <div class="proof-item">
-            <span class="proof-value">PR #20</span>
-            <span class="proof-label">Submitted to Meta FAIR TRIBE v2 (CLA signed)</span>
-          </div>
-          <div class="proof-item">
-            <span class="proof-value">PyPI</span>
-            <span class="proof-label">medeval-harness v0.1.0 published</span>
-          </div>
-        </div>
-
-        <div class="hero-socials">
-          <a href="https://github.com/Rajkumar2002-Rk" target="_blank" class="social-link" aria-label="GitHub">
-            <i class="fab fa-github"></i>
+          <a href="https://github.com/Rajkumar2002-Rk/MedEval" target="_blank" class="project-link-code">
+            <i class="fab fa-github"></i> GitHub
           </a>
-          <a href="https://www.linkedin.com/in/raj-kumar-nelluri-351389393/" target="_blank" class="social-link" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
+          <button class="project-link-case view-case-study" data-modal="medeval">How It Works →</button>
+        </div>
+      </div>
+
+      <!-- 02 Financial Agent -->
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-img" style="--proj-color:#1A3A5C">
+          <img src="Fintel.png" alt="Financial Agent screenshot" onerror="this.style.display='none'" />
+        </div>
+        <div>
+          <div class="project-num">02</div>
+          <div class="project-category">LLM Agent · Live</div>
+        </div>
+        <h3 class="project-title">AI Financial Research Agent</h3>
+        <p class="project-desc">
+          7-step async LangGraph pipeline generating auditable BUY/HOLD/SELL
+          recommendations in under 30 seconds. GPT-4o constrained to explanation-only.
+          Zero hallucination risk on decisions.
+        </p>
+        <div class="project-metrics">
+          <span class="project-metric">Decision in &lt;30s</span>
+          <span class="project-metric">&lt;100ms Redis cache</span>
+          <span class="project-metric">Zero hallucination risk</span>
+        </div>
+        <div class="project-stack">
+          <span>GPT-4o</span><span>LangGraph</span><span>FastAPI</span>
+          <span>Redis</span><span>Docker</span><span>AWS EC2</span>
+        </div>
+        <div class="project-links">
+          <a href="https://fintel.rajkumarai.dev/" target="_blank" class="project-link-live">
+            Live System <i class="fas fa-arrow-right" style="font-size:.7rem"></i>
           </a>
-          <a href="mailto:rajkumarn2002@gmail.com" class="social-link" aria-label="Email">
-            <i class="fas fa-envelope"></i>
+          <a href="https://github.com/Rajkumar2002-Rk/financial-research-agent" target="_blank" class="project-link-code">
+            <i class="fab fa-github"></i> GitHub
           </a>
+          <button class="project-link-case view-case-study" data-modal="financial">How It Works →</button>
         </div>
       </div>
 
-      <!-- Right: Photo -->
-      <div class="hero-photo-wrap">
-        <img src="Raj_Kumar.png" alt="Raj Kumar Nelluri" />
-        <div class="hero-photo-badge">
-          <div class="badge-dot"></div>
-          <div class="badge-text">
-            <strong>Available for Full-Time Roles</strong>
-            AI/ML Engineer · Remote or Hybrid
-          </div>
+      <!-- 03 CineNeuro -->
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-img" style="--proj-color:#3D1A5C">
+          <img src="cineneuro.png" alt="CineNeuro screenshot" onerror="this.style.display='none'" />
+        </div>
+        <div>
+          <div class="project-num">03</div>
+          <div class="project-category">Neuroscience AI · Meta FAIR · Live</div>
+        </div>
+        <h3 class="project-title">CineNeuro — Neural Audience Intelligence</h3>
+        <p class="project-desc">
+          Predicts second-by-second fMRI activations across 20,484 cortical vertices
+          for movie trailers using Meta FAIR's TRIBE v2. Three neural networks feed
+          5 emotion channels across 7 brain regions. PR #20 to Meta FAIR — CLA signed.
+        </p>
+        <div class="project-metrics">
+          <span class="project-metric">20,484 vertices/sec</span>
+          <span class="project-metric">$0.50/trailer</span>
+          <span class="project-metric">PR #20 Meta FAIR</span>
+        </div>
+        <div class="project-stack">
+          <span>Meta TRIBE v2</span><span>V-JEPA2</span><span>Llama 3.2</span>
+          <span>FastAPI</span><span>React</span><span>AWS EC2</span>
+        </div>
+        <div class="project-links">
+          <a href="https://cineneuro.rajkumarai.dev/" target="_blank" class="project-link-live">
+            Live System <i class="fas fa-arrow-right" style="font-size:.7rem"></i>
+          </a>
+          <a href="https://github.com/Rajkumar2002-Rk/CineNeuro" target="_blank" class="project-link-code">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <button class="project-link-case view-case-study" data-modal="cineneuro">How It Works →</button>
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ TRUST / METRICS ═══════════════════ -->
-<section id="trust">
-  <div class="container">
-    <div class="trust-grid reveal">
-
-      <!-- Metrics -->
-      <div>
-        <p class="section-label">Impact</p>
-        <h2 class="section-title">Real systems.<br />Measured results.</h2>
-        <p class="trust-outcome-kicker">Every number below comes from a production deployment that replaced a manual process — not a Kaggle notebook.</p>
-        <div class="metrics-row" style="margin-top:2.5rem">
-          <div class="metric-card reveal-scale">
-            <div class="metric-num" data-target="96.7" data-suffix="%">96.7<span>%</span></div>
-            <div class="metric-desc">Fraud detection accuracy across 50k+ insurance claims</div>
-          </div>
-          <div class="metric-card reveal-scale reveal-delay-1">
-            <div class="metric-num" data-target="91" data-suffix="%">91<span>%</span></div>
-            <div class="metric-desc">F1 score on churn prediction with SHAP explainability</div>
-          </div>
-          <div class="metric-card reveal-scale reveal-delay-2">
-            <div class="metric-num" data-target="87" data-suffix="%">87<span>%</span></div>
-            <div class="metric-desc">Retrieval accuracy on enterprise RAG chatbot</div>
-          </div>
-          <div class="metric-card reveal-scale reveal-delay-3">
-            <div class="metric-num" data-target="4.2" data-suffix="%">4.2<span>%</span></div>
-            <div class="metric-desc">RMSE on 8-week retail sales forecast — 18% better than baselines</div>
-          </div>
+      <!-- 04 RAG Chatbot -->
+      <div class="project-card reveal reveal-delay-3">
+        <div class="project-img" style="--proj-color:#4A2C1A">
+          <img src="Rag.png" alt="RAG Chatbot screenshot" onerror="this.style.display='none'" />
         </div>
-      </div>
-
-      <!-- Tech Stack -->
-      <div class="tech-section">
-        <p class="section-label">Stack</p>
-        <h2 class="section-title">Tools I work<br />with daily.</h2>
-        <div class="tech-grid" style="margin-top:2.5rem">
-          <div class="tech-row">
-            <span class="tech-category">LLM / Agents</span>
-            <div class="tech-tags">
-              <span class="tech-tag">GPT-4o</span>
-              <span class="tech-tag">LangGraph</span>
-              <span class="tech-tag">LangChain</span>
-              <span class="tech-tag">ChromaDB</span>
-              <span class="tech-tag">Pydantic</span>
-            </div>
-          </div>
-          <div class="tech-row">
-            <span class="tech-category">Neural AI</span>
-            <div class="tech-tags">
-              <span class="tech-tag">PyTorch</span>
-              <span class="tech-tag">Transformers</span>
-              <span class="tech-tag">Llama 3.2</span>
-              <span class="tech-tag">Meta TRIBE v2</span>
-            </div>
-          </div>
-          <div class="tech-row">
-            <span class="tech-category">Infrastructure</span>
-            <div class="tech-tags">
-              <span class="tech-tag">AWS EC2</span>
-              <span class="tech-tag">Docker</span>
-              <span class="tech-tag">FastAPI</span>
-              <span class="tech-tag">Redis</span>
-              <span class="tech-tag">Nginx</span>
-            </div>
-          </div>
-          <div class="tech-row">
-            <span class="tech-category">Frontend & Tools</span>
-            <div class="tech-tags">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">Streamlit</span>
-              <span class="tech-tag">GitHub Actions</span>
-            </div>
-          </div>
+        <div>
+          <div class="project-num">04</div>
+          <div class="project-category">RAG Pipeline · Live</div>
         </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ PROJECTS ═══════════════════ -->
-<section id="projects" class="section-dark">
-  <div class="container">
-
-    <div class="projects-header reveal">
-      <div>
-        <p class="section-label">Selected Work</p>
-        <h2 class="section-title">Built. Shipped. Measured.</h2>
-        <p style="margin-top:0.75rem;font-size:0.9rem;color:var(--text-3);max-width:460px">Every project below replaced a manual process that was costing someone real time, money, or accuracy.</p>
-      </div>
-      <a href="https://github.com/Rajkumar2002-Rk" target="_blank" class="btn btn-outline">
-        All on GitHub <i class="fas fa-arrow-right" style="font-size:.75rem"></i>
-      </a>
-    </div>
-
-    <div class="featured-projects">
-
-      <!-- ── 01: MedEval — Clinical Triage AI ── -->
-      <div class="featured-project reveal">
-        <div class="fp-content">
-          <div>
-            <p class="fp-index">01 — Healthcare AI · Live Product · PyPI Published</p>
-            <h3 class="fp-title">MedEval — Clinical Triage AI</h3>
-            <p class="fp-tagline">
-              Designed and deployed a deterministic ESI triage engine where the LLM is
-              structurally barred from making urgency decisions. A Python rules engine
-              fires 68 ACEP handbook rules to assign ESI levels 1–5; GPT-4o-mini only
-              extracts 95 structured facts from free-text complaints and rephrases the
-              engine's rationale in plain language. Built and published the evaluation
-              harness to PyPI (medeval-harness v0.1.0). CI runs weekly evals against
-              live production. Live on AWS with HTTPS.
-            </p>
-            <div class="fp-impact-badge">
-              <span>68 ACEP rules · 0 LLM hallucination risk</span>
-              <span>PyPI · medeval-harness v0.1.0</span>
-              <span>Live · CI weekly eval</span>
-            </div>
-            <div class="fp-stack">
-              <span>GPT-4o-mini</span><span>LangGraph</span><span>FastAPI</span>
-              <span>React 19</span><span>Docker</span><span>Langfuse</span>
-              <span>AWS EC2</span><span>GitHub Actions</span>
-            </div>
-          </div>
-          <p class="fp-link-label">Try it live</p>
-          <div class="fp-links">
-            <a href="https://medeval.rajkumarai.dev/" target="_blank" class="fp-link--live">
-              View Live System <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="https://github.com/Rajkumar2002-Rk/MedEval" target="_blank" class="fp-link--code">
-              <i class="fab fa-github"></i> View Code
-            </a>
-            <button class="fp-link--case view-case-study" data-modal="medeval">
-              See How It Works <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
+        <h3 class="project-title">Enterprise RAG Chatbot</h3>
+        <p class="project-desc">
+          Production RAG system with MMR retrieval, hallucination guardrails, and
+          a rule-based query classifier — no LLM call fires without sufficient
+          retrieval confidence.
+        </p>
+        <div class="project-metrics">
+          <span class="project-metric">Hallucination guardrails</span>
+          <span class="project-metric">MMR retrieval</span>
+          <span class="project-metric">Live on AWS</span>
         </div>
-        <div class="fp-detail">
-          <div class="fp-case">
-            <span class="fp-case-label">Problem</span>
-            <p class="fp-case-text">LLMs hallucinate — in emergency triage, under-rating urgency can be fatal. Generic LLM-based triage tools give confident answers with no structural guarantee against incorrect urgency assignments.</p>
-          </div>
-          <div class="fp-case">
-            <span class="fp-case-label">Solution</span>
-            <p class="fp-case-text">LangGraph pipeline with a hard architectural constraint: the LLM never touches the urgency decision. GPT-4o-mini converts free-text chief complaints into 95 structured booleans. A deterministic Python rules engine fires 68 ACEP handbook rules to assign the ESI level. A second LLM call rephrases the engine's rationale into plain language — the LLM explains, never decides.</p>
-          </div>
-          <div class="fp-case">
-            <span class="fp-case-label">Engineering Decisions</span>
-            <p class="fp-case-text">Rules engine evaluates recursive AND/OR conditions against a merged fact pool. First A or B rule match is definitive; C rules set a base level but D rules can upgrade to ESI 2 (C_upgraded_by_D path). Missing fields return False — pediatric rules safely no-op for adult patients. ExtractedFacts binds 94 booleans + predicted_resources to OpenAI structured output at temp 0.0. Built and published medeval-harness on PyPI — 50-case eval suite with exact/tolerant accuracy, under-triage rate, and p50/p95 latency. CI runs weekly against live production via GitHub Actions with --fail-under 60.</p>
-          </div>
-          <div class="fp-case">
-            <span class="fp-case-label">Business Value</span>
-            <p class="fp-case-text">Dual UI: patient view (plain-English explanation only) and doctor view (decision path + rule IDs that fired). Every triage decision is auditable — the specific ACEP rules that triggered are surfaced. Under-triage rate reduced 20% → 10% after prompt tuning. The evaluation harness is on PyPI so accuracy claims are independently reproducible.</p>
-          </div>
-          <div class="fp-impact">
-            <div class="fp-impact-item">
-              <span class="fp-impact-val">68</span>
-              <span class="fp-impact-lbl">ACEP triage rules</span>
-            </div>
-            <div class="fp-impact-item">
-              <span class="fp-impact-val">10%</span>
-              <span class="fp-impact-lbl">Under-triage rate (from 20%)</span>
-            </div>
-            <div class="fp-impact-item">
-              <span class="fp-impact-val">PyPI</span>
-              <span class="fp-impact-lbl">medeval-harness v0.1.0</span>
-            </div>
-          </div>
+        <div class="project-stack">
+          <span>LangChain</span><span>ChromaDB</span><span>GPT-4</span>
+          <span>FastAPI</span><span>Streamlit</span><span>AWS EC2</span>
         </div>
-      </div>
-
-      <!-- ── 02: AI Financial Research Agent ── -->
-      <div class="featured-project reveal reveal-delay-1">
-        <div class="fp-content">
-          <div>
-            <p class="fp-index">02 — LLM Agent · Live Product</p>
-            <h3 class="fp-title">AI Financial Research Agent</h3>
-            <p class="fp-tagline">
-              Designed and deployed a deterministic investment decision engine —
-              a 7-step async LangGraph pipeline generating auditable BUY/HOLD/SELL
-              recommendations in under 30 seconds. GPT-4o is constrained to
-              explanation-only; all decisions are made by a normalized multi-factor
-              scoring system. Zero LLM hallucination risk on recommendations.
-              Running in production.
-            </p>
-            <div class="fp-impact-badge">
-              <span>BUY/HOLD/SELL in &lt;30s</span>
-              <span>~15s → &lt;100ms Redis cache</span>
-              <span>Live · Zero hallucination risk</span>
-            </div>
-            <div class="fp-stack">
-              <span>GPT-4o</span><span>LangGraph</span><span>FastAPI</span>
-              <span>Alpha Vantage</span><span>Redis</span><span>Docker</span>
-              <span>AWS EC2</span><span>Nginx</span>
-            </div>
-          </div>
-          <p class="fp-link-label">Try it live</p>
-          <div class="fp-links">
-            <a href="https://fintel.rajkumarai.dev/" target="_blank" class="fp-link--live">
-              View Live System <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="https://github.com/Rajkumar2002-Rk/financial-research-agent" target="_blank" class="fp-link--code">
-              <i class="fab fa-github"></i> View Code
-            </a>
-            <button class="fp-link--case view-case-study" data-modal="financial">
-              See How It Works <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
-        </div>
-        <div class="fp-detail">
-          <div class="fp-case">
-            <span class="fp-case-label">Problem</span>
-            <p class="fp-case-text">Financial analysts spend days compiling research from 10+ scattered data sources. Manual work is slow and doesn't scale.</p>
-          </div>
-          <div class="fp-case">
-            <span class="fp-case-label">Solution</span>
-            <p class="fp-case-text">GPT-4o agent loop that autonomously calls live APIs — market data, financial news, SEC fundamentals — then synthesises a structured markdown report.</p>
-          </div>
-          <div class="fp-case">
-            <span class="fp-case-label">Engineering Decisions</span>
-            <p class="fp-case-text">Multi-factor scoring engine (Technical 0–25, Fundamental 0–40, Sentiment 0–15) with conflict-aware logic — signal disagreement (variance&nbsp;&gt;&nbsp;0.15) overrides to HOLD, eliminating false conviction. GPT-4o constrained to explanation-only: zero influence over the decision, fully auditable outputs. Redis TTL&nbsp;900s caching cuts repeated query latency from ~15s to &lt;100ms. LangGraph chosen for structured async pipeline over ad-hoc tool-calling.</p>
-          </div>
-          <div class="fp-case">
-            <span class="fp-case-label">Business Value</span>
-            <p class="fp-case-text">A 5-factor confidence model (data completeness, signal agreement, volatility, news uncertainty) blocks recommendations below 20% confidence — solving the false-conviction problem of generic LLM finance tools. Portfolio ranking mode supports 2–8 tickers with proportional capital allocation. Any firm paying analysts $80k+/year offsets that cost with sub-30s auditable decisions.</p>
-          </div>
-          <div class="fp-impact">
-            <div class="fp-impact-item">
-              <span class="fp-impact-val">&lt;30s</span>
-              <span class="fp-impact-lbl">BUY/HOLD/SELL decision</span>
-            </div>
-            <div class="fp-impact-item">
-              <span class="fp-impact-val">&lt;100ms</span>
-              <span class="fp-impact-lbl">Cached query latency</span>
-            </div>
-            <div class="fp-impact-item">
-              <span class="fp-impact-val">0</span>
-              <span class="fp-impact-lbl">LLM hallucination risk</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── 03: CineNeuro ── -->
-      <div class="featured-project reveal reveal-delay-2">
-        <div class="fp-content">
-          <div>
-            <p class="fp-index">03 — Neuroscience AI · Live Product · Meta FAIR TRIBE v2</p>
-            <h3 class="fp-title">CineNeuro — Neural Audience Intelligence</h3>
-            <p class="fp-tagline">
-              Engineered a multimodal brain encoding pipeline that predicts second-by-second
-              fMRI activations across 20,484 cortical vertices — giving studios audience
-              emotional response intelligence before a trailer ever releases. Three neural
-              networks (V-JEPA2, Wav2Vec-BERT, Llama 3.2) feed Meta FAIR's TRIBE v2
-              to map vision, audio, and language into 5 emotion channels across 7 brain regions.
-              Live on AWS. Submitted PR #20 to Meta FAIR's TRIBE v2 — added int8 compute_type fallback for WhisperX on non-CUDA devices. Before the fix: hardcoded float16 caused ValueError on Apple Silicon and CPU-only Linux. After: the full pipeline runs everywhere. CUDA path unchanged, &lt;1% WER degradation on transcription accuracy. CLA signed, checks passing.
-            </p>
-            <div class="fp-impact-badge">
-              <span>20,484 brain vertices/sec</span>
-              <span>&lt;100ms demo response</span>
-              <span>$0.50/trailer · Live on AWS</span>
-            </div>
-            <div class="fp-stack">
-              <span>Meta TRIBE v2</span><span>V-JEPA2</span><span>Wav2Vec-BERT</span>
-              <span>Llama 3.2</span><span>FastAPI</span><span>React</span>
-              <span>Docker</span><span>AWS EC2</span><span>Nginx</span>
-            </div>
-          </div>
-          <p class="fp-link-label">Try it live</p>
-          <div class="fp-links">
-            <a href="https://cineneuro.rajkumarai.dev/" target="_blank" class="fp-link--live">
-              View Live System <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="https://github.com/Rajkumar2002-Rk/CineNeuro" target="_blank" class="fp-link--code">
-              <i class="fab fa-github"></i> View Code
-            </a>
-            <button class="fp-link--case view-case-study" data-modal="cineneuro">
-              See How It Works <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
-        </div>
-        <div class="fp-detail">
-          <div class="fp-case">
-            <span class="fp-case-label">Problem</span>
-            <p class="fp-case-text">Studios spend millions on trailers with no way to predict emotional response before release. Test screenings are expensive, slow, and limited to small samples — a studio can't know second-by-second where audiences peak in excitement or disengage.</p>
-          </div>
-          <div class="fp-case">
-            <span class="fp-case-label">Solution</span>
-            <p class="fp-case-text">Multimodal brain encoding pipeline: V-JEPA2 extracts video features, Wav2Vec-BERT processes audio, Llama 3.2 embeds the transcript — all three streams feed Meta FAIR's TRIBE v2, which predicts fMRI activations across 20,484 cortical vertices per second of video. Activations are mapped to 5 emotion channels (excitement, fear, joy, suspense, boredom) across 7 brain regions using neuroscience-based weights.</p>
-          </div>
-          <div class="fp-case">
-            <span class="fp-case-label">Engineering Decisions</span>
-            <p class="fp-case-text">Two-tier deployment: g4dn.xlarge GPU instance ($0.53/hr, Tesla T4 15GB VRAM) spun on-demand for inference only, t3.micro serves 24/7 with pre-computed JSON results at &lt;100ms — keeping monthly cost near $0. 12.89GB across three extractors barely fits in T4 VRAM, requiring careful model loading order. Multi-stage Docker build (Node 18 + Python 3.11-slim) keeps the production image at ~500MB with no ML weights. Submitted PR #20 to Meta FAIR's TRIBE v2 — added int8 compute_type fallback for WhisperX on non-CUDA devices. Before the fix: hardcoded float16 caused ValueError on Apple Silicon and CPU-only Linux. After: the full pipeline runs everywhere. CUDA path unchanged, &lt;1% WER degradation on transcription accuracy. CLA signed, checks passing.</p>
-          </div>
-          <div class="fp-case">
-            <span class="fp-case-label">Business Value</span>
-            <p class="fp-case-text">Second-by-second emotion maps identify the 3 strongest and 3 weakest moments in a trailer — actionable edit intelligence. Persona simulation models how Action Lovers, Romance Fans, and Horror Enthusiasts respond differently. Competitive benchmarking against Oppenheimer, Avengers Endgame, Inception, Interstellar, and The Dark Knight gives studios a quantified baseline. Full analysis costs ~$0.50 in GPU time, replacing a test screening that costs thousands.</p>
-          </div>
-          <div class="fp-impact">
-            <div class="fp-impact-item">
-              <span class="fp-impact-val">20,484</span>
-              <span class="fp-impact-lbl">Brain vertices/sec</span>
-            </div>
-            <div class="fp-impact-item">
-              <span class="fp-impact-val">&lt;100ms</span>
-              <span class="fp-impact-lbl">Pre-computed demo latency</span>
-            </div>
-            <div class="fp-impact-item">
-              <span class="fp-impact-val">$0.50</span>
-              <span class="fp-impact-lbl">Full trailer GPU cost</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── 04: Enterprise RAG Chatbot ── -->
-      <div class="featured-project reveal reveal-delay-3">
-        <div class="fp-content">
-          <div>
-            <p class="fp-index">04 — RAG Pipeline · Live Product</p>
-            <h3 class="fp-title">Enterprise RAG Chatbot</h3>
-            <p class="fp-tagline">
-              Engineered a production RAG system with MMR retrieval, hallucination
-              guardrails, and a rule-based query classifier — no LLM call fires
-              without sufficient retrieval confidence. 87% retrieval accuracy.
-              Two interfaces: Streamlit chat UI + FastAPI developer API.
-              Live on AWS with HTTPS.
-            </p>
-            <div class="fp-impact-badge">
-              <span>87% retrieval accuracy</span>
-              <span>Hallucination guardrails</span>
-              <span>HTTPS · Live on AWS</span>
-            </div>
-            <div class="fp-stack">
-              <span>LangChain</span><span>ChromaDB</span><span>GPT-4</span>
-              <span>FastAPI</span><span>Streamlit</span><span>Docker</span>
-              <span>AWS EC2</span><span>Nginx</span>
-            </div>
-          </div>
-          <p class="fp-link-label">Try it live</p>
-          <div class="fp-links">
-            <a href="https://chatbot.rajkumarai.dev" target="_blank" class="fp-link--live">
-              View Live System <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="https://github.com/Rajkumar2002-Rk/rag-chatbot" target="_blank" class="fp-link--code">
-              <i class="fab fa-github"></i> View Code
-            </a>
-            <button class="fp-link--case view-case-study" data-modal="rag">
-              See How It Works <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
-        </div>
-        <div class="fp-detail">
-          <div class="fp-case">
-            <span class="fp-case-label">Problem</span>
-            <p class="fp-case-text">Enterprise knowledge locked in PDFs and Word docs means employees waste hours on manual search instead of actual work.</p>
-          </div>
-          <div class="fp-case">
-            <span class="fp-case-label">Solution</span>
-            <p class="fp-case-text">Full RAG pipeline: LangChain orchestration, ChromaDB vector store, GPT-4 generation with streaming. Supports multi-format doc ingestion.</p>
-          </div>
-          <div class="fp-case">
-            <span class="fp-case-label">Engineering Decisions</span>
-            <p class="fp-case-text">MMR (Maximal Marginal Relevance) over plain cosine similarity — fetches a larger candidate pool and re-ranks for relevance and diversity, preventing near-duplicate chunks reaching the LLM. Rule-based query classifier (no LLM cost) detects factual/complex/ambiguous intent and adjusts top_k/fetch_k accordingly. Three API cost guards: rate limiting (20&nbsp;req/min), 500-char input cap, tiktoken token budget — all fire before any LLM call. Hallucination guardrails check retrieval confidence and return a fallback instead of guessing on low scores.</p>
-          </div>
-          <div class="fp-case">
-            <span class="fp-case-label">Business Value</span>
-            <p class="fp-case-text">Citation format [SOURCE N: filename — Page: X] makes every answer auditable — critical for regulated industries. Dual interfaces (Streamlit for business users, FastAPI Swagger at /api/docs for engineering teams) means one deployment serves both audiences. The cost guards and query classifier make this viable at scale without API spend ballooning.</p>
-          </div>
-          <div class="fp-impact">
-            <div class="fp-impact-item">
-              <span class="fp-impact-val">87%</span>
-              <span class="fp-impact-lbl">Retrieval accuracy</span>
-            </div>
-            <div class="fp-impact-item">
-              <span class="fp-impact-val">MMR</span>
-              <span class="fp-impact-lbl">Anti-duplicate retrieval</span>
-            </div>
-            <div class="fp-impact-item">
-              <span class="fp-impact-val">0</span>
-              <span class="fp-impact-lbl">Hallucination on grounded queries</span>
-            </div>
-          </div>
+        <div class="project-links">
+          <a href="https://chatbot.rajkumarai.dev" target="_blank" class="project-link-live">
+            Live System <i class="fas fa-arrow-right" style="font-size:.7rem"></i>
+          </a>
+          <a href="https://github.com/Rajkumar2002-Rk/rag-chatbot" target="_blank" class="project-link-code">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <button class="project-link-case view-case-study" data-modal="rag">How It Works →</button>
         </div>
       </div>
 
@@ -534,169 +242,151 @@
 </section>
 
 <!-- ═══════════════════ ABOUT ═══════════════════ -->
-<section id="about" class="section">
-  <div class="container">
-    <div class="about-grid">
+<section id="about">
+  <div class="about-grid">
 
-      <div class="about-body reveal reveal-left">
-        <p class="section-label">About</p>
-        <h2 class="section-title" style="margin-bottom:1.5rem">Full-stack AI —<br />from manual process<br />to production system.</h2>
-        <p>
-          Designed and deployed complete AI systems — not just notebooks. A model
-          that never leaves a researcher's laptop isn't a product — it's a cost.
-          Every system I've built started with a process someone was doing manually.
-          My job was to make that unnecessary.
-          Engineered across the full stack: <strong>model architecture and training</strong>,
-          <strong>API development</strong>, <strong>containerisation</strong>, and
-          <strong>AWS cloud deployment</strong>.
-        </p>
-        <p>
-          Owned three commercially critical areas end-to-end: <strong>LLM agents and RAG
-          pipelines</strong> (GPT-4o, LangGraph, deterministic decision systems, hallucination mitigation),
-          <strong>computer vision systems</strong> (YOLO, ResNet, real-time inference), and
-          <strong>predictive ML</strong> (forecasting, churn, fraud). I care less about
-          model accuracy on holdout sets and more about what happens when the system goes live.
-          Every system is measured against accuracy, latency, and business outcome — not validation loss.
-        </p>
-        <!-- Quick credibility strip -->
-        <div class="about-cred-row">
-          <div class="about-cred-item">
-            <span class="about-cred-val">4</span>
-            <span class="about-cred-lbl">Production deployments</span>
-          </div>
-          <div class="about-cred-item">
-            <span class="about-cred-val">3</span>
-            <span class="about-cred-lbl">AI domains</span>
-          </div>
-          <div class="about-cred-item">
-            <span class="about-cred-val">AWS</span>
-            <span class="about-cred-lbl">Cloud infrastructure</span>
-          </div>
-          <div class="about-cred-item">
-            <span class="about-cred-val">End-to-end</span>
-            <span class="about-cred-lbl">Full-stack ML</span>
-          </div>
-        </div>
-        <!-- Education + certifications -->
-        <div class="about-cred-row" style="margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--border-1)">
-          <div class="about-cred-item">
-            <span class="about-cred-val" style="font-size:0.8rem">MS CS</span>
-            <span class="about-cred-lbl">Pace University · NYC</span>
-          </div>
-          <div class="about-cred-item">
-            <span class="about-cred-val" style="font-size:0.8rem">AWS CCP</span>
-            <span class="about-cred-lbl">Certified Cloud Practitioner</span>
-          </div>
-          <div class="about-cred-item">
-            <span class="about-cred-val" style="font-size:0.8rem">B.Tech AI</span>
-            <span class="about-cred-lbl">Amrita Vishwa Vidyapeetham</span>
-          </div>
-        </div>
-        <div class="about-ctas">
-          <a href="Raj_Kumar_Nelluri_AI:ML_Engineer_Resume.pdf" download class="btn btn-fill">
-            <i class="fas fa-arrow-down" style="font-size:.75rem"></i> Download Resume
-          </a>
-          <a href="#contact" class="btn btn-outline">Get in touch</a>
-        </div>
-      </div>
-
-      <div class="capabilities reveal reveal-right reveal-delay-1">
-        <p class="section-label">Capabilities</p>
-        <div class="cap-list" style="margin-top:1.5rem">
-          <div class="cap-item">
-            <span class="cap-num">01</span>
-            <div>
-              <div class="cap-title">LLM Engineering</div>
-              <div class="cap-desc">Production-grade agents and RAG pipelines that replace manual research and document retrieval — with deterministic decision logic and hallucination guardrails built in.</div>
-            </div>
-          </div>
-          <div class="cap-item">
-            <span class="cap-num">02</span>
-            <div>
-              <div class="cap-title">Computer Vision</div>
-              <div class="cap-desc">YOLO and ResNet pipelines that replace manual inspection and review at scale — real-time inference via FastAPI, streaming ingestion via Kinesis, results queryable via SQL.</div>
-            </div>
-          </div>
-          <div class="cap-item">
-            <span class="cap-num">03</span>
-            <div>
-              <div class="cap-title">ML Infrastructure</div>
-              <div class="cap-desc">End-to-end MLOps on AWS — S3 ingestion, Lambda ETL, SageMaker training, real-time endpoints, CloudWatch drift detection, and CI/CD retraining. Systems that stay accurate without manual intervention.</div>
-            </div>
-          </div>
-          <div class="cap-item">
-            <span class="cap-num">04</span>
-            <div>
-              <div class="cap-title">Forecasting &amp; Prediction</div>
-              <div class="cap-desc">LSTM + Prophet ensembles and XGBoost classifiers that replace manual planning and gut-feel decisions — SHAP explainability makes every prediction auditable for non-technical stakeholders.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <div class="about-photo-col reveal-left">
+      <img src="Raj_Kumar.png" alt="Raj Kumar Nelluri" />
     </div>
+
+    <div class="about-text-col reveal-right reveal-delay-1">
+      <p class="about-label">A B O U T</p>
+
+      <h2 class="about-heading">
+        Here is a <span class="ul">little</span> background
+      </h2>
+
+      <p class="about-body">
+        I design and deploy complete AI systems — not just notebooks. A model that
+        never leaves a researcher's laptop isn't a product, it's a cost. Every system
+        I've built started with a process someone was doing manually. My job was to
+        make that unnecessary.
+      </p>
+      <p class="about-body">
+        Engineered across the full stack: <strong>LLM agents and RAG pipelines</strong>,
+        <strong>computer vision</strong>, <strong>predictive ML</strong>, and
+        <strong>AWS cloud infrastructure</strong>. I care less about validation loss
+        and more about what happens when the system goes live.
+      </p>
+
+      <div class="about-creds">
+        <div class="about-cred">
+          <span class="about-cred-val">MS CS</span>
+          <span class="about-cred-lbl">Pace University · NYC</span>
+        </div>
+        <div class="about-cred">
+          <span class="about-cred-val">AWS CCP</span>
+          <span class="about-cred-lbl">Cloud Practitioner</span>
+        </div>
+        <div class="about-cred">
+          <span class="about-cred-val">B.Tech AI</span>
+          <span class="about-cred-lbl">Amrita Vishwa Vidyapeetham</span>
+        </div>
+      </div>
+
+      <div class="about-ctas">
+        <a href="Raj_Kumar_Nelluri_AI:ML_Engineer_Resume.pdf" download class="btn-primary">
+          <i class="fas fa-arrow-down" style="font-size:.75rem"></i> Resume
+        </a>
+        <a href="#contact" class="btn-secondary">Get in touch</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- ═══════════════════ SKILLS ═══════════════════ -->
 <section id="skills">
   <div class="container">
-    <p class="section-label reveal">Full Stack</p>
-    <h2 class="section-title reveal" style="max-width:480px">
-      Every layer — so nothing blocks the deployment.
-    </h2>
-    <div class="skills-cloud">
+    <div class="skills-header reveal">
+      <h3 class="skills-eyebrow">Skills</h3>
+      <p class="skills-sub">Hover over a skill for proficiency level</p>
+    </div>
 
-      <!-- LLM & Agents -->
-      <div class="skill-group reveal reveal-delay-1">
-        <div class="skill-group-header">LLM &amp; Agents</div>
-        <div class="skill-badges-wrap">
-          <span class="skill-badge">GPT-4o / LLM APIs</span>
-          <span class="skill-badge">LangGraph</span>
-          <span class="skill-badge">LangChain</span>
-          <span class="skill-badge">RAG Pipelines</span>
-          <span class="skill-badge">ChromaDB</span>
-          <span class="skill-badge">Pydantic v2</span>
-          <span class="skill-badge">Langfuse</span>
-        </div>
+    <div class="skill-badges">
+
+      <!-- Row 1 -->
+      <div class="skill-badge reveal">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+        <div class="skill-badge-overlay"><span>95%</span></div>
+        <div class="skill-badge-label">Python</div>
+      </div>
+      <div class="skill-badge reveal reveal-delay-1">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" />
+        <div class="skill-badge-overlay"><span>88%</span></div>
+        <div class="skill-badge-label">PyTorch</div>
+      </div>
+      <div class="skill-badge reveal reveal-delay-2">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" />
+        <div class="skill-badge-overlay"><span>82%</span></div>
+        <div class="skill-badge-label">AWS</div>
+      </div>
+      <div class="skill-badge reveal reveal-delay-3">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+        <div class="skill-badge-overlay"><span>85%</span></div>
+        <div class="skill-badge-label">Docker</div>
+      </div>
+      <div class="skill-badge reveal">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" />
+        <div class="skill-badge-overlay"><span>90%</span></div>
+        <div class="skill-badge-label">FastAPI</div>
+      </div>
+      <div class="skill-badge reveal reveal-delay-1">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+        <div class="skill-badge-overlay"><span>78%</span></div>
+        <div class="skill-badge-label">React</div>
+      </div>
+      <div class="skill-badge reveal reveal-delay-2">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
+        <div class="skill-badge-overlay"><span>76%</span></div>
+        <div class="skill-badge-label">TypeScript</div>
+      </div>
+      <div class="skill-badge reveal reveal-delay-3">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" />
+        <div class="skill-badge-overlay"><span>80%</span></div>
+        <div class="skill-badge-label">Redis</div>
       </div>
 
-      <!-- Neural Models -->
-      <div class="skill-group reveal reveal-delay-2">
-        <div class="skill-group-header">Neural Models</div>
-        <div class="skill-badges-wrap">
-          <span class="skill-badge">PyTorch</span>
-          <span class="skill-badge">Transformers</span>
-          <span class="skill-badge">V-JEPA2 / Wav2Vec-BERT</span>
-          <span class="skill-badge">Llama 3.2</span>
-          <span class="skill-badge">Meta TRIBE v2</span>
-        </div>
+      <!-- Row 2 -->
+      <div class="skill-badge reveal">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+        <div class="skill-badge-overlay"><span>92%</span></div>
+        <div class="skill-badge-label">Git</div>
       </div>
-
-      <!-- Cloud & Infra -->
-      <div class="skill-group reveal reveal-delay-1">
-        <div class="skill-group-header">Cloud &amp; Infra</div>
-        <div class="skill-badges-wrap">
-          <span class="skill-badge">AWS EC2</span>
-          <span class="skill-badge">Docker &amp; Compose</span>
-          <span class="skill-badge">FastAPI</span>
-          <span class="skill-badge">Redis</span>
-          <span class="skill-badge">Nginx</span>
-          <span class="skill-badge">GitHub Actions</span>
-        </div>
+      <div class="skill-badge reveal reveal-delay-1">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" />
+        <div class="skill-badge-overlay"><span>84%</span></div>
+        <div class="skill-badge-label">Linux</div>
       </div>
-
-      <!-- Frontend & Tools -->
-      <div class="skill-group reveal reveal-delay-2">
-        <div class="skill-group-header">Frontend &amp; Tools</div>
-        <div class="skill-badges-wrap">
-          <span class="skill-badge">React / TypeScript</span>
-          <span class="skill-badge">Tailwind CSS</span>
-          <span class="skill-badge">Streamlit</span>
-          <span class="skill-badge">Python (Expert)</span>
-          <span class="skill-badge">Git / GitHub</span>
-          <span class="skill-badge">Linux / Bash</span>
-        </div>
+      <div class="skill-badge reveal reveal-delay-2">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" />
+        <div class="skill-badge-overlay"><span>79%</span></div>
+        <div class="skill-badge-label">OpenCV</div>
+      </div>
+      <div class="skill-badge reveal reveal-delay-3">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" />
+        <div class="skill-badge-overlay"><span>93%</span></div>
+        <div class="skill-badge-label">Jupyter</div>
+      </div>
+      <div class="skill-badge reveal">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+        <div class="skill-badge-overlay"><span>91%</span></div>
+        <div class="skill-badge-label">GitHub</div>
+      </div>
+      <div class="skill-badge reveal reveal-delay-1">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" />
+        <div class="skill-badge-overlay"><span>77%</span></div>
+        <div class="skill-badge-label">Nginx</div>
+      </div>
+      <div class="skill-badge reveal reveal-delay-2">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" />
+        <div class="skill-badge-overlay"><span>81%</span></div>
+        <div class="skill-badge-label">TensorFlow</div>
+      </div>
+      <div class="skill-badge reveal reveal-delay-3">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kaggle/kaggle-original.svg" alt="Kaggle" />
+        <div class="skill-badge-overlay"><span>86%</span></div>
+        <div class="skill-badge-label">Kaggle</div>
       </div>
 
     </div>
@@ -706,34 +396,27 @@
 <!-- ═══════════════════ CONTACT ═══════════════════ -->
 <section id="contact">
   <div class="container">
-    <div class="contact-centered reveal">
-
-      <p class="section-label">Contact</p>
-      <div class="contact-hire-signal">Actively looking · Available now</div>
-
-      <h2 class="section-title contact-heading">
-        Got a manual workflow<br />
-        that should be <em style="font-style:normal;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">automated?</em>
-      </h2>
-
+    <div class="contact-inner reveal">
+      <p class="contact-label">Actively looking · Available now</p>
+      <h2 class="contact-heading">Let's work<br />together.</h2>
       <p class="contact-sub">
         I'm looking for a full-time AI/ML Engineering role where there's a real problem —
-        a bottleneck, a slow decision, a process someone is doing by hand. If that's your team,
-        reach out directly. I reply within 24 hours.
+        a bottleneck, a slow decision, a process someone is doing by hand.
+        I reply within 24 hours.
       </p>
-
-      <div class="contact-cta-row">
-        <a href="mailto:rajkumarn2002@gmail.com" class="btn btn-fill contact-btn-primary">
+      <div class="contact-ctas">
+        <a href="mailto:rajkumarn2002@gmail.com" class="contact-btn-primary">
           <i class="fas fa-envelope"></i> rajkumarn2002@gmail.com
         </a>
-        <a href="https://www.linkedin.com/in/raj-kumar-nelluri-351389393/" target="_blank" class="btn btn-outline contact-btn-secondary">
+        <a href="https://www.linkedin.com/in/raj-kumar-nelluri-351389393/" target="_blank" class="contact-btn-secondary">
           <i class="fab fa-linkedin-in"></i> Connect on LinkedIn
         </a>
-        <a href="Raj_Kumar_Nelluri_AI:ML_Engineer_Resume.pdf" download class="btn btn-outline contact-btn-secondary">
-          <i class="fas fa-arrow-down" style="font-size:.75rem"></i> Download Resume
-        </a>
       </div>
-
+      <div class="contact-links">
+        <a href="https://github.com/Rajkumar2002-Rk" target="_blank">GitHub</a>
+        <a href="Raj_Kumar_Nelluri_AI:ML_Engineer_Resume.pdf" download>Resume</a>
+        <a href="mailto:rajkumarn2002@gmail.com">Email</a>
+      </div>
     </div>
   </div>
 </section>
@@ -742,21 +425,10 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <div>
-        <p class="footer-copy">
-          © 2026 Raj Kumar Nelluri
-          <span style="margin:0 .75rem;color:var(--border-2)">·</span>
-          <a href="https://rajkumar2002-rk.github.io/Real_Portfolio/" style="color:var(--text-3);transition:color .2s" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text-3)'">
-            rajkumar2002-rk.github.io
-          </a>
-        </p>
-        <p class="footer-built" style="margin-top:4px;">
-          Built with <span>HTML · CSS · Vanilla JS</span> · Canvas · Zero frameworks
-        </p>
-        <p class="footer-built" style="margin-top:3px;font-style:italic;opacity:0.5">
-          "If a team is doing it manually at scale, there's a better AI system for that."
-        </p>
-      </div>
+      <p class="footer-copy">
+        © 2026 Raj Kumar Nelluri ·
+        <a href="https://rajkumarai.dev/">rajkumarai.dev</a>
+      </p>
       <div class="footer-links">
         <a href="https://github.com/Rajkumar2002-Rk" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/raj-kumar-nelluri-351389393/" target="_blank">LinkedIn</a>
@@ -775,7 +447,6 @@
   </div>
 </div>
 
-<!-- Modal data (hidden) -->
 <div id="modal-data" style="display:none">
 
   <div data-id="medeval">
@@ -783,261 +454,64 @@
       <h2>MedEval — Clinical Triage AI</h2>
       <p>GPT-4o-mini · LangGraph · FastAPI · React 19 · Docker · AWS EC2 · Langfuse</p>
     </div>
-    <div class="modal-section">
-      <h4>The Problem</h4>
-      <p>LLMs hallucinate. In emergency triage, an under-rated urgency level can be fatal — a patient who is ESI 1 (immediate life threat) being triaged as ESI 3 (less urgent) is a clinical failure. Generic LLM-based triage tools give confident answers with no structural guarantee against incorrect urgency assignments.</p>
-    </div>
-    <div class="modal-section">
-      <h4>The Solution</h4>
-      <p>MedEval's core design constraint: the LLM is structurally barred from making the urgency decision. A three-node LangGraph pipeline (extract → triage → explain) processes each case: GPT-4o-mini converts a free-text chief complaint into 95 structured booleans (ExtractedFacts), a deterministic Python rules engine assigns the ESI level by firing 68 ACEP handbook rules, and a second GPT-4o-mini call rephrases the engine's clinical rationale into lay language. The LLM explains decisions — it never makes them.</p>
-    </div>
-    <div class="modal-section">
-      <h4>Engineering Decisions</h4>
-      <p>Rules engine evaluates recursive AND/OR conditions (all_of / any_of / simple field comparisons) against a merged fact pool. First A or B rule match is definitive. C rules set a base level but D rules can upgrade to ESI 2 (decision_path="C_upgraded_by_D"). Missing fields return False — pediatric rules safely no-op for adult patients. ExtractedFacts binds 94 booleans + predicted_resources to OpenAI structured output at temperature 0.0. Every LLM call is traced via Langfuse (prompt, latency, tokens). Built and published medeval-harness on PyPI (v0.1.0) — 50-case eval suite with exact/tolerant accuracy, under-triage rate, over-triage rate, and p50/p95 latency. CI runs weekly against live production via GitHub Actions with --fail-under 60.</p>
-    </div>
-    <div class="modal-section">
-      <h4>Business Value</h4>
-      <p>Dual UI: patients see a plain-English explanation only; doctors see the full decision path and specific rule IDs that fired — making every triage fully auditable and explainable. Under-triage rate reduced from 20% → 10% after prompt tuning on 50 benchmark cases. The evaluation harness is published on PyPI so accuracy claims are independently reproducible — not just a self-reported number. Backend + frontend deployed as Docker containers on AWS EC2 behind Nginx with Let's Encrypt HTTPS.</p>
-    </div>
-    <div class="modal-section">
-      <h4>Key Results</h4>
-      <ul>
-        <li>68 deterministic ACEP rules — zero LLM influence on the urgency decision</li>
-        <li>Under-triage rate: 20% (baseline) → 10% (tuned) — the safety-critical metric</li>
-        <li>Exact triage accuracy: 66% (baseline) → 68% (tuned) on 50-case benchmark</li>
-        <li>medeval-harness v0.1.0 published on PyPI — independently reproducible eval</li>
-        <li>CI weekly eval against live production; build fails below 60% accuracy</li>
-        <li>A2_apneic crash bug fixed — all 68 rules verified live (returns ESI 1)</li>
-        <li>Live at medeval.rajkumarai.dev — HTTPS, Docker Compose, AWS EC2, Nginx</li>
-      </ul>
-    </div>
-    <div class="modal-section">
-      <h4>Stack</h4>
-      <div class="modal-tags"><span>GPT-4o-mini</span><span>LangGraph</span><span>FastAPI</span><span>React 19</span><span>Vite</span><span>Tailwind CSS</span><span>TypeScript</span><span>Docker</span><span>AWS EC2</span><span>Nginx</span><span>Langfuse</span><span>GitHub Actions</span><span>PyPI</span></div>
-    </div>
+    <div class="modal-section"><h4>The Problem</h4><p>LLMs hallucinate. In emergency triage, an under-rated urgency level can be fatal. Generic LLM-based triage tools give confident answers with no structural guarantee against incorrect urgency assignments.</p></div>
+    <div class="modal-section"><h4>The Solution</h4><p>MedEval's core design constraint: the LLM is structurally barred from making the urgency decision. A three-node LangGraph pipeline (extract → triage → explain): GPT-4o-mini converts free-text into 95 structured booleans, a deterministic Python rules engine assigns the ESI level by firing 68 ACEP handbook rules, and a second LLM call rephrases the rationale into lay language. The LLM explains decisions — it never makes them.</p></div>
+    <div class="modal-section"><h4>Engineering Decisions</h4><p>Rules engine evaluates recursive AND/OR conditions against a merged fact pool. First A or B rule match is definitive. C rules set a base level but D rules can upgrade to ESI 2. Missing fields return False — pediatric rules safely no-op for adult patients. Built and published medeval-harness on PyPI (v0.1.0) — 50-case eval suite with exact/tolerant accuracy, under-triage rate, and p50/p95 latency. CI runs weekly against live production via GitHub Actions with --fail-under 60.</p></div>
+    <div class="modal-section"><h4>Business Value</h4><p>Dual UI: patients see plain-English explanation only; doctors see full decision path and rule IDs that fired — making every triage fully auditable. Under-triage rate reduced 20% → 10% after prompt tuning. The evaluation harness is on PyPI so accuracy claims are independently reproducible.</p></div>
+    <div class="modal-section"><h4>Key Results</h4><ul><li>68 deterministic ACEP rules — zero LLM influence on urgency decision</li><li>Under-triage rate: 20% → 10% — the safety-critical metric</li><li>medeval-harness v0.1.0 published on PyPI — independently reproducible eval</li><li>CI weekly eval against live production; build fails below 60% accuracy</li><li>Live at medeval.rajkumarai.dev — HTTPS, Docker Compose, AWS EC2, Nginx</li></ul></div>
+    <div class="modal-section"><h4>Stack</h4><div class="modal-tags"><span>GPT-4o-mini</span><span>LangGraph</span><span>FastAPI</span><span>React 19</span><span>Docker</span><span>AWS EC2</span><span>Nginx</span><span>Langfuse</span><span>GitHub Actions</span><span>PyPI</span></div></div>
     <div class="modal-footer">
-      <a href="https://github.com/Rajkumar2002-Rk/MedEval" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> View Code</a>
-      <a href="https://medeval.rajkumarai.dev/" target="_blank" class="btn btn-outline">View Live System <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+      <a href="https://github.com/Rajkumar2002-Rk/MedEval" target="_blank" class="btn-primary"><i class="fab fa-github"></i> View Code</a>
+      <a href="https://medeval.rajkumarai.dev/" target="_blank" class="btn-secondary">View Live System →</a>
     </div>
   </div>
 
   <div data-id="financial">
     <div class="modal-header">
       <h2>AI Financial Research Agent</h2>
-      <p>GPT-4o · FastAPI · Redis · Docker · AWS EC2</p>
+      <p>GPT-4o · LangGraph · FastAPI · Redis · Docker · AWS EC2</p>
     </div>
-    <div class="modal-section">
-      <h4>The Problem</h4>
-      <p>Financial analysts spend days compiling research from 10+ scattered sources — market data, news, SEC filings, fundamentals. Manual work doesn't scale and introduces inconsistency.</p>
-    </div>
-    <div class="modal-section">
-      <h4>The Solution</h4>
-      <p>Designed and deployed a deterministic investment decision engine — a 7-step async LangGraph pipeline that generates auditable BUY/HOLD/SELL recommendations in under 30 seconds. GPT-4o is constrained to explanation-only: zero influence over the decision, ensuring fully reproducible and auditable outputs with zero hallucination risk on recommendations.</p>
-    </div>
-    <div class="modal-section">
-      <h4>Engineering Decisions</h4>
-      <p>Normalized multi-factor scoring engine (Technical 0–25, Fundamental 0–40, Sentiment 0–15) with dynamic max adjustment — missing data excluded from denominator rather than penalised, eliminating false SELL signals. Conflict-aware decision logic: signal disagreement (variance &gt; 0.15) overrides to HOLD in 35–55% ambiguity band, reducing false conviction. 5-factor confidence model (data completeness, signal agreement, volatility, news uncertainty) blocks recommendations below 20% confidence. Redis TTL 900s caching reduces repeated query latency from ~15s to &lt;100ms.</p>
-    </div>
-    <div class="modal-section">
-      <h4>Business Value</h4>
-      <p>Any firm paying analysts $80k+/year offsets that cost with sub-30s deterministic decisions. Portfolio ranking mode supports 2–8 tickers with proportional capital allocation. The same architecture extends to portfolio monitoring, earnings alerts, and competitive intelligence at near-zero marginal cost per use case.</p>
-    </div>
-    <div class="modal-section">
-      <h4>Key Results</h4>
-      <ul>
-        <li>BUY/HOLD/SELL decision generated in under 30 seconds</li>
-        <li>Repeated query latency: ~15s → &lt;100ms via Redis caching (10× API cost reduction)</li>
-        <li>Zero LLM hallucination risk — GPT-4o explains decisions, never makes them</li>
-        <li>Portfolio ranking mode: 2–8 tickers with proportional capital allocation</li>
-        <li>Live on AWS EC2 with Nginx domain routing and Docker Compose</li>
-      </ul>
-    </div>
-    <div class="modal-section">
-      <h4>Stack</h4>
-      <div class="modal-tags"><span>GPT-4o</span><span>LangGraph</span><span>FastAPI</span><span>Alpha Vantage</span><span>Redis</span><span>Docker</span><span>AWS EC2</span><span>Nginx</span><span>Python</span></div>
-    </div>
+    <div class="modal-section"><h4>The Problem</h4><p>Financial analysts spend days compiling research from 10+ scattered sources. Manual work doesn't scale and introduces inconsistency.</p></div>
+    <div class="modal-section"><h4>The Solution</h4><p>A 7-step async LangGraph pipeline that generates auditable BUY/HOLD/SELL recommendations in under 30 seconds. GPT-4o constrained to explanation-only: zero influence over the decision, ensuring fully reproducible and auditable outputs.</p></div>
+    <div class="modal-section"><h4>Engineering Decisions</h4><p>Normalized multi-factor scoring engine (Technical 0–25, Fundamental 0–40, Sentiment 0–15) with conflict-aware logic — signal disagreement (variance > 0.15) overrides to HOLD, eliminating false conviction. 5-factor confidence model blocks recommendations below 20% confidence. Redis TTL 900s caching reduces repeated query latency from ~15s to &lt;100ms.</p></div>
+    <div class="modal-section"><h4>Business Value</h4><p>Any firm paying analysts $80k+/year offsets that cost with sub-30s deterministic decisions. Portfolio ranking mode supports 2–8 tickers with proportional capital allocation.</p></div>
+    <div class="modal-section"><h4>Key Results</h4><ul><li>BUY/HOLD/SELL decision generated in under 30 seconds</li><li>Repeated query latency: ~15s → &lt;100ms via Redis caching</li><li>Zero LLM hallucination risk — GPT-4o explains, never decides</li><li>Portfolio ranking mode: 2–8 tickers with proportional capital allocation</li></ul></div>
+    <div class="modal-section"><h4>Stack</h4><div class="modal-tags"><span>GPT-4o</span><span>LangGraph</span><span>FastAPI</span><span>Alpha Vantage</span><span>Redis</span><span>Docker</span><span>AWS EC2</span><span>Nginx</span></div></div>
     <div class="modal-footer">
-      <a href="https://github.com/Rajkumar2002-Rk/financial-research-agent" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> View Code</a>
-      <a href="https://fintel.rajkumarai.dev/" target="_blank" class="btn btn-outline">View Live System <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
-    </div>
-  </div>
-
-  <div data-id="rag">
-    <div class="modal-header">
-      <h2>Enterprise RAG Chatbot</h2>
-      <p>LangChain · ChromaDB · GPT-4 · Streamlit · AWS EC2</p>
-    </div>
-    <div class="modal-section">
-      <h4>The Problem</h4>
-      <p>Enterprise knowledge locked in PDFs, Word docs, and internal wikis means employees waste hours on search instead of work. Generic chatbots hallucinate without grounding.</p>
-    </div>
-    <div class="modal-section">
-      <h4>The Solution</h4>
-      <p>Engineered a production RAG system: PDF ingestion pipeline (1000-char chunks, 200-char overlap, OpenAI text-embedding-3-small), ChromaDB vector store, MMR retrieval, and GPT-4 generation with real-time streaming. Hallucination guardrails block LLM calls when retrieval confidence is too low. Deployed on AWS EC2 with HTTPS via Let's Encrypt.</p>
-    </div>
-    <div class="modal-section">
-      <h4>Engineering Decisions</h4>
-      <p>MMR (Maximal Marginal Relevance) retrieval over plain cosine similarity — fetches a larger candidate pool and re-ranks for relevance and diversity, preventing near-duplicate chunks reaching the LLM. Rule-based query classifier (no LLM cost) detects factual/complex/ambiguous/keyword intent and adjusts top_k and fetch_k accordingly. Three API cost guards: rate limiting (20 req/min via slowapi), 500-char input cap, tiktoken token budget — all fire before any LLM call. Every answer uses [SOURCE N: filename — Page: X] citation format — LLM is forced to cite, never invent.</p>
-    </div>
-    <div class="modal-section">
-      <h4>Business Value</h4>
-      <p>Dual deployment: Streamlit chat UI for business users, FastAPI Swagger UI at /api/docs for engineering integration — one system serves both audiences. The citation format makes every answer auditable — critical for regulated industries. Cost guards and query classifier make this viable at production scale without API spend ballooning.</p>
-    </div>
-    <div class="modal-section">
-      <h4>Key Results</h4>
-      <ul>
-        <li>87% retrieval accuracy on benchmark query set</li>
-        <li>Zero hallucination on document-grounded queries — guardrails return fallback instead of guessing</li>
-        <li>MMR retrieval prevents near-duplicate context from polluting LLM answers</li>
-        <li>Two interfaces: Streamlit (users) + FastAPI Swagger (developers)</li>
-        <li>Live on AWS EC2 with Nginx reverse proxy and HTTPS (Let's Encrypt)</li>
-      </ul>
-    </div>
-    <div class="modal-section">
-      <h4>Stack</h4>
-      <div class="modal-tags"><span>LangChain</span><span>ChromaDB</span><span>GPT-4</span><span>FastAPI</span><span>Streamlit</span><span>Docker</span><span>AWS EC2</span><span>Nginx</span><span>Redis</span></div>
-    </div>
-    <div class="modal-footer">
-      <a href="https://github.com/Rajkumar2002-Rk/rag-chatbot" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> View Code</a>
-      <a href="https://chatbot.rajkumarai.dev" target="_blank" class="btn btn-outline">View Live System <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
-    </div>
-  </div>
-
-  <div data-id="retail">
-    <div class="modal-header">
-      <h2>AWS Retail Sales Forecasting</h2>
-      <p>LSTM · Prophet · SageMaker · S3 · PyTorch</p>
-    </div>
-    <div class="modal-section">
-      <h4>The Problem</h4>
-      <p>Single-model forecasts fail to capture both long-range trends and short-range seasonality simultaneously, causing inventory errors that cost retailers millions annually.</p>
-    </div>
-    <div class="modal-section">
-      <h4>The Solution</h4>
-      <p>Architected an LSTM + Prophet ensemble — LSTM captures complex temporal dependencies, Prophet handles seasonality and holidays. Trained on 2 years of multi-store data, deployed as a SageMaker endpoint with automated weekly retraining triggered from S3. Model stays current without manual intervention.</p>
-    </div>
-    <div class="modal-section">
-      <h4>Key Results</h4>
-      <ul>
-        <li>4.2% RMSE across 45 product categories — 18% improvement over single-model baselines</li>
-        <li>Trained on 500,000+ retail transactions across 2 years of multi-store data</li>
-        <li>8-week forecast horizon with automated weekly SageMaker retraining from S3</li>
-        <li>Ensemble captures both temporal complexity (LSTM) and seasonality/holidays (Prophet)</li>
-      </ul>
-    </div>
-    <div class="modal-section">
-      <h4>Stack</h4>
-      <div class="modal-tags"><span>LSTM</span><span>Prophet</span><span>SageMaker</span><span>S3</span><span>PyTorch</span><span>Pandas</span></div>
-    </div>
-    <div class="modal-footer">
-      <a href="https://github.com/Rajkumar2002-Rk/aws-sales-forecasting" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> View Code</a>
-    </div>
-  </div>
-
-  <div data-id="churn">
-    <div class="modal-header">
-      <h2>Customer Churn Prediction</h2>
-      <p>XGBoost · SHAP · MLflow · Docker · GitHub Actions</p>
-    </div>
-    <div class="modal-section">
-      <h4>The Problem</h4>
-      <p>Acquiring new telecom customers costs 5× more than retaining existing ones. Without early warning signals, at-risk customers leave before retention campaigns can reach them.</p>
-    </div>
-    <div class="modal-section">
-      <h4>The Solution</h4>
-      <p>Engineered 21 customer behaviour features plus AWS Comprehend NLP sentiment signals extracted from 7k+ customer support tickets — expanding the feature space with real customer voice data. End-to-end MLOps: S3 ingestion → Lambda ETL → SageMaker training → real-time inference endpoint. Automated retraining via CloudWatch + EventBridge on data drift detection. SHAP waterfall plots make every prediction auditable for non-technical retention teams. MLflow tracks all experiments with full reproducibility.</p>
-    </div>
-    <div class="modal-section">
-      <h4>Key Results</h4>
-      <ul>
-        <li>91% classification accuracy, 89% F1 score</li>
-        <li>AWS Comprehend NLP sentiment from 7k+ customer support tickets</li>
-        <li>Full MLOps pipeline: S3 → Lambda ETL → SageMaker → real-time inference endpoint</li>
-        <li>CloudWatch + EventBridge automated retraining on data drift</li>
-        <li>SHAP waterfall plots for every individual prediction</li>
-      </ul>
-    </div>
-    <div class="modal-section">
-      <h4>Stack</h4>
-      <div class="modal-tags"><span>XGBoost</span><span>SHAP</span><span>SageMaker</span><span>Lambda</span><span>CloudWatch</span><span>EventBridge</span><span>AWS Comprehend</span><span>MLflow</span><span>Docker</span></div>
-    </div>
-    <div class="modal-footer">
-      <a href="https://github.com/Rajkumar2002-Rk/Customer_Chrun_Prediction" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> View Code</a>
-    </div>
-  </div>
-
-  <div data-id="fraud">
-    <div class="modal-header">
-      <h2>Insurance Fraud Detection</h2>
-      <p>YOLOv8 · ResNet-50 · PyTorch · OpenCV · FastAPI</p>
-    </div>
-    <div class="modal-section">
-      <h4>The Problem</h4>
-      <p>Insurance companies process 50,000+ claims annually. Manual review is slow, expensive, and inconsistent — letting fraudulent claims slip through while delaying legitimate ones.</p>
-    </div>
-    <div class="modal-section">
-      <h4>The Solution</h4>
-      <p>Designed a dual-model CV pipeline: YOLOv8 localises vehicle damage in real time, ResNet-50 classifies severity and flags fraud indicators at 96.7% accuracy. Real-time claim ingestion via AWS Kinesis, serverless processing with Lambda, and fraud scores stored in RDS — enabling SQL-based analyst queries on top of the pipeline. FastAPI serves the inference endpoint at 50ms average latency.</p>
-    </div>
-    <div class="modal-section">
-      <h4>Key Results</h4>
-      <ul>
-        <li>96.7% fraud detection accuracy on 50,000+ claim images</li>
-        <li>50ms average inference latency via FastAPI REST API</li>
-        <li>Real-time ingestion via AWS Kinesis + Lambda serverless processing</li>
-        <li>Fraud scores stored in RDS — analysts query results directly via SQL</li>
-        <li>Dual-model pipeline: YOLOv8 (detection) + ResNet-50 (classification)</li>
-      </ul>
-    </div>
-    <div class="modal-section">
-      <h4>Stack</h4>
-      <div class="modal-tags"><span>YOLOv8</span><span>ResNet-50</span><span>PyTorch</span><span>FastAPI</span><span>AWS Kinesis</span><span>Lambda</span><span>RDS</span><span>OpenCV</span></div>
-    </div>
-    <div class="modal-footer">
-      <a href="https://github.com/Rajkumar2002-Rk" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> View Code</a>
+      <a href="https://github.com/Rajkumar2002-Rk/financial-research-agent" target="_blank" class="btn-primary"><i class="fab fa-github"></i> View Code</a>
+      <a href="https://fintel.rajkumarai.dev/" target="_blank" class="btn-secondary">View Live System →</a>
     </div>
   </div>
 
   <div data-id="cineneuro">
     <div class="modal-header">
       <h2>CineNeuro — Neural Audience Intelligence</h2>
-      <p>Meta FAIR TRIBE v2 · V-JEPA2 · Wav2Vec-BERT · Llama 3.2 · FastAPI · React · AWS EC2</p>
+      <p>Meta FAIR TRIBE v2 · V-JEPA2 · Wav2Vec-BERT · Llama 3.2 · FastAPI · React · AWS</p>
     </div>
-    <div class="modal-section">
-      <h4>The Problem</h4>
-      <p>Film studios spend millions producing trailers with no way to quantify emotional impact before release. Traditional test screenings are expensive, slow, and limited to small samples — there's no second-by-second signal showing where audiences peak in excitement, disengage, or feel fear.</p>
-    </div>
-    <div class="modal-section">
-      <h4>The Solution</h4>
-      <p>CineNeuro uses Meta FAIR's TRIBE v2 brain encoding model to predict fMRI activations across 20,484 cortical vertices for every second of a trailer. Three feature extractors process the video simultaneously — V-JEPA2 for visual content, Wav2Vec-BERT for audio waveforms, and Llama 3.2 for transcript embeddings. These feed TRIBE v2, and the predicted activations are mapped to 5 emotion channels (excitement, fear, joy, suspense, boredom) across 7 functional brain regions using neuroscience-based weights.</p>
-    </div>
-    <div class="modal-section">
-      <h4>Engineering Decisions</h4>
-      <p>Two-tier deployment strategy: a g4dn.xlarge GPU instance (Tesla T4, 15GB VRAM) handles inference on-demand at $0.53/hr, then terminates. A t3.micro serves the React dashboard 24/7 at near-zero cost using pre-computed JSON results (&lt;100ms load time). The three extractors total 12.89GB (V-JEPA2 4.14GB + Wav2Vec-BERT 2.32GB + Llama 3.2 6.43GB) — barely fitting in 15GB VRAM, requiring careful sequential model loading. Multi-stage Docker build (Node 18 + Python 3.11-slim) keeps the production image at ~500MB with no ML weights. Submitted PR #20 to Meta FAIR's TRIBE v2 — added int8 compute_type fallback for WhisperX on non-CUDA devices. Before the fix: hardcoded float16 caused ValueError on Apple Silicon and CPU-only Linux. After: the full pipeline runs everywhere. CUDA path unchanged, &lt;1% WER degradation on transcription accuracy. CLA signed, checks passing.</p>
-    </div>
-    <div class="modal-section">
-      <h4>Business Value</h4>
-      <p>Second-by-second emotion maps identify the 3 strongest and 3 weakest trailer moments with human-readable explanations — directly actionable edit intelligence. Audience persona simulation (Action Lovers, Romance Fans, Horror Enthusiasts) shows differentiated engagement curves. Competitive benchmarking against 5 iconic trailers (Oppenheimer, Avengers Endgame, Inception, Interstellar, The Dark Knight) gives studios a quantified baseline. Full analysis costs ~$0.50 in GPU time vs thousands for a traditional test screening.</p>
-    </div>
-    <div class="modal-section">
-      <h4>Key Results</h4>
-      <ul>
-        <li>20,484 cortical vertices predicted per second of video across 7 functional brain regions</li>
-        <li>5 simultaneous emotion channels: excitement, fear, joy, suspense, boredom</li>
-        <li>53–224 predicted segments per trailer (74–93% kept after quality filter)</li>
-        <li>Pre-computed demo results served in &lt;100ms from disk</li>
-        <li>Full 2-minute trailer analysis in ~55 minutes on Tesla T4 GPU</li>
-        <li>Monthly hosting cost: ~$0 (t3.micro free tier + on-demand GPU only when needed)</li>
-        <li>PR #20 submitted to Meta FAIR TRIBE v2 — int8 compute_type fallback for WhisperX on non-CUDA devices. CLA signed, checks passing.</li>
-      </ul>
-    </div>
-    <div class="modal-section">
-      <h4>Stack</h4>
-      <div class="modal-tags"><span>Meta TRIBE v2</span><span>V-JEPA2</span><span>Wav2Vec-BERT</span><span>Llama 3.2</span><span>WhisperX</span><span>FastAPI</span><span>React</span><span>Recharts</span><span>ReportLab</span><span>Docker</span><span>AWS EC2 g4dn.xlarge</span><span>Nginx</span><span>Python 3.11</span></div>
-    </div>
+    <div class="modal-section"><h4>The Problem</h4><p>Film studios spend millions producing trailers with no way to quantify emotional impact before release. Traditional test screenings are expensive, slow, and limited to small samples — no second-by-second signal.</p></div>
+    <div class="modal-section"><h4>The Solution</h4><p>CineNeuro uses Meta FAIR's TRIBE v2 brain encoding model to predict fMRI activations across 20,484 cortical vertices for every second of a trailer. Three feature extractors — V-JEPA2 (vision), Wav2Vec-BERT (audio), Llama 3.2 (transcript) — feed TRIBE v2, mapping to 5 emotion channels across 7 brain regions.</p></div>
+    <div class="modal-section"><h4>Engineering Decisions</h4><p>Two-tier deployment: g4dn.xlarge GPU ($0.53/hr) handles inference on-demand then terminates. t3.micro serves the React dashboard 24/7 using pre-computed JSON results (&lt;100ms). The three extractors total 12.89GB — barely fitting in 15GB VRAM, requiring careful sequential model loading. PR #20 submitted to Meta FAIR TRIBE v2 — added int8 compute_type fallback for WhisperX on non-CUDA devices. CLA signed, checks passing.</p></div>
+    <div class="modal-section"><h4>Key Results</h4><ul><li>20,484 cortical vertices predicted per second across 7 brain regions</li><li>5 simultaneous emotion channels: excitement, fear, joy, suspense, boredom</li><li>Pre-computed demo results served in &lt;100ms from disk</li><li>Full 2-minute trailer analysis in ~55 minutes on Tesla T4 GPU</li><li>Monthly hosting cost: ~$0 (t3.micro free tier + on-demand GPU only when needed)</li><li>PR #20 submitted to Meta FAIR TRIBE v2 — CLA signed, checks passing</li></ul></div>
+    <div class="modal-section"><h4>Stack</h4><div class="modal-tags"><span>Meta TRIBE v2</span><span>V-JEPA2</span><span>Wav2Vec-BERT</span><span>Llama 3.2</span><span>WhisperX</span><span>FastAPI</span><span>React</span><span>Docker</span><span>AWS EC2 g4dn.xlarge</span><span>Nginx</span></div></div>
     <div class="modal-footer">
-      <a href="https://github.com/Rajkumar2002-Rk/CineNeuro" target="_blank" class="btn btn-fill"><i class="fab fa-github"></i> View Code</a>
-      <a href="https://cineneuro.rajkumarai.dev/" target="_blank" class="btn btn-outline">View Live System <i class="fas fa-arrow-right" style="font-size:.7rem"></i></a>
+      <a href="https://github.com/Rajkumar2002-Rk/CineNeuro" target="_blank" class="btn-primary"><i class="fab fa-github"></i> View Code</a>
+      <a href="https://cineneuro.rajkumarai.dev/" target="_blank" class="btn-secondary">View Live System →</a>
+    </div>
+  </div>
+
+  <div data-id="rag">
+    <div class="modal-header">
+      <h2>Enterprise RAG Chatbot</h2>
+      <p>LangChain · ChromaDB · GPT-4 · FastAPI · Streamlit · Docker · AWS EC2</p>
+    </div>
+    <div class="modal-section"><h4>The Problem</h4><p>Enterprise knowledge locked in PDFs and Word docs means employees waste hours on search. Generic chatbots hallucinate without grounding.</p></div>
+    <div class="modal-section"><h4>The Solution</h4><p>Production RAG system: PDF ingestion pipeline, ChromaDB vector store, MMR retrieval, and GPT-4 generation with real-time streaming. Hallucination guardrails block LLM calls when retrieval confidence is too low.</p></div>
+    <div class="modal-section"><h4>Engineering Decisions</h4><p>MMR (Maximal Marginal Relevance) retrieval over plain cosine similarity — prevents near-duplicate chunks reaching the LLM. Rule-based query classifier (no LLM cost) detects factual/complex/ambiguous intent and adjusts retrieval params. Three API cost guards: rate limiting, input cap, tiktoken token budget — all fire before any LLM call. Citation format [SOURCE N: filename — Page: X] forces the LLM to cite, never invent.</p></div>
+    <div class="modal-section"><h4>Key Results</h4><ul><li>Zero hallucination on document-grounded queries</li><li>Two interfaces: Streamlit (users) + FastAPI Swagger (developers)</li><li>Live on AWS EC2 with Nginx reverse proxy and HTTPS</li></ul></div>
+    <div class="modal-section"><h4>Stack</h4><div class="modal-tags"><span>LangChain</span><span>ChromaDB</span><span>GPT-4</span><span>FastAPI</span><span>Streamlit</span><span>Docker</span><span>AWS EC2</span><span>Nginx</span><span>Redis</span></div></div>
+    <div class="modal-footer">
+      <a href="https://github.com/Rajkumar2002-Rk/rag-chatbot" target="_blank" class="btn-primary"><i class="fab fa-github"></i> View Code</a>
+      <a href="https://chatbot.rajkumarai.dev" target="_blank" class="btn-secondary">View Live System →</a>
     </div>
   </div>
 
@@ -1045,28 +519,16 @@
 
 <!-- ═══════════════════ CHATBOT ═══════════════════ -->
 <div id="chatbot-wrap">
-  <!-- Proactive greeting bubble -->
   <div id="chat-greeting" class="chat-greeting" aria-hidden="true">
     <span id="chat-greeting-text"></span>
     <button class="chat-greeting-close" aria-label="Dismiss">&times;</button>
   </div>
-
-  <!-- Unread badge -->
   <span id="chat-badge" class="chat-badge" aria-hidden="true">1</span>
-
-  <!-- Floating toggle button -->
   <button id="chat-toggle" class="chat-toggle" aria-label="Open chat assistant">
-    <svg class="chat-icon-open" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-    </svg>
-    <svg class="chat-icon-close" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-    </svg>
+    <svg class="chat-icon-open" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <svg class="chat-icon-close" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
   </button>
-
-  <!-- Chat window -->
   <div id="chat-window" class="chat-window" role="dialog" aria-label="Chat with Raj's assistant">
-    <!-- Header -->
     <div class="chat-header">
       <div class="chat-header-info">
         <div class="chat-avatar">RK</div>
@@ -1076,22 +538,16 @@
         </div>
       </div>
       <div class="chat-header-actions">
-        <button id="chat-sound-toggle" class="chat-header-btn" aria-label="Toggle sound" title="Toggle sound">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path class="sound-on" d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/><line class="sound-off" x1="23" y1="9" x2="17" y2="15" style="display:none"/><line class="sound-off" x1="17" y1="9" x2="23" y2="15" style="display:none"/></svg>
+        <button id="chat-sound-toggle" class="chat-header-btn" aria-label="Toggle sound">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path class="sound-on" d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/><line class="sound-off" x1="23" y1="9" x2="17" y2="15" style="display:none"/><line class="sound-off" x1="17" y1="9" x2="23" y2="15" style="display:none"/></svg>
         </button>
         <button id="chat-close" class="chat-header-btn" aria-label="Close chat">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
     </div>
-
-    <!-- ARIA live region for screen readers -->
     <div id="chat-live" class="sr-only" aria-live="polite" aria-atomic="false"></div>
-
-    <!-- Messages area -->
     <div id="chat-messages" class="chat-messages" role="log" aria-label="Chat messages"></div>
-
-    <!-- Quick replies -->
     <div id="chat-quick" class="chat-quick">
       <button class="chat-quick-btn" data-q="What projects have you built?" data-topic="projects">Projects</button>
       <button class="chat-quick-btn" data-q="What's your tech stack?" data-topic="stack">Tech Stack</button>
@@ -1100,26 +556,20 @@
       <button class="chat-quick-btn" data-q="Tell me about your experience" data-topic="experience">Experience</button>
       <button class="chat-quick-btn" data-q="Can I see your resume?" data-topic="resume">Resume</button>
     </div>
-
-    <!-- Input area -->
     <div class="chat-input-wrap">
       <input id="chat-input" type="text" class="chat-input" placeholder="Ask me anything about Raj..." autocomplete="off" maxlength="300" />
       <button id="chat-send" class="chat-send" aria-label="Send message">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
-        </svg>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
       </button>
     </div>
-
-    <!-- Footer actions -->
     <div class="chat-footer-actions">
-      <button id="chat-clear" class="chat-footer-btn" title="Clear conversation">
-        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+      <button id="chat-clear" class="chat-footer-btn">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
         Clear
       </button>
-      <button id="chat-email-summary" class="chat-footer-btn" title="Email this conversation">
-        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Email Summary
+      <button id="chat-email-summary" class="chat-footer-btn">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email summary
       </button>
     </div>
   </div>
@@ -1127,53 +577,88 @@
 
 <!-- ═══════════════════ SCRIPTS ═══════════════════ -->
 <script>
-/* ── Progress bar ─────────────────────────────────────────── */
+/* ── Progress bar ── */
 const progressBar = document.getElementById('progress-bar');
 window.addEventListener('scroll', () => {
   const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
   progressBar.style.width = pct + '%';
 }, { passive: true });
 
-/* ── Navbar scroll state ──────────────────────────────────── */
-const navbar = document.getElementById('navbar');
+/* ── Topbar scroll state ── */
+const topbar = document.getElementById('topbar');
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
+  topbar.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
-/* ── Hamburger menu ───────────────────────────────────────── */
-const hamburger = document.getElementById('hamburger');
-const navLinks  = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navLinks.classList.toggle('open');
+/* ── Mobile menu ── */
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobile-nav');
+menuBtn.addEventListener('click', () => {
+  menuBtn.classList.toggle('open');
+  mobileNav.classList.toggle('open');
 });
-navLinks.querySelectorAll('a').forEach(a => {
+mobileNav.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navLinks.classList.remove('open');
+    menuBtn.classList.remove('open');
+    mobileNav.classList.remove('open');
   });
 });
 
-/* ── Universal scroll reveal ──────────────────────────────── */
+/* ── Scroll reveal ── */
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add('visible');
-      revealObserver.unobserve(e.target); // fire once
+      revealObserver.unobserve(e.target);
     }
   });
 }, { threshold: 0.12 });
-document.querySelectorAll(
-  '.reveal, .reveal-left, .reveal-right, .reveal-scale'
-).forEach(el => revealObserver.observe(el));
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
+  .forEach(el => revealObserver.observe(el));
 
-/* ── Modals ───────────────────────────────────────────────── */
+/* ── Typing animation ── */
+(function () {
+  const el = document.getElementById('typing-name');
+  if (!el) return;
+  const phrases = [
+    'Hi, I am Raj',
+    'I build AI systems 🤖',
+    'I_deploy_to_AWS.py',
+    "And I run on ☕️",
+  ];
+  let pi = 0, ci = 0, deleting = false;
+  function tick() {
+    const cur = phrases[pi];
+    if (!deleting) {
+      ci++;
+      el.textContent = cur.slice(0, ci);
+      if (ci === cur.length) {
+        deleting = true;
+        setTimeout(tick, 2200);
+        return;
+      }
+      setTimeout(tick, 65 + Math.random() * 55);
+    } else {
+      ci--;
+      el.textContent = cur.slice(0, ci);
+      if (ci === 0) {
+        deleting = false;
+        pi = (pi + 1) % phrases.length;
+        setTimeout(tick, 380);
+        return;
+      }
+      setTimeout(tick, 32);
+    }
+  }
+  setTimeout(tick, 600);
+})();
+
+/* ── Modals ── */
 const overlay      = document.getElementById('modal-overlay');
 const modalContent = document.getElementById('modal-content');
 const modalClose   = document.getElementById('modalClose');
-
 function openModal(id) {
-  const src = document.querySelector(`#modal-data [data-id="${id}"]`);
+  const src = document.querySelector('#modal-data [data-id="' + id + '"]');
   if (!src) return;
   modalContent.innerHTML = src.innerHTML;
   overlay.classList.add('active');
@@ -1190,129 +675,23 @@ modalClose.addEventListener('click', closeModal);
 overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-/* ── Particle Canvas — Neural Network + Mouse Repulsion ──── */
-(function () {
-  const canvas  = document.getElementById('hero-canvas');
-  const heroEl  = document.getElementById('hero');
-  if (!canvas || !heroEl) return;
-  const ctx = canvas.getContext('2d');
-
-  function resize() {
-    canvas.width  = canvas.offsetWidth  || window.innerWidth;
-    canvas.height = canvas.offsetHeight || window.innerHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize, { passive: true });
-
-  const COUNT    = 65;
-  const MAX_DIST = 130;
-  const COLORS   = ['59,130,246', '139,92,246', '6,182,212'];
-
-  // Mouse position relative to the canvas (for repulsion field)
-  let mouseX = -9999, mouseY = -9999;
-  heroEl.addEventListener('mousemove', e => {
-    const r = canvas.getBoundingClientRect();
-    mouseX = e.clientX - r.left;
-    mouseY = e.clientY - r.top;
-  }, { passive: true });
-  heroEl.addEventListener('mouseleave', () => { mouseX = -9999; mouseY = -9999; });
-
-  class Particle {
-    constructor() { this.init(); }
-    init() {
-      this.x  = Math.random() * canvas.width;
-      this.y  = Math.random() * canvas.height;
-      this.vx = (Math.random() - 0.5) * 0.38;
-      this.vy = (Math.random() - 0.5) * 0.38;
-      this.r  = Math.random() * 1.4 + 0.4;
-      this.c  = COLORS[Math.floor(Math.random() * COLORS.length)];
-      this.o  = Math.random() * 0.45 + 0.15;
-    }
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      // Mouse repulsion — particles scatter away from cursor
-      const dx   = this.x - mouseX;
-      const dy   = this.y - mouseY;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 95 && dist > 0) {
-        const f = (1 - dist / 95) * 1.4;
-        this.x += (dx / dist) * f;
-        this.y += (dy / dist) * f;
-      }
-      // Boundary wrap
-      if (this.x < 0)             this.x = canvas.width;
-      if (this.x > canvas.width)  this.x = 0;
-      if (this.y < 0)             this.y = canvas.height;
-      if (this.y > canvas.height) this.y = 0;
-    }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${this.c},${this.o})`;
-      ctx.fill();
-    }
-  }
-
-  const particles = Array.from({ length: COUNT }, () => new Particle());
-
-  function drawEdges() {
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx   = particles[i].x - particles[j].x;
-        const dy   = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < MAX_DIST) {
-          // Lines closer to mouse become brighter
-          const mdx   = (particles[i].x + particles[j].x) / 2 - mouseX;
-          const mdy   = (particles[i].y + particles[j].y) / 2 - mouseY;
-          const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
-          const boost = mdist < 150 ? 1 + (1 - mdist / 150) * 1.5 : 1;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(59,130,246,${0.13 * boost * (1 - dist / MAX_DIST)})`;
-          ctx.lineWidth   = 0.5;
-          ctx.stroke();
-        }
-      }
-    }
-  }
-
-  let raf;
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => { p.update(); p.draw(); });
-    drawEdges();
-    raf = requestAnimationFrame(animate);
-  }
-  animate();
-
-  new IntersectionObserver(([e]) => {
-    if (e.isIntersecting) { if (!raf) animate(); }
-    else { cancelAnimationFrame(raf); raf = null; }
-  }).observe(heroEl);
-})();
-
-/* ── Animated metric counters ─────────────────────────────── */
+/* ── Animated metric counters ── */
 function animateCounter(el) {
-  const target   = parseFloat(el.dataset.target);
-  const suffix   = el.dataset.suffix || '';
-  const isFloat  = !Number.isInteger(target);
-  const dur      = 1600;
-  const start    = performance.now();
-  const spanHTML = el.querySelector('span') ? `<span>${suffix}</span>` : '';
-
+  const target  = parseFloat(el.dataset.target);
+  const suffix  = el.dataset.suffix || '';
+  const isFloat = !Number.isInteger(target);
+  const dur     = 1600;
+  const start   = performance.now();
+  const spanHTML = '<span>' + suffix + '</span>';
   function tick(now) {
     const progress = Math.min((now - start) / dur, 1);
-    const eased    = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    const eased    = 1 - Math.pow(1 - progress, 3);
     const val      = eased * target;
     el.innerHTML   = (isFloat ? val.toFixed(1) : Math.floor(val)) + spanHTML;
     if (progress < 1) requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
 }
-
 document.querySelectorAll('[data-target]').forEach(el => {
   new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -1324,249 +703,20 @@ document.querySelectorAll('[data-target]').forEach(el => {
   }, { threshold: 0.6 }).observe(el);
 });
 
-/* ── Subtle hero parallax ─────────────────────────────────── */
-const heroSection = document.getElementById('hero');
-window.addEventListener('scroll', () => {
-  const sy = window.scrollY;
-  if (sy < window.innerHeight * 1.2) {
-    // Canvas drifts slower than content for depth
-    const canvas = document.getElementById('hero-canvas');
-    if (canvas) canvas.style.transform = `translateY(${sy * 0.25}px)`;
-  }
-}, { passive: true });
-
-/* ── Stagger reveal for tech-tags and skill-badges ────────── */
-document.querySelectorAll('.tech-tags, .skill-badges-wrap').forEach(wrap => {
-  const observer = new IntersectionObserver(([entry]) => {
-    if (!entry.isIntersecting) return;
-    observer.disconnect();
-    Array.from(wrap.children).forEach((child, i) => {
-      child.style.opacity   = '0';
-      child.style.transform = 'translateY(12px)';
-      child.style.transition = `opacity 0.4s ease ${i * 55}ms, transform 0.4s ease ${i * 55}ms`;
-      requestAnimationFrame(() => requestAnimationFrame(() => {
-        child.style.opacity   = '';
-        child.style.transform = '';
-      }));
-    });
-  }, { threshold: 0.2 });
-  observer.observe(wrap);
-});
+/* ── Section tracker for chatbot ── */
+const sectionIds = ['hero', 'metrics', 'work', 'about', 'skills', 'contact'];
+const sectionEls = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) document.body.setAttribute('data-section', e.target.id);
+  });
+}, { threshold: 0.4 });
+sectionEls.forEach(el => sectionObserver.observe(el));
 
 /* ================================================================
-   SIGNATURE INTERACTIONS
-   ================================================================ */
-
-/* ── 1. Custom Glowing Cursor with lerp smoothing ───────────── */
+   CHATBOT ENGINE
+================================================================ */
 (function () {
-  // Only activate on devices with a fine pointer (mouse)
-  if (!window.matchMedia('(pointer: fine)').matches) return;
-
-  const outer = document.getElementById('cursor-outer');
-  const dot   = document.getElementById('cursor-dot');
-  if (!outer || !dot) return;
-
-  // Target position (moves instantly with mouse)
-  let tx = window.innerWidth / 2, ty = window.innerHeight / 2;
-  // Outer ring lags behind for smooth trailing effect
-  let ox = tx, oy = ty;
-  const LERP = 0.14; // 0=no follow, 1=instant
-
-  document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; }, { passive: true });
-
-  // Click feedback
-  document.addEventListener('mousedown', () => document.body.classList.add('c-down'));
-  document.addEventListener('mouseup',   () => document.body.classList.remove('c-down'));
-
-  // Expand cursor on interactive elements
-  const INTERACTIVE = 'a, button, [role="button"], .btn, .social-link, .tech-tag, .skill-badge, .sec-dot, .fp-link, .pc-link, label, input, textarea, select';
-  document.addEventListener('mouseover', e => {
-    if (e.target.closest(INTERACTIVE)) document.body.classList.add('c-hover');
-  });
-  document.addEventListener('mouseout', e => {
-    if (e.target.closest(INTERACTIVE)) document.body.classList.remove('c-hover');
-  });
-
-  // RAF loop — dot snaps, outer ring lags (depth illusion)
-  (function tick() {
-    ox += (tx - ox) * LERP;
-    oy += (ty - oy) * LERP;
-    dot.style.transform   = `translate(${tx}px, ${ty}px)`;
-    outer.style.transform = `translate(${ox}px, ${oy}px)`;
-    requestAnimationFrame(tick);
-  })();
-})();
-
-/* ── 2. Hero Mouse Glow (ambient spotlight follows cursor) ──── */
-(function () {
-  const hero = document.getElementById('hero');
-  const glow = document.getElementById('hero-mouse-glow');
-  if (!hero || !glow || !window.matchMedia('(pointer: fine)').matches) return;
-
-  let glowX = 0, glowY = 0, tgx = 0, tgy = 0;
-  const LERP = 0.09;
-
-  hero.addEventListener('mousemove', e => {
-    const r = hero.getBoundingClientRect();
-    tgx = e.clientX - r.left;
-    tgy = e.clientY - r.top;
-  }, { passive: true });
-
-  (function tick() {
-    glowX += (tgx - glowX) * LERP;
-    glowY += (tgy - glowY) * LERP;
-    // Offset by half the glow size (520px) to center it on the cursor
-    glow.style.transform = `translate(${glowX - 260}px, ${glowY - 260}px)`;
-    requestAnimationFrame(tick);
-  })();
-})();
-
-/* page spotlight removed */
-
-/* ── 4. Magnetic CTA Button ─────────────────────────────────── */
-(function () {
-  if (!window.matchMedia('(pointer: fine)').matches) return;
-
-  // Only the primary hero CTA gets the magnetic pull
-  const btn = document.querySelector('.hero-ctas .btn-fill');
-  if (!btn) return;
-
-  btn.classList.add('btn-magnetic');
-  const RANGE = 100; // px radius around button that activates pull
-  const PULL  = 0.42; // pull strength (0–1)
-  let active  = false;
-
-  function onMove(e) {
-    const rect = btn.getBoundingClientRect();
-    const cx = rect.left + rect.width  / 2;
-    const cy = rect.top  + rect.height / 2;
-    const dx = e.clientX - cx;
-    const dy = e.clientY - cy;
-    const dist = Math.sqrt(dx * dx + dy * dy);
-
-    if (dist < RANGE) {
-      if (!active) {
-        active = true;
-        btn.style.transition = 'transform 0.08s ease, box-shadow 0.25s ease';
-      }
-      const px = dx * PULL * (1 - dist / RANGE);
-      const py = dy * PULL * (1 - dist / RANGE);
-      btn.style.transform = `translate(${px}px, ${py}px) translateY(-2px)`;
-    } else if (active) {
-      active = false;
-      btn.style.transition = 'transform 0.55s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease';
-      btn.style.transform  = '';
-    }
-  }
-
-  document.addEventListener('mousemove', onMove, { passive: true });
-})();
-
-/* ── 5. Section Tracker — cursor colour + side dots ────────── */
-(function () {
-  const sections = [
-    { id: 'hero',     color: 'blue',   dotColor: 'var(--accent)',  dotGlow: '59,130,246'  },
-    { id: 'trust',    color: 'cyan',   dotColor: 'var(--cyan)',    dotGlow: '6,182,212'   },
-    { id: 'projects', color: 'blue',   dotColor: 'var(--accent)',  dotGlow: '59,130,246'  },
-    { id: 'about',    color: 'purple', dotColor: 'var(--purple)',  dotGlow: '139,92,246'  },
-    { id: 'skills',   color: 'cyan',   dotColor: 'var(--cyan)',    dotGlow: '6,182,212'   },
-    { id: 'contact',  color: 'blue',   dotColor: 'var(--accent)',  dotGlow: '59,130,246'  },
-  ];
-
-  const dotsNav  = document.getElementById('section-dots');
-  const dots     = dotsNav ? Array.from(dotsNav.querySelectorAll('.sec-dot')) : [];
-
-  // Show side dots only after scrolling past hero
-  window.addEventListener('scroll', () => {
-    if (dotsNav) dotsNav.classList.toggle('visible', window.scrollY > 120);
-  }, { passive: true });
-
-  // IntersectionObserver fires when a section hits 35% visibility
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const id  = entry.target.id;
-      const sec = sections.find(s => s.id === id);
-      if (!sec) return;
-
-      // Update body data-section for CSS cursor colour targeting
-      document.body.setAttribute('data-section', id);
-
-      // Update section dots
-      dots.forEach((dot, i) => {
-        const isCurrent = sections[i]?.id === id;
-        dot.classList.toggle('active', isCurrent);
-        if (isCurrent) {
-          dot.style.background = sec.dotColor;
-          dot.style.boxShadow  =
-            `0 0 14px rgba(${sec.dotGlow},0.6), 0 0 28px rgba(${sec.dotGlow},0.2)`;
-        } else {
-          dot.style.background = '';
-          dot.style.boxShadow  = '';
-        }
-      });
-
-    });
-  }, { threshold: 0.35 });
-
-  sections.forEach(s => {
-    const el = document.getElementById(s.id);
-    if (el) io.observe(el);
-  });
-})();
-
-/* ── PAGE LOADER ─────────────────────────────────────────────── */
-(function () {
-  const loader = document.getElementById('page-loader');
-  if (!loader) return;
-  // Fade out after brand text has rendered
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      loader.classList.add('loader-out');
-      setTimeout(() => loader.remove(), 700);
-    }, 650);
-  });
-})();
-
-/* typewriter removed — static copy is clearer and loads instantly */
-
-/* ── 3D CARD TILT ─────────────────────────────────────────────── */
-(function () {
-  if (!window.matchMedia('(pointer: fine)').matches) return;
-
-  const TILT_MAX = 6; // degrees
-  const cards = document.querySelectorAll('.featured-project, .project-card');
-
-  cards.forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const r  = card.getBoundingClientRect();
-      const x  = (e.clientX - r.left) / r.width  - 0.5; // -0.5 to 0.5
-      const y  = (e.clientY - r.top)  / r.height - 0.5;
-      const rx =  y * TILT_MAX * -1;
-      const ry =  x * TILT_MAX;
-      card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(4px)`;
-    }, { passive: true });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transition = 'transform 0.55s cubic-bezier(0.34,1.56,0.64,1)';
-      card.style.transform  = '';
-      setTimeout(() => { card.style.transition = ''; }, 560);
-    });
-
-    card.addEventListener('mouseenter', () => {
-      card.style.transition = 'transform 0.12s ease';
-    });
-  });
-})();
-
-/* contact form removed — direct email CTA replaces it */
-
-/* ================================================================
-   CHATBOT ENGINE v2 — Full upgrade
-   Multi-turn context · Conversion · Persistence · Analytics · A11y
-   ================================================================ */
-(function () {
-  /* ── DOM refs ── */
   const chatToggle   = document.getElementById('chat-toggle');
   const chatWindow   = document.getElementById('chat-window');
   const chatMessages = document.getElementById('chat-messages');
@@ -1583,966 +733,178 @@ document.querySelectorAll('.tech-tags, .skill-badges-wrap').forEach(wrap => {
   const chatClear    = document.getElementById('chat-clear');
   const chatEmailSum = document.getElementById('chat-email-summary');
 
-  /* ── State ── */
-  let isOpen = false;
-  let soundOn = false;
-  let history = [];          // full session history
-  let lastProjectKey = null; // multi-turn context tracking
-  let lastTopic = null;      // last discussed topic category
-  let proactiveTimer = null;
-  let hasInteracted = false;
-  let ctaNudged = false;     // CTA escalation flag
-  let messageCount = 0;
-  let lastMsgTimestamp = 0;
+  let isOpen = false, soundOn = false, history = [], lastProjectKey = null;
+  let lastTopic = null, proactiveTimer = null, hasInteracted = false;
+  let ctaNudged = false, messageCount = 0, lastMsgTimestamp = 0;
+  let exitIntentFired = false, lastProactiveSection = '';
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ── localStorage keys ── */
   const LS_HISTORY   = 'rk_chat_history';
   const LS_RETURNING = 'rk_chat_returning';
   const LS_LAST_PROJ = 'rk_chat_last_proj';
   const LS_ANALYTICS = 'rk_chat_analytics';
 
-  /* ══════════════════════════════════════
-     KNOWLEDGE BASE
-     ══════════════════════════════════════ */
   const PROJECTS = {
-    medeval: {
-      key: 'medeval',
-      title: 'MedEval — Clinical Triage AI',
-      desc: 'Deterministic ESI triage engine — LLM structurally barred from urgency decisions. 68 ACEP rules fire in a Python engine; GPT-4o-mini only extracts facts and explains the outcome. Under-triage rate: 20% → 10%. medeval-harness published on PyPI (v0.1.0).',
-      stack: 'GPT-4o-mini, LangGraph, FastAPI, React 19, Docker, AWS EC2, Langfuse, GitHub Actions',
-      live: 'https://medeval.rajkumarai.dev/',
-      code: 'https://github.com/Rajkumar2002-Rk/MedEval',
-      section: 'projects',
-      keywords: ['medeval', 'medical', 'triage', 'esi', 'healthcare', 'hospital', 'emergency', 'clinical', 'pypi', 'patient', 'doctor', 'urgency', 'rules engine', 'acep']
-    },
-    financial: {
-      key: 'financial',
-      title: 'AI Financial Research Agent',
-      desc: 'Deterministic investment decision engine — 7-step LangGraph pipeline, BUY/HOLD/SELL in <30s. Zero LLM hallucination risk.',
-      stack: 'GPT-4o, LangGraph, FastAPI, Redis, Docker, AWS EC2',
-      live: 'https://fintel.rajkumarai.dev/',
-      code: 'https://github.com/Rajkumar2002-Rk/financial-research-agent',
-      section: 'projects',
-      keywords: ['financial', 'finance', 'stock', 'invest', 'agent', 'langgraph', 'buy', 'sell', 'hold', 'trading', 'fintel', 'research agent', 'decision']
-    },
-    cineneuro: {
-      key: 'cineneuro',
-      title: 'CineNeuro — Neural Audience Intelligence',
-      desc: 'Predicts fMRI brain activations (20,484 vertices/sec) for movie trailers using Meta FAIR TRIBE v2. 5 emotion channels across 7 brain regions.',
-      stack: 'Meta TRIBE v2, V-JEPA2, Wav2Vec-BERT, Llama 3.2, FastAPI, React, AWS EC2',
-      live: 'https://cineneuro.rajkumarai.dev/',
-      code: 'https://github.com/Rajkumar2002-Rk/CineNeuro',
-      section: 'projects',
-      keywords: ['cineneuro', 'cine', 'neuro', 'brain', 'fmri', 'movie', 'trailer', 'emotion', 'audience', 'tribe', 'meta', 'fair', 'neuroscience', 'v-jepa', 'wav2vec']
-    },
-    rag: {
-      key: 'rag',
-      title: 'Enterprise RAG Chatbot',
-      desc: '87% retrieval accuracy with MMR retrieval, hallucination guardrails, and rule-based query classifier. Dual interface: Streamlit + FastAPI.',
-      stack: 'LangChain, ChromaDB, GPT-4, FastAPI, Streamlit, Docker, AWS EC2',
-      live: 'https://chatbot.rajkumarai.dev',
-      code: 'https://github.com/Rajkumar2002-Rk/rag-chatbot',
-      section: 'projects',
-      keywords: ['rag', 'chatbot', 'retrieval', 'enterprise', 'langchain', 'chroma', 'chromadb', 'mmr', 'document', 'pdf']
-    },
-    forecasting: {
-      key: 'forecasting',
-      title: 'AWS Retail Sales Forecasting',
-      desc: 'LSTM + Prophet ensemble — 4.2% RMSE, 18% better than baselines. Automated weekly SageMaker retraining.',
-      stack: 'LSTM, Prophet, SageMaker, S3, PyTorch',
-      code: 'https://github.com/Rajkumar2002-Rk/aws-sales-forecasting',
-      section: 'projects',
-      keywords: ['forecast', 'sales', 'retail', 'lstm', 'prophet', 'sagemaker', 'prediction', 'time series']
-    },
-    churn: {
-      key: 'churn',
-      title: 'Customer Churn Prediction',
-      desc: '91% accuracy, 89% F1. XGBoost + SHAP explainability + AWS Comprehend NLP sentiment from 7k+ tickets.',
-      stack: 'XGBoost, SHAP, SageMaker, Lambda, CloudWatch, MLflow',
-      code: 'https://github.com/Rajkumar2002-Rk/Customer_Chrun_Prediction',
-      section: 'projects',
-      keywords: ['churn', 'customer', 'xgboost', 'shap', 'retention', 'telecom', 'classification']
-    },
-    fraud: {
-      key: 'fraud',
-      title: 'Insurance Fraud Detection',
-      desc: '96.7% accuracy on 50k+ claims. YOLOv8 + ResNet-50 pipeline with real-time Kinesis ingestion.',
-      stack: 'YOLOv8, ResNet-50, PyTorch, FastAPI, AWS Kinesis, Lambda, RDS',
-      code: 'https://github.com/Rajkumar2002-Rk',
-      section: 'projects',
-      keywords: ['fraud', 'insurance', 'yolo', 'resnet', 'detection', 'computer vision', 'claim', 'vehicle']
-    }
+    medeval:    { key:'medeval',    title:'MedEval — Clinical Triage AI',            desc:'Deterministic ESI triage engine — LLM structurally barred from urgency decisions. 68 ACEP rules fire in a Python engine; GPT-4o-mini only extracts facts and explains. Under-triage rate: 20% → 10%. medeval-harness published on PyPI (v0.1.0).', stack:'GPT-4o-mini, LangGraph, FastAPI, React 19, Docker, AWS EC2, Langfuse', live:'https://medeval.rajkumarai.dev/', code:'https://github.com/Rajkumar2002-Rk/MedEval', section:'work', keywords:['medeval','medical','triage','esi','healthcare','hospital','emergency','clinical','pypi','patient','doctor','urgency','rules engine','acep'] },
+    financial:  { key:'financial',  title:'AI Financial Research Agent',              desc:'Deterministic investment decision engine — 7-step LangGraph pipeline, BUY/HOLD/SELL in <30s. Zero LLM hallucination risk.', stack:'GPT-4o, LangGraph, FastAPI, Redis, Docker, AWS EC2', live:'https://fintel.rajkumarai.dev/', code:'https://github.com/Rajkumar2002-Rk/financial-research-agent', section:'work', keywords:['financial','finance','stock','invest','agent','langgraph','buy','sell','hold','trading','fintel','research agent','decision'] },
+    cineneuro:  { key:'cineneuro',  title:'CineNeuro — Neural Audience Intelligence', desc:'Predicts fMRI brain activations (20,484 vertices/sec) for movie trailers using Meta FAIR TRIBE v2. 5 emotion channels across 7 brain regions.', stack:'Meta TRIBE v2, V-JEPA2, Wav2Vec-BERT, Llama 3.2, FastAPI, React, AWS EC2', live:'https://cineneuro.rajkumarai.dev/', code:'https://github.com/Rajkumar2002-Rk/CineNeuro', section:'work', keywords:['cineneuro','cine','neuro','brain','fmri','movie','trailer','emotion','audience','tribe','meta','fair','neuroscience','v-jepa','wav2vec'] },
+    rag:        { key:'rag',        title:'Enterprise RAG Chatbot',                   desc:'Production RAG system with MMR retrieval, hallucination guardrails, and rule-based query classifier — no LLM call fires without sufficient retrieval confidence. Dual interface: Streamlit + FastAPI.', stack:'LangChain, ChromaDB, GPT-4, FastAPI, Streamlit, Docker, AWS EC2', live:'https://chatbot.rajkumarai.dev', code:'https://github.com/Rajkumar2002-Rk/rag-chatbot', section:'work', keywords:['rag','chatbot','retrieval','enterprise','langchain','chroma','chromadb','mmr','document','pdf'] },
+    forecasting:{ key:'forecasting',title:'AWS Retail Sales Forecasting',             desc:'LSTM + Prophet ensemble — 4.2% RMSE, 18% better than baselines. Automated weekly SageMaker retraining.', stack:'LSTM, Prophet, SageMaker, S3, PyTorch', code:'https://github.com/Rajkumar2002-Rk/aws-sales-forecasting', section:'work', keywords:['forecast','sales','retail','lstm','prophet','sagemaker','prediction','time series'] },
+    churn:      { key:'churn',      title:'Customer Churn Prediction',                desc:'XGBoost + SHAP explainability pipeline with AWS Comprehend NLP sentiment analysis from customer support tickets.', stack:'XGBoost, SHAP, SageMaker, Lambda, CloudWatch, MLflow', code:'https://github.com/Rajkumar2002-Rk/Customer_Chrun_Prediction', section:'work', keywords:['churn','customer','xgboost','shap','retention','telecom','classification'] },
+    fraud:      { key:'fraud',      title:'Insurance Fraud Detection',                desc:'YOLOv8 + ResNet-50 computer vision pipeline for insurance claim fraud detection with real-time Kinesis ingestion.', stack:'YOLOv8, ResNet-50, PyTorch, FastAPI, AWS Kinesis, Lambda, RDS', code:'https://github.com/Rajkumar2002-Rk', section:'work', keywords:['fraud','insurance','yolo','resnet','detection','computer vision','claim','vehicle'] }
   };
 
   const SKILLS_DATA = {
-    'LLM & Agents': 'GPT-4o, LangGraph, LangChain, RAG Pipelines, ChromaDB, Pydantic v2, Langfuse',
-    'Neural Models': 'PyTorch, Transformers, V-JEPA2, Wav2Vec-BERT, Llama 3.2, Meta TRIBE v2',
-    'Cloud & Infra': 'AWS EC2, Docker & Compose, FastAPI, Redis, Nginx, GitHub Actions',
-    'Frontend & Tools': 'React, TypeScript, Tailwind CSS, Streamlit, Python (Expert), Git/GitHub, Linux/Bash'
+    'LLM & Agents':'GPT-4o, LangGraph, LangChain, RAG Pipelines, ChromaDB, Pydantic v2, Langfuse',
+    'Neural Models':'PyTorch, Transformers, V-JEPA2, Wav2Vec-BERT, Llama 3.2, Meta TRIBE v2',
+    'Cloud & Infra':'AWS EC2, Docker & Compose, FastAPI, Redis, Nginx, GitHub Actions',
+    'Frontend & Tools':'React, TypeScript, Tailwind CSS, Streamlit, Python (Expert), Git/GitHub, Linux/Bash'
   };
 
-  /* ── Synonym clusters — map variations to canonical terms ── */
-  const SYNONYMS = {
-    'machine learning': 'ml', 'artificial intelligence': 'ai', 'deep learning': 'dl',
-    'ml': 'ml', 'ai': 'ai', 'dl': 'dl',
-    'deployed': 'production', 'shipped': 'production', 'live': 'production', 'production': 'production',
-    'natural language processing': 'nlp', 'nlp': 'nlp',
-    'cv': 'computer vision', 'computer vision': 'computer vision',
-    'neural network': 'nn', 'neural net': 'nn', 'nn': 'nn',
-  };
+  const SYNONYMS = { 'machine learning':'ml','artificial intelligence':'ai','deep learning':'dl','ml':'ml','ai':'ai','dl':'dl','deployed':'production','shipped':'production','live':'production','natural language processing':'nlp','nlp':'nlp','cv':'computer vision','computer vision':'computer vision','neural network':'nn','neural net':'nn' };
 
   function expandSynonyms(text) {
     let expanded = text.toLowerCase();
-    for (const [term, canonical] of Object.entries(SYNONYMS)) {
-      if (expanded.includes(term)) expanded += ' ' + canonical;
-    }
+    for (const [term, canonical] of Object.entries(SYNONYMS)) { if (expanded.includes(term)) expanded += ' ' + canonical; }
     return expanded;
   }
-
-  /* ══════════════════════════════════════
-     FUZZY MATCHING
-     ══════════════════════════════════════ */
   function levenshtein(a, b) {
-    const m = a.length, n = b.length;
-    const dp = Array.from({length: m + 1}, () => Array(n + 1).fill(0));
-    for (let i = 0; i <= m; i++) dp[i][0] = i;
-    for (let j = 0; j <= n; j++) dp[0][j] = j;
-    for (let i = 1; i <= m; i++)
-      for (let j = 1; j <= n; j++)
-        dp[i][j] = a[i-1] === b[j-1] ? dp[i-1][j-1] : 1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]);
+    const m=a.length,n=b.length,dp=Array.from({length:m+1},()=>Array(n+1).fill(0));
+    for(let i=0;i<=m;i++)dp[i][0]=i; for(let j=0;j<=n;j++)dp[0][j]=j;
+    for(let i=1;i<=m;i++) for(let j=1;j<=n;j++) dp[i][j]=a[i-1]===b[j-1]?dp[i-1][j-1]:1+Math.min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]);
     return dp[m][n];
   }
-
   function fuzzyMatch(input, keyword) {
-    input = input.toLowerCase();
-    keyword = keyword.toLowerCase();
-    if (input.includes(keyword) || keyword.includes(input)) return true;
-    // Check each word in input against keyword
-    const words = input.split(/\s+/);
-    for (const w of words) {
-      if (w.length > 3 && keyword.length > 3) {
-        const maxDist = Math.floor(Math.min(w.length, keyword.length) * 0.3);
-        if (levenshtein(w, keyword) <= maxDist) return true;
-      }
-    }
+    input=input.toLowerCase(); keyword=keyword.toLowerCase();
+    if(input.includes(keyword)||keyword.includes(input)) return true;
+    for(const w of input.split(/\s+/)) { if(w.length>3&&keyword.length>3&&levenshtein(w,keyword)<=Math.floor(Math.min(w.length,keyword.length)*0.3)) return true; }
     return false;
   }
-
   function findProject(input) {
-    const expanded = expandSynonyms(input);
-    let best = null, bestScore = 0;
-    for (const [key, proj] of Object.entries(PROJECTS)) {
-      for (const kw of proj.keywords) {
-        if (fuzzyMatch(expanded, kw)) {
-          const score = kw.length;
-          if (score > bestScore) { bestScore = score; best = key; }
-        }
-      }
-    }
+    const expanded=expandSynonyms(input); let best=null,bestScore=0;
+    for(const [key,proj] of Object.entries(PROJECTS)) { for(const kw of proj.keywords) { if(fuzzyMatch(expanded,kw)&&kw.length>bestScore){bestScore=kw.length;best=key;} } }
     return best;
   }
-
-  /* ══════════════════════════════════════
-     MULTI-TURN CONTEXT ENGINE
-     ══════════════════════════════════════ */
   function resolvePronouns(input) {
-    const lower = input.toLowerCase();
-    // Check for pronoun references to last project
-    const pronounPatterns = /\b(that|this|it|this one|that one|the same|that project|this project|its|about it)\b/;
-    if (pronounPatterns.test(lower) && lastProjectKey) {
-      return lastProjectKey;
-    }
-    // "what stack" / "what tech" / "how does it work" after a project discussion
-    if (/\b(stack|tech|how.*(work|built|made)|architecture|more)\b/.test(lower) && lastProjectKey && lower.split(/\s+/).length <= 6) {
-      return lastProjectKey;
-    }
+    const lower=input.toLowerCase();
+    if(/\b(that|this|it|this one|that one|the same|that project|this project|its|about it)\b/.test(lower)&&lastProjectKey) return lastProjectKey;
+    if(/\b(stack|tech|how.*(work|built|made)|architecture|more)\b/.test(lower)&&lastProjectKey&&lower.split(/\s+/).length<=6) return lastProjectKey;
     return null;
   }
-
-  /* ══════════════════════════════════════
-     ANALYTICS
-     ══════════════════════════════════════ */
-  function getAnalytics() {
-    try { return JSON.parse(localStorage.getItem(LS_ANALYTICS)) || {}; } catch(e) { return {}; }
-  }
-  function trackTopic(topic) {
-    const a = getAnalytics();
-    a[topic] = (a[topic] || 0) + 1;
-    a._depth = (a._depth || 0) + 1;
-    try { localStorage.setItem(LS_ANALYTICS, JSON.stringify(a)); } catch(e) {}
-    updateTrendingBadge();
-  }
+  function getAnalytics() { try{return JSON.parse(localStorage.getItem(LS_ANALYTICS))||{};}catch(e){return{};} }
+  function trackTopic(topic) { const a=getAnalytics();a[topic]=(a[topic]||0)+1;a._depth=(a._depth||0)+1;try{localStorage.setItem(LS_ANALYTICS,JSON.stringify(a));}catch(e){}updateTrendingBadge(); }
   function updateTrendingBadge() {
-    const a = getAnalytics();
-    let maxTopic = null, maxCount = 0;
-    for (const [k, v] of Object.entries(a)) {
-      if (k.startsWith('_')) continue;
-      if (v > maxCount) { maxCount = v; maxTopic = k; }
-    }
-    // Add trending badge to the matching quick reply
-    document.querySelectorAll('.chat-quick-btn').forEach(btn => {
-      btn.classList.remove('trending');
-      const existingBadge = btn.querySelector('.trending-dot');
-      if (existingBadge) existingBadge.remove();
-    });
-    if (maxTopic && maxCount >= 2) {
-      const btn = document.querySelector(`.chat-quick-btn[data-topic="${maxTopic}"]`);
-      if (btn) {
-        btn.classList.add('trending');
-        const dot = document.createElement('span');
-        dot.className = 'trending-dot';
-        dot.title = 'Popular topic';
-        btn.appendChild(dot);
-      }
-    }
+    const a=getAnalytics();let maxTopic=null,maxCount=0;
+    for(const[k,v]of Object.entries(a)){if(!k.startsWith('_')&&v>maxCount){maxCount=v;maxTopic=k;}}
+    document.querySelectorAll('.chat-quick-btn').forEach(btn=>{btn.classList.remove('trending');const b=btn.querySelector('.trending-dot');if(b)b.remove();});
+    if(maxTopic&&maxCount>=2){const btn=document.querySelector('.chat-quick-btn[data-topic="'+maxTopic+'"]');if(btn){btn.classList.add('trending');const dot=document.createElement('span');dot.className='trending-dot';dot.title='Popular topic';btn.appendChild(dot);}}
   }
-
-  /* ══════════════════════════════════════
-     AUDIO
-     ══════════════════════════════════════ */
   function playPing() {
-    if (!soundOn) return;
-    try {
-      const ac = new (window.AudioContext || window.webkitAudioContext)();
-      const osc = ac.createOscillator();
-      const gain = ac.createGain();
-      osc.type = 'sine'; osc.frequency.value = 880; gain.gain.value = 0.08;
-      osc.connect(gain); gain.connect(ac.destination);
-      osc.start();
-      gain.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.15);
-      osc.stop(ac.currentTime + 0.15);
-    } catch(e) {}
+    if(!soundOn)return;
+    try{const ac=new(window.AudioContext||window.webkitAudioContext)();const osc=ac.createOscillator();const gain=ac.createGain();osc.type='sine';osc.frequency.value=880;gain.gain.value=0.08;osc.connect(gain);gain.connect(ac.destination);osc.start();gain.gain.exponentialRampToValueAtTime(0.001,ac.currentTime+0.15);osc.stop(ac.currentTime+0.15);}catch(e){}
   }
-
-  /* ══════════════════════════════════════
-     TIMESTAMPS
-     ══════════════════════════════════════ */
-  function timeAgo(ts) {
-    const diff = Math.floor((Date.now() - ts) / 1000);
-    if (diff < 10) return 'just now';
-    if (diff < 60) return diff + 's ago';
-    if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
-    return Math.floor(diff / 3600) + 'h ago';
+  function timeAgo(ts){const diff=Math.floor((Date.now()-ts)/1000);if(diff<10)return'just now';if(diff<60)return diff+'s ago';if(diff<3600)return Math.floor(diff/60)+'m ago';return Math.floor(diff/3600)+'h ago';}
+  setInterval(()=>{document.querySelectorAll('.chat-ts').forEach(el=>{const ts=parseInt(el.dataset.ts);if(ts)el.textContent=timeAgo(ts);});},30000);
+  function saveHistory(){try{localStorage.setItem(LS_HISTORY,JSON.stringify({history,lastProjectKey,messageCount}));}catch(e){}}
+  function loadHistory(){
+    try{const raw=localStorage.getItem(LS_HISTORY);if(!raw)return false;const data=JSON.parse(raw);if(!data.history||!data.history.length)return false;
+    history=data.history;lastProjectKey=data.lastProjectKey||null;messageCount=data.messageCount||0;
+    history.forEach((msg,i)=>{const isGrouped=i>0&&history[i-1].role===msg.role&&msg.role==='bot';renderMessage(msg.role,msg.html||msg.text,msg.ts,msg.card,null,isGrouped,true);});hasInteracted=true;return true;}catch(e){return false;}
   }
-
-  // Update visible timestamps every 30s
-  setInterval(() => {
-    document.querySelectorAll('.chat-ts').forEach(el => {
-      const ts = parseInt(el.dataset.ts);
-      if (ts) el.textContent = timeAgo(ts);
-    });
-  }, 30000);
-
-  /* ══════════════════════════════════════
-     PERSISTENCE (localStorage)
-     ══════════════════════════════════════ */
-  function saveHistory() {
-    try {
-      const data = { history, lastProjectKey, messageCount };
-      localStorage.setItem(LS_HISTORY, JSON.stringify(data));
-    } catch(e) {}
-  }
-
-  function loadHistory() {
-    try {
-      const raw = localStorage.getItem(LS_HISTORY);
-      if (!raw) return false;
-      const data = JSON.parse(raw);
-      if (!data.history || !data.history.length) return false;
-      history = data.history;
-      lastProjectKey = data.lastProjectKey || null;
-      messageCount = data.messageCount || 0;
-      // Render saved messages
-      history.forEach((msg, i) => {
-        const isGrouped = i > 0 && history[i-1].role === msg.role && msg.role === 'bot';
-        renderMessage(msg.role, msg.html || msg.text, msg.ts, msg.card, null, isGrouped, true);
-      });
-      hasInteracted = true;
-      return true;
-    } catch(e) { return false; }
-  }
-
-  function clearHistory() {
-    history = [];
-    lastProjectKey = null;
-    lastTopic = null;
-    messageCount = 0;
-    ctaNudged = false;
-    chatMessages.innerHTML = '';
-    try { localStorage.removeItem(LS_HISTORY); } catch(e) {}
-    // Re-show welcome
-    hasInteracted = false;
-    addWelcomeMessage();
-  }
-
-  /* ══════════════════════════════════════
-     RETURN VISITOR DETECTION
-     ══════════════════════════════════════ */
-  function isReturningVisitor() {
-    try { return localStorage.getItem(LS_RETURNING) === '1'; } catch(e) { return false; }
-  }
-  function markVisitor() {
-    try { localStorage.setItem(LS_RETURNING, '1'); } catch(e) {}
-  }
-  function getLastProject() {
-    try { return localStorage.getItem(LS_LAST_PROJ); } catch(e) { return null; }
-  }
-  function saveLastProject(key) {
-    try { localStorage.setItem(LS_LAST_PROJ, key); } catch(e) {}
-  }
-
-  /* ══════════════════════════════════════
-     GREETING & WELCOME
-     ══════════════════════════════════════ */
-  function getTimeWord() {
-    const h = new Date().getHours();
-    if (h < 12) return 'Good morning';
-    if (h < 17) return 'Good afternoon';
-    if (h < 21) return 'Good evening';
-    return 'Hey there';
-  }
-
-  function getGreeting() {
-    if (isReturningVisitor()) return 'Welcome back! 👋 Pick up where you left off?';
-    return getTimeWord() + '! 👋 I can help you learn about Raj\'s work.';
-  }
-
-  function addWelcomeMessage() {
-    hasInteracted = true;
-    const returning = isReturningVisitor();
-    const lastProj = getLastProject();
-
-    if (returning && lastProj && PROJECTS[lastProj]) {
-      const p = PROJECTS[lastProj];
-      const name = p.title.split('—')[0].trim();
-      addBotMessage(
-        `Welcome back! Last time you were looking at <strong>${name}</strong>. Want to continue, or explore something new?`,
-        [`More about ${name}`, 'Show all projects', 'What\'s new?']
-      );
-    } else {
-      addBotMessage(
-        `${getTimeWord()}! I'm Raj's portfolio assistant. I know everything about his projects, skills, and experience. Ask me anything, or pick a topic below!`
-      );
-    }
+  function clearHistory(){history=[];lastProjectKey=null;lastTopic=null;messageCount=0;ctaNudged=false;chatMessages.innerHTML='';try{localStorage.removeItem(LS_HISTORY);}catch(e){}hasInteracted=false;addWelcomeMessage();}
+  function isReturningVisitor(){try{return localStorage.getItem(LS_RETURNING)==='1';}catch(e){return false;}}
+  function markVisitor(){try{localStorage.setItem(LS_RETURNING,'1');}catch(e){}}
+  function getLastProject(){try{return localStorage.getItem(LS_LAST_PROJ);}catch(e){return null;}}
+  function saveLastProject(key){try{localStorage.setItem(LS_LAST_PROJ,key);}catch(e){}}
+  function getTimeWord(){const h=new Date().getHours();if(h<12)return'Good morning';if(h<17)return'Good afternoon';if(h<21)return'Good evening';return'Hey there';}
+  function getGreeting(){if(isReturningVisitor())return'Welcome back! 👋 Pick up where you left off?';return getTimeWord()+'! 👋 I can help you learn about Raj\'s work.';}
+  function addWelcomeMessage(){
+    hasInteracted=true;const returning=isReturningVisitor();const lastProj=getLastProject();
+    if(returning&&lastProj&&PROJECTS[lastProj]){const p=PROJECTS[lastProj];const name=p.title.split('—')[0].trim();addBotMessage('Welcome back! Last time you were looking at <strong>'+name+'</strong>. Want to continue, or explore something new?',['More about '+name,'Show all projects','What\'s new?']);}
+    else{addBotMessage(getTimeWord()+'! I\'m Raj\'s portfolio assistant. I know everything about his projects, skills, and experience. Ask me anything!');}
     markVisitor();
   }
-
-  /* ── Show greeting bubble after 3s ── */
-  setTimeout(() => {
-    if (isOpen) return;
-    greetingText.textContent = getGreeting();
-    chatGreeting.classList.add('visible');
-    chatBadge.classList.add('visible');
-
-    // Auto-dismiss greeting on mobile after 5s so it doesn't block content
-    if (window.innerWidth <= 500) {
-      setTimeout(() => {
-        chatGreeting.classList.remove('visible');
-      }, 5000);
-    }
-  }, 3000);
-
-  greetingClose.addEventListener('click', (e) => {
-    e.stopPropagation();
-    chatGreeting.classList.remove('visible');
-    chatBadge.classList.remove('visible');
-  });
-
-  /* ══════════════════════════════════════
-     OPEN / CLOSE
-     ══════════════════════════════════════ */
-  function openChat() {
-    isOpen = true;
-    chatToggle.classList.add('open');
-    chatWindow.classList.add('open');
-    chatGreeting.classList.remove('visible');
-    chatBadge.classList.remove('visible');
-
-    // Staggered quick reply entrance
-    const quickBtns = chatQuick.querySelectorAll('.chat-quick-btn');
-    quickBtns.forEach((btn, i) => {
-      btn.style.opacity = '0';
-      btn.style.transform = 'translateY(8px)';
-      const delay = prefersReducedMotion ? 0 : 60 * i;
-      setTimeout(() => {
-        btn.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-        btn.style.opacity = '1';
-        btn.style.transform = 'translateY(0)';
-      }, 150 + delay);
-    });
-
-    // Only auto-focus input on desktop — on mobile it triggers the keyboard
-    // which covers the page and causes iOS zoom
-    if (window.innerWidth > 500) chatInput.focus();
+  setTimeout(()=>{if(isOpen)return;greetingText.textContent=getGreeting();chatGreeting.classList.add('visible');chatBadge.classList.add('visible');if(window.innerWidth<=500){setTimeout(()=>{chatGreeting.classList.remove('visible');},5000);}},3000);
+  greetingClose.addEventListener('click',(e)=>{e.stopPropagation();chatGreeting.classList.remove('visible');chatBadge.classList.remove('visible');});
+  function openChat(){
+    isOpen=true;chatToggle.classList.add('open');chatWindow.classList.add('open');chatGreeting.classList.remove('visible');chatBadge.classList.remove('visible');
+    const quickBtns=chatQuick.querySelectorAll('.chat-quick-btn');
+    quickBtns.forEach((btn,i)=>{btn.style.opacity='0';btn.style.transform='translateY(8px)';const delay=prefersReducedMotion?0:60*i;setTimeout(()=>{btn.style.transition='opacity 0.3s ease,transform 0.3s ease';btn.style.opacity='1';btn.style.transform='translateY(0)';},150+delay);});
+    if(window.innerWidth>500)chatInput.focus();
     trapFocus(true);
-
-    if (!hasInteracted) {
-      // Check for persisted history first
-      const restored = loadHistory();
-      if (!restored) addWelcomeMessage();
-      else hasInteracted = true;
-    }
-    startProactiveTimer();
-    updateTrendingBadge();
+    if(!hasInteracted){const restored=loadHistory();if(!restored)addWelcomeMessage();else hasInteracted=true;}
+    startProactiveTimer();updateTrendingBadge();
   }
+  function closeChat(){isOpen=false;chatToggle.classList.remove('open');chatWindow.classList.remove('open');stopProactiveTimer();trapFocus(false);exitIntentFired=false;}
+  chatToggle.addEventListener('click',()=>{isOpen?closeChat():openChat();});
+  chatClose.addEventListener('click',closeChat);
+  if(window.visualViewport&&window.innerWidth<=500){window.visualViewport.addEventListener('resize',()=>{if(!isOpen)return;const kH=window.innerHeight-window.visualViewport.height;if(kH>100){chatWindow.style.maxHeight=Math.min(window.visualViewport.height*0.55,340)+'px';chatWindow.style.bottom=(kH+12)+'px';}else{chatWindow.style.maxHeight='';chatWindow.style.bottom='';}});}
+  const FOCUSABLE='button,input,a,[tabindex]:not([tabindex="-1"])';let focusTrapActive=false;
+  function trapFocus(enable){focusTrapActive=enable;}
+  chatWindow.addEventListener('keydown',(e)=>{if(!focusTrapActive||e.key!=='Tab')return;const focusable=Array.from(chatWindow.querySelectorAll(FOCUSABLE)).filter(el=>!el.disabled&&el.offsetParent!==null);if(!focusable.length)return;const first=focusable[0];const last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}});
+  document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&isOpen)closeChat();});
+  chatInput.addEventListener('keydown',(e)=>{if(e.key==='Enter'&&chatInput.value.trim())sendMessage();});
+  soundToggle.addEventListener('click',()=>{soundOn=!soundOn;soundToggle.classList.toggle('sound-off',!soundOn);});
 
-  function closeChat() {
-    isOpen = false;
-    chatToggle.classList.remove('open');
-    chatWindow.classList.remove('open');
-    stopProactiveTimer();
-    trapFocus(false);
-    // Reset exit intent so it can fire again on next leave
-    exitIntentFired = false;
+  function renderMessage(role,html,ts,card,followups,isGrouped,skipAnimation){
+    const wrap=document.createElement('div');wrap.className='chat-msg-wrap '+role+(isGrouped?' grouped':'');
+    if(!skipAnimation&&!prefersReducedMotion)wrap.style.animation='chatMsgIn 0.35s ease forwards';
+    const bubble=document.createElement('div');bubble.className='chat-msg '+role;bubble.innerHTML=html;
+    if(role==='bot'){const copyBtn=document.createElement('button');copyBtn.className='chat-copy-btn';copyBtn.innerHTML='<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';copyBtn.title='Copy message';copyBtn.addEventListener('click',()=>{const text=bubble.innerText.replace(/Copy message|📋 Copied!/g,'').trim();navigator.clipboard.writeText(text).then(()=>{copyBtn.innerHTML='📋';setTimeout(()=>{copyBtn.innerHTML='<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';},1500);});});bubble.appendChild(copyBtn);}
+    if(card){const cardEl=document.createElement('div');cardEl.className='chat-project-card';cardEl.innerHTML='<h4>'+card.title+'</h4><p>'+card.desc+'</p><div class="chat-card-links">'+(card.live?'<a href="'+card.live+'" target="_blank" class="chat-card-link live">View Live ↗</a>':'')+(card.code?'<a href="'+card.code+'" target="_blank" class="chat-card-link code">GitHub ↗</a>':'')+(card.section?'<button class="chat-card-link scroll-link" data-section="'+card.section+'">Show on page ↓</button>':'')+'</div>';bubble.appendChild(cardEl);}
+    if(followups&&followups.length){const fWrap=document.createElement('div');fWrap.className='chat-followups';followups.forEach((f,i)=>{const btn=document.createElement('button');btn.className='chat-followup-btn';btn.textContent=f;if(!skipAnimation&&!prefersReducedMotion){btn.style.opacity='0';btn.style.transform='translateY(6px)';setTimeout(()=>{btn.style.transition='opacity 0.25s ease,transform 0.25s ease';btn.style.opacity='1';btn.style.transform='translateY(0)';},200+i*80);}btn.addEventListener('click',()=>{chatInput.value=f;sendMessage();});fWrap.appendChild(btn);});bubble.appendChild(fWrap);}
+    wrap.appendChild(bubble);const tsEl=document.createElement('div');tsEl.className='chat-ts '+role;tsEl.dataset.ts=ts||Date.now();tsEl.textContent=timeAgo(ts||Date.now());wrap.appendChild(tsEl);chatMessages.appendChild(wrap);scrollToBottom();if(role==='bot'&&chatLive)chatLive.textContent=bubble.innerText.substring(0,200);
   }
+  function addUserMessage(text){const ts=Date.now();const isGrouped=history.length>0&&history[history.length-1].role==='user';renderMessage('user',escapeHtml(text),ts,null,null,isGrouped);history.push({role:'user',text,ts});saveHistory();}
+  function addBotMessage(html,followups,card){const ts=Date.now();const isGrouped=history.length>0&&history[history.length-1].role==='bot';renderMessage('bot',html,ts,card,followups,isGrouped);history.push({role:'bot',html,ts,card:card||null});lastMsgTimestamp=ts;saveHistory();playPing();const userMsgCount=history.filter(m=>m.role==='user').length;if(userMsgCount>=3&&!ctaNudged){ctaNudged=true;setTimeout(()=>{addBotMessage("By the way — Raj responds within 24 hours if you want to <a href='mailto:rajkumarn2002@gmail.com'>reach out directly</a>. Just saying! 😊");},1200);}}
+  function escapeHtml(str){const div=document.createElement('div');div.textContent=str;return div.innerHTML;}
+  chatMessages.addEventListener('click',(e)=>{const scrollBtn=e.target.closest('.scroll-link');if(!scrollBtn)return;const section=document.getElementById(scrollBtn.dataset.section);if(section){section.scrollIntoView({behavior:'smooth',block:'start'});section.style.outline='2px solid rgba(0,0,0,0.15)';setTimeout(()=>{section.style.outline='';},2000);}});
+  function showTyping(callback){const avatar=chatWindow.querySelector('.chat-avatar');if(avatar)avatar.classList.add('thinking');const typing=document.createElement('div');typing.className='chat-typing';typing.innerHTML='<span></span><span></span><span></span>';chatMessages.appendChild(typing);scrollToBottom();const delay=prefersReducedMotion?200:(600+Math.random()*600);setTimeout(()=>{typing.remove();if(avatar)avatar.classList.remove('thinking');callback();},delay);}
+  function scrollToBottom(){requestAnimationFrame(()=>{chatMessages.scrollTop=chatMessages.scrollHeight;});}
+  chatSend.addEventListener('click',()=>{if(chatInput.value.trim())sendMessage();});
+  function sendMessage(){const text=chatInput.value.trim();if(!text)return;addUserMessage(text);chatInput.value='';messageCount++;showTyping(()=>{const response=getResponse(text);if(response.topic)trackTopic(response.topic);addBotMessage(response.text,response.followups,response.card);});}
+  chatQuick.addEventListener('click',(e)=>{const btn=e.target.closest('.chat-quick-btn');if(!btn)return;const q=btn.dataset.q;if(!isOpen)openChat();setTimeout(()=>{chatInput.value=q;sendMessage();},100);});
+  chatClear.addEventListener('click',clearHistory);
+  chatEmailSum.addEventListener('click',()=>{if(!history.length)return;let body='Chat Summary — rajkumarai.dev\n\n';history.forEach(m=>{const who=m.role==='user'?'You':'Assistant';const text=(m.html||m.text||'').replace(/<[^>]+>/g,'').replace(/&[^;]+;/g,' ').trim();if(text)body+=who+': '+text+'\n\n';});body+='---\nGenerated from rajkumarai.dev portfolio chatbot';window.open('mailto:?subject='+encodeURIComponent("Chat with Raj Kumar's Portfolio")+'&body='+encodeURIComponent(body),'_self');});
+  document.documentElement.addEventListener('mouseleave',(e)=>{if(exitIntentFired||e.clientY>0)return;exitIntentFired=true;if(isOpen){addBotMessage("Looks like you're heading out — want to grab Raj's resume before you go?<br><a href='Raj_Kumar_Nelluri_AI:ML_Engineer_Resume.pdf' download class='chat-resume-btn'><svg viewBox='0 0 24 24' width='14' height='14' fill='none' stroke='currentColor' stroke-width='2'><path d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/><polyline points='7 10 12 15 17 10'/><line x1='12' y1='15' x2='12' y2='3'/></svg> Download Resume (PDF)</a>");}else{greetingText.textContent="Before you go — want Raj's resume? 📄";chatGreeting.classList.add('visible');chatBadge.classList.add('visible');}});
+  const proactiveMessages={work:"I see you're checking out the projects! Want me to break down any of them?",about:"Want to know more about Raj's background or education?",skills:"Curious about any specific skill or tool? I can give you context on how Raj uses it.",contact:"Ready to reach out? I can give you Raj's email or LinkedIn right here!"};
+  function startProactiveTimer(){stopProactiveTimer();proactiveTimer=setInterval(()=>{if(!isOpen)return;const section=document.body.getAttribute('data-section');if(section&&section!=='hero'&&section!==lastProactiveSection&&proactiveMessages[section]){const lastMsg=history[history.length-1];if(!lastMsg||(Date.now()-lastMsgTimestamp)>15000){lastProactiveSection=section;addBotMessage(proactiveMessages[section]);}}},20000);}
+  function stopProactiveTimer(){if(proactiveTimer){clearInterval(proactiveTimer);proactiveTimer=null;}}
 
-  chatToggle.addEventListener('click', () => { isOpen ? closeChat() : openChat(); });
-  chatClose.addEventListener('click', closeChat);
-
-  /* ── Mobile keyboard handling ── */
-  if (window.visualViewport && window.innerWidth <= 500) {
-    window.visualViewport.addEventListener('resize', () => {
-      if (!isOpen) return;
-      const keyboardHeight = window.innerHeight - window.visualViewport.height;
-      if (keyboardHeight > 100) {
-        // Keyboard is open — shrink chat so it doesn't cover the whole page
-        chatWindow.style.maxHeight = Math.min(window.visualViewport.height * 0.55, 340) + 'px';
-        chatWindow.style.bottom = (keyboardHeight + 12) + 'px';
-      } else {
-        // Keyboard closed — reset
-        chatWindow.style.maxHeight = '';
-        chatWindow.style.bottom = '';
-      }
-    });
-  }
-
-  /* ══════════════════════════════════════
-     FOCUS TRAP (Accessibility)
-     ══════════════════════════════════════ */
-  const FOCUSABLE = 'button, input, a, [tabindex]:not([tabindex="-1"])';
-  let focusTrapActive = false;
-
-  function trapFocus(enable) {
-    focusTrapActive = enable;
-  }
-
-  chatWindow.addEventListener('keydown', (e) => {
-    if (!focusTrapActive || e.key !== 'Tab') return;
-    const focusable = Array.from(chatWindow.querySelectorAll(FOCUSABLE)).filter(el => !el.disabled && el.offsetParent !== null);
-    if (!focusable.length) return;
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-    if (e.shiftKey && document.activeElement === first) {
-      e.preventDefault(); last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
-      e.preventDefault(); first.focus();
-    }
-  });
-
-  /* ── Keyboard shortcuts ── */
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && isOpen) closeChat();
-  });
-  chatInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' && chatInput.value.trim()) sendMessage();
-  });
-
-  /* ── Sound toggle ── */
-  soundToggle.addEventListener('click', () => {
-    soundOn = !soundOn;
-    soundToggle.classList.toggle('sound-off', !soundOn);
-  });
-
-  /* ══════════════════════════════════════
-     MESSAGE RENDERING
-     ══════════════════════════════════════ */
-  function renderMessage(role, html, ts, card, followups, isGrouped, skipAnimation) {
-    const wrap = document.createElement('div');
-    wrap.className = `chat-msg-wrap ${role}${isGrouped ? ' grouped' : ''}`;
-    if (!skipAnimation && !prefersReducedMotion) {
-      wrap.style.opacity = '0';
-      wrap.style.transform = 'translateY(12px)';
-      wrap.style.animation = 'chatMsgIn 0.35s ease forwards';
-    }
-
-    const bubble = document.createElement('div');
-    bubble.className = `chat-msg ${role}`;
-    bubble.innerHTML = html;
-
-    // Copy button for bot messages
-    if (role === 'bot') {
-      const copyBtn = document.createElement('button');
-      copyBtn.className = 'chat-copy-btn';
-      copyBtn.innerHTML = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
-      copyBtn.title = 'Copy message';
-      copyBtn.addEventListener('click', () => {
-        const text = bubble.innerText.replace(/Copy message|📋 Copied!/g, '').trim();
-        navigator.clipboard.writeText(text).then(() => {
-          copyBtn.innerHTML = '📋';
-          setTimeout(() => {
-            copyBtn.innerHTML = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
-          }, 1500);
-        });
-      });
-      bubble.appendChild(copyBtn);
-    }
-
-    // Rich project card
-    if (card) {
-      const cardEl = document.createElement('div');
-      cardEl.className = 'chat-project-card';
-      cardEl.innerHTML = `
-        <h4>${card.title}</h4>
-        <p>${card.desc}</p>
-        <div class="chat-card-links">
-          ${card.live ? `<a href="${card.live}" target="_blank" class="chat-card-link live">View Live ↗</a>` : ''}
-          ${card.code ? `<a href="${card.code}" target="_blank" class="chat-card-link code">GitHub ↗</a>` : ''}
-          ${card.section ? `<button class="chat-card-link scroll-link" data-section="${card.section}">Show on page ↓</button>` : ''}
-        </div>
-      `;
-      bubble.appendChild(cardEl);
-    }
-
-    // Follow-up chips
-    if (followups && followups.length) {
-      const fWrap = document.createElement('div');
-      fWrap.className = 'chat-followups';
-      followups.forEach((f, i) => {
-        const btn = document.createElement('button');
-        btn.className = 'chat-followup-btn';
-        btn.textContent = f;
-        if (!skipAnimation && !prefersReducedMotion) {
-          btn.style.opacity = '0';
-          btn.style.transform = 'translateY(6px)';
-          setTimeout(() => {
-            btn.style.transition = 'opacity 0.25s ease, transform 0.25s ease, background 0.2s, color 0.2s';
-            btn.style.opacity = '1';
-            btn.style.transform = 'translateY(0)';
-          }, 200 + i * 80);
-        }
-        btn.addEventListener('click', () => {
-          chatInput.value = f;
-          sendMessage();
-        });
-        fWrap.appendChild(btn);
-      });
-      bubble.appendChild(fWrap);
-    }
-
-    wrap.appendChild(bubble);
-
-    // Timestamp
-    const tsEl = document.createElement('div');
-    tsEl.className = `chat-ts ${role}`;
-    tsEl.dataset.ts = ts || Date.now();
-    tsEl.textContent = timeAgo(ts || Date.now());
-    wrap.appendChild(tsEl);
-
-    chatMessages.appendChild(wrap);
-    scrollToBottom();
-
-    // ARIA announcement
-    if (role === 'bot' && chatLive) {
-      chatLive.textContent = bubble.innerText.substring(0, 200);
-    }
-  }
-
-  function addUserMessage(text) {
-    const ts = Date.now();
-    const isGrouped = history.length > 0 && history[history.length - 1].role === 'user';
-    renderMessage('user', escapeHtml(text), ts, null, null, isGrouped);
-    history.push({ role: 'user', text, ts });
-    saveHistory();
-  }
-
-  function addBotMessage(html, followups, card) {
-    const ts = Date.now();
-    const isGrouped = history.length > 0 && history[history.length - 1].role === 'bot';
-    renderMessage('bot', html, ts, card, followups, isGrouped);
-    history.push({ role: 'bot', html, ts, card: card || null });
-    lastMsgTimestamp = ts;
-    saveHistory();
-    playPing();
-
-    // CTA escalation — after 3+ user messages, nudge once
-    const userMsgCount = history.filter(m => m.role === 'user').length;
-    if (userMsgCount >= 3 && !ctaNudged) {
-      ctaNudged = true;
-      setTimeout(() => {
-        addBotMessage("By the way — Raj responds within 24 hours if you want to <a href='mailto:rajkumarn2002@gmail.com'>reach out directly</a>. Just saying! 😊");
-      }, 1200);
-    }
-  }
-
-  function escapeHtml(str) {
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
-  }
-
-  /* ── Scroll-to-section handler (delegated) ── */
-  chatMessages.addEventListener('click', (e) => {
-    const scrollBtn = e.target.closest('.scroll-link');
-    if (!scrollBtn) return;
-    const sectionId = scrollBtn.dataset.section;
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Brief highlight
-      section.style.boxShadow = '0 0 0 2px var(--accent)';
-      setTimeout(() => { section.style.boxShadow = ''; }, 2000);
-    }
-  });
-
-  /* ── Typing indicator with avatar pulse ── */
-  function showTyping(callback) {
-    const avatar = chatWindow.querySelector('.chat-avatar');
-    if (avatar) avatar.classList.add('thinking');
-
-    const typing = document.createElement('div');
-    typing.className = 'chat-typing';
-    typing.innerHTML = '<span></span><span></span><span></span>';
-    chatMessages.appendChild(typing);
-    scrollToBottom();
-    const delay = prefersReducedMotion ? 200 : (600 + Math.random() * 600);
-    setTimeout(() => {
-      typing.remove();
-      if (avatar) avatar.classList.remove('thinking');
-      callback();
-    }, delay);
-  }
-
-  function scrollToBottom() {
-    requestAnimationFrame(() => { chatMessages.scrollTop = chatMessages.scrollHeight; });
-  }
-
-  /* ══════════════════════════════════════
-     SEND MESSAGE
-     ══════════════════════════════════════ */
-  chatSend.addEventListener('click', () => { if (chatInput.value.trim()) sendMessage(); });
-
-  function sendMessage() {
-    const text = chatInput.value.trim();
-    if (!text) return;
-    addUserMessage(text);
-    chatInput.value = '';
-    messageCount++;
-    showTyping(() => {
-      const response = getResponse(text);
-      if (response.topic) trackTopic(response.topic);
-      addBotMessage(response.text, response.followups, response.card);
-    });
-  }
-
-  /* ── Quick replies ── */
-  chatQuick.addEventListener('click', (e) => {
-    const btn = e.target.closest('.chat-quick-btn');
-    if (!btn) return;
-    const q = btn.dataset.q;
-    if (!isOpen) openChat();
-    setTimeout(() => { chatInput.value = q; sendMessage(); }, 100);
-  });
-
-  /* ── Clear chat ── */
-  chatClear.addEventListener('click', clearHistory);
-
-  /* ── Email summary ── */
-  chatEmailSum.addEventListener('click', () => {
-    if (!history.length) return;
-    let body = 'Chat Summary — rajkumarai.dev\n\n';
-    history.forEach(m => {
-      const who = m.role === 'user' ? 'You' : 'Assistant';
-      // Strip HTML tags for plain text
-      const text = (m.html || m.text || '').replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, ' ').trim();
-      if (text) body += `${who}: ${text}\n\n`;
-    });
-    body += '---\nGenerated from rajkumarai.dev portfolio chatbot';
-    const mailto = `mailto:?subject=${encodeURIComponent('Chat with Raj Kumar\'s Portfolio')}&body=${encodeURIComponent(body)}`;
-    window.open(mailto, '_self');
-  });
-
-  /* ══════════════════════════════════════
-     EXIT INTENT DETECTION
-     ══════════════════════════════════════ */
-  let exitIntentFired = false;
-
-  // mouseleave on documentElement fires ONLY when cursor truly leaves the page
-  document.documentElement.addEventListener('mouseleave', (e) => {
-    if (exitIntentFired) return;
-    // Only trigger when mouse exits through the top (toward tab bar / address bar)
-    if (e.clientY <= 0) {
-      exitIntentFired = true;
-      if (isOpen) {
-        // Chat is open — inject a message directly
-        addBotMessage("Looks like you're heading out — want to grab Raj's resume before you go?<br><a href='Raj_Kumar_Nelluri_AI:ML_Engineer_Resume.pdf' download class='chat-resume-btn'><svg viewBox='0 0 24 24' width='14' height='14' fill='none' stroke='currentColor' stroke-width='2'><path d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/><polyline points='7 10 12 15 17 10'/><line x1='12' y1='15' x2='12' y2='3'/></svg> Download Resume (PDF)</a>");
-      } else {
-        // Chat is closed — show the greeting bubble
-        greetingText.textContent = "Before you go — want Raj's resume? 📄";
-        chatGreeting.classList.add('visible');
-        chatBadge.classList.add('visible');
-      }
-    }
-  });
-
-  /* ══════════════════════════════════════
-     SECTION-AWARE PROACTIVE MESSAGES
-     ══════════════════════════════════════ */
-  const proactiveMessages = {
-    projects: "I see you're checking out the projects! Want me to break down any of them?",
-    trust:    "Those metrics are all from production systems. Want the details behind any of them?",
-    about:    "Want to know more about Raj's background or education?",
-    skills:   "Curious about any specific skill or tool? I can give you context on how Raj uses it.",
-    contact:  "Ready to reach out? I can give you Raj's email or LinkedIn right here!"
-  };
-  let lastProactiveSection = '';
-
-  function startProactiveTimer() {
-    stopProactiveTimer();
-    proactiveTimer = setInterval(() => {
-      if (!isOpen) return;
-      const section = document.body.getAttribute('data-section');
-      if (section && section !== 'hero' && section !== lastProactiveSection && proactiveMessages[section]) {
-        const lastMsg = history[history.length - 1];
-        if (!lastMsg || (Date.now() - lastMsgTimestamp) > 15000) {
-          lastProactiveSection = section;
-          addBotMessage(proactiveMessages[section]);
-        }
-      }
-    }, 20000);
-  }
-
-  function stopProactiveTimer() {
-    if (proactiveTimer) { clearInterval(proactiveTimer); proactiveTimer = null; }
-  }
-
-  /* ══════════════════════════════════════
-     RESPONSE ENGINE v2
-     Multi-turn · Disambiguation · Synonyms
-     ══════════════════════════════════════ */
   function getResponse(input) {
-    const lower = input.toLowerCase().trim();
-    const expanded = expandSynonyms(lower);
-    const words = lower.split(/\s+/);
-
-    /* ── Multi-turn pronoun resolution ── */
-    const pronounRef = resolvePronouns(lower);
-    if (pronounRef && PROJECTS[pronounRef]) {
-      const proj = PROJECTS[pronounRef];
-      lastProjectKey = pronounRef;
-      saveLastProject(pronounRef);
-
-      // Determine what they're asking about the referenced project
-      if (/\b(stack|tech|built with|tools?|language)\b/.test(lower)) {
-        return { text: `<strong>${proj.title}</strong> is built with:<br><br><strong>${proj.stack}</strong>`, followups: ['See it live', 'More projects'], topic: 'stack' };
-      }
-      if (/\b(live|demo|try|see|link|url|visit)\b/.test(lower)) {
-        const links = [];
-        if (proj.live) links.push(`🔗 <a href="${proj.live}" target="_blank">Live demo</a>`);
-        if (proj.code) links.push(`💻 <a href="${proj.code}" target="_blank">GitHub repo</a>`);
-        return { text: `Here are the links for <strong>${proj.title}</strong>:<br><br>${links.join('<br>')}`, topic: 'projects' };
-      }
-      if (/\b(how|work|explain|detail|more|tell me more|about)\b/.test(lower)) {
-        let text = `<strong>${proj.title}</strong><br><br>${proj.desc}<br><br><strong>Stack:</strong> ${proj.stack}`;
-        return { text, followups: ['See it live', 'What\'s his tech stack?'], card: { title: proj.title, desc: proj.desc, live: proj.live, code: proj.code, section: proj.section }, topic: 'projects' };
-      }
-      // Generic reference
-      let text = `<strong>${proj.title}</strong><br><br>${proj.desc}<br><br><strong>Stack:</strong> ${proj.stack}`;
-      return { text, followups: ['See it live', 'Show on page'], card: { title: proj.title, desc: proj.desc, live: proj.live, code: proj.code, section: proj.section }, topic: 'projects' };
-    }
-
-    /* ── Disambiguation ── */
-    if (/\bagent\b/.test(lower) && !/financial|research|llm/i.test(lower) && words.length <= 4) {
-      return { text: "When you say <strong>agent</strong>, do you mean:", followups: ['Financial Research Agent', 'LLM agent experience in general'] };
-    }
-
-    /* ── Easter eggs ── */
-    if (/\b(joke|funny|laugh)\b/.test(lower)) {
-      const jokes = [
-        "Why do ML engineers prefer dark mode? Because light attracts too many bugs! 😄",
-        "Why did the neural network go to therapy? Too many deep issues! 😄",
-        "What's a data scientist's favourite music? Heavy metal... I mean, heavy model ensembles. 😄"
-      ];
-      return { text: jokes[Math.floor(Math.random() * jokes.length)] + " But seriously, want to hear about Raj's actual work?", followups: ['Tell me about projects', 'What\'s his tech stack?'], topic: 'fun' };
-    }
-    if (/\b(are you (ai|real|human|bot|robot))\b/.test(lower) || lower === 'who are you') {
-      return { text: "I'm a knowledge-base assistant built right into this portfolio — no API calls, no latency, no hallucinations. Zero external dependencies. I know everything about Raj's work. What would you like to know?", followups: ['Projects', 'Skills', 'Experience'], topic: 'fun' };
-    }
-    if (/\bhire raj\b/.test(lower) || /\bhiring\b/.test(lower)) {
-      return { text: "Great call! 🎯 Raj is actively looking for full-time AI/ML engineering roles. He replies within 24 hours.<br><br>📧 <a href='mailto:rajkumarn2002@gmail.com'>rajkumarn2002@gmail.com</a><br>🔗 <a href='https://www.linkedin.com/in/raj-kumar-nelluri-351389393/' target='_blank'>LinkedIn</a>", followups: ['See his resume', 'What projects has he built?'], topic: 'contact' };
-    }
-    if (/\b(hello|hi|hey|sup|yo|hola|namaste)\b/.test(lower) && words.length <= 3) {
-      return { text: `Hey! ${getTimeWord()}! 👋 I'm here to answer anything about Raj — projects, skills, experience, or how to get in touch. What are you curious about?`, followups: ['Projects', 'Tech Stack', 'Availability'] };
-    }
-    if (/\b(thanks?|thank you|thx|ty)\b/.test(lower)) {
-      return { text: "You're welcome! Let me know if there's anything else you'd like to know about Raj's work. 🙌" };
-    }
-    if (/\b(bye|goodbye|see ya|later)\b/.test(lower)) {
-      return { text: "Thanks for stopping by! If you want to reach Raj directly — <a href='mailto:rajkumarn2002@gmail.com'>rajkumarn2002@gmail.com</a>. He replies within 24 hours. 👋" };
-    }
-    if (/\b(cool|awesome|nice|impressive|wow|great|amazing|insane)\b/.test(lower) && words.length <= 5) {
-      // Sentiment-aware — ride the momentum
-      if (lastProjectKey && PROJECTS[lastProjectKey]) {
-        const p = PROJECTS[lastProjectKey];
-        const links = [];
-        if (p.live) links.push(`<a href="${p.live}" target="_blank">try it live</a>`);
-        return { text: `Glad you think so! ${links.length ? 'Want to ' + links[0] + '?' : 'Want to explore more?'}`, followups: ['See it live', 'Show all projects', 'Contact Raj'] };
-      }
-      return { text: "Thanks! Want to dive deeper into any of Raj's projects or skills?", followups: ['Tell me about MedEval', 'Tell me about CineNeuro', 'Financial Agent details'] };
-    }
-    if (/\b(what'?s new|update|latest|recent)\b/.test(lower)) {
-      return { text: "The latest project is <strong>MedEval</strong> — a deterministic clinical triage AI where the LLM is structurally barred from urgency decisions. The evaluation harness (medeval-harness) is also published on PyPI (v0.1.0) — independently reproducible accuracy benchmarks. Want to hear more?", followups: ['MedEval details', 'All projects', 'Tell me about PyPI harness'], topic: 'projects' };
-    }
-
-    /* ── Projects (general) ── */
-    if (/\b(project|work|built|portfolio|showcase|show.*(all|everything)|what (have|has) (you|he|raj))\b/.test(lower) && !findProject(input)) {
-      let text = "Raj has built <strong>7 production-grade AI systems</strong>, 4 of which are live on AWS right now:<br><br>";
-      text += "🔹 <strong>MedEval</strong> — Deterministic ESI triage AI (LLM never decides urgency) · PyPI published<br>";
-      text += "🔹 <strong>AI Financial Research Agent</strong> — BUY/HOLD/SELL in &lt;30s<br>";
-      text += "🔹 <strong>CineNeuro</strong> — Brain encoding for movie trailers (Meta FAIR TRIBE v2 · PR #20)<br>";
-      text += "🔹 <strong>Enterprise RAG Chatbot</strong> — 87% retrieval accuracy<br>";
-      text += "🔹 <strong>Retail Sales Forecasting</strong> — 4.2% RMSE on AWS SageMaker<br>";
-      text += "🔹 <strong>Customer Churn Prediction</strong> — 91% accuracy with SHAP<br>";
-      text += "🔹 <strong>Insurance Fraud Detection</strong> — 96.7% on 50k+ claims";
-      return { text, followups: ['MedEval details', 'Financial Agent details', 'Tell me about CineNeuro'], topic: 'projects' };
-    }
-
-    /* ── Specific project match ── */
-    const projKey = findProject(input);
-    if (projKey) {
-      const proj = PROJECTS[projKey];
-      lastProjectKey = projKey;
-      lastTopic = 'projects';
-      saveLastProject(projKey);
-
-      let text = `<strong>${proj.title}</strong><br><br>${proj.desc}<br><br><strong>Stack:</strong> ${proj.stack}`;
-      // Session memory — returning to a project
-      const prevMention = history.some(m => m.text && m.text.toLowerCase().includes(projKey));
-      if (prevMention && history.length > 4) {
-        text = `Coming back to this one! ` + text;
-      }
-      const followups = [];
-      const others = Object.values(PROJECTS).filter(p => p.key !== projKey).slice(0, 2);
-      others.forEach(p => followups.push(`Tell me about ${p.title.split('—')[0].trim().split(' ').slice(0,3).join(' ')}`));
-      followups.push('What\'s his tech stack?');
-      return { text, followups, card: { title: proj.title, desc: proj.desc, live: proj.live, code: proj.code, section: proj.section }, topic: 'projects' };
-    }
-
-    /* ── Tech stack / skills ── */
-    if (/\b(stack|skill|tech|tool|language|framework|what (do|does) (you|he|raj) (use|know|work))\b/.test(lower)) {
-      lastTopic = 'stack';
-      let text = "Here's Raj's full stack:<br><br>";
-      for (const [cat, skills] of Object.entries(SKILLS_DATA)) {
-        text += `<strong>${cat}:</strong> ${skills}<br><br>`;
-      }
-      text += "Every tool listed here is one he's used in a production deployment — not just tutorials.";
-      return { text, followups: ['Tell me about his projects', 'AWS experience?', 'LLM experience?'], topic: 'stack' };
-    }
-
-    /* ── Specific tech queries ── */
-    if (/\b(aws|cloud|deploy|infrastructure|ec2|s3|sagemaker|lambda)\b/.test(lower)) {
-      return { text: "Raj has <strong>4 live deployments on AWS</strong> (EC2, Nginx, Docker Compose) — MedEval, Financial Agent, CineNeuro, and RAG Chatbot — plus SageMaker training pipelines, Lambda ETL, Kinesis streaming, S3 storage, CloudWatch monitoring, and RDS databases. He's also AWS Certified Cloud Practitioner (CCP).", followups: ['MedEval (AWS)', 'Financial Agent (AWS)', 'CineNeuro (AWS)'], topic: 'stack' };
-    }
-    if (/\b(llm|gpt|openai|langchain|langgraph|rag|retrieval|large language|prompt)\b/.test(expanded)) {
-      return { text: "Raj specializes in <strong>production LLM systems</strong>:<br><br>🔹 <strong>LangGraph agents</strong> — deterministic multi-step pipelines (Financial Agent)<br>🔹 <strong>RAG pipelines</strong> — MMR retrieval, hallucination guardrails (Enterprise Chatbot)<br>🔹 <strong>Brain encoding</strong> — Llama 3.2 embeddings for neural predictions (CineNeuro)<br><br>Key principle: GPT explains decisions but never makes them. All decision logic is deterministic and auditable.", followups: ['Financial Agent details', 'RAG Chatbot details', 'CineNeuro details'], topic: 'stack' };
-    }
-    if (/\b(python|pytorch|tensorflow|docker|fastapi|redis)\b/.test(lower)) {
-      const tech = words.find(w => /^(python|pytorch|tensorflow|docker|fastapi|redis)$/i.test(w));
-      return { text: `Yes, Raj uses <strong>${tech}</strong> in production. It's part of his core stack across multiple deployed systems. Want me to show you a specific project where he uses it?`, followups: ['Show me projects', 'Full tech stack'], topic: 'stack' };
-    }
-    if (/\b(computer vision|cv|yolo|resnet|object detect|image)\b/.test(expanded)) {
-      lastProjectKey = 'fraud';
-      return { text: "Raj built an <strong>Insurance Fraud Detection</strong> system using YOLOv8 + ResNet-50 — 96.7% accuracy across 50k+ claim images, with real-time Kinesis ingestion and 50ms inference latency via FastAPI.", followups: ['Fraud Detection details', 'Other projects'], card: { title: PROJECTS.fraud.title, desc: PROJECTS.fraud.desc, code: PROJECTS.fraud.code, section: 'projects' }, topic: 'projects' };
-    }
-
-    /* ── Experience / background ── */
-    if (/\b(experience|background|education|degree|university|college|certif|qualification|school|study|studied)\b/.test(lower)) {
-      return { text: "<strong>Education:</strong><br>🎓 MS in Computer Science — Pace University, NYC<br>🎓 B.Tech in AI — Amrita Vishwa Vidyapeetham<br><br><strong>Certification:</strong><br>☁️ AWS Certified Cloud Practitioner (CCP)<br><br><strong>Focus areas:</strong> LLM Engineering, Healthcare AI, Computer Vision, ML Infrastructure. He's built and deployed 4 live systems on AWS, submitted PR #20 to Meta FAIR's TRIBE v2, and published medeval-harness on PyPI.", followups: ['What projects has he built?', 'Tech stack?', 'Is he available?'], topic: 'experience' };
-    }
-
-    /* ── Availability ── */
-    if (/\b(avail|hire|job|position|role|work with|open to|looking|employ|full.?time|remote|hybrid|relocat)\b/.test(lower)) {
-      return { text: "✅ <strong>Raj is actively looking for full-time AI/ML Engineering roles.</strong><br><br>He's open to remote or hybrid positions. He replies within 24 hours.<br><br>📧 <a href='mailto:rajkumarn2002@gmail.com'>rajkumarn2002@gmail.com</a><br>🔗 <a href='https://www.linkedin.com/in/raj-kumar-nelluri-351389393/' target='_blank'>Connect on LinkedIn</a>", followups: ['See his resume', 'What has he built?'], topic: 'availability' };
-    }
-
-    /* ── Contact ── */
-    if (/\b(contact|email|reach|connect|linkedin|get in touch|talk|message|phone|call)\b/.test(lower)) {
-      return { text: "Here's how to reach Raj — he replies within 24 hours:<br><br>📧 <a href='mailto:rajkumarn2002@gmail.com'>rajkumarn2002@gmail.com</a><br>🔗 <a href='https://www.linkedin.com/in/raj-kumar-nelluri-351389393/' target='_blank'>LinkedIn</a><br>💻 <a href='https://github.com/Rajkumar2002-Rk' target='_blank'>GitHub</a>", topic: 'contact' };
-    }
-
-    /* ── Resume ── */
-    if (/\b(resume|cv|download|pdf)\b/.test(lower)) {
-      return { text: 'Here\'s Raj\'s resume — download it directly:<br><a href="Raj_Kumar_Nelluri_AI:ML_Engineer_Resume.pdf" download class="chat-resume-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Resume (PDF)</a>', followups: ['What has he built?', 'Is he available?'], topic: 'resume' };
-    }
-
-    /* ── Metrics / results ── */
-    if (/\b(metric|result|number|accuracy|performance|how good|stats|data)\b/.test(lower)) {
-      return { text: "Here are Raj's production metrics:<br><br>📊 <strong>96.7%</strong> — Fraud detection accuracy (50k+ claims)<br>📊 <strong>91%</strong> — Churn prediction accuracy (F1: 89%)<br>📊 <strong>87%</strong> — RAG retrieval accuracy<br>📊 <strong>4.2%</strong> — RMSE on retail forecasting (18% above baseline)<br>📊 <strong><30s</strong> — Investment decision latency<br>📊 <strong>20,484</strong> — Brain vertices predicted per second<br><br>All from production systems, not Kaggle notebooks.", followups: ['Tell me about a project', 'What\'s his stack?'], topic: 'projects' };
-    }
-
-    /* ── PyPI / evaluation harness ── */
-    if (/\b(pypi|harness|medeval.harness|eval|evaluation|pip install)\b/.test(lower)) {
-      lastProjectKey = 'medeval';
-      return { text: "Raj published <strong>medeval-harness v0.1.0 on PyPI</strong> — an evaluation harness for MedEval's triage engine. It runs 50 benchmark cases against the live API and reports exact/tolerant triage accuracy, under-triage rate (the safety-critical metric), over-triage rate, and p50/p95 latency. CI runs it weekly in GitHub Actions with <code>--fail-under 60</code>. Under-triage rate dropped from 20% → 10% after prompt tuning.", followups: ['MedEval details', 'See it live'], topic: 'projects' };
-    }
-
-    /* ── PR / open source ── */
-    if (/\b(pr|pull request|open source|contribution|meta|tribe)\b/.test(lower)) {
-      lastProjectKey = 'cineneuro';
-      return { text: "Raj submitted <strong>PR #20 to Meta FAIR's TRIBE v2</strong> — added int8 compute_type fallback for WhisperX on non-CUDA devices. Before the fix, hardcoded float16 caused errors on Apple Silicon and CPU-only Linux. CLA signed, checks passing. The full pipeline now runs everywhere with <1% WER degradation.", followups: ['CineNeuro details', 'Other projects'], topic: 'projects' };
-    }
-
-    /* ── About the site ── */
-    if (/\b(site|website|portfolio|how.*(built|made)|this page)\b/.test(lower)) {
-      return { text: "This portfolio is built with <strong>HTML, CSS, and vanilla JavaScript</strong> — zero frameworks. Features include a particle canvas with mouse repulsion, 3D card tilt, custom cursor with lerp smoothing, scroll-reveal animations, glassmorphism chatbot with multi-turn context, and session persistence. 😄", followups: ['What projects has he built?', 'Tech stack?'], topic: 'fun' };
-    }
-
-    /* ── What can you do ── */
-    if (/\b(what can you|help|what do you know|capabilities)\b/.test(lower)) {
-      return { text: "I can tell you about:<br><br>🔹 Raj's <strong>projects</strong> — all 7, with live demos and GitHub links<br>🔹 <strong>Tech stack</strong> — every tool he uses in production<br>🔹 <strong>Experience</strong> — education, certifications, background<br>🔹 <strong>Availability</strong> — he's actively looking for roles<br>🔹 <strong>Contact info</strong> — email, LinkedIn, GitHub<br>🔹 <strong>Resume</strong> — instant download<br>🔹 <strong>Metrics</strong> — production numbers from real systems<br><br>I also understand follow-up questions! Ask about a project, then say \"what stack?\" or \"show me live\" — I'll know what you mean.", followups: ['Projects', 'Tech Stack', 'Availability'] };
-    }
-
-    /* ── Location ── */
-    if (/\b(where|location|based|city|country|live|from)\b/.test(lower)) {
-      return { text: "Raj is based in the <strong>NYC area</strong> (Pace University, MS in CS). He's open to remote or hybrid AI/ML engineering roles.", followups: ['Is he available?', 'Contact him'], topic: 'availability' };
-    }
-
-    /* ── Fallback ── */
-    const fallbacks = [
-      "I'm not sure about that one, but I can tell you about Raj's projects, skills, experience, or how to reach him. What interests you?",
-      "Hmm, that's outside my knowledge. I specialize in Raj's portfolio — try asking about his projects, tech stack, or availability!",
-      "I don't have info on that, but I know everything about Raj's AI/ML work. Want to hear about his projects or skills?"
-    ];
-    return { text: fallbacks[Math.floor(Math.random() * fallbacks.length)], followups: ['Projects', 'Tech Stack', 'Contact', 'Resume'] };
+    const lower=input.toLowerCase().trim(),expanded=expandSynonyms(lower),words=lower.split(/\s+/);
+    const pronounRef=resolvePronouns(lower);
+    if(pronounRef&&PROJECTS[pronounRef]){const proj=PROJECTS[pronounRef];lastProjectKey=pronounRef;saveLastProject(pronounRef);if(/\b(stack|tech|built with|tools?|language)\b/.test(lower))return{text:'<strong>'+proj.title+'</strong> is built with:<br><br><strong>'+proj.stack+'</strong>',followups:['See it live','More projects'],topic:'stack'};if(/\b(live|demo|try|see|link|url|visit)\b/.test(lower)){const links=[];if(proj.live)links.push('🔗 <a href="'+proj.live+'" target="_blank">Live demo</a>');if(proj.code)links.push('💻 <a href="'+proj.code+'" target="_blank">GitHub repo</a>');return{text:'Here are the links for <strong>'+proj.title+'</strong>:<br><br>'+links.join('<br>'),topic:'projects'};}let text='<strong>'+proj.title+'</strong><br><br>'+proj.desc+'<br><br><strong>Stack:</strong> '+proj.stack;return{text,followups:['See it live',"What's his tech stack?"],card:{title:proj.title,desc:proj.desc,live:proj.live,code:proj.code,section:proj.section},topic:'projects'};}
+    if(/\bagent\b/.test(lower)&&!/financial|research|llm/i.test(lower)&&words.length<=4)return{text:'When you say <strong>agent</strong>, do you mean:',followups:['Financial Research Agent','LLM agent experience in general']};
+    if(/\b(joke|funny|laugh)\b/.test(lower)){const jokes=["Why do ML engineers prefer dark mode? Because light attracts too many bugs! 😄","Why did the neural network go to therapy? Too many deep issues! 😄","What's a data scientist's favourite music? Heavy metal... I mean, heavy model ensembles. 😄"];return{text:jokes[Math.floor(Math.random()*jokes.length)]+' But seriously, want to hear about Raj\'s actual work?',followups:['Tell me about projects',"What's his tech stack?"],topic:'fun'};}
+    if(/\b(are you (ai|real|human|bot|robot))\b/.test(lower)||lower==='who are you')return{text:"I'm a knowledge-base assistant built right into this portfolio — no API calls, no latency, no hallucinations. What would you like to know?",followups:['Projects','Skills','Experience'],topic:'fun'};
+    if(/\bhire raj\b/.test(lower)||/\bhiring\b/.test(lower))return{text:"Great call! 🎯 Raj is actively looking for full-time AI/ML engineering roles.<br><br>📧 <a href='mailto:rajkumarn2002@gmail.com'>rajkumarn2002@gmail.com</a><br>🔗 <a href='https://www.linkedin.com/in/raj-kumar-nelluri-351389393/' target='_blank'>LinkedIn</a>",followups:['See his resume','What projects has he built?'],topic:'contact'};
+    if(/\b(hello|hi|hey|sup|yo|hola|namaste)\b/.test(lower)&&words.length<=3)return{text:'Hey! '+getTimeWord()+'! 👋 I\'m here to answer anything about Raj — projects, skills, experience, or how to get in touch.',followups:['Projects','Tech Stack','Availability']};
+    if(/\b(thanks?|thank you|thx|ty)\b/.test(lower))return{text:"You're welcome! Let me know if there's anything else you'd like to know. 🙌"};
+    if(/\b(bye|goodbye|see ya|later)\b/.test(lower))return{text:"Thanks for stopping by! If you want to reach Raj — <a href='mailto:rajkumarn2002@gmail.com'>rajkumarn2002@gmail.com</a>. He replies within 24 hours. 👋"};
+    if(/\b(what'?s new|update|latest|recent)\b/.test(lower))return{text:'The latest project is <strong>MedEval</strong> — a deterministic clinical triage AI where the LLM is structurally barred from urgency decisions. medeval-harness v0.1.0 is also on PyPI. Want to hear more?',followups:['MedEval details','All projects'],topic:'projects'};
+    if(/\b(project|work|built|portfolio|showcase|show.*(all|everything)|what (have|has) (you|he|raj))\b/.test(lower)&&!findProject(input)){let text="Raj has built <strong>AI systems across healthcare, finance, neuroscience, and ML</strong>:<br><br>🔹 <strong>MedEval</strong> — Deterministic ESI triage AI · PyPI published<br>🔹 <strong>AI Financial Research Agent</strong> — BUY/HOLD/SELL in &lt;30s<br>🔹 <strong>CineNeuro</strong> — Brain encoding for movie trailers (Meta FAIR TRIBE v2 · PR #20)<br>🔹 <strong>Enterprise RAG Chatbot</strong> — MMR retrieval with hallucination guardrails<br>🔹 <strong>Retail Sales Forecasting</strong> — LSTM + Prophet on SageMaker<br>🔹 <strong>Customer Churn Prediction</strong> — XGBoost + SHAP explainability<br>🔹 <strong>Insurance Fraud Detection</strong> — YOLOv8 + ResNet-50 computer vision";return{text,followups:['MedEval details','Financial Agent details','Tell me about CineNeuro'],topic:'projects'};}
+    const projKey=findProject(input);
+    if(projKey){const proj=PROJECTS[projKey];lastProjectKey=projKey;lastTopic='projects';saveLastProject(projKey);let text='<strong>'+proj.title+'</strong><br><br>'+proj.desc+'<br><br><strong>Stack:</strong> '+proj.stack;const followups=[];const others=Object.values(PROJECTS).filter(p=>p.key!==projKey).slice(0,2);others.forEach(p=>followups.push('Tell me about '+p.title.split('—')[0].trim().split(' ').slice(0,3).join(' ')));followups.push("What's his tech stack?");return{text,followups,card:{title:proj.title,desc:proj.desc,live:proj.live,code:proj.code,section:proj.section},topic:'projects'};}
+    if(/\b(stack|skill|tech|tool|language|framework|what (do|does) (you|he|raj) (use|know|work))\b/.test(lower)){lastTopic='stack';let text="Here's Raj's full stack:<br><br>";for(const[cat,skills]of Object.entries(SKILLS_DATA))text+='<strong>'+cat+':</strong> '+skills+'<br><br>';text+="Every tool listed here is one he's used in a production deployment.";return{text,followups:['Tell me about his projects','AWS experience?','LLM experience?'],topic:'stack'};}
+    if(/\b(aws|cloud|deploy|infrastructure|ec2|s3|sagemaker|lambda)\b/.test(lower))return{text:"Raj has <strong>4 live deployments on AWS</strong> (EC2, Nginx, Docker Compose) plus SageMaker training pipelines, Lambda ETL, Kinesis streaming, CloudWatch monitoring. He's also AWS Certified Cloud Practitioner (CCP).",followups:['MedEval (AWS)','Financial Agent (AWS)','CineNeuro (AWS)'],topic:'stack'};
+    if(/\b(llm|gpt|openai|langchain|langgraph|rag|retrieval|large language|prompt)\b/.test(expanded))return{text:"Raj specializes in <strong>production LLM systems</strong>:<br><br>🔹 <strong>LangGraph agents</strong> — deterministic multi-step pipelines<br>🔹 <strong>RAG pipelines</strong> — MMR retrieval, hallucination guardrails<br>🔹 <strong>Brain encoding</strong> — Llama 3.2 embeddings for neural predictions<br><br>Key principle: GPT explains decisions but never makes them.",followups:['Financial Agent details','RAG Chatbot details','CineNeuro details'],topic:'stack'};
+    if(/\b(python|pytorch|tensorflow|docker|fastapi|redis)\b/.test(lower)){const tech=words.find(w=>/^(python|pytorch|tensorflow|docker|fastapi|redis)$/i.test(w));return{text:'Yes, Raj uses <strong>'+tech+'</strong> in production across multiple deployed systems. Want me to show you a specific project?',followups:['Show me projects','Full tech stack'],topic:'stack'};}
+    if(/\b(computer vision|cv|yolo|resnet|object detect|image)\b/.test(expanded)){lastProjectKey='fraud';return{text:"Raj built an <strong>Insurance Fraud Detection</strong> system using YOLOv8 + ResNet-50 — computer vision pipeline for insurance claim analysis with real-time Kinesis ingestion.",followups:['Fraud Detection details','Other projects'],card:{title:PROJECTS.fraud.title,desc:PROJECTS.fraud.desc,code:PROJECTS.fraud.code,section:'work'},topic:'projects'};}
+    if(/\b(experience|background|education|degree|university|college|certif|qualification|school|study|studied)\b/.test(lower))return{text:"<strong>Education:</strong><br>🎓 MS in Computer Science — Pace University, NYC<br>🎓 B.Tech in AI — Amrita Vishwa Vidyapeetham<br><br><strong>Certification:</strong><br>☁️ AWS Certified Cloud Practitioner (CCP)<br><br>4 live systems on AWS, PR #20 to Meta FAIR's TRIBE v2, medeval-harness on PyPI.",followups:['What projects has he built?','Tech stack?','Is he available?'],topic:'experience'};
+    if(/\b(avail|hire|job|position|role|work with|open to|looking|employ|full.?time|remote|hybrid|relocat)\b/.test(lower))return{text:"✅ <strong>Raj is actively looking for full-time AI/ML Engineering roles.</strong><br><br>Open to remote or hybrid. Replies within 24 hours.<br><br>📧 <a href='mailto:rajkumarn2002@gmail.com'>rajkumarn2002@gmail.com</a><br>🔗 <a href='https://www.linkedin.com/in/raj-kumar-nelluri-351389393/' target='_blank'>Connect on LinkedIn</a>",followups:['See his resume','What has he built?'],topic:'availability'};
+    if(/\b(contact|email|reach|connect|linkedin|get in touch|talk|message|phone|call)\b/.test(lower))return{text:"Here's how to reach Raj — he replies within 24 hours:<br><br>📧 <a href='mailto:rajkumarn2002@gmail.com'>rajkumarn2002@gmail.com</a><br>🔗 <a href='https://www.linkedin.com/in/raj-kumar-nelluri-351389393/' target='_blank'>LinkedIn</a><br>💻 <a href='https://github.com/Rajkumar2002-Rk' target='_blank'>GitHub</a>",topic:'contact'};
+    if(/\b(resume|cv|download|pdf)\b/.test(lower))return{text:'Here\'s Raj\'s resume:<br><a href="Raj_Kumar_Nelluri_AI:ML_Engineer_Resume.pdf" download class="chat-resume-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Resume (PDF)</a>',followups:['What has he built?','Is he available?'],topic:'resume'};
+    if(/\b(metric|result|number|accuracy|performance|how good|stats|data)\b/.test(lower))return{text:"Raj's key technical highlights:<br><br>🔹 <strong>&lt;30s</strong> — Investment decision latency (Financial Agent)<br>🔹 <strong>20,484</strong> — Brain vertices/sec (CineNeuro)<br>🔹 <strong>Under-triage 20%→10%</strong> — MedEval after prompt tuning<br>🔹 <strong>PR #20</strong> — Meta FAIR TRIBE v2 · CLA signed<br>🔹 <strong>PyPI published</strong> — medeval-harness v0.1.0",followups:['Tell me about a project',"What's his stack?"],topic:'projects'};
+    if(/\b(pypi|harness|medeval.harness|eval|evaluation|pip install)\b/.test(lower)){lastProjectKey='medeval';return{text:"Raj published <strong>medeval-harness v0.1.0 on PyPI</strong> — a 50-case eval suite with exact/tolerant accuracy, under-triage rate, and p50/p95 latency. CI runs it weekly in GitHub Actions with <code>--fail-under 60</code>.",followups:['MedEval details','See it live'],topic:'projects'};}
+    if(/\b(pr|pull request|open source|contribution|meta|tribe)\b/.test(lower)){lastProjectKey='cineneuro';return{text:"Raj submitted <strong>PR #20 to Meta FAIR's TRIBE v2</strong> — added int8 compute_type fallback for WhisperX on non-CUDA devices. CLA signed, checks passing.",followups:['CineNeuro details','Other projects'],topic:'projects'};}
+    if(/\b(site|website|portfolio|how.*(built|made)|this page)\b/.test(lower))return{text:"This portfolio is built with <strong>HTML, CSS, and vanilla JavaScript</strong> — zero frameworks. Inspired by mitchellsparrow.com — warm gray editorial design, typing animation, hover-reveal skill cards, and this multi-turn chatbot. 😄",followups:['What projects has he built?','Tech stack?'],topic:'fun'};
+    if(/\b(where|location|based|city|country|live|from)\b/.test(lower))return{text:"Raj is based in the <strong>NYC area</strong> (Pace University, MS in CS). Open to remote or hybrid roles.",followups:['Is he available?','Contact him'],topic:'availability'};
+    const fallbacks=["I'm not sure about that one, but I can tell you about Raj's projects, skills, experience, or how to reach him. What interests you?","Hmm, that's outside my knowledge. Try asking about his projects, tech stack, or availability!","I don't have info on that, but I know everything about Raj's AI/ML work. Want to hear about his projects or skills?"];
+    return{text:fallbacks[Math.floor(Math.random()*fallbacks.length)],followups:['Projects','Tech Stack','Contact','Resume']};
   }
 
-  /* ── Init: load trending badge on page load ── */
   updateTrendingBadge();
-
-})();
-
-/* ── 6. Delayed hover depth effect on cap-items & metric-cards  */
-(function () {
-  // Add a micro-delay on metric card hover for a "settling" premium feel
-  document.querySelectorAll('.metric-card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      card.style.transitionDelay = '0.03s';
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transitionDelay = '0s';
-    });
-  });
-
-  // fp-link arrow nudge on parent hover
-  document.querySelectorAll('.featured-project').forEach(fp => {
-    const arrows = fp.querySelectorAll('.fp-link.primary i');
-    fp.addEventListener('mouseenter', () => {
-      arrows.forEach(a => { a.style.transition = 'transform 0.3s ease'; a.style.transform = 'translateX(3px)'; });
-    });
-    fp.addEventListener('mouseleave', () => {
-      arrows.forEach(a => { a.style.transform = ''; });
-    });
-  });
 })();
 </script>
 </body>
