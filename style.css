@@ -247,7 +247,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   color: #999; margin-bottom: 48px;
 }
 .work-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+  display: grid; grid-template-columns: 1fr; gap: 2px;
 }
 .project-card {
   background: #E5E5DF; position: relative; overflow: hidden;
