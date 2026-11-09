@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raj Kumar Nelluri — AI/ML Engineer</title>
-  <meta name="description" content="AI/ML Engineer specialising in deterministic LLM systems, RAG pipelines, and computer vision — 4 production deployments on AWS." />
+  <meta name="description" content="AI engineer. I build LLM agent systems and then measure whether they actually work — eval harnesses, mutation testing, deterministic guardrails." />
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://rajkumarai.dev/" />
-  <meta property="og:title"       content="Raj Kumar Nelluri — AI/ML Engineer" />
-  <meta property="og:description" content="4 production AI systems on AWS · LangGraph agents · RAG pipelines · Healthcare AI · Computer Vision · MLOps." />
+  <meta property="og:title"       content="Raj Kumar Nelluri — AI Engineer" />
+  <meta property="og:description" content="LLM agents measured against real data. Sim bugs merged upstream. PR #20 to Meta FAIR. medeval-harness on PyPI." />
   <meta property="og:image"       content="https://rajkumarai.dev/Raj_Kumar.png" />
   <meta name="twitter:card"       content="summary_large_image" />
-  <meta name="twitter:title"      content="Raj Kumar Nelluri — AI/ML Engineer" />
-  <meta name="twitter:description" content="4 production AI systems on AWS · LangGraph · RAG · Healthcare AI · Computer Vision" />
+  <meta name="twitter:title"      content="Raj Kumar Nelluri — AI Engineer" />
+  <meta name="twitter:description" content="LLM agents measured against real data. Sim bugs merged upstream. PR #20 to Meta FAIR." />
   <meta name="twitter:image"      content="https://rajkumarai.dev/Raj_Kumar.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -68,12 +68,14 @@
       <span id="typing-name"></span><span class="typing-cursor"></span>
     </h1>
     <p class="hero-tagline reveal">
-      AI / ML Engineer · I build production systems that<br />replace manual work — not just notebooks.
+      AI Engineer · I build LLM agent systems and then measure<br />whether they actually work.
     </p>
     <div class="hero-proof reveal reveal-delay-1">
+      <span>2 Sim bugs merged upstream</span>
+      <span class="dot">·</span>
       <span>PR #20 Meta FAIR</span>
       <span class="dot">·</span>
-      <span>PyPI Published</span>
+      <span>medeval-harness on PyPI</span>
       <span class="dot">·</span>
       <span>MS CS · Pace University</span>
     </div>
@@ -97,130 +99,131 @@
     <p class="section-eyebrow reveal">Selected Work</p>
     <div class="work-grid">
 
-      <!-- 01 MedEval -->
+      <!-- 01 Autonomous AI Engineering Platform -->
       <div class="project-card reveal">
-        <div class="project-img" style="--proj-color:#2D6A4F">
-          <img src="Medeval.png" alt="MedEval screenshot" onerror="this.style.display='none'" />
+        <div class="project-img" style="--proj-color:#1E3A5F">
+          <img src="aiorg.png" alt="AI Org screenshot" onerror="this.style.display='none'" />
         </div>
         <div class="project-content">
           <div class="project-num">01</div>
-          <div class="project-category">Healthcare AI · Live · PyPI</div>
-          <h3 class="project-title">MedEval — Clinical Triage AI</h3>
+          <div class="project-category">Multi-Agent Platform · 15.7k LOC</div>
+          <h3 class="project-title">Autonomous AI Engineering Platform</h3>
           <p class="project-desc">
-            Deterministic ESI triage engine — LLM structurally barred from urgency decisions.
-            68 ACEP handbook rules fire in a Python engine; GPT-4o-mini only extracts facts.
-            Under-triage rate reduced from 20% → 10%.
+            A 10-stage multi-agent LLM pipeline that turns a plain-English brief into a deployed
+            full-stack app. Backed by a Code Integrity Engine of deterministic, LLM-free checks:
+            AST symbol resolution, dangling foreign keys, hallucinated packages verified by real
+            pip installs, esbuild parse checks, duplicate routes.
           </p>
           <div class="project-metrics">
-            <span class="project-metric">68 ACEP rules</span>
-            <span class="project-metric">PyPI published</span>
-            <span class="project-metric">CI weekly eval</span>
+            <span class="project-metric">55+ defects closed</span>
+            <span class="project-metric">20+ paid end-to-end runs</span>
+            <span class="project-metric">OpenAI · Anthropic · Gemini</span>
           </div>
           <div class="project-stack">
-            <span>GPT-4o-mini</span><span>LangGraph</span><span>FastAPI</span>
-            <span>React 19</span><span>Docker</span><span>AWS EC2</span>
+            <span>Python</span><span>FastAPI</span><span>Next.js</span>
+            <span>PostgreSQL</span><span>Docker</span><span>Async</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/Rajkumar2002-Rk/MedEval" target="_blank" class="project-link-code">
+            <a href="https://github.com/Rajkumar2002-Rk/ai-org" target="_blank" class="project-link-code">
               <i class="fab fa-github"></i> GitHub
             </a>
-            <button class="project-link-case view-case-study" data-modal="medeval">How It Works →</button>
+            <button class="project-link-case view-case-study" data-modal="aiorg">How It Works →</button>
           </div>
         </div>
       </div>
 
-      <!-- 02 Financial Agent -->
+      <!-- 02 sim-triage-eval -->
       <div class="project-card reveal reveal-delay-1">
-        <div class="project-img" style="--proj-color:#1A3A5C">
-          <img src="Fintel.png" alt="Financial Agent screenshot" onerror="this.style.display='none'" />
+        <div class="project-img" style="--proj-color:#4B2E83">
+          <img src="simtriage.png" alt="sim-triage-eval screenshot" onerror="this.style.display='none'" />
         </div>
         <div class="project-content">
           <div class="project-num">02</div>
-          <div class="project-category">LLM Agent · Live</div>
-          <h3 class="project-title">AI Financial Research Agent</h3>
+          <div class="project-category">Eval Harness · 2 Sim bugs merged</div>
+          <h3 class="project-title">sim-triage-eval</h3>
           <p class="project-desc">
-            7-step async LangGraph pipeline generating auditable BUY/HOLD/SELL
-            recommendations in under 30 seconds. GPT-4o constrained to explanation-only.
-            Zero hallucination risk on decisions.
+            Built an issue-triage workflow on self-hosted Sim, scored it against 536 real
+            GitHub issues from Sim and Kubernetes with a dev/test split. Mutation-tested
+            12 injected error types. Reported 2 bugs fixed by Sim's co-founder.
           </p>
           <div class="project-metrics">
-            <span class="project-metric">Decision in &lt;30s</span>
-            <span class="project-metric">&lt;100ms Redis cache</span>
-            <span class="project-metric">Zero hallucination risk</span>
+            <span class="project-metric">536 real issues</span>
+            <span class="project-metric">12 mutation types</span>
+            <span class="project-metric">Priority 24% → 33%</span>
           </div>
           <div class="project-stack">
-            <span>GPT-4o</span><span>LangGraph</span><span>FastAPI</span>
-            <span>Redis</span><span>Docker</span><span>AWS EC2</span>
+            <span>Sim</span><span>Claude Haiku 4.5</span><span>Python</span>
+            <span>pytest</span><span>GitHub Actions</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/Rajkumar2002-Rk/financial-research-agent" target="_blank" class="project-link-code">
+            <a href="https://github.com/Rajkumar2002-Rk/sim-triage-eval" target="_blank" class="project-link-code">
               <i class="fab fa-github"></i> GitHub
             </a>
-            <button class="project-link-case view-case-study" data-modal="financial">How It Works →</button>
+            <button class="project-link-case view-case-study" data-modal="simtriage">How It Works →</button>
           </div>
         </div>
       </div>
 
-      <!-- 03 CineNeuro -->
+      <!-- 03 citecheck -->
       <div class="project-card reveal reveal-delay-2">
-        <div class="project-img" style="--proj-color:#3D1A5C">
-          <img src="cineneuro.png" alt="CineNeuro screenshot" onerror="this.style.display='none'" />
+        <div class="project-img" style="--proj-color:#2D6A4F">
+          <img src="citecheck.png" alt="citecheck screenshot" onerror="this.style.display='none'" />
         </div>
         <div class="project-content">
           <div class="project-num">03</div>
-          <div class="project-category">Neuroscience AI · Meta FAIR · Live</div>
-          <h3 class="project-title">CineNeuro — Neural Audience Intelligence</h3>
+          <div class="project-category">Citation Verification · SOX · SEC</div>
+          <h3 class="project-title">citecheck</h3>
           <p class="project-desc">
-            Predicts second-by-second fMRI activations across 20,484 cortical vertices
-            for movie trailers using Meta FAIR's TRIBE v2. Three neural networks feed
-            5 emotion channels across 7 brain regions. PR #20 to Meta FAIR — CLA signed.
+            A harness that checks every citation an LLM attaches to claims extracted from
+            30 real SEC Item 9A filings. Deterministic checks that never call a model. All
+            30 filings hand-labeled so the answer key was not written by the system under test.
           </p>
           <div class="project-metrics">
-            <span class="project-metric">20,484 vertices/sec</span>
-            <span class="project-metric">$0.50/trailer</span>
-            <span class="project-metric">PR #20 Meta FAIR</span>
+            <span class="project-metric">0 fabricated quotes / 354 cited fields</span>
+            <span class="project-metric">98.9% citation integrity</span>
+            <span class="project-metric">9 checker bugs found</span>
           </div>
           <div class="project-stack">
-            <span>Meta TRIBE v2</span><span>V-JEPA2</span><span>Llama 3.2</span>
-            <span>FastAPI</span><span>React</span><span>AWS EC2</span>
+            <span>Python</span><span>Pydantic v2</span><span>Anthropic API</span>
+            <span>pytest</span><span>GitHub Actions</span><span>uv</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/Rajkumar2002-Rk/CineNeuro" target="_blank" class="project-link-code">
+            <a href="https://github.com/Rajkumar2002-Rk/citecheck" target="_blank" class="project-link-code">
               <i class="fab fa-github"></i> GitHub
             </a>
-            <button class="project-link-case view-case-study" data-modal="cineneuro">How It Works →</button>
+            <button class="project-link-case view-case-study" data-modal="citecheck">How It Works →</button>
           </div>
         </div>
       </div>
 
-      <!-- 04 RAG Chatbot -->
+      <!-- 04 MedEval -->
       <div class="project-card reveal reveal-delay-3">
-        <div class="project-img" style="--proj-color:#4A2C1A">
-          <img src="Rag.png" alt="RAG Chatbot screenshot" onerror="this.style.display='none'" />
+        <div class="project-img" style="--proj-color:#8B2635">
+          <img src="Medeval.png" alt="MedEval screenshot" onerror="this.style.display='none'" />
         </div>
         <div class="project-content">
           <div class="project-num">04</div>
-          <div class="project-category">RAG Pipeline · Live</div>
-          <h3 class="project-title">Enterprise RAG Chatbot</h3>
+          <div class="project-category">Healthcare AI · PyPI</div>
+          <h3 class="project-title">MedEval — Clinical Triage AI</h3>
           <p class="project-desc">
-            Production RAG system with MMR retrieval, hallucination guardrails, and
-            a rule-based query classifier — no LLM call fires without sufficient
-            retrieval confidence.
+            ESI triage where a deterministic Python rules engine makes every urgency decision.
+            68 YAML-encoded clinical rules with handbook citations. The LLM is barred from
+            choosing the level and only extracts a 95-field Pydantic contract.
           </p>
           <div class="project-metrics">
-            <span class="project-metric">Hallucination guardrails</span>
-            <span class="project-metric">MMR retrieval</span>
-            <span class="project-metric">Live on AWS</span>
+            <span class="project-metric">Under-triage 20% → 10%</span>
+            <span class="project-metric">68 YAML rules</span>
+            <span class="project-metric">medeval-harness on PyPI</span>
           </div>
           <div class="project-stack">
-            <span>LangChain</span><span>ChromaDB</span><span>GPT-4</span>
-            <span>FastAPI</span><span>Streamlit</span><span>AWS EC2</span>
+            <span>GPT-4o-mini</span><span>LangGraph</span><span>FastAPI</span>
+            <span>Pydantic v2</span><span>Docker</span><span>AWS EC2</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/Rajkumar2002-Rk/rag-chatbot" target="_blank" class="project-link-code">
+            <a href="https://github.com/Rajkumar2002-Rk/medeval" target="_blank" class="project-link-code">
               <i class="fab fa-github"></i> GitHub
             </a>
-            <button class="project-link-case view-case-study" data-modal="rag">How It Works →</button>
+            <button class="project-link-case view-case-study" data-modal="medeval">How It Works →</button>
           </div>
         </div>
       </div>
@@ -245,16 +248,17 @@
       </h2>
 
       <p class="about-body">
-        I design and deploy complete AI systems — not just notebooks. A model that
-        never leaves a researcher's laptop isn't a product, it's a cost. Every system
-        I've built started with a process someone was doing manually. My job was to
-        make that unnecessary.
+        I build LLM agent systems and then measure whether they actually work.
+        That means eval harnesses with held-out test sets, mutation testing,
+        deterministic checks around the model, and rules engines that keep the LLM
+        out of the decisions that matter.
       </p>
       <p class="about-body">
-        Engineered across the full stack: <strong>LLM agents and RAG pipelines</strong>,
-        <strong>computer vision</strong>, <strong>predictive ML</strong>, and
-        <strong>AWS cloud infrastructure</strong>. I care less about validation loss
-        and more about what happens when the system goes live.
+        I evaluated an AI triage workflow built on Sim against 536 real GitHub issues
+        and reported 2 bugs upstream that Sim's co-founder fixed and merged. I built
+        <strong>citecheck</strong>, which found 0 fabricated quotes across 354 LLM
+        citations and 9 bugs in its own checker. I built a <strong>multi-agent platform</strong>
+        that generates and deploys full-stack apps behind deterministic code checks.
       </p>
 
       <div class="about-creds">
@@ -388,9 +392,8 @@
       <p class="contact-label">Actively looking · Available now</p>
       <h2 class="contact-heading">Let's work<br />together.</h2>
       <p class="contact-sub">
-        I'm looking for a full-time AI/ML Engineering role where there's a real problem —
-        a bottleneck, a slow decision, a process someone is doing by hand.
-        I reply within 24 hours.
+        Looking for a full-time AI Engineering role where the work is building LLM
+        agent systems and proving they hold up under real data. I reply within 24 hours.
       </p>
       <div class="contact-ctas">
         <a href="mailto:rajkumarn2002@gmail.com" class="contact-btn-primary">
@@ -437,65 +440,63 @@
 
 <div id="modal-data" style="display:none">
 
+  <div data-id="aiorg">
+    <div class="modal-header">
+      <h2>Autonomous AI Engineering Platform</h2>
+      <p>Python · FastAPI · Next.js · PostgreSQL · Docker · OpenAI · Anthropic · Gemini</p>
+    </div>
+    <div class="modal-section"><h4>The Problem</h4><p>Code-generating agents confidently produce output that does not compile, references packages that do not exist, and breaks its own files on the next pass. An LLM reviewing an LLM is not a check.</p></div>
+    <div class="modal-section"><h4>The Solution</h4><p>A 10-stage multi-agent pipeline (requirements interview, architecture, code generation, security review, QA, deploy) that turns a plain-English brief into a deployed full-stack app. Around 15.7k lines of async Python. Each stage routes to a different model across OpenAI, Anthropic, and Gemini to control cost.</p></div>
+    <div class="modal-section"><h4>Engineering Decisions</h4><p>Built a Code Integrity Engine of deterministic, LLM-free checks: AST symbol resolution, dangling foreign keys, hallucinated packages verified with real pip installs, esbuild parse checks, duplicate routes. Each check sends a targeted repair back to the agent and retries. Every check came from a real failed run and is locked in with a regression test.</p></div>
+    <div class="modal-section"><h4>Key Results</h4><ul><li>55+ documented defects diagnosed and closed across 20+ paid end-to-end runs</li><li>Caught a security reviewer whose own auto-fixes rewrote certified files and quietly put bugs back in. Fixed with a gate that re-runs the original build checks on any post-certification change</li><li>Per-stage model routing across three providers to control cost</li></ul></div>
+    <div class="modal-section"><h4>Stack</h4><div class="modal-tags"><span>Python</span><span>FastAPI</span><span>Next.js</span><span>PostgreSQL</span><span>Docker</span><span>OpenAI</span><span>Anthropic</span><span>Gemini</span><span>AST</span><span>esbuild</span></div></div>
+    <div class="modal-footer">
+      <a href="https://github.com/Rajkumar2002-Rk/ai-org" target="_blank" class="btn-primary"><i class="fab fa-github"></i> View Code</a>
+    </div>
+  </div>
+
+  <div data-id="simtriage">
+    <div class="modal-header">
+      <h2>sim-triage-eval</h2>
+      <p>Sim (self-hosted) · Claude Haiku 4.5 · Python · pytest · GitHub Actions</p>
+    </div>
+    <div class="modal-section"><h4>The Problem</h4><p>Teams use LLM-as-judge evaluators to sign off on agent output. Nobody checks whether the judge actually catches real mistakes or just flags surface patterns.</p></div>
+    <div class="modal-section"><h4>The Solution</h4><p>Built an issue-triage workflow on self-hosted Sim, deployed it as an API, and scored it on 536 real issues from Sim and Kubernetes against maintainers' own labels. Dev/test split and an always-guess-the-majority baseline for every field.</p></div>
+    <div class="modal-section"><h4>Engineering Decisions</h4><p>Mutation-tested code checks against Sim's LLM-judge Evaluator across 12 injected error types. Code checks caught 100% of invented numbers and broken structure but 0% of summaries with flipped meaning. The judge caught 88 to 100% of injected errors yet only 41 to 54% of the model's real mistakes. Blind hand review showed most judge flags on correct outputs were false alarms (0 of 8 flagged summaries were wrong).</p></div>
+    <div class="modal-section"><h4>Key Results</h4><ul><li>536 real issues scored across Sim and Kubernetes repos</li><li>Reported 2 bugs upstream (#8353, #8354), both fixed and merged by Sim's co-founder</li><li>Docs PR #8448 correcting the Evaluator block's documented settings (open)</li><li>Calibrated prompt raised Kubernetes priority accuracy from 24% to 33% and within-one-level accuracy from 70% to 87%, stopping there to avoid fitting the test set</li></ul></div>
+    <div class="modal-section"><h4>Stack</h4><div class="modal-tags"><span>Sim</span><span>Claude Haiku 4.5</span><span>Python</span><span>pytest</span><span>GitHub Actions</span><span>Docker</span></div></div>
+    <div class="modal-footer">
+      <a href="https://github.com/Rajkumar2002-Rk/sim-triage-eval" target="_blank" class="btn-primary"><i class="fab fa-github"></i> View Code</a>
+    </div>
+  </div>
+
+  <div data-id="citecheck">
+    <div class="modal-header">
+      <h2>citecheck — Citation Verification for LLM-Extracted Audit Claims</h2>
+      <p>Python · Pydantic v2 · Anthropic API · pytest · GitHub Actions · uv</p>
+    </div>
+    <div class="modal-section"><h4>The Problem</h4><p>When an LLM extracts audit claims from SEC filings, every number and quote it cites has to be verifiable against the source. A fabricated quote hidden inside a correct-looking claim ships silent errors downstream.</p></div>
+    <div class="modal-section"><h4>The Solution</h4><p>A harness that checks every citation an LLM attaches to claims extracted from 30 real SEC Item 9A filings. Deterministic checks that never call a model. All 30 filings hand-labeled so the answer key was not written by the system under test.</p></div>
+    <div class="modal-section"><h4>Engineering Decisions</h4><p>Mutation-tested the checker: 92% of 539 injected defects caught, 100% of fabricated quotes and flipped values. Gated in CI at --fail-under 0.85. Found 9 defects in the checker itself against 3 model errors, including one that produced a false 23% claim-error rate when the real figure was 10%.</p></div>
+    <div class="modal-section"><h4>Key Results</h4><ul><li>0 fabricated quotes across 354 cited fields</li><li>98.9% citation integrity measured end-to-end</li><li>9 checker bugs caught against 3 real model errors</li><li>92% of 539 injected defects caught by mutation tests</li><li>CI gate at --fail-under 0.85</li></ul></div>
+    <div class="modal-section"><h4>Stack</h4><div class="modal-tags"><span>Python</span><span>Pydantic v2</span><span>Anthropic API</span><span>pytest</span><span>GitHub Actions</span><span>uv</span></div></div>
+    <div class="modal-footer">
+      <a href="https://github.com/Rajkumar2002-Rk/citecheck" target="_blank" class="btn-primary"><i class="fab fa-github"></i> View Code</a>
+    </div>
+  </div>
+
   <div data-id="medeval">
     <div class="modal-header">
       <h2>MedEval — Clinical Triage AI</h2>
-      <p>GPT-4o-mini · LangGraph · FastAPI · React 19 · Docker · AWS EC2 · Langfuse</p>
+      <p>GPT-4o-mini · LangGraph · FastAPI · Pydantic v2 · Langfuse · React · Docker · AWS EC2</p>
     </div>
-    <div class="modal-section"><h4>The Problem</h4><p>LLMs hallucinate. In emergency triage, an under-rated urgency level can be fatal. Generic LLM-based triage tools give confident answers with no structural guarantee against incorrect urgency assignments.</p></div>
-    <div class="modal-section"><h4>The Solution</h4><p>MedEval's core design constraint: the LLM is structurally barred from making the urgency decision. A three-node LangGraph pipeline (extract → triage → explain): GPT-4o-mini converts free-text into 95 structured booleans, a deterministic Python rules engine assigns the ESI level by firing 68 ACEP handbook rules, and a second LLM call rephrases the rationale into lay language. The LLM explains decisions — it never makes them.</p></div>
-    <div class="modal-section"><h4>Engineering Decisions</h4><p>Rules engine evaluates recursive AND/OR conditions against a merged fact pool. First A or B rule match is definitive. C rules set a base level but D rules can upgrade to ESI 2. Missing fields return False — pediatric rules safely no-op for adult patients. Built and published medeval-harness on PyPI (v0.1.0) — 50-case eval suite with exact/tolerant accuracy, under-triage rate, and p50/p95 latency. CI runs weekly against live production via GitHub Actions with --fail-under 60.</p></div>
-    <div class="modal-section"><h4>Business Value</h4><p>Dual UI: patients see plain-English explanation only; doctors see full decision path and rule IDs that fired — making every triage fully auditable. Under-triage rate reduced 20% → 10% after prompt tuning. The evaluation harness is on PyPI so accuracy claims are independently reproducible.</p></div>
-    <div class="modal-section"><h4>Key Results</h4><ul><li>68 deterministic ACEP rules — zero LLM influence on urgency decision</li><li>Under-triage rate: 20% → 10% — the safety-critical metric</li><li>medeval-harness v0.1.0 published on PyPI — independently reproducible eval</li><li>CI weekly eval against live production; build fails below 60% accuracy</li><li>Live at medeval.rajkumarai.dev — HTTPS, Docker Compose, AWS EC2, Nginx</li></ul></div>
-    <div class="modal-section"><h4>Stack</h4><div class="modal-tags"><span>GPT-4o-mini</span><span>LangGraph</span><span>FastAPI</span><span>React 19</span><span>Docker</span><span>AWS EC2</span><span>Nginx</span><span>Langfuse</span><span>GitHub Actions</span><span>PyPI</span></div></div>
+    <div class="modal-section"><h4>The Problem</h4><p>In emergency triage, an under-rated urgency level can be fatal. Generic LLM-based triage tools give confident answers with no structural guarantee against incorrect urgency assignments.</p></div>
+    <div class="modal-section"><h4>The Solution</h4><p>An ESI triage system where a deterministic Python rules engine (68 YAML-encoded clinical rules with handbook citations) makes every urgency decision. The LLM is barred from choosing the level and only extracts typed facts (a 95-field Pydantic v2 contract) and explains the result.</p></div>
+    <div class="modal-section"><h4>Engineering Decisions</h4><p>Reduced dangerous under-triage from 20% to 10% by tuning extraction prompts against a 50-case suite built from ESI handbook practice cases, tracking exact and tolerant accuracy, under- and over-triage, and latency p50/p95. Published medeval-harness v0.1.0 on PyPI, a CLI eval tool with --fail-under gating and standard exit codes, plus a GitHub Actions workflow that fails the build when accuracy drops below 60%.</p></div>
+    <div class="modal-section"><h4>Key Results</h4><ul><li>Under-triage rate reduced from 20% to 10%</li><li>68 YAML-encoded clinical rules with handbook citations</li><li>95-field Pydantic v2 contract for extracted facts</li><li>medeval-harness v0.1.0 published on PyPI</li><li>CI gate fails the build below 60% accuracy</li></ul></div>
+    <div class="modal-section"><h4>Stack</h4><div class="modal-tags"><span>GPT-4o-mini</span><span>LangGraph</span><span>FastAPI</span><span>Pydantic v2</span><span>Langfuse</span><span>React</span><span>TypeScript</span><span>Docker</span><span>AWS EC2</span><span>Nginx</span><span>PyPI</span></div></div>
     <div class="modal-footer">
-      <a href="https://github.com/Rajkumar2002-Rk/MedEval" target="_blank" class="btn-primary"><i class="fab fa-github"></i> View Code</a>
-    </div>
-  </div>
-
-  <div data-id="financial">
-    <div class="modal-header">
-      <h2>AI Financial Research Agent</h2>
-      <p>GPT-4o · LangGraph · FastAPI · Redis · Docker · AWS EC2</p>
-    </div>
-    <div class="modal-section"><h4>The Problem</h4><p>Financial analysts spend days compiling research from 10+ scattered sources. Manual work doesn't scale and introduces inconsistency.</p></div>
-    <div class="modal-section"><h4>The Solution</h4><p>A 7-step async LangGraph pipeline that generates auditable BUY/HOLD/SELL recommendations in under 30 seconds. GPT-4o constrained to explanation-only: zero influence over the decision, ensuring fully reproducible and auditable outputs.</p></div>
-    <div class="modal-section"><h4>Engineering Decisions</h4><p>Normalized multi-factor scoring engine (Technical 0–25, Fundamental 0–40, Sentiment 0–15) with conflict-aware logic — signal disagreement (variance > 0.15) overrides to HOLD, eliminating false conviction. 5-factor confidence model blocks recommendations below 20% confidence. Redis TTL 900s caching reduces repeated query latency from ~15s to &lt;100ms.</p></div>
-    <div class="modal-section"><h4>Business Value</h4><p>Any firm paying analysts $80k+/year offsets that cost with sub-30s deterministic decisions. Portfolio ranking mode supports 2–8 tickers with proportional capital allocation.</p></div>
-    <div class="modal-section"><h4>Key Results</h4><ul><li>BUY/HOLD/SELL decision generated in under 30 seconds</li><li>Repeated query latency: ~15s → &lt;100ms via Redis caching</li><li>Zero LLM hallucination risk — GPT-4o explains, never decides</li><li>Portfolio ranking mode: 2–8 tickers with proportional capital allocation</li></ul></div>
-    <div class="modal-section"><h4>Stack</h4><div class="modal-tags"><span>GPT-4o</span><span>LangGraph</span><span>FastAPI</span><span>Alpha Vantage</span><span>Redis</span><span>Docker</span><span>AWS EC2</span><span>Nginx</span></div></div>
-    <div class="modal-footer">
-      <a href="https://github.com/Rajkumar2002-Rk/financial-research-agent" target="_blank" class="btn-primary"><i class="fab fa-github"></i> View Code</a>
-    </div>
-  </div>
-
-  <div data-id="cineneuro">
-    <div class="modal-header">
-      <h2>CineNeuro — Neural Audience Intelligence</h2>
-      <p>Meta FAIR TRIBE v2 · V-JEPA2 · Wav2Vec-BERT · Llama 3.2 · FastAPI · React · AWS</p>
-    </div>
-    <div class="modal-section"><h4>The Problem</h4><p>Film studios spend millions producing trailers with no way to quantify emotional impact before release. Traditional test screenings are expensive, slow, and limited to small samples — no second-by-second signal.</p></div>
-    <div class="modal-section"><h4>The Solution</h4><p>CineNeuro uses Meta FAIR's TRIBE v2 brain encoding model to predict fMRI activations across 20,484 cortical vertices for every second of a trailer. Three feature extractors — V-JEPA2 (vision), Wav2Vec-BERT (audio), Llama 3.2 (transcript) — feed TRIBE v2, mapping to 5 emotion channels across 7 brain regions.</p></div>
-    <div class="modal-section"><h4>Engineering Decisions</h4><p>Two-tier deployment: g4dn.xlarge GPU ($0.53/hr) handles inference on-demand then terminates. t3.micro serves the React dashboard 24/7 using pre-computed JSON results (&lt;100ms). The three extractors total 12.89GB — barely fitting in 15GB VRAM, requiring careful sequential model loading. PR #20 submitted to Meta FAIR TRIBE v2 — added int8 compute_type fallback for WhisperX on non-CUDA devices. CLA signed, checks passing.</p></div>
-    <div class="modal-section"><h4>Key Results</h4><ul><li>20,484 cortical vertices predicted per second across 7 brain regions</li><li>5 simultaneous emotion channels: excitement, fear, joy, suspense, boredom</li><li>Pre-computed demo results served in &lt;100ms from disk</li><li>Full 2-minute trailer analysis in ~55 minutes on Tesla T4 GPU</li><li>Monthly hosting cost: ~$0 (t3.micro free tier + on-demand GPU only when needed)</li><li>PR #20 submitted to Meta FAIR TRIBE v2 — CLA signed, checks passing</li></ul></div>
-    <div class="modal-section"><h4>Stack</h4><div class="modal-tags"><span>Meta TRIBE v2</span><span>V-JEPA2</span><span>Wav2Vec-BERT</span><span>Llama 3.2</span><span>WhisperX</span><span>FastAPI</span><span>React</span><span>Docker</span><span>AWS EC2 g4dn.xlarge</span><span>Nginx</span></div></div>
-    <div class="modal-footer">
-      <a href="https://github.com/Rajkumar2002-Rk/CineNeuro" target="_blank" class="btn-primary"><i class="fab fa-github"></i> View Code</a>
-    </div>
-  </div>
-
-  <div data-id="rag">
-    <div class="modal-header">
-      <h2>Enterprise RAG Chatbot</h2>
-      <p>LangChain · ChromaDB · GPT-4 · FastAPI · Streamlit · Docker · AWS EC2</p>
-    </div>
-    <div class="modal-section"><h4>The Problem</h4><p>Enterprise knowledge locked in PDFs and Word docs means employees waste hours on search. Generic chatbots hallucinate without grounding.</p></div>
-    <div class="modal-section"><h4>The Solution</h4><p>Production RAG system: PDF ingestion pipeline, ChromaDB vector store, MMR retrieval, and GPT-4 generation with real-time streaming. Hallucination guardrails block LLM calls when retrieval confidence is too low.</p></div>
-    <div class="modal-section"><h4>Engineering Decisions</h4><p>MMR (Maximal Marginal Relevance) retrieval over plain cosine similarity — prevents near-duplicate chunks reaching the LLM. Rule-based query classifier (no LLM cost) detects factual/complex/ambiguous intent and adjusts retrieval params. Three API cost guards: rate limiting, input cap, tiktoken token budget — all fire before any LLM call. Citation format [SOURCE N: filename — Page: X] forces the LLM to cite, never invent.</p></div>
-    <div class="modal-section"><h4>Key Results</h4><ul><li>Zero hallucination on document-grounded queries</li><li>Two interfaces: Streamlit (users) + FastAPI Swagger (developers)</li><li>Live on AWS EC2 with Nginx reverse proxy and HTTPS</li></ul></div>
-    <div class="modal-section"><h4>Stack</h4><div class="modal-tags"><span>LangChain</span><span>ChromaDB</span><span>GPT-4</span><span>FastAPI</span><span>Streamlit</span><span>Docker</span><span>AWS EC2</span><span>Nginx</span><span>Redis</span></div></div>
-    <div class="modal-footer">
-      <a href="https://github.com/Rajkumar2002-Rk/rag-chatbot" target="_blank" class="btn-primary"><i class="fab fa-github"></i> View Code</a>
+      <a href="https://github.com/Rajkumar2002-Rk/medeval" target="_blank" class="btn-primary"><i class="fab fa-github"></i> View Code</a>
     </div>
   </div>
 
@@ -729,20 +730,20 @@ sectionEls.forEach(el => sectionObserver.observe(el));
   const LS_ANALYTICS = 'rk_chat_analytics';
 
   const PROJECTS = {
-    medeval:    { key:'medeval',    title:'MedEval — Clinical Triage AI',            desc:'Deterministic ESI triage engine — LLM structurally barred from urgency decisions. 68 ACEP rules fire in a Python engine; GPT-4o-mini only extracts facts and explains. Under-triage rate: 20% → 10%. medeval-harness published on PyPI (v0.1.0).', stack:'GPT-4o-mini, LangGraph, FastAPI, React 19, Docker, AWS EC2, Langfuse', live:'', code:'https://github.com/Rajkumar2002-Rk/MedEval', section:'work', keywords:['medeval','medical','triage','esi','healthcare','hospital','emergency','clinical','pypi','patient','doctor','urgency','rules engine','acep'] },
-    financial:  { key:'financial',  title:'AI Financial Research Agent',              desc:'Deterministic investment decision engine — 7-step LangGraph pipeline, BUY/HOLD/SELL in <30s. Zero LLM hallucination risk.', stack:'GPT-4o, LangGraph, FastAPI, Redis, Docker, AWS EC2', live:'', code:'https://github.com/Rajkumar2002-Rk/financial-research-agent', section:'work', keywords:['financial','finance','stock','invest','agent','langgraph','buy','sell','hold','trading','fintel','research agent','decision'] },
-    cineneuro:  { key:'cineneuro',  title:'CineNeuro — Neural Audience Intelligence', desc:'Predicts fMRI brain activations (20,484 vertices/sec) for movie trailers using Meta FAIR TRIBE v2. 5 emotion channels across 7 brain regions.', stack:'Meta TRIBE v2, V-JEPA2, Wav2Vec-BERT, Llama 3.2, FastAPI, React, AWS EC2', live:'', code:'https://github.com/Rajkumar2002-Rk/CineNeuro', section:'work', keywords:['cineneuro','cine','neuro','brain','fmri','movie','trailer','emotion','audience','tribe','meta','fair','neuroscience','v-jepa','wav2vec'] },
-    rag:        { key:'rag',        title:'Enterprise RAG Chatbot',                   desc:'Production RAG system with MMR retrieval, hallucination guardrails, and rule-based query classifier — no LLM call fires without sufficient retrieval confidence. Dual interface: Streamlit + FastAPI.', stack:'LangChain, ChromaDB, GPT-4, FastAPI, Streamlit, Docker, AWS EC2', live:'', code:'https://github.com/Rajkumar2002-Rk/rag-chatbot', section:'work', keywords:['rag','chatbot','retrieval','enterprise','langchain','chroma','chromadb','mmr','document','pdf'] },
-    forecasting:{ key:'forecasting',title:'AWS Retail Sales Forecasting',             desc:'LSTM + Prophet ensemble — 4.2% RMSE, 18% better than baselines. Automated weekly SageMaker retraining.', stack:'LSTM, Prophet, SageMaker, S3, PyTorch', code:'https://github.com/Rajkumar2002-Rk/aws-sales-forecasting', section:'work', keywords:['forecast','sales','retail','lstm','prophet','sagemaker','prediction','time series'] },
-    churn:      { key:'churn',      title:'Customer Churn Prediction',                desc:'XGBoost + SHAP explainability pipeline with AWS Comprehend NLP sentiment analysis from customer support tickets.', stack:'XGBoost, SHAP, SageMaker, Lambda, CloudWatch, MLflow', code:'https://github.com/Rajkumar2002-Rk/Customer_Chrun_Prediction', section:'work', keywords:['churn','customer','xgboost','shap','retention','telecom','classification'] },
-    fraud:      { key:'fraud',      title:'Insurance Fraud Detection',                desc:'YOLOv8 + ResNet-50 computer vision pipeline for insurance claim fraud detection with real-time Kinesis ingestion.', stack:'YOLOv8, ResNet-50, PyTorch, FastAPI, AWS Kinesis, Lambda, RDS', code:'https://github.com/Rajkumar2002-Rk', section:'work', keywords:['fraud','insurance','yolo','resnet','detection','computer vision','claim','vehicle'] }
+    aiorg:      { key:'aiorg',      title:'Autonomous AI Engineering Platform',       desc:'10-stage multi-agent LLM pipeline that turns a plain-English brief into a deployed full-stack app. ~15.7k lines of async Python. Code Integrity Engine of deterministic, LLM-free checks (AST, pip installs, esbuild, duplicate routes). 55+ defects closed across 20+ paid end-to-end runs.', stack:'Python, FastAPI, Next.js, PostgreSQL, Docker, OpenAI, Anthropic, Gemini', live:'', code:'https://github.com/Rajkumar2002-Rk/ai-org', section:'work', keywords:['aiorg','ai-org','autonomous','multi-agent','agent','code generation','platform','pipeline','integrity','ast','pip'] },
+    simtriage:  { key:'simtriage',  title:'sim-triage-eval',                           desc:'Evaluated an AI triage workflow built on self-hosted Sim against 536 real GitHub issues from Sim and Kubernetes. Mutation-tested 12 error types. Reported 2 bugs merged by Sim\'s co-founder. Calibrated prompt raised Kubernetes priority accuracy from 24% to 33%.', stack:'Sim, Claude Haiku 4.5, Python, pytest, GitHub Actions', live:'', code:'https://github.com/Rajkumar2002-Rk/sim-triage-eval', section:'work', keywords:['sim','simtriage','sim-triage','triage','eval','evaluation','issues','github','kubernetes','mutation','judge','llm-as-judge'] },
+    citecheck:  { key:'citecheck',  title:'citecheck — Citation Verification for LLM-Extracted Audit Claims', desc:'Harness that checks every citation an LLM attaches to claims extracted from 30 real SEC Item 9A filings. 0 fabricated quotes across 354 cited fields. 98.9% citation integrity. 9 checker bugs caught against 3 model errors. Mutation testing gated in CI at --fail-under 0.85.', stack:'Python, Pydantic v2, Anthropic API, pytest, GitHub Actions, uv', live:'', code:'https://github.com/Rajkumar2002-Rk/citecheck', section:'work', keywords:['citecheck','citation','sec','sox','audit','filing','verification','mutation','fabricated','quotes'] },
+    voiceqa:    { key:'voiceqa',    title:'voice-agent-qa',                            desc:'Deterministic QA harness for Retell appointment-booking voice agents. Scripted adversarial callers and a rules-based scorer that names which field was wrong. 102 real calls committed. Voice accuracy fell to 67-73% against 95% over text, almost all on names misheard by speech-to-text.', stack:'Retell, Python, pytest, GitHub Actions', live:'', code:'https://github.com/Rajkumar2002-Rk/voice-agent-qa', section:'work', keywords:['voice','voice-agent','retell','qa','appointment','booking','speech','whisper','calls'] },
+    medeval:    { key:'medeval',    title:'MedEval — Clinical Triage AI',              desc:'ESI triage where a deterministic Python rules engine (68 YAML-encoded clinical rules) makes every urgency decision. LLM only extracts a 95-field Pydantic contract. Under-triage reduced from 20% to 10%. medeval-harness v0.1.0 published on PyPI.', stack:'GPT-4o-mini, LangGraph, FastAPI, Pydantic v2, Langfuse, React, Docker, AWS EC2', live:'', code:'https://github.com/Rajkumar2002-Rk/medeval', section:'work', keywords:['medeval','medical','triage','esi','healthcare','hospital','emergency','clinical','pypi','patient','doctor','urgency','rules engine','acep'] },
+    fintel:     { key:'fintel',     title:'FinTel — AI Financial Research Agent',      desc:'9-node async LangGraph pipeline that issues BUY/HOLD/SELL recommendations in under 30 seconds from live market data, fundamentals, and news sentiment. A scoring engine (Technical, Fundamental, Sentiment) makes every call. GPT-4o only classifies sentiment and writes the explanation.', stack:'LangGraph, GPT-4o, FastAPI, yfinance, Tavily, Redis, Docker, AWS EC2', live:'', code:'https://github.com/Rajkumar2002-Rk/financial-research-agent', section:'work', keywords:['financial','finance','stock','invest','agent','langgraph','buy','sell','hold','trading','fintel','research agent','decision'] },
+    rag:        { key:'rag',        title:'Enterprise RAG Chatbot',                    desc:'RAG system end to end: PDF ingestion, chunking, OpenAI embeddings, persistent ChromaDB, scored cosine retrieval with reranking (MMR and hybrid BM25 built in), and streaming generation behind Nginx with HTTPS. Guardrails gate the LLM call on retrieval confidence.', stack:'LangChain, ChromaDB, OpenAI API, FastAPI, Streamlit, Redis, Docker, AWS EC2', live:'', code:'https://github.com/Rajkumar2002-Rk/rag-chatbot', section:'work', keywords:['rag','chatbot','retrieval','enterprise','langchain','chroma','chromadb','mmr','document','pdf','bm25'] }
   };
 
   const SKILLS_DATA = {
-    'LLM & Agents':'GPT-4o, LangGraph, LangChain, RAG Pipelines, ChromaDB, Pydantic v2, Langfuse',
-    'Neural Models':'PyTorch, Transformers, V-JEPA2, Wav2Vec-BERT, Llama 3.2, Meta TRIBE v2',
-    'Cloud & Infra':'AWS EC2, Docker & Compose, FastAPI, Redis, Nginx, GitHub Actions',
-    'Frontend & Tools':'React, TypeScript, Tailwind CSS, Streamlit, Python (Expert), Git/GitHub, Linux/Bash'
+    'LLM & Agentic Systems':'LangGraph, LangChain, Anthropic API, OpenAI API, MCP, RAG (hybrid search, reranking), ChromaDB, Pydantic v2, Langfuse',
+    'Evaluation & Reliability':'Eval Harnesses, LLM-as-Judge, Mutation Testing, Deterministic Guardrails, CI Regression Gating, Held-out Test Splits',
+    'Backend & Cloud':'FastAPI, PostgreSQL, Redis, Docker, Nginx, AWS EC2/S3, GitHub Actions, pytest, PyPI, uv',
+    'Voice & Multimodal':'Retell Voice Agents, Whisper, Meta FAIR TRIBE v2'
   };
 
   const SYNONYMS = { 'machine learning':'ml','artificial intelligence':'ai','deep learning':'dl','ml':'ml','ai':'ai','dl':'dl','deployed':'production','shipped':'production','live':'production','natural language processing':'nlp','nlp':'nlp','cv':'computer vision','computer vision':'computer vision','neural network':'nn','neural net':'nn' };
@@ -866,22 +867,24 @@ sectionEls.forEach(el => sectionObserver.observe(el));
     if(/\b(hello|hi|hey|sup|yo|hola|namaste)\b/.test(lower)&&words.length<=3)return{text:'Hey! '+getTimeWord()+'! 👋 I\'m here to answer anything about Raj — projects, skills, experience, or how to get in touch.',followups:['Projects','Tech Stack','Availability']};
     if(/\b(thanks?|thank you|thx|ty)\b/.test(lower))return{text:"You're welcome! Let me know if there's anything else you'd like to know. 🙌"};
     if(/\b(bye|goodbye|see ya|later)\b/.test(lower))return{text:"Thanks for stopping by! If you want to reach Raj — <a href='mailto:rajkumarn2002@gmail.com'>rajkumarn2002@gmail.com</a>. He replies within 24 hours. 👋"};
-    if(/\b(what'?s new|update|latest|recent)\b/.test(lower))return{text:'The latest project is <strong>MedEval</strong> — a deterministic clinical triage AI where the LLM is structurally barred from urgency decisions. medeval-harness v0.1.0 is also on PyPI. Want to hear more?',followups:['MedEval details','All projects'],topic:'projects'};
-    if(/\b(project|work|built|portfolio|showcase|show.*(all|everything)|what (have|has) (you|he|raj))\b/.test(lower)&&!findProject(input)){let text="Raj has built <strong>AI systems across healthcare, finance, neuroscience, and ML</strong>:<br><br>🔹 <strong>MedEval</strong> — Deterministic ESI triage AI · PyPI published<br>🔹 <strong>AI Financial Research Agent</strong> — BUY/HOLD/SELL in &lt;30s<br>🔹 <strong>CineNeuro</strong> — Brain encoding for movie trailers (Meta FAIR TRIBE v2 · PR #20)<br>🔹 <strong>Enterprise RAG Chatbot</strong> — MMR retrieval with hallucination guardrails<br>🔹 <strong>Retail Sales Forecasting</strong> — LSTM + Prophet on SageMaker<br>🔹 <strong>Customer Churn Prediction</strong> — XGBoost + SHAP explainability<br>🔹 <strong>Insurance Fraud Detection</strong> — YOLOv8 + ResNet-50 computer vision";return{text,followups:['MedEval details','Financial Agent details','Tell me about CineNeuro'],topic:'projects'};}
+    if(/\b(what'?s new|update|latest|recent)\b/.test(lower))return{text:'The latest project is the <strong>Autonomous AI Engineering Platform</strong> — a 10-stage multi-agent pipeline that turns a plain-English brief into a deployed app, backed by deterministic, LLM-free code checks. Want to hear more?',followups:['AI Platform details','All projects'],topic:'projects'};
+    if(/\b(project|work|built|portfolio|showcase|show.*(all|everything)|what (have|has) (you|he|raj))\b/.test(lower)&&!findProject(input)){let text="Raj builds LLM agent systems and measures whether they actually work:<br><br>🔹 <strong>Autonomous AI Engineering Platform</strong> — 10-stage multi-agent pipeline, Code Integrity Engine, 55+ defects closed<br>🔹 <strong>sim-triage-eval</strong> — Mutation-tested 536 real issues. 2 bugs merged by Sim's co-founder<br>🔹 <strong>citecheck</strong> — 0 fabricated quotes across 354 LLM citations on 30 SEC filings<br>🔹 <strong>voice-agent-qa</strong> — Deterministic QA harness for Retell voice agents, 102 real calls<br>🔹 <strong>MedEval</strong> — ESI triage with 68 YAML rules. medeval-harness on PyPI<br>🔹 <strong>FinTel</strong> — BUY/HOLD/SELL in under 30s from live market data<br>🔹 <strong>Enterprise RAG Chatbot</strong> — MMR retrieval with hallucination guardrails";return{text,followups:['AI Platform details','sim-triage-eval details','citecheck details'],topic:'projects'};}
     const projKey=findProject(input);
     if(projKey){const proj=PROJECTS[projKey];lastProjectKey=projKey;lastTopic='projects';saveLastProject(projKey);let text='<strong>'+proj.title+'</strong><br><br>'+proj.desc+'<br><br><strong>Stack:</strong> '+proj.stack;const followups=[];const others=Object.values(PROJECTS).filter(p=>p.key!==projKey).slice(0,2);others.forEach(p=>followups.push('Tell me about '+p.title.split('—')[0].trim().split(' ').slice(0,3).join(' ')));followups.push("What's his tech stack?");return{text,followups,card:{title:proj.title,desc:proj.desc,live:proj.live,code:proj.code,section:proj.section},topic:'projects'};}
     if(/\b(stack|skill|tech|tool|language|framework|what (do|does) (you|he|raj) (use|know|work))\b/.test(lower)){lastTopic='stack';let text="Here's Raj's full stack:<br><br>";for(const[cat,skills]of Object.entries(SKILLS_DATA))text+='<strong>'+cat+':</strong> '+skills+'<br><br>';text+="Every tool listed here is one he's used in a production deployment.";return{text,followups:['Tell me about his projects','AWS experience?','LLM experience?'],topic:'stack'};}
-    if(/\b(aws|cloud|deploy|infrastructure|ec2|s3|sagemaker|lambda)\b/.test(lower))return{text:"Raj has <strong>4 live deployments on AWS</strong> (EC2, Nginx, Docker Compose) plus SageMaker training pipelines, Lambda ETL, Kinesis streaming, CloudWatch monitoring. He's also AWS Certified Cloud Practitioner (CCP).",followups:['MedEval (AWS)','Financial Agent (AWS)','CineNeuro (AWS)'],topic:'stack'};
-    if(/\b(llm|gpt|openai|langchain|langgraph|rag|retrieval|large language|prompt)\b/.test(expanded))return{text:"Raj specializes in <strong>production LLM systems</strong>:<br><br>🔹 <strong>LangGraph agents</strong> — deterministic multi-step pipelines<br>🔹 <strong>RAG pipelines</strong> — MMR retrieval, hallucination guardrails<br>🔹 <strong>Brain encoding</strong> — Llama 3.2 embeddings for neural predictions<br><br>Key principle: GPT explains decisions but never makes them.",followups:['Financial Agent details','RAG Chatbot details','CineNeuro details'],topic:'stack'};
-    if(/\b(python|pytorch|tensorflow|docker|fastapi|redis)\b/.test(lower)){const tech=words.find(w=>/^(python|pytorch|tensorflow|docker|fastapi|redis)$/i.test(w));return{text:'Yes, Raj uses <strong>'+tech+'</strong> in production across multiple deployed systems. Want me to show you a specific project?',followups:['Show me projects','Full tech stack'],topic:'stack'};}
-    if(/\b(computer vision|cv|yolo|resnet|object detect|image)\b/.test(expanded)){lastProjectKey='fraud';return{text:"Raj built an <strong>Insurance Fraud Detection</strong> system using YOLOv8 + ResNet-50 — computer vision pipeline for insurance claim analysis with real-time Kinesis ingestion.",followups:['Fraud Detection details','Other projects'],card:{title:PROJECTS.fraud.title,desc:PROJECTS.fraud.desc,code:PROJECTS.fraud.code,section:'work'},topic:'projects'};}
-    if(/\b(experience|background|education|degree|university|college|certif|qualification|school|study|studied)\b/.test(lower))return{text:"<strong>Education:</strong><br>🎓 MS in Computer Science — Pace University, NYC<br>🎓 B.Tech in AI — Amrita Vishwa Vidyapeetham<br><br><strong>Certification:</strong><br>☁️ AWS Certified Cloud Practitioner (CCP)<br><br>4 live systems on AWS, PR #20 to Meta FAIR's TRIBE v2, medeval-harness on PyPI.",followups:['What projects has he built?','Tech stack?','Is he available?'],topic:'experience'};
+    if(/\b(aws|cloud|deploy|infrastructure|ec2|s3|sagemaker|lambda)\b/.test(lower))return{text:"Raj deploys on <strong>AWS EC2</strong> with Docker Compose and Nginx, uses S3 for storage, and ships CI/CD through GitHub Actions. He's AWS Certified Cloud Practitioner (CCP).",followups:['MedEval (AWS)','FinTel (AWS)','RAG Chatbot (AWS)'],topic:'stack'};
+    if(/\b(llm|gpt|openai|langchain|langgraph|rag|retrieval|large language|prompt)\b/.test(expanded))return{text:"Raj builds <strong>LLM agent systems and measures whether they work</strong>:<br><br>🔹 <strong>Multi-agent pipelines</strong> with deterministic, LLM-free code checks (ai-org)<br>🔹 <strong>Eval harnesses</strong> with held-out test splits and mutation testing (sim-triage-eval, citecheck)<br>🔹 <strong>LangGraph agents</strong> where rules engines make every decision (MedEval, FinTel)<br><br>Key principle: the LLM explains decisions but never makes them.",followups:['AI Platform details','sim-triage-eval details','citecheck details'],topic:'stack'};
+    if(/\b(python|pytorch|tensorflow|docker|fastapi|redis|postgres|postgresql|typescript)\b/.test(lower)){const tech=words.find(w=>/^(python|pytorch|tensorflow|docker|fastapi|redis|postgres|postgresql|typescript)$/i.test(w));return{text:'Yes, Raj uses <strong>'+tech+'</strong> across multiple projects. Want me to show you a specific one?',followups:['Show me projects','Full tech stack'],topic:'stack'};}
+    if(/\b(voice|retell|whisper|speech|call|appointment)\b/.test(lower)){lastProjectKey='voiceqa';return{text:"Raj built <strong>voice-agent-qa</strong>, a deterministic QA harness for Retell appointment-booking agents. 102 real calls committed. Voice accuracy fell to 67-73% against 95% over text, almost all on names misheard by speech-to-text.",followups:['voice-agent-qa details','Other projects'],card:{title:PROJECTS.voiceqa.title,desc:PROJECTS.voiceqa.desc,code:PROJECTS.voiceqa.code,section:'work'},topic:'projects'};}
+    if(/\b(experience|background|education|degree|university|college|certif|qualification|school|study|studied)\b/.test(lower))return{text:"<strong>Education:</strong><br>🎓 MS in Computer Science — Pace University, NYC (Sep 2023 to Apr 2025)<br>🎓 B.Tech in Artificial Intelligence — Amrita Vishwa Vidyapeetham<br><br><strong>Certification:</strong><br>☁️ AWS Certified Cloud Practitioner (2025)<br><br>2 Sim bugs merged upstream, PR #20 to Meta FAIR's TRIBE v2, medeval-harness on PyPI.",followups:['What projects has he built?','Tech stack?','Is he available?'],topic:'experience'};
     if(/\b(avail|hire|job|position|role|work with|open to|looking|employ|full.?time|remote|hybrid|relocat)\b/.test(lower))return{text:"✅ <strong>Raj is actively looking for full-time AI/ML Engineering roles.</strong><br><br>Open to remote or hybrid. Replies within 24 hours.<br><br>📧 <a href='mailto:rajkumarn2002@gmail.com'>rajkumarn2002@gmail.com</a><br>🔗 <a href='https://www.linkedin.com/in/raj-kumar-nelluri-351389393/' target='_blank'>Connect on LinkedIn</a>",followups:['See his resume','What has he built?'],topic:'availability'};
     if(/\b(contact|email|reach|connect|linkedin|get in touch|talk|message|phone|call)\b/.test(lower))return{text:"Here's how to reach Raj — he replies within 24 hours:<br><br>📧 <a href='mailto:rajkumarn2002@gmail.com'>rajkumarn2002@gmail.com</a><br>🔗 <a href='https://www.linkedin.com/in/raj-kumar-nelluri-351389393/' target='_blank'>LinkedIn</a><br>💻 <a href='https://github.com/Rajkumar2002-Rk' target='_blank'>GitHub</a>",topic:'contact'};
     if(/\b(resume|cv|download|pdf)\b/.test(lower))return{text:'Here\'s Raj\'s resume:<br><a href="Raj.pdf" download class="chat-resume-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Resume (PDF)</a>',followups:['What has he built?','Is he available?'],topic:'resume'};
-    if(/\b(metric|result|number|accuracy|performance|how good|stats|data)\b/.test(lower))return{text:"Raj's key technical highlights:<br><br>🔹 <strong>&lt;30s</strong> — Investment decision latency (Financial Agent)<br>🔹 <strong>20,484</strong> — Brain vertices/sec (CineNeuro)<br>🔹 <strong>Under-triage 20%→10%</strong> — MedEval after prompt tuning<br>🔹 <strong>PR #20</strong> — Meta FAIR TRIBE v2 · CLA signed<br>🔹 <strong>PyPI published</strong> — medeval-harness v0.1.0",followups:['Tell me about a project',"What's his stack?"],topic:'projects'};
-    if(/\b(pypi|harness|medeval.harness|eval|evaluation|pip install)\b/.test(lower)){lastProjectKey='medeval';return{text:"Raj published <strong>medeval-harness v0.1.0 on PyPI</strong> — a 50-case eval suite with exact/tolerant accuracy, under-triage rate, and p50/p95 latency. CI runs it weekly in GitHub Actions with <code>--fail-under 60</code>.",followups:['MedEval details','See it live'],topic:'projects'};}
-    if(/\b(pr|pull request|open source|contribution|meta|tribe)\b/.test(lower)){lastProjectKey='cineneuro';return{text:"Raj submitted <strong>PR #20 to Meta FAIR's TRIBE v2</strong> — added int8 compute_type fallback for WhisperX on non-CUDA devices. CLA signed, checks passing.",followups:['CineNeuro details','Other projects'],topic:'projects'};}
+    if(/\b(metric|result|number|accuracy|performance|how good|stats|data)\b/.test(lower))return{text:"Raj's key technical highlights:<br><br>🔹 <strong>0 fabricated quotes / 354 cited fields</strong> — citecheck on 30 SEC filings<br>🔹 <strong>536 real issues</strong> scored — sim-triage-eval<br>🔹 <strong>55+ defects closed / 20+ paid runs</strong> — AI Engineering Platform<br>🔹 <strong>Under-triage 20% → 10%</strong> — MedEval after prompt tuning<br>🔹 <strong>2 bugs merged by Sim's co-founder</strong><br>🔹 <strong>PR #20</strong> — Meta FAIR TRIBE v2 · CLA signed<br>🔹 <strong>medeval-harness</strong> v0.1.0 on PyPI",followups:['Tell me about a project',"What's his stack?"],topic:'projects'};
+    if(/\b(pypi|harness|medeval.harness|eval|evaluation|pip install)\b/.test(lower)){lastProjectKey='medeval';return{text:"Raj published <strong>medeval-harness v0.1.0 on PyPI</strong> — a 50-case eval suite with exact/tolerant accuracy, under-triage rate, and p50/p95 latency. CI runs weekly with <code>--fail-under 60</code>.",followups:['MedEval details','citecheck details'],topic:'projects'};}
+    if(/\b(sim|simstudio|triage|judge|llm-as-judge)\b/.test(lower)){lastProjectKey='simtriage';return{text:"<strong>sim-triage-eval</strong>: Raj built a workflow on self-hosted Sim and scored it on 536 real GitHub issues with a dev/test split. Mutation testing showed the LLM-judge caught 88 to 100% of injected errors but only 41 to 54% of the model's real mistakes. He reported <strong>2 bugs</strong> that Sim's co-founder fixed and merged (#8353, #8354).",followups:['sim-triage-eval details','AI Platform details'],topic:'projects'};}
+    if(/\b(cite|citation|sec|audit|sox|filing)\b/.test(lower)){lastProjectKey='citecheck';return{text:"<strong>citecheck</strong>: Raj built a harness that checks every citation an LLM attaches to claims extracted from 30 real SEC Item 9A filings. 0 fabricated quotes across 354 cited fields. 9 checker bugs caught against 3 model errors. CI gated at <code>--fail-under 0.85</code>.",followups:['citecheck details','AI Platform details'],topic:'projects'};}
+    if(/\b(pr|pull request|open source|contribution|meta|tribe)\b/.test(lower))return{text:"Open-source contributions:<br><br>🔹 <strong>Sim</strong> (simstudioai/sim): 2 bugs reported and merged (#8353, #8354) by Sim's co-founder. Docs PR #8448 open.<br>🔹 <strong>Meta FAIR TRIBE v2</strong>: PR #20 adding an int8 <code>compute_type</code> fallback for WhisperX so the pipeline runs on Apple Silicon and CPU-only machines. CLA signed, checks passing.",followups:['sim-triage-eval details','Other projects'],topic:'projects'};
     if(/\b(site|website|portfolio|how.*(built|made)|this page)\b/.test(lower))return{text:"This portfolio is built with <strong>HTML, CSS, and vanilla JavaScript</strong> — zero frameworks. Inspired by mitchellsparrow.com — warm gray editorial design, typing animation, hover-reveal skill cards, and this multi-turn chatbot. 😄",followups:['What projects has he built?','Tech stack?'],topic:'fun'};
     if(/\b(where|location|based|city|country|live|from)\b/.test(lower))return{text:"Raj is based in the <strong>NYC area</strong> (Pace University, MS in CS). Open to remote or hybrid roles.",followups:['Is he available?','Contact him'],topic:'availability'};
     const fallbacks=["I'm not sure about that one, but I can tell you about Raj's projects, skills, experience, or how to reach him. What interests you?","Hmm, that's outside my knowledge. Try asking about his projects, tech stack, or availability!","I don't have info on that, but I know everything about Raj's AI/ML work. Want to hear about his projects or skills?"];
